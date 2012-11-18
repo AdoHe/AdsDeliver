@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/adsdeliever">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.format_sql">true</prop> 
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>edu/tongji/se/model/Administrator.hbm.xml</value>
+				<value>edu/tongji/se/model/Account.hbm.xml</value>
+				<value>edu/tongji/se/model/Price.hbm.xml</value>
+				<value>edu/tongji/se/model/Location.hbm.xml</value>
+				<value>edu/tongji/se/model/Userinfo.hbm.xml</value>
+				<value>edu/tongji/se/model/Adverinfo.hbm.xml</value>
+				<value>edu/tongji/se/model/Advertisement.hbm.xml</value>
+				<value>edu/tongji/se/model/User.hbm.xml</value></list>
+		</property></bean>
+	
+	<!-- declare dao and inject sessionFactory into dao -->
+	<bean id="AdministratorDAO"
+		class="edu.tongji.se.daoImpl.AdministratorDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AccountDAO" class="edu.tongji.se.daoImpl.AccountDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="PriceDAO" class="edu.tongji.se.daoImpl.PriceDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="LocationDAO" class="edu.tongji.se.daoImpl.LocationDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserinfoDAO" class="edu.tongji.se.daoImpl.UserinfoDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdverinfoDAO" class="edu.tongji.se.daoImpl.AdverinfoDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdvertisementDAO"
+		class="edu.tongji.se.daoImpl.AdvertisementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="edu.tongji.se.daoImpl.UserDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- declare service -->
+	<bean id="adminService" class="edu.tongji.se.serviceImpl.AdminServiceImpl">
+		<property name="mAdminDao">
+			<ref bean="AdministratorDAO"/>
+		</property>
+	</bean>
+	
+	
+	<!-- declare action -->
+	<bean id="LoginInAction" class="edu.tongji.se.action.LoginInAction">
+		<property name="mAdminService">
+			<ref bean="adminService"/>
+		</property>
+	</bean>
+	
+</beans>
