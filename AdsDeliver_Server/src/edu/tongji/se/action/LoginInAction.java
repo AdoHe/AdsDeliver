@@ -50,7 +50,10 @@ public class LoginInAction extends ActionSupport implements SessionAware
 	public String execute() throws Exception 
 	{
 		// TODO Auto-generated method stub
-		return super.execute();
+		if(mAdminService.validateAdmin(name, password) == 1)
+			return "SUCCESS";
+		else
+			return "FAIL";
 	}
 
 	public AdminServiceImpl getmAdminService() {
