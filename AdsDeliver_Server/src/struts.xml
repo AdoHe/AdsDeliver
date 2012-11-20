@@ -17,9 +17,11 @@
 		
 		
 		<action name="LoginIn" class="LoginInAction">
-			<result name="SUCCESS">/jsp/index.jsp</result>
-			<result name="FAIL">/jsp/index.jsp</result>
+			<result name="SUCCESS">/jsp/admin.jsp</result>
+			<result name="FAIL">/jsp/login.jsp</result>
+			<result name="LOGIN">/jsp/login.jsp</result>
 		</action>
+		
 	</package>
 	
 </struts>    

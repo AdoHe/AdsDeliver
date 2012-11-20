@@ -26,7 +26,7 @@ public class LoginInAction extends ActionSupport implements SessionAware
 	
 	private AdminServiceImpl mAdminService;
 	
-	private String name;
+	private String name = null;
 	private String password;
 	/**
 	 * 
@@ -50,10 +50,18 @@ public class LoginInAction extends ActionSupport implements SessionAware
 	public String execute() throws Exception 
 	{
 		// TODO Auto-generated method stub
+		if(name == null)
+			return "LOGIN";
+		
 		if(mAdminService.validateAdmin(name, password) == 1)
+		{
+			session.put("USERNAME", name);
+			
 			return "SUCCESS";
-		else
+		}else
+		{
 			return "FAIL";
+		}
 	}
 
 	public AdminServiceImpl getmAdminService() {
