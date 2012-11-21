@@ -94,6 +94,11 @@
 			<ref bean="AdministratorDAO"/>
 		</property>
 	</bean>
+	<bean id="userService" class="edu.tongji.se.serviceImpl.UserServiceImpl">
+		<property name="mUserDao">
+			<ref bean="UserDAO"/>
+		</property>
+	</bean>
 	
 	
 	<!-- declare action -->

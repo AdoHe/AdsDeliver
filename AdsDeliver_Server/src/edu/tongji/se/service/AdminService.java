@@ -10,4 +10,5 @@ package edu.tongji.se.service;
 public interface AdminService 
 {
 	public int validateAdmin(String name, String password);
+	
 }
