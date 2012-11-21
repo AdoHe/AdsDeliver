@@ -108,4 +108,7 @@
 		</property>
 	</bean>
 	
+	<bean id="AdminIndexAction" class="edu.tongji.se.action.AdminIndexAction">
+	</bean>
+	
 </beans>
