@@ -11,7 +11,7 @@
   </context-param>
   
   <welcome-file-list>
-    <welcome-file>/jsp/index.jsp</welcome-file>
+    <welcome-file>/WEB-INF/jsp/index.jsp</welcome-file>
   </welcome-file-list>
   
   <filter>
