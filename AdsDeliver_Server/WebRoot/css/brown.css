@@ -4,7 +4,7 @@
 
 #header #header-inner
 {
-	background: #5c330a url("../../../resources/images/colors/brown/header_inner.png") repeat-x;
+	background: #5c330a url("../images/header_inner.png") repeat-x;
 }
 
 /* -----------------------------------------------------------
@@ -58,7 +58,7 @@
 
 #header #header-inner div.corner
 {
-	background: url("../../../resources/images/colors/brown/header_inner_corners.png") no-repeat;
+	background: url("../images/header_inner_corners.png") no-repeat;
 }
 
 #header #header-inner div.tl
@@ -249,7 +249,7 @@
 
 #login div.title
 {
-	background: #5c330a url("../../../resources/images/colors/brown/header_inner.png") repeat-x;
+	background: #5c330a url("../images/header_inner.png") repeat-x;
 }
 
 
@@ -259,7 +259,7 @@
 
 #login div.title div.corner
 {
-	background: url("../../../resources/images/colors/brown/login_corners.png") no-repeat;
+	background: url("../images/login_corners.png") no-repeat;
 }
 
 #login div.title div.tl

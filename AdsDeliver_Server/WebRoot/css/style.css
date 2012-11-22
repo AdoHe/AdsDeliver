@@ -1894,10 +1894,10 @@ div.form div.fields div.buttons input
 	content -> right -> forms -> buttons (jquery styling)
 ----------------------------------------------------------- */
 
-div.form div.fields div.buttons input .ui-state-default
+div.form div.fields div.buttons .ui-state-default
 {
 	margin: 0;
-	padding: 5px 8px 5px 8px;
+	padding: 6px 12px 6px 12px;
 	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
@@ -1907,10 +1907,10 @@ div.form div.fields div.buttons input .ui-state-default
 	outline: none;
 }
 
-div.form div.fields div.buttons input:hover
+div.form div.fields div.buttons .ui-state-hover
 {
 	margin: 0;
-	padding: 5px 8px 5px 8px;
+	padding: 6px 12px 6px 12px;
 	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
@@ -2746,7 +2746,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;
