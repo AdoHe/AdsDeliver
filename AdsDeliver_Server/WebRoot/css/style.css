@@ -2746,7 +2746,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;
