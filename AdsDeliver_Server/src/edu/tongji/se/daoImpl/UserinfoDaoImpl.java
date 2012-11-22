@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import edu.tongji.se.dao.UserinfoDao;
 import edu.tongji.se.model.Userinfo;
 
 /**
@@ -22,7 +23,7 @@ import edu.tongji.se.model.Userinfo;
  * @author MyEclipse Persistence Tools
  */
 
-public class UserinfoDaoImpl extends HibernateDaoSupport {
+public class UserinfoDaoImpl extends HibernateDaoSupport implements UserinfoDao{
 	private static final Logger log = LoggerFactory
 			.getLogger(UserinfoDaoImpl.class);
 	// property constants

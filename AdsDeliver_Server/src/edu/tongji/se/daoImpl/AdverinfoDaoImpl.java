@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
+import edu.tongji.se.dao.AdverinfoDao;
 import edu.tongji.se.model.Adverinfo;
 
 /**
@@ -22,7 +23,7 @@ import edu.tongji.se.model.Adverinfo;
  * @author MyEclipse Persistence Tools
  */
 
-public class AdverinfoDaoImpl extends HibernateDaoSupport {
+public class AdverinfoDaoImpl extends HibernateDaoSupport implements AdverinfoDao{
 	private static final Logger log = LoggerFactory
 			.getLogger(AdverinfoDaoImpl.class);
 	// property constants
