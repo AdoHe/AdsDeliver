@@ -1894,11 +1894,11 @@ div.form div.fields div.buttons input
 	content -> right -> forms -> buttons (jquery styling)
 ----------------------------------------------------------- */
 
-div.form div.fields div.buttons .ui-state-default
+div.form div.fields div.buttons input .ui-state-default
 {
 	margin: 0;
-	padding: 6px 12px 6px 12px;
-	background: #e5e3e3 url("/images/button.png") repeat-x;
+	padding: 5px 8px 5px 8px;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
 	border-right: 1px solid #DDDDDD;
@@ -1907,11 +1907,11 @@ div.form div.fields div.buttons .ui-state-default
 	outline: none;
 }
 
-div.form div.fields div.buttons .ui-state-hover
+div.form div.fields div.buttons input:hover
 {
 	margin: 0;
-	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("/images/button_selected.png") repeat-x;
+	padding: 5px 8px 5px 8px;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;
@@ -2391,7 +2391,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	clear: both;
 	overflow: hidden;
 	position: relative;
-	background: #003367 url("../../resources/images/colors/blue/header_inner.png") repeat-x;
+	background: #003367 url("../images/header_inner.png") repeat-x;
 }
 
 #login div.title h5
@@ -2410,7 +2410,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	height: 6px;
 	width: 6px;
 	position: absolute;
-	background: url("../../resources/images/colors/blue/login_corners.png") no-repeat;
+	background: url("../images/login_corners.png") no-repeat;
 }
 
 #login div.title div.tl
