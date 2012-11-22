@@ -25,6 +25,10 @@
 		<action name="AdminIndex" class="AdminIndexAction">
 		</action>
 		
+		<action name="Register" class="RegisterAction">
+			<result name="SUCCESS">/WEB-INF/jsp/reg.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>    

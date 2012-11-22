@@ -111,4 +111,10 @@
 	<bean id="AdminIndexAction" class="edu.tongji.se.action.AdminIndexAction">
 	</bean>
 	
+	<bean id="RegisterAction" class="edu.tongji.se.action.RegisterAction">
+		<property name="mUserService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
 </beans>
