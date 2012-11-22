@@ -1,5 +1,7 @@
 package edu.tongji.se.service;
 
+import java.util.List;
+
 import edu.tongji.se.model.Adverinfo;
 import edu.tongji.se.model.Advertisement;
 import edu.tongji.se.model.Location;
@@ -15,4 +17,5 @@ public interface AdService {
 	
 	public void updateAdInfo(int id, Adverinfo adinfo);
 	
+	public List<Advertisement> getAds(int uid, int offset, int limit);
 }

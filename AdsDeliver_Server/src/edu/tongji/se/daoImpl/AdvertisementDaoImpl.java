@@ -1,11 +1,16 @@
 package edu.tongji.se.daoImpl;
 
+import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.List;
+
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import edu.tongji.se.dao.AdvertisementDao;
@@ -166,5 +171,28 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 	public static AdvertisementDaoImpl getFromApplicationContext(
 			ApplicationContext ctx) {
 		return (AdvertisementDaoImpl) ctx.getBean("AdvertisementDAO");
+	}
+	
+	@Override
+	public List<Advertisement> findAd(final int uid, final int offset, final int length) {
+		
+		final String HQL = "from Advertisement as ad "
+                + "where ad.user.id in"
+                + "( select relation.uid2 from Userrelation as relation  where relation.uid1=?)"
+                + "OR ad.userinfo.uid=?"
+                + "order by ad.feedId desc";
+        
+        List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
+              
+            public Object doInHibernate(Session session) throws HibernateException,  
+                    SQLException {  
+                List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)  
+                                .setParameter(0, uid).setParameter(1, uid)  
+                                .setMaxResults(length)  
+                                .list();  
+                return result;  
+            }  
+        });  
+        return list;
 	}
 }

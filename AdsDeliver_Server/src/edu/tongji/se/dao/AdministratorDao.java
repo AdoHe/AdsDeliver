@@ -6,6 +6,7 @@ package edu.tongji.se.dao;
 import java.util.List;
 
 import edu.tongji.se.model.Administrator;
+import edu.tongji.se.model.Advertisement;
 
 /**
  * @author hezibo
@@ -30,4 +31,5 @@ public interface AdministratorDao
 	
 	//merge two administrators
 	public Administrator merge(Administrator detachedInstance);
+	
 }

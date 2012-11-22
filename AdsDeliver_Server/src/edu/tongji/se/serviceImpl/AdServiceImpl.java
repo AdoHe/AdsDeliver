@@ -1,5 +1,7 @@
 package edu.tongji.se.serviceImpl;
 
+import java.util.List;
+
 import edu.tongji.se.dao.AdvertisementDao;
 import edu.tongji.se.dao.UserDao;
 import edu.tongji.se.model.Adverinfo;
@@ -62,6 +64,18 @@ public class AdServiceImpl implements AdService {
 		
 		mAdDao.attachDirty(ad);
 	}
+
+
+
+	@Override
+	public List<Advertisement> getAds(int uid, int offset, int limit) {
+		
+		return mAdDao.findAd(uid, offset, limit);
+	}
+
+
+
+	
 
 
 }

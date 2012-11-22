@@ -1,14 +1,21 @@
 package edu.tongji.se.daoImpl;
 
+import java.sql.SQLException;
 import java.util.List;
+
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import edu.tongji.se.dao.AdministratorDao;
 import edu.tongji.se.model.Administrator;
+import edu.tongji.se.model.Advertisement;
+
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -163,4 +170,5 @@ public class AdministratorDaoImpl extends HibernateDaoSupport
 			ApplicationContext ctx) {
 		return (AdministratorDaoImpl) ctx.getBean("AdministratorDAO");
 	}
+
 }
