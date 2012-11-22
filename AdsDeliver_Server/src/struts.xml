@@ -26,7 +26,8 @@
 		</action>
 		
 		<action name="Register" class="RegisterAction">
-			<result name="SUCCESS">/WEB-INF/jsp/reg.jsp</result>
+			<result name="SUCCESS">/WEB-INF/jsp/login.jsp</result>
+			<result name="ERROR">/WEB-INF/jsp/error.jsp</result>
 		</action>
 		
 	</package>
