@@ -11,7 +11,7 @@ body
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #d1d1d1 url("../../resources/images/background.png") repeat;
+	background: #d1d1d1 url("../images/background.png") repeat;
 	font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
 	font-size: 11px;
 }
@@ -158,7 +158,7 @@ div.color a.greyblue
 {
 	margin: 0;
 	padding: 10px 60px 0 60px;
-	background: #b0b0b0 url("../../resources/images/header_background.png") repeat;
+	background: #b0b0b0 url("../images/header_background.png") repeat;
 }
 
 /* -----------------------------------------------------------
@@ -250,7 +250,7 @@ div.color a.greyblue
 	height: 40px;
 	clear: both;
 	position: relative;
-	background: #003367 url("../../resources/images/colors/blue/header_inner.png") repeat-x;
+	background: #003367 url("../images/header_inner.png") repeat-x;
 	border-bottom: 6px solid #ffffff;
 }
 
@@ -270,7 +270,7 @@ div.color a.greyblue
 	height: 40px;
 	width: 46px;
 	display: block;
-	background: url("../../resources/images/colors/blue/button_home.png");
+	background: url("../images/button_home.png");
 	background-position: 0 0;	
 }
 
@@ -311,7 +311,7 @@ div.color a.greyblue
 	display: block;
 	clear: both;
 	overflow: hidden;
-	background: #336699 url("../../resources/images/colors/blue/quick_l.png") no-repeat top left;
+	background: #336699 url("../images/quick_l.png") no-repeat top left;
 	color: #FFFFFF;
 	font-weight: bold;
 	text-decoration: none;
@@ -326,7 +326,7 @@ div.color a.greyblue
 	height: 1%;
 	display: block;
 	float: left;
-	background: url("../../resources/images/colors/blue/quick_r.png") no-repeat top right;
+	background: url("../images/quick_r.png") no-repeat top right;
 	border-left: 1px solid #3f6f9f;
 }
 
@@ -341,19 +341,19 @@ div.color a.greyblue
 	top: 0;
 	left: 0;
 	padding: 8px 8px 4px 8px;
-	background: url("../../resources/images/colors/blue/quick_l.png") no-repeat top left;
+	background: url("../images/quick_l.png") no-repeat top left;
 	border-left: none;
 	border-right: 1px solid #2e5c89;
 }
 
 #header #header-inner #quick li a:hover
 {
-	background: #4e4e4e url("../../resources/images/colors/blue/quick_l_selected.png") no-repeat top left;
+	background: #4e4e4e url("../images/quick_l_selected.png") no-repeat top left;
 }
 
 #header #header-inner #quick li a:hover span
 {
-	background: url("../../resources/images/colors/blue/quick_r_selected.png") no-repeat top right;
+	background: url("../images/quick_r_selected.png") no-repeat top right;
 	border-left: 1px solid #545454;
 }
 
@@ -364,7 +364,7 @@ div.color a.greyblue
 
 #header #header-inner #quick li a:hover span.icon
 {
-	background: url("../../resources/images/colors/blue/quick_l_selected.png") no-repeat top left;
+	background: url("../images/quick_l_selected.png") no-repeat top left;
 	border-left: none;
 	border-right: 1px solid #464646;
 }
@@ -413,7 +413,7 @@ div.color a.greyblue
 	margin: 0;
 	padding: 7px 9px 7px 24px;
 	width: 167px;
-	background: #FFFFFF url("../../resources/images/plus.png") no-repeat 8px 9px;
+	background: #FFFFFF url("../images/plus.png") no-repeat 8px 9px;
 }
 
 #header #header-inner #quick li ul li a:hover
@@ -424,7 +424,7 @@ div.color a.greyblue
 
 #header #header-inner #quick li ul li a.childs:hover
 {
-	background: #FFFFFF url("../../resources/images/minus.png") no-repeat 8px 9px;
+	background: #FFFFFF url("../images/minus.png") no-repeat 8px 9px;
 }
 
 #header #header-inner #quick ul ul 
@@ -461,7 +461,7 @@ div.color a.greyblue
 	height: 6px;
 	width: 6px;
 	position: absolute;
-	background: url("../../resources/images/colors/blue/header_inner_corners.png") no-repeat;
+	background: url("../images/header_inner_corners.png") no-repeat;
 }
 
 #header #header-inner div.tl
@@ -489,7 +489,7 @@ div.color a.greyblue
 	min-height: 100%;
 	clear: both;
 	overflow: hidden;
-	background: url("../../resources/images/content.png") repeat-y top left;
+	background: url("../images/content.png") repeat-y top left;
 }
 
 /* -----------------------------------------------------------
@@ -525,7 +525,7 @@ div.color a.greyblue
 	padding: 0;
 	clear: both;
 	overflow: hidden;
-	background: #dfdfdf url("../../resources/images/menu.png") repeat-x;
+	background: #dfdfdf url("../images/menu.png") repeat-x;
 	color: #6e6e6e;
 }
 
@@ -537,7 +537,7 @@ div.color a.greyblue
 	display: block;
 	clear: both;
 	overflow: hidden;
-	background: url("../../resources/images/menu_l.png") no-repeat top left;
+	background: url("../images/menu_l.png") no-repeat top left;
 	color: #6e6e6e;
 	text-decoration: none;
 }
@@ -548,24 +548,24 @@ div.color a.greyblue
 	padding: 9px 10px 10px 10px;
 	height: 1%;
 	display: block;
-	background: url("../../resources/images/menu_r.png") no-repeat top right;
+	background: url("../images/menu_r.png") no-repeat top right;
 }
 
 #content #left #menu h6.selected
 {
-	background: #00376e url("../../resources/images/colors/blue/menu_selected.png") repeat-x;
+	background: #00376e url("../images/menu_selected.png") repeat-x;
 	color: #FFFFFF;
 }
 
 #content #left #menu h6.selected a
 {
-	background: url("../../resources/images/colors/blue/menu_l_selected.png") no-repeat top left;
+	background: url("../images/menu_l_selected.png") no-repeat top left;
 	color: #ffffff;
 }
 
 #content #left #menu h6.selected span
 {
-	background: url("../../resources/images/colors/blue/menu_r_selected.png") no-repeat top right;
+	background: url("../images/menu_r_selected.png") no-repeat top right;
 }
 
 /* -----------------------------------------------------------
@@ -610,7 +610,7 @@ div.color a.greyblue
 	height: 1%;
 	display: block;
 	float: left;
-	background: url("../../resources/images/colors/blue/menu_arrow.png") no-repeat 0 9px;
+	background: url("../images/menu_arrow.png") no-repeat 0 9px;
 	color: #ffffff;
 	font-size: 11px;
 	line-height: normal;
@@ -629,7 +629,7 @@ div.color a.greyblue
 #content #left #menu li.collapsible
 {
 	margin: -1px 0 0 0;
-	background: url("../../resources/images/colors/blue/menu_border.png") no-repeat top left;
+	background: url("../images/menu_border.png") no-repeat top left;
 }
 
 #content #left #menu li.collapsible a
@@ -651,7 +651,7 @@ div.color a.greyblue
 	width: 100%;
 	display: block;
 	float: left;
-	background: url("../../resources/images/menu_plus.png") no-repeat 5px 10px;
+	background: url("../images/menu_plus.png") no-repeat 5px 10px;
 	border: none;
 }
 
@@ -663,7 +663,7 @@ div.color a.greyblue
 	width: 100%;
 	display: block;
 	float: left;
-	background: url("../../resources/images/menu_minus.png") no-repeat 5px 10px;
+	background: url("../images/menu_minus.png") no-repeat 5px 10px;
 	border: none;
 	border-bottom: 1px solid #326395;
 }
@@ -692,7 +692,7 @@ div.color a.greyblue
 	clear: both;
 	overflow: hidden;
 	list-style: none;
-	background: url("../../resources/images/colors/blue/menu_arrow.png") no-repeat 10px 9px;
+	background: url("../images/menu_arrow.png") no-repeat 10px 9px;
 	border-top: 1px solid #4377ab;
 	border-bottom: 1px solid #326395;
 	color: #ffffff;
@@ -733,7 +733,7 @@ div.color a.greyblue
 #content #left #date-picker .ui-datepicker .ui-datepicker-header  
 {
 	padding: 5px 0 6px 0;
-	background: #dfdfdf url("../../resources/images/menu.png") repeat-x;
+	background: #dfdfdf url("../images/menu.png") repeat-x;
 }
 
 #content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev
@@ -741,7 +741,7 @@ div.color a.greyblue
 	top: 0;
 	left: 0;
 	padding: 0;
-	background: url("../../resources/images/menu_l.png") no-repeat top left;
+	background: url("../images/menu_l.png") no-repeat top left;
 }
 
 #content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev .ui-icon-circle-triangle-w
@@ -750,7 +750,7 @@ div.color a.greyblue
 	left: 8px;
 	width: 26px;
 	height: 30px;
-	background: url("../../resources/images/calender_prev.png") no-repeat 0 0;
+	background: url("../images/calender_prev.png") no-repeat 0 0;
 }
 
 #content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next  
@@ -758,7 +758,7 @@ div.color a.greyblue
 	top: 0;
 	right: 0;
 	padding: 5px 12px 5px 0;
-	background: url("../../resources/images/menu_r.png") no-repeat top right;
+	background: url("../images/menu_r.png") no-repeat top right;
 }
 
 #content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-next .ui-icon-circle-triangle-e
@@ -767,7 +767,7 @@ div.color a.greyblue
 	left: 14px;
 	width: 26px;
 	height: 30px;
-	background: url("../../resources/images/calender_next.png") no-repeat 0 0;
+	background: url("../images/calender_next.png") no-repeat 0 0;
 }
 
 #content #left #date-picker .ui-datepicker .ui-datepicker-header .ui-datepicker-prev-hover
@@ -871,7 +871,7 @@ div.color a.greyblue
 	padding: 0;
 	clear: both;
 	overflow: hidden;
-	background: #336699 url("../../resources/images/colors/blue/title.png") repeat-x;
+	background: #336699 url("../images/title.png") repeat-x;
 }
 
 #content div.box div.title h1,
@@ -939,7 +939,7 @@ div.color a.greyblue
 	margin: 0;
 	padding: 6px 6px 6px 7px;
 	float: right;
-	background: url("../../resources/images/colors/blue/title_link.png") no-repeat top left;
+	background: url("../images/title_link.png") no-repeat top left;
 	border-left: 1px solid #316293;
 }
 
@@ -978,7 +978,7 @@ div.color a.greyblue
 	margin: 0;
 	padding: 4px 12px 5px 12px;
 	overflow: hidden;
-	background: #4e85bb url("../../resources/images/colors/blue/button_highlight.png") repeat-x;
+	background: #4e85bb url("../images/button_highlight.png") repeat-x;
 	border: 1px solid #316293;
 	border-left: none;
 	color: #FFFFFF;
@@ -989,7 +989,7 @@ div.color a.greyblue
 #content div.box div.title div.search div.button input.ui-state-hover
 {
 	margin: 0;
-	background: #46a0c1 url("../../resources/images/colors/blue/button_highlight_selected.png") repeat-x;
+	background: #46a0c1 url("../images/button_highlight_selected.png") repeat-x;
 	border: 1px solid #316293;
 	border-left: none;
 	color: #FFFFFF;
@@ -1269,7 +1269,7 @@ div.color a.greyblue
 
 div.form
 {
-	margin: 0;
+	margin: 0px;
 	padding: 0 20px 10px 20px;
 	clear: both;
 	overflow: hidden;
@@ -1814,7 +1814,7 @@ div.form div.fields div.field div.button .ui-state-default
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #e5e3e3 url("../../resources/images/button.png") repeat-x;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
 	border-right: 1px solid #DDDDDD;
@@ -1827,7 +1827,7 @@ div.form div.fields div.field div.button .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;
@@ -1845,7 +1845,7 @@ div.form div.fields div.field div.highlight .ui-state-default
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #4e85bb url("../../resources/images/colors/blue/button_highlight.png") repeat-x;
+	background: #4e85bb url("../images/button_highlight.png") repeat-x;
 	border-top: 1px solid #5c91a4;
 	border-left: 1px solid #2a6f89;
 	border-right: 1px solid #2b7089;
@@ -1857,7 +1857,7 @@ div.form div.fields div.field div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #46a0c1 url("../../resources/images/colors/blue/button_highlight_selected.png") repeat-x;
+	background: #46a0c1 url("../images/button_highlight_selected.png") repeat-x;
 	border-top: 1px solid #78acbf;
 	border-left: 1px solid #34819e;
 	border-right: 1px solid #35829f;
@@ -1929,7 +1929,7 @@ div.form div.fields div.buttons div.highlight .ui-state-default
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #4e85bb url("../../resources/images/colors/blue/button_highlight.png") repeat-x;
+	background: #4e85bb url("../images/button_highlight.png") repeat-x;
 	border-top: 1px solid #5c91a4;
 	border-left: 1px solid #2a6f89;
 	border-right: 1px solid #2b7089;
@@ -1941,7 +1941,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #46a0c1 url("../../resources/images/colors/blue/button_highlight_selected.png") repeat-x;
+	background: #46a0c1 url("../images/button_highlight_selected.png") repeat-x;
 	border-top: 1px solid #78acbf;
 	border-left: 1px solid #34819e;
 	border-right: 1px solid #35829f;
@@ -2734,7 +2734,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #e5e3e3 url("../../resources/images/button.png") repeat-x;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
 	border-right: 1px solid #DDDDDD;
@@ -2746,7 +2746,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;

@@ -1,0 +1,349 @@
+html
+{
+	height: 100%;  
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #d1d1d1 url("../images/background.png") repeat;
+	font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
+	font-size: 11px;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	color: #292929;
+	font-weight: bold;
+}
+
+h5
+{
+	font-size: 14px; 
+}
+
+/* -----------------------------------------------------------
+	content
+----------------------------------------------------------- */ 
+
+#content 
+{
+	margin: 10px 0 10px 0;
+	padding: 0;
+	min-height: 100%;
+	clear: both;
+	overflow: hidden;
+	background: url("../../images/content.png") repeat-y top left;
+}
+
+/* -----------------------------------------------------------
+	content -> right
+----------------------------------------------------------- */ 
+
+#content #right
+{
+	margin: -10px 300px 0 290px;
+	padding: 0;
+	clear: both;
+	overflow: hidden;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> box
+----------------------------------------------------------- */
+
+#content div.box
+{
+	margin: 10px 0 0 0;
+	padding: 0 0 10px 0;
+	clear: both;
+	overflow: hidden;
+	background: #ffffff;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> box / title
+----------------------------------------------------------- */
+
+#content div.box div.title
+{
+	margin: 0 0 20px 0;
+	padding: 0;
+	clear: both;
+	overflow: hidden;
+	background: #336699 url("../images/title.png") repeat-x;
+}
+
+#content div.box div.title h1,
+#content div.box div.title h2,
+#content div.box div.title h3,
+#content div.box div.title h4,
+#content div.box div.title h5,
+#content div.box div.title h6
+{
+	margin: 0;
+	padding: 11px 0 11px 10px;
+	float: left;
+	border: none;
+	color: #ffffff;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> box / forms
+----------------------------------------------------------- */
+
+div.form
+{
+	margin: 0px;
+	padding: 0 20px 10px 20px;
+	clear: both;
+	overflow: hidden;
+}
+
+.ui-dialog div.form
+{
+	padding: 0;
+}
+
+div.form div.fields
+{
+	margin: 0;
+	padding: 0;
+	clear: both;
+	overflow: hidden;
+}
+
+div.form div.fields div.field
+{
+	margin: 0;
+	padding: 10px 0 10px 0; 
+	height: 1%;
+	border-bottom: 1px solid #DDDDDD;
+	clear: both;
+	overflow: hidden;
+}
+
+div.form div.fields div.field-first
+{
+	padding: 0 0 10px 0; 
+}
+
+div.form div.fields div.field span.error
+{
+	margin: 0;
+	padding: 8px 0 0 0;
+	height: 1%;
+	display: block;
+	clear: both;
+	overflow: hidden;
+	color: #FF0000;
+}
+
+div.form div.fields div.field span.success
+{
+	margin: 8px 0 0 0;
+	padding: 0;
+	height: 1%;
+	display: block;
+	color: #316309;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> labels
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label
+{
+	left: 310px;
+	margin: 0;
+	padding: 8px 0 0 5px;
+	width: auto;
+	position: absolute;
+}
+
+.ui-dialog div.form div.fields div.field div.label,
+div.box-left div.form div.fields div.field div.label,
+div.box-right div.form div.fields div.field div.label
+{
+	left: 0;
+	margin: 0;
+	padding: 0 0 8px 0;
+	width: auto;
+	position: relative;
+	clear: both;
+	overflow: hidden;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> label (select)
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label-select
+{
+	padding: 2px 0 0 5px;
+}
+
+.ui-dialog div.form div.fields div.field div.label-select,
+div.box-left div.form div.fields div.field div.label-select,
+div.box-right div.form div.fields div.field div.label-select
+{
+	padding: 0 0 8px 0;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> label (checkbox)
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label-checkbox
+{
+	padding: 0 0 0 5px;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> label (radio)
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label-radio
+{
+	padding: 0 0 0 5px;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> label (textarea)
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label-textarea
+{
+	padding: 0 0 0 5px;
+}
+
+.ui-dialog div.form div.fields div.field div.label-textarea,
+div.box-left div.form div.fields div.field div.label-textarea,
+div.box-right div.form div.fields div.field div.label-textarea
+{
+	padding: 0 0 8px 0;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> labels (label)
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.label label
+{
+	color: #393939;
+	font-weight: bold;
+}
+
+div.form div.fields div.field div.label span
+{
+	margin: 0;
+	padding: 2px 0 0 0;
+	height: 1%;
+	display: block;
+	color: #363636;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> input
+----------------------------------------------------------- */
+
+div.form div.fields div.field div.input
+{
+	margin: 0 0 0 200px;
+	padding: 0;
+}
+
+.ui-dialog div.form div.fields div.field div.input,
+div.box-left div.form div.fields div.field div.input,
+div.box-right div.form div.fields div.field div.input
+{
+	margin: 0;
+	padding: 7px 7px 6px 7px;
+	clear: both;
+	overflow: hidden;
+	border-top: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+}
+
+div.form div.fields div.field div.input input
+{
+	margin: 0;
+	padding: 7px 7px 6px 7px;
+	float: left;
+	background: #FFFFFF;
+	border-top: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	color: #000000;
+	font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
+	font-size: 11px;
+}
+
+.ui-dialog div.form div.fields div.field div.input input,
+div.box-left div.form div.fields div.field div.input input,
+div.box-right div.form div.fields div.field div.input input
+{
+	width: 100%;
+	padding: 0;
+	border: none;
+}
+
+div.form div.fields div.field div.input-file input
+{
+	float: none;
+}
+
+div.form div.fields div.field div.input input.small
+{
+	width: 30%;	
+}
+
+div.form div.fields div.field div.input input.medium
+{
+	width: 55%;	
+}
+
+div.form div.fields div.field div.input input.large
+{
+	width: 85%;	
+}
+
+div.form div.fields div.field div.input input.date
+{
+	width: 180px;	
+}
+
+div.form div.fields div.field div.input input.button
+{
+	margin: 0;
+	padding: 4px 8px 4px 8px;
+	background: #D4D0C8;
+	border-top: 1px solid #FFFFFF;
+	border-left: 1px solid #FFFFFF;
+	border-right: 1px solid #404040;
+	border-bottom: 1px solid #404040;
+	color: #000000;
+}
+
+div.form div.fields div.field div.input input.error
+{
+	background: #FBE3E4;
+	border-top: 1px solid #e1b2b3;
+	border-left: 1px solid #e1b2b3;
+	border-right: 1px solid #FBC2C4;
+	border-bottom: 1px solid #FBC2C4;
+}
+
+div.form div.fields div.field div.input input.valid
+{
+	background: #E6EFC2;
+	border-top: 1px solid #cebb98;
+	border-left: 1px solid #cebb98;
+	border-right: 1px solid #c6d880;
+	border-bottom: 1px solid #c6d880;
+}

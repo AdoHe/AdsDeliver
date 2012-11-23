@@ -7,7 +7,7 @@
 <title>Register To AdsDeliver</title>
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/reg.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
@@ -21,10 +21,7 @@
 <script type="text/javascript" src="js/smooth.form.js"></script>
 </head>
 <body>
-	<!-- header -->
-	<div id="header"></div>
 	<div id="content">
-		<div id="left"></div>
 		<div id="right">
 			<!-- forms -->
 			<div class="box">
@@ -38,7 +35,7 @@
 						<div class="fields">
 							<div class="field">
 								<div class="label">
-									<label for="username">用户名</label>
+									<label for="username">用户名：</label>
 								</div>
 								<div class="input">
 									<input type="text" name="username" id="username" class="small error" />
@@ -47,7 +44,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="password">密码</label>
+									<label for="password">密码：</label>
 								</div>
 								<div class="input">
 									<input type="password" name="password" id="password" class="small error" />
@@ -55,7 +52,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="passwordAck">确认密码</label>
+									<label for="passwordAck">确认密码：</label>
 								</div>
 								<div class="input">
 									<input type="password" name="passwordAck" id="passwordAck" class="small error" />
@@ -63,7 +60,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="realname">真实姓名</label>
+									<label for="realname">真实姓名：</label>
 								</div>
 								<div class="input">
 									<input type="text" name="realname" id="realname" class="small error" />
@@ -71,7 +68,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="company">公司</label>
+									<label for="company">公司：</label>
 								</div>
 								<div class="input">
 									<input type="text" name="company" id="company" class="small error" />
@@ -79,11 +76,30 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="mobile">手机号</label>
+									<label for="mobile">手机号：</label>
 								</div>
 								<div class="input">
 									<input type="text" name="mobile" id="mobile" class="small" />
 								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="telephone">固定电话：</label>
+								</div>
+								<div class="input">
+									<input type="text" name="telephone" id="telephone" class="small"/>
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="address">地址：</label>
+								</div>
+								<div class="input">
+									<input type="text" name="address" id="address" class="small" />
+								</div>
+							</div>
+							<div class="buttons">
+								<input type="submit" value="注册" />
 							</div>
 						</div>
 					</div>

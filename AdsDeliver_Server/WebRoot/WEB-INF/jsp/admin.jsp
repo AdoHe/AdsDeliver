@@ -34,7 +34,7 @@
 	<div id="header">
 		<!-- logo -->
 		<div id="logo">
-			<h1><a href="" title="SmoothAdmin"><img src="" alt="Smooth Adimn" /></a></h1>
+			<h1><a href="" title="SmoothAdmin"><img src="images/logo.png" alt="Smooth Adimn" /></a></h1>
 		</div>
 		<!-- end logo -->
 		<!-- user -->
@@ -51,8 +51,8 @@
 			<!-- quick -->
 			<ul id="quick">
 				<li>
-					<a href="" title="广告"><span class="icon"><img src="" alt="广告" /></span>
-					<span>广告</span></a>
+					<a href="" title="广告"><span class="icon"><img src="images/application_double.png" alt="广告" /></span>
+					<span>广告管理</span></a>
 					<ul>
 						<li><a href="#">投放广告</a></li>
 						<li><a href="#">查看广告</a></li>
@@ -60,16 +60,16 @@
 					</ul>
 				</li>
 				<li>
-					<a href="#" title="账户"><span class="icon"><img src="" alt="账户" /></span>
-					<span>账户</span></a>
+					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
+					<span>账户管理</span></a>
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#" title="设置"><span class="icon"><img src="" alt="设置" /></span>
-					<span>设置</span></a>
+					<a href="#" title="设置"><span class="icon"><img src="images/cog.png" alt="设置" /></span>
+					<span>常用设置</span></a>
 					<ul>
 						<li><a href="#">账户设置</a></li>
 						<li class="last"><a href="#">广告设置</a></li>

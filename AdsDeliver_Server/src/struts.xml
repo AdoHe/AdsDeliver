@@ -28,6 +28,7 @@
 		<action name="Register" class="RegisterAction">
 			<result name="SUCCESS">/WEB-INF/jsp/login.jsp</result>
 			<result name="ERROR">/WEB-INF/jsp/error.jsp</result>
+			<result name="REGISTER">/WEB-INF/jsp/reg.jsp</result>
 		</action>
 		
 	</package>
