@@ -5,6 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Register To AdsDeliver</title>
+<!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/reset.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<!-- scripts(jquery) -->
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript" src="js/juqery.flot.min.js"></script>
+<script type="text/javascript" src="js/jquery.tinymce.js"></script>
+<script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
+<script type="text/javascript" src="js/tiny_mce.js"></script>
+<!-- scripts(custom) -->
+<script type="text/javascript" src="js/smooth.js"></script>
+<script type="text/javascript" src="js/smooth.form.js"></script>
 </head>
 <body>
 	<!-- header -->
@@ -48,16 +62,28 @@
 								</div>
 							</div>
 							<div class="field">
-								<div class="label"></div>
-								<div class="input"></div>
+								<div class="label">
+									<label for="realname">真实姓名</label>
+								</div>
+								<div class="input">
+									<input type="text" name="realname" id="realname" class="small error" />
+								</div>
 							</div>
 							<div class="field">
-								<div class="label"></div>
-								<div class="input"></div>
+								<div class="label">
+									<label for="company">公司</label>
+								</div>
+								<div class="input">
+									<input type="text" name="company" id="company" class="small error" />
+								</div>
 							</div>
 							<div class="field">
-								<div class="label"></div>
-								<div class="input"></div>
+								<div class="label">
+									<label for="mobile">手机号</label>
+								</div>
+								<div class="input">
+									<input type="text" name="mobile" id="mobile" class="small" />
+								</div>
 							</div>
 						</div>
 					</div>
