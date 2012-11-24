@@ -13,7 +13,7 @@
 
 #header #header-inner #home a
 {
-	background: url("../../../resources/images/colors/brown/button_home.png");
+	background: url("../images/button_home.png");
 }
 
 /* -----------------------------------------------------------
@@ -22,34 +22,34 @@
 
 #header #header-inner ul#quick li a
 {
-	background: #8f663d url("../../../resources/images/colors/brown/quick_l.png") no-repeat top left;
+	background: #8f663d url("../images/quick_l.png") no-repeat top left;
 }
 
 #header #header-inner ul#quick li span
 {
-	background: url("../../../resources/images/colors/brown/quick_r.png") no-repeat top right;
+	background: url("../images/quick_r.png") no-repeat top right;
 	border-left: 1px solid #956f49;
 }
 
 #header #header-inner ul#quick li span.icon
 {
-	background: url("../../../resources/images/colors/brown/quick_l.png") no-repeat top left;
+	background: url("../images/quick_l.png") no-repeat top left;
 	border-right: 1px solid #805c37;
 }
 
 #header #header-inner ul#quick li a:hover
 {
-	background: #4e4e4e url("../../../resources/images/colors/brown/quick_l_selected.png") no-repeat top left;
+	background: #4e4e4e url("../images/quick_l_selected.png") no-repeat top left;
 }
 
 #header #header-inner ul#quick li a:hover span
 {
-	background: url("../../../resources/images/colors/brown/quick_r_selected.png") no-repeat top right;
+	background: url("../images/quick_r_selected.png") no-repeat top right;
 }
 
 #header #header-inner ul#quick li a:hover span.icon
 {
-	background: url("../../../resources/images/colors/brown/quick_l_selected.png") no-repeat top left;
+	background: url("../images/quick_l_selected.png") no-repeat top left;
 }
 
 /* -----------------------------------------------------------
@@ -81,17 +81,17 @@
 
 #content #left #menu h6.selected
 {
-	background: #5d330a url("../../../resources/images/colors/brown/menu_selected.png") repeat-x;
+	background: #5d330a url("../images/menu_selected.png") repeat-x;
 }
 
 #content #left #menu h6.selected a
 {
-	background: url("../../../resources/images/colors/brown/menu_l_selected.png") no-repeat top left;
+	background: url("../images/menu_l_selected.png") no-repeat top left;
 }
 
 #content #left #menu h6.selected span
 {
-	background: url("../../../resources/images/colors/brown/menu_r_selected.png") no-repeat top right;
+	background: url("../images/menu_r_selected.png") no-repeat top right;
 }
 
 #content #left #menu ul
@@ -107,7 +107,7 @@
 
 #content #left #menu li a
 {
-	background: url("../../../resources/images/colors/brown/menu_arrow.png") no-repeat 0 9px;	
+	background: url("../images/menu_arrow.png") no-repeat 0 9px;	
 }
 
 #content #left #menu li a:hover
@@ -132,7 +132,7 @@
 
 #content #left #menu li ul li
 {
-	background: url("../../../resources/images/colors/brown/menu_arrow.png") no-repeat 10px 9px;
+	background: url("../images/menu_arrow.png") no-repeat 10px 9px;
 	border-top: 1px solid #a0774d;
 	border-bottom: 1px solid #8b633b;
 }
@@ -143,12 +143,12 @@
 
 #content div.box div.title
 {
-	background: #8f663d url("../../../resources/images/colors/brown/title.png") repeat-x;
+	background: #8f663d url("../images/title.png") repeat-x;
 }
 
 #content div.box div.title ul.links li a
 {
-	background: url("../../../resources/images/colors/brown/title_link.png") no-repeat top left;
+	background: url("../images/title_link.png") no-repeat top left;
 	border-left: 1px solid #8a623b;
 }
 
@@ -170,7 +170,7 @@
 
 #content div.box div.title div.search
 {
-	background: url("../../../resources/images/colors/brown/title_link.png") no-repeat top left;
+	background: url("../images/title_link.png") no-repeat top left;
 	border-left: 1px solid #8a623b;
 }
 
@@ -181,7 +181,7 @@
 
 #content div.box div.title div.search div.button input.ui-state-default
 {
-	background: #b08559 url("../../../resources/images/colors/brown/button_highlight.png") repeat-x;
+	background: #b08559 url("../images/button_highlight.png") repeat-x;
 	border: 1px solid #8a623b;
 	border-left: none;
 	color: #FFFFFF;
@@ -189,7 +189,7 @@
 
 #content div.box div.title div.search div.button input.ui-state-hover
 {
-	background: #b46d52 url("../../../resources/images/colors/brown/button_highlight_selected.png") repeat-x;
+	background: #b46d52 url("../images/button_highlight_selected.png") repeat-x;
 	border: 1px solid #8a623b;
 	border-left: none;
 	color: #FFFFFF;
@@ -201,7 +201,7 @@
 
 #content div.box div.form div.fields div.field div.highlight .ui-state-default
 {
-	background: #b08559 url("../../../resources/images/colors/brown/button_highlight.png") repeat-x;
+	background: #b08559 url("../images/button_highlight.png") repeat-x;
 	border-top: 1px solid #bfa49a;
 	border-left: 1px solid #ac887b;
 	border-right: 1px solid #996d5d;
@@ -211,7 +211,7 @@
 
 #content div.box div.form div.fields div.field div.highlight .ui-state-hover
 {
-	background: #b46d52 url("../../../resources/images/colors/brown/button_highlight_selected.png") repeat-x;
+	background: #b46d52 url("../images/button_highlight_selected.png") repeat-x;
 	border-top: 1px solid #b88e7f;
 	border-left: 1px solid #94553e;
 	border-right: 1px solid #94563f;
@@ -225,7 +225,7 @@
 
 #content div.box div.form div.fields div.buttons div.highlight input.ui-state-default
 {
-	background: #b08559 url("../../../resources/images/colors/brown/button_highlight.png") repeat-x;
+	background: #b08559 url("../images/button_highlight.png") repeat-x;
 	border-top: 1px solid #bfa49a;
 	border-left: 1px solid #ac887b;
 	border-right: 1px solid #996d5d;
@@ -235,7 +235,7 @@
 
 #content div.box div.form div.fields div.buttons div.highlight input.ui-state-hover
 {
-	background: #b46d52 url("../../../resources/images/colors/brown/button_highlight_selected.png") repeat-x;
+	background: #b46d52 url("../images/button_highlight_selected.png") repeat-x;
 	border-top: 1px solid #b88e7f;
 	border-left: 1px solid #94553e;
 	border-right: 1px solid #94563f;

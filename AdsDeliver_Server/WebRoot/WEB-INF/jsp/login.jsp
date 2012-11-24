@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>AdsDeliver Admin</title>
+<title>Login To AdsDeliver</title>
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
@@ -15,7 +15,7 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		style_path = "css/colors";
+		style_path = "css";
 		
 		$("input:submit").button();
 	});

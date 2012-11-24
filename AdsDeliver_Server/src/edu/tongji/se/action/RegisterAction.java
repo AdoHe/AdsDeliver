@@ -20,7 +20,7 @@ public class RegisterAction extends ActionSupport
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private String userName;
+	private String userName = null;
 	private String password;
 	
 	private String realName;
@@ -92,6 +92,9 @@ public class RegisterAction extends ActionSupport
 	@Override
 	public String execute() throws Exception 
 	{
+		if(userName == null)
+			return "REGISTER";
+		
 		String randString = Encry.generateSalt();
 		String passwdInDb = Encry.generatePasswordInDatabase(password, randString);
 		
