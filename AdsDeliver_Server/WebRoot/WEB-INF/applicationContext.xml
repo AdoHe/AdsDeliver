@@ -117,4 +117,10 @@
 		</property>
 	</bean>
 	
+	<bean id="UserLoginAction" class="edu.tongji.se.action.UserLoginAction">
+		<property name="mUserService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
 </beans>

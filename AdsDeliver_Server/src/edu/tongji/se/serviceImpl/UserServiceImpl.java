@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int validateUser(String name, String password) {
 		
-		List<User> lstUsers = mUserDao.findByUsName(name);
+		List<User> lstUsers = mUserDao.findByUsName((Object)name);
 		
 		if(lstUsers.size() != 0) {
 			String salt = lstUsers.get(0).getUsRand();

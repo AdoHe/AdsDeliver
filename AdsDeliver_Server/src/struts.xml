@@ -30,6 +30,12 @@
 			<result name="ERROR">/WEB-INF/jsp/error.jsp</result>
 		</action>
 		
+		<action name="UserLogin" class="UserLoginAction">
+			<result type="json">
+				<param name="result" />
+			</result>
+		</action>
+		
 	</package>
 	
 </struts>    

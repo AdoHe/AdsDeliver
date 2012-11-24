@@ -55,7 +55,7 @@ public class LoginInAction extends ActionSupport implements SessionAware
 		
 		if(mAdminService.validateAdmin(name, password) == 1)
 		{
-			session.put("USERNAME", name);
+			session.put("AD_NAME", name);
 			
 			return "SUCCESS";
 		}else

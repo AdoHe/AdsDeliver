@@ -20,6 +20,35 @@
 		$("input:submit").button();
 	});
 </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#signin").click(function() {
+			$.post(
+					"UserLogin.action",
+					//$("#login_form").serialize(),
+					{
+						loginname : "11",
+						password : "111"
+					},
+					function(data, textStatus) {
+						alert("111");
+						if(data.result == 1) {
+							//location.href = "";
+							alert("success data:" + data);
+						}else {
+							// 登录失败
+							alert("error data:" + data);
+						}
+					});
+					
+		});
+	});
+	
+	$("#signin").click(function() {
+		alert("11");
+	});
+	
+</script>
 </head>
 <body>
 	<div id="login">
@@ -30,16 +59,16 @@
 			<div class="corner tr"></div>
 		</div>
 		<div class="inner">
-			<form action="LoginIn.action" method="post">
+			<form id="login_form" method="post">
 				<div class="form">
 					<!-- fields -->
 					<div class="fields">
 						<div class="field">
 							<div class="label">
-								<label for="name">Username:</label>
+								<label for="loginname">Username:</label>
 							</div>
 							<div class="input">
-								<input type="text" name="name" id="username" size="40" class="focus" />
+								<input type="text" name="loginname" id="username" size="40" class="focus" />
 							</div>
 						</div>
 						<div class="field">
@@ -57,7 +86,7 @@
 							</div>
 						</div>
 						<div class="buttons">
-							<input type="submit" value="Sign in" />
+							<input type="button" value="Sign in" id="signin"/>
 						</div>
 					</div>
 					<!-- end fields -->
