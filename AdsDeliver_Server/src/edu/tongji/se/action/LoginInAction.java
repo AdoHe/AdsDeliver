@@ -63,6 +63,10 @@ public class LoginInAction extends ActionSupport implements SessionAware
 			return "FAIL";
 		}
 	}
+	
+	public String goindex() throws Exception {
+		return SUCCESS;
+	}
 
 	public AdminServiceImpl getmAdminService() {
 		return mAdminService;

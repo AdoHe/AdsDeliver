@@ -25,19 +25,20 @@
 		$("#signin").click(function() {
 			$.post(
 					"UserLogin.action",
-					//$("#login_form").serialize(),
 					{
-						loginname : "11",
-						password : "111"
+						loginname : $("input#username").attr("value"),
+						password : $("input#password").attr("value")
 					},
 					function(data, textStatus) {
-						alert("111");
+						
 						if(data.result == 1) {
-							//location.href = "";
-							alert("success data:" + data);
+							location.href = "";
+							("success:");
 						}else {
 							// 登录失败
-							alert("error data:" + data);
+							//alert("错了，去百度查查吧- -");
+							location.href = "UserIndex.action";
+							//location.href = "http://www.baidu.com/";
 						}
 					});
 					

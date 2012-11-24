@@ -37,6 +37,10 @@
 			</result>
 		</action>
 		
+		<action name="UserIndex" class="UserIndexAction">
+			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>    

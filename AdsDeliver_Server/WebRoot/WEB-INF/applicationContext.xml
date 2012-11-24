@@ -123,4 +123,6 @@
 		</property>
 	</bean>
 	
+	<bean id="UserIndexAction" class="edu.tongji.se.action.UserIndex">
+	</bean>
 </beans>
