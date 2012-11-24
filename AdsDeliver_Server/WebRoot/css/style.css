@@ -2574,7 +2574,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	margin: 0 auto;
 	padding: 20px;
 	width: 380px;
-	background: #FFFFFF url("../../resources/images/login.png") no-repeat top left;
+	background: #FFFFFF url("../images/login.png") no-repeat top left;
 	border-top: none;
 	border-bottom: none;
 }

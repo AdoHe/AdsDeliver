@@ -19,6 +19,11 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		style_path = "css";
+	});
+</script>
 </head>
 <body>
 	<div id="content">
@@ -99,7 +104,7 @@
 								</div>
 							</div>
 							<div class="buttons">
-								<input type="submit" value="注册" />
+								<input type="submit" value="Submit" />
 							</div>
 						</div>
 					</div>

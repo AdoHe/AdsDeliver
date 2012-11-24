@@ -347,3 +347,58 @@ div.form div.fields div.field div.input input.valid
 	border-right: 1px solid #c6d880;
 	border-bottom: 1px solid #c6d880;
 }
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> buttons
+----------------------------------------------------------- */
+
+div.form div.fields div.buttons
+{
+	margin: 10px 0 0 200px;
+	padding: 0;
+}
+
+div.box-left div.form div.fields div.buttons,
+div.box-right div.form div.fields div.buttons
+{
+	margin: 10px 0 0 0;
+}
+
+div.form div.fields div.buttons input
+{
+	margin: 0;
+	color: #000000;
+	font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> forms -> buttons (jquery styling)
+----------------------------------------------------------- */
+
+div.form div.fields div.buttons .ui-state-default
+{
+	margin: 0;
+	padding: 6px 12px 6px 12px;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #c6c6c6;
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #c6c6c6;
+	color: #515151;
+	outline: none;
+}
+
+div.form div.fields div.buttons .ui-state-hover
+{
+	margin: 0;
+	padding: 6px 12px 6px 12px;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
+	border-top: 1px solid #cccccc;
+	border-left: 1px solid #bebebe;
+	border-right: 1px solid #b1b1b1;
+	border-bottom: 1px solid #afafaf;
+	color: #515151;
+	outline: none;
+}
