@@ -31,7 +31,7 @@
 			<result name="REGISTER">/WEB-INF/jsp/reg.jsp</result>
 		</action>
 		
-		<action name="UserLogin" class="UserLoginAction">
+		<action name="UserLogin" class="UserLoginAction" method="login">
 			<result type="json">
 				<param name="result" />
 			</result>

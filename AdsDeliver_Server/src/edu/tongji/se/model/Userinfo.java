@@ -22,7 +22,7 @@ public class Userinfo implements java.io.Serializable {
 	private String ufTelephone;
 	private String ufAddress;
 	private Short ufStatus;
-	private Set users = new HashSet(0);
+	private User user;
 
 	// Constructors
 
@@ -41,14 +41,14 @@ public class Userinfo implements java.io.Serializable {
 
 	/** full constructor */
 	public Userinfo(String ufName, String ufCorperation, String ufMobilePhone,
-			String ufTelephone, String ufAddress, Short ufStatus, Set users) {
+			String ufTelephone, String ufAddress, Short ufStatus, User users) {
 		this.ufName = ufName;
 		this.ufCorperation = ufCorperation;
 		this.ufMobilePhone = ufMobilePhone;
 		this.ufTelephone = ufTelephone;
 		this.ufAddress = ufAddress;
 		this.ufStatus = ufStatus;
-		this.users = users;
+		this.user = users;
 	}
 
 	// Property accessors
@@ -109,12 +109,14 @@ public class Userinfo implements java.io.Serializable {
 		this.ufStatus = ufStatus;
 	}
 
-	public Set getUsers() {
-		return this.users;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsers(Set users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
+	
+	
 }

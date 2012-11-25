@@ -54,8 +54,8 @@ public class UserLoginAction extends ActionSupport implements SessionAware{
 		this.session = arg0;
 	}
 	
-	@Override
-	public String execute() throws Exception {
+	//@Override
+	public String login() throws Exception {
 		
 		result = mUserService.validateUser(loginname, password);
 
@@ -66,5 +66,9 @@ public class UserLoginAction extends ActionSupport implements SessionAware{
 		return SUCCESS;
 	}
 
+	
+	public String goindex() throws Exception {
+		return SUCCESS;
+	}
 	
 }

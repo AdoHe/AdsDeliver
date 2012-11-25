@@ -24,6 +24,16 @@
 		style_path = "css";
 	});
 </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#form").submit(function(e) {
+			if($("#username").attr("value") != "1") {
+				e.preventDefault();
+			    alert("Submit prevented");
+			}
+		});
+	});
+</script>	
 </head>
 <body>
 	<div id="content">
@@ -35,7 +45,7 @@
 					<h5>注册</h5>
 				</div>
 				<!-- end box title -->
-				<form id="form" action="" method="post">
+				<form id="form" action="Register.action" method="post">
 					<div class="form">
 						<div class="fields">
 							<div class="field">
@@ -43,7 +53,7 @@
 									<label for="username">用户名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="username" id="username" class="small error" />
+									<input type="text" name="userName" id="username" class="small error" />
 									<span class="error">This means a required field!</span>
 								</div>
 							</div>
@@ -68,7 +78,7 @@
 									<label for="realname">真实姓名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="realname" id="realname" class="small error" />
+									<input type="text" name="realName" id="realname" class="small error" />
 								</div>
 							</div>
 							<div class="field">
@@ -76,7 +86,7 @@
 									<label for="company">公司：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="company" id="company" class="small error" />
+									<input type="text" name="corperation" id="company" class="small error" />
 								</div>
 							</div>
 							<div class="field">
@@ -84,7 +94,7 @@
 									<label for="mobile">手机号：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="mobile" id="mobile" class="small" />
+									<input type="text" name="mobilePhone" id="mobile" class="small" />
 								</div>
 							</div>
 							<div class="field">
@@ -92,7 +102,7 @@
 									<label for="telephone">固定电话：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="telephone" id="telephone" class="small"/>
+									<input type="text" name="telePhone" id="telephone" class="small"/>
 								</div>
 							</div>
 							<div class="field">
@@ -102,9 +112,9 @@
 								<div class="input">
 									<input type="text" name="address" id="address" class="small" />
 								</div>
-							</div>
+							</div>  
 							<div class="buttons">
-								<input type="submit" value="Submit" />
+								<input type="submit" id="submit" value="Submit" />
 							</div>
 						</div>
 					</div>

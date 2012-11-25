@@ -3,6 +3,9 @@ package edu.tongji.se.serviceImpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.tongji.se.dao.AccountDao;
+import edu.tongji.se.dao.UserDao;
+import edu.tongji.se.dao.UserinfoDao;
 import edu.tongji.se.daoImpl.UserDaoImpl;
 import edu.tongji.se.model.Account;
 import edu.tongji.se.model.User;
@@ -12,7 +15,9 @@ import edu.tongji.se.tools.Encry;
 
 public class UserServiceImpl implements UserService {
 
-	private UserDaoImpl mUserDao;
+	private UserDao mUserDao;
+	private UserinfoDao mUserinfoDao;
+	private AccountDao mAccountDao;
 	
 	@Override
 	public int validateUser(String name, String password) {
@@ -50,13 +55,16 @@ public class UserServiceImpl implements UserService {
 		userInfo.setUfMobilePhone(mobilePhone);
 		userInfo.setUfTelephone(telePhone);
 		userInfo.setUfStatus((short)status);
+		userInfo.setUser(user);
 		
 		Account account = new Account();
 		account.setAcBalance(0);
+		account.setUser(user);
 		
 		user.setUserinfo(userInfo);
 		user.setAccount(account);
-		
+		mUserinfoDao.save(userInfo);
+		mAccountDao.save(account);
 		mUserDao.save(user);
 	}
 
@@ -65,8 +73,17 @@ public class UserServiceImpl implements UserService {
 		mUserDao.delete(user);
 	}
 
-	public void setmUserDao(UserDaoImpl mUserDao) {
+	public void setmUserDao(UserDao mUserDao) {
 		this.mUserDao = mUserDao;
+	}
+	
+
+	public void setmUserinfoDao(UserinfoDao mUserinfoDao) {
+		this.mUserinfoDao = mUserinfoDao;
+	}
+
+	public void setmAccountDao(AccountDao mAccountDao) {
+		this.mAccountDao = mAccountDao;
 	}
 
 	@Override

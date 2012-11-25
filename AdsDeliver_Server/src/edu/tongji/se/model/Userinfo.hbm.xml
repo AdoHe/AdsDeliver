@@ -28,11 +28,6 @@
         <property name="ufStatus" type="java.lang.Short">
             <column name="uf_Status" not-null="true" />
         </property>
-        <set name="users" inverse="true">
-            <key>
-                <column name="us_Info" not-null="true" />
-            </key>
-            <one-to-many class="edu.tongji.se.model.User" />
-        </set>
+        <one-to-one name="user" class="edu.tongji.se.model.User" />
     </class>
 </hibernate-mapping>

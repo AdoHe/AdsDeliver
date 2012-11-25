@@ -17,7 +17,7 @@ public class Account implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer acBalance;
-	private Set users = new HashSet(0);
+	private User user;
 
 	// Constructors
 
@@ -31,9 +31,9 @@ public class Account implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Account(Integer acBalance, Set users) {
+	public Account(Integer acBalance, User users) {
 		this.acBalance = acBalance;
-		this.users = users;
+		this.user = users;
 	}
 
 	// Property accessors
@@ -54,12 +54,16 @@ public class Account implements java.io.Serializable {
 		this.acBalance = acBalance;
 	}
 
-	public Set getUsers() {
-		return this.users;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsers(Set users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
+
+	
+
+	
 
 }

@@ -25,11 +25,6 @@
         <property name="afContents" type="java.lang.String">
             <column name="af_Contents" length="65535" not-null="true" />
         </property>
-        <set name="advertisements" inverse="true">
-            <key>
-                <column name="av_Info" not-null="true" />
-            </key>
-            <one-to-many class="edu.tongji.se.model.Advertisement" />
-        </set>
+        <one-to-one name="advertisement" class="edu.tongji.se.model.Advertisement" />
     </class>
 </hibernate-mapping>

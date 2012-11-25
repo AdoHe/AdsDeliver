@@ -21,7 +21,7 @@ public class Adverinfo implements java.io.Serializable {
 	private String afBannerWordTwo;
 	private String afContentPic;
 	private String afContents;
-	private Set advertisements = new HashSet(0);
+	private Advertisement advertisement;
 
 	// Constructors
 
@@ -42,13 +42,13 @@ public class Adverinfo implements java.io.Serializable {
 	/** full constructor */
 	public Adverinfo(String afBannerPic, String afBannerWordOne,
 			String afBannerWordTwo, String afContentPic, String afContents,
-			Set advertisements) {
+			Advertisement advertisement) {
 		this.afBannerPic = afBannerPic;
 		this.afBannerWordOne = afBannerWordOne;
 		this.afBannerWordTwo = afBannerWordTwo;
 		this.afContentPic = afContentPic;
 		this.afContents = afContents;
-		this.advertisements = advertisements;
+		this.advertisement = advertisement;
 	}
 
 	// Property accessors
@@ -101,12 +101,14 @@ public class Adverinfo implements java.io.Serializable {
 		this.afContents = afContents;
 	}
 
-	public Set getAdvertisements() {
-		return this.advertisements;
+	public Advertisement getAdvertisement() {
+		return advertisement;
 	}
 
-	public void setAdvertisements(Set advertisements) {
-		this.advertisements = advertisements;
+	public void setAdvertisement(Advertisement advertisement) {
+		this.advertisement = advertisement;
 	}
+
+	
 
 }

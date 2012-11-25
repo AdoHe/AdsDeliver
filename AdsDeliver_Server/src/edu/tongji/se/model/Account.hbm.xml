@@ -13,11 +13,7 @@
         <property name="acBalance" type="java.lang.Integer">
             <column name="ac_Balance" not-null="true" />
         </property>
-        <set name="users" inverse="true">
-            <key>
-                <column name="us_Account" not-null="true" />
-            </key>
-            <one-to-many class="edu.tongji.se.model.User" />
-        </set>
+        
+        <one-to-one name="user" class="edu.tongji.se.model.User" />
     </class>
 </hibernate-mapping>

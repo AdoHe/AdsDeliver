@@ -96,10 +96,6 @@ public class LoginInAction extends ActionSupport implements SessionAware, Cookie
 		}
 	}
 	
-	public String goindex() throws Exception {
-		return SUCCESS;
-	}
-
 	public AdminServiceImpl getmAdminService() {
 		return mAdminService;
 	}

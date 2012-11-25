@@ -24,7 +24,7 @@
 	$(document).ready(function() {
 		$("#signin").click(function() {
 			$.post(
-					"UserLogin.action",
+					"UserLogin!login.action",
 					{
 						loginname : $("input#username").attr("value"),
 						password : $("input#password").attr("value")
@@ -32,12 +32,12 @@
 					function(data, textStatus) {
 						
 						if(data.result == 1) {
-							location.href = "";
-							("success:");
+							alert("success:");
+							location.href = "UserIndex.action";
 						}else {
 							// 登录失败
-							//alert("错了，去百度查查吧- -");
-							location.href = "UserIndex.action";
+							alert("错了");
+							//location.href = "UserIndex.action";
 							//location.href = "http://www.baidu.com/";
 						}
 					});
