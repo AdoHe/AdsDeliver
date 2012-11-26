@@ -150,6 +150,36 @@ INSERT INTO `administrator` VALUES (1,'admin','446b32dd1e7d1c609dfb0bdb354a3ff07
 UNLOCK TABLES;
 
 --
+-- Table structure for table `record`
+--
+
+DROP TABLE IF EXISTS `record`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `record` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `re_Date` datetime NOT NULL DEFAULT '1000-01-01 00:00:00',
+  `re_Income` int(11) NOT NULL DEFAULT '0',
+  `re_Outcome` int(11) NOT NULL DEFAULT '0',
+  `re_Balance` int(11) NOT NULL DEFAULT '0',
+  `re_Category` varchar(100) NOT NULL,
+  `re_Account` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `re_fk` (`re_Account`),
+  CONSTRAINT `re_fk` FOREIGN KEY (`re_Account`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `record`
+--
+
+LOCK TABLES `record` WRITE;
+/*!40000 ALTER TABLE `record` DISABLE KEYS */;
+/*!40000 ALTER TABLE `record` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `userInfo`
 --
 
@@ -251,4 +281,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-11-24 19:33:04
+-- Dump completed on 2012-11-26 19:31:05
