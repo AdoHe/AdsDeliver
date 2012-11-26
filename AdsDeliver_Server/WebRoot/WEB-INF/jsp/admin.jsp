@@ -10,15 +10,16 @@
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.tinymce.js"></script>
 <script type="text/javascript" src="js/tiny_mce.js"></script>
+<script type="text/javascript" src="js/jquery.tinymce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/smooth.dialog.js"></script>
 <script type="text/javascript" src="js/smooth.autocomplete.js"></script>
 <script type="text/javascript">
 			
@@ -68,6 +69,7 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
+						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -91,19 +93,20 @@
 		<!-- content/left -->
 		<div id="left">
 			<div id="menu">
-				<h6 id="h-menu-products" class="selected"><a href="#"><span>广告</span></a></h6>
+				<h6 id="h-menu-products" class="selected"><a href="#products"><span>广告</span></a></h6>
 				<ul id="menu-products" class="opened">
 					<li><a href="#">投放广告</a></li>
 					<li><a href="#">查看广告</a></li>
 					<li class="last"><a href="">撤销广告</a></li>
 				</ul>
-				<h6 id="h-menu-events"><a href="#"><span>账户</span></a></h6>
-				<ul id="menu-events" class="closed">
-					<li><a href="#">查看账户余额</a></li>
-					<li class="last"><a href="#">账户充值</a></li>
+				<h6 id="h-menu-pages" class="selected"><a href="#pages"><span>账户</span></a></h6>
+				<ul id="menu-pages" class="opened">
+					<li><a href="">查看账户余额</a></li>
+					<li><a href="">查看交易记录</a></li>
+					<li class="last"><a href="">账户充值</a></li>
 				</ul>
-				<h6 id="h-menu-settings"><a href="#"><span>设置</span></a></h6>
-				<ul id="menu-settings" class="closed">
+				<h6 id="h-menu-events" class="selected"><a href="#settings"><span>设置</span></a></h6>
+				<ul id="menu-events" class="opened">
 					<li><a href="#">账户设置</a></li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>

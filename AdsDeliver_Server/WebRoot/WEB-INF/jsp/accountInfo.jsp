@@ -64,6 +64,7 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
+						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -93,13 +94,14 @@
 					<li><a href="#">查看广告</a></li>
 					<li class="last"><a href="">撤销广告</a></li>
 				</ul>
-				<h6 id="h-menu-events"><a href="#"><span>账户</span></a></h6>
-				<ul id="menu-events" class="closed">
+				<h6 id="h-menu-events" class="selected"><a href="#"><span>账户</span></a></h6>
+				<ul id="menu-events" class="opened">
 					<li><a href="#">查看账户余额</a></li>
+					<li><a href="#">查看交易记录</a></li>
 					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
-				<h6 id="h-menu-settings"><a href="#"><span>设置</span></a></h6>
-				<ul id="menu-settings" class="closed">
+				<h6 id="h-menu-settings" class="selected"><a href="#"><span>设置</span></a></h6>
+				<ul id="menu-settings" class="opened">
 					<li><a href="#">账户设置</a></li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
@@ -113,42 +115,20 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>广告</h5>
-					<div class="search">
-						<form action="#" method="post">
-							<div class="input">
-								<input type="text" id="search" name="search" />
-							</div>
-							<div class="button">
-								<input type="submit" name="submit" value="搜索" />
-							</div>
-						</form>
-					</div>
+					<h5>你的账户:</h5>
 				</div>
 				<!-- end box/title -->
-				<div class="table">
-					<form action="" method="post">
-						<table>
-							<thead>
-								<tr>
-									<th class="left">Title</th>
-									<th>Price</th>
-									<th>Added</th>
-									<th>Status</th>
-									<th class="selected last"><input type="checkbox" class="checkall" /></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="title">shit</td>
-									<td class="price">fuck</td>
-									<td class="date">gan</td>
-									<td class="category">ri</td>
-									<td class="selected last"><input type="checkbox" /></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
+				<div>
+					<table>
+						<tr>
+							<td>当前余额:</td>
+							<td>1000</td>
+						</tr>
+						<tr>
+							<td>可用余额:</td>
+							<td>1000</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
