@@ -17,7 +17,6 @@
 <script type="text/javascript" src="js/tiny_mce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.autocomplete.js"></script>
 <script type="text/javascript">
@@ -26,12 +25,9 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				
-				$("input:submit").button();
 			});
 </script>
-
-<title>AdsDeliver Administer Page</title>
+<title>Ads Deliver Account Info</title>
 </head>
 <body>
 	<!-- header -->

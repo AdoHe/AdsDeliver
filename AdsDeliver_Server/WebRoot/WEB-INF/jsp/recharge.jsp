@@ -17,7 +17,6 @@
 <script type="text/javascript" src="js/tiny_mce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.autocomplete.js"></script>
 <script type="text/javascript">
@@ -26,12 +25,9 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				
-				$("input:submit").button();
 			});
 </script>
-
-<title>AdsDeliver Administer Page</title>
+<title>Ads Deliver Account Recharge</title>
 </head>
 <body>
 	<!-- header -->
@@ -113,48 +109,29 @@
 		<!-- end content/left -->
 		<!-- content/right -->
 		<div id="right">
-			<!-- table -->
+			<!-- forms -->
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>广告</h5>
-					<div class="search">
-						<form action="#" method="post">
-							<div class="input">
-								<input type="text" id="search" name="search" />
-							</div>
-							<div class="button">
-								<input type="submit" name="submit" value="搜索" />
-							</div>
-						</form>
-					</div>
+					<h5>账户充值</h5>
 				</div>
 				<!-- end box/title -->
-				<div class="table">
-					<form action="" method="post">
-						<table>
-							<thead>
-								<tr>
-									<th class="left">Title</th>
-									<th>Price</th>
-									<th>Added</th>
-									<th>Status</th>
-									<th class="selected last"><input type="checkbox" class="checkall" /></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="title">shit</td>
-									<td class="price">fuck</td>
-									<td class="date">gan</td>
-									<td class="category">ri</td>
-									<td class="selected last"><input type="checkbox" /></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
-				</div>
+				<form id="form" action="" method="post">
+					<div class="form">
+						<div class="fields">
+							<div class="field field-first">
+								<div class="label">
+								</div>
+								<div class="input">
+								</div>
+								<div class="button highlight">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
+			<!-- end forms -->
 		</div>
 		<!-- end content/right -->
 	</div>
