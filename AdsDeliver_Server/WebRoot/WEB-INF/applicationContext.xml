@@ -41,7 +41,8 @@
 				<value>edu/tongji/se/model/Userinfo.hbm.xml</value>
 				<value>edu/tongji/se/model/Adverinfo.hbm.xml</value>
 				<value>edu/tongji/se/model/Advertisement.hbm.xml</value>
-				<value>edu/tongji/se/model/User.hbm.xml</value></list>
+				<value>edu/tongji/se/model/User.hbm.xml</value>
+				<value>edu/tongji/se/model/Record.hbm.xml</value></list>
 		</property></bean>
 	
 	<!-- declare dao and inject sessionFactory into dao -->
