@@ -41,6 +41,9 @@
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
 		</action>
 		
+		<action name="AccountManage" class="AccountManageAction">
+		</action>
+		
 	</package>
 	
 </struts>    

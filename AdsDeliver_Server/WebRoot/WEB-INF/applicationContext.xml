@@ -106,6 +106,11 @@
 		</property>
 	</bean>
 	
+	<bean id="accountService" class="edu.tongji.se.serviceImpl.AccountServiceImpl">
+		<property name="mAccountDao">
+			<ref bean="AccountDao"/>
+		</property>
+	</bean>
 	
 	<!-- declare action -->
 	<bean id="LoginInAction" class="edu.tongji.se.action.LoginInAction">
@@ -131,4 +136,11 @@
 	
 	<bean id="UserIndexAction" class="edu.tongji.se.action.UserIndex">
 	</bean>
+	
+	<bean id="AccountManageAction" class="edu.tongji.se.action.AccountManageAction">
+		<property name="mAccountService">
+			<ref bean="accountService"/>
+		</property>
+	</bean>
+	
 </beans>

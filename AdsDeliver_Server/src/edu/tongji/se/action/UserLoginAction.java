@@ -7,8 +7,15 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.service.UserService;
+import edu.tongji.se.tools.AuthorInterceptor;
 
-public class UserLoginAction extends ActionSupport implements SessionAware{
+public class UserLoginAction extends ActionSupport implements SessionAware
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private UserService mUserService;
 	
 	private String loginname;
@@ -54,13 +61,12 @@ public class UserLoginAction extends ActionSupport implements SessionAware{
 		this.session = arg0;
 	}
 	
-	//@Override
 	public String login() throws Exception {
 		
 		result = mUserService.validateUser(loginname, password);
 
 		if(result == 1) {
-			session.put("USER_NAME", loginname);
+			session.put(AuthorInterceptor.USER_SESSION_KEY, loginname);
 		}
 		
 		return SUCCESS;
