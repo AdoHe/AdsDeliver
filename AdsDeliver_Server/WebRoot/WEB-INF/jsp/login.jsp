@@ -22,7 +22,12 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		$("div.messages").hide();	
+		
 		$("#signin").click(function() {
+			// 先把错误提示隐藏
+			$("div.messages").hide();			
+			// 登录请求
 			$.post(
 					"UserLogin!login.action",
 					{
@@ -32,13 +37,13 @@
 					function(data, textStatus) {
 						
 						if(data.result == 1) {
-							alert("success:");
 							location.href = "UserIndex.action";
-						}else {
-							// 登录失败
-							alert("错了");
-							//location.href = "UserIndex.action";
-							//location.href = "http://www.baidu.com/";
+						}else if(data.result == 2){
+							$("div.messages").show();
+							$("#errorMsg").html("密码错误");
+						}else if(data.result == 3) {
+							$("div.messages").show();
+							$("#errorMsg").html("用户名不存在");
 						}
 					});
 					
@@ -59,6 +64,21 @@
 			<div class="corner tl"></div>
 			<div class="corner tr"></div>
 		</div>
+		<div class="messages">
+				<div id="message-error" class="message message-error">
+					<div class="image">
+						<img src="resources/images/icons/error.png" alt="Error" height="32" />
+					</div>
+					<div class="text">
+						<h6>Error Message</h6>
+						<span id="errorMsg"></span>
+					</div>
+					<div class="dismiss">
+						<a href="#message-error"></a>
+					</div>
+				</div>
+			</div>
+				
 		<div class="inner">
 			<form id="login_form" method="post">
 				<div class="form">

@@ -108,7 +108,7 @@
 	
 	<bean id="accountService" class="edu.tongji.se.serviceImpl.AccountServiceImpl">
 		<property name="mAccountDao">
-			<ref bean="AccountDao"/>
+			<ref bean="AccountDAO"/>
 		</property>
 	</bean>
 	
