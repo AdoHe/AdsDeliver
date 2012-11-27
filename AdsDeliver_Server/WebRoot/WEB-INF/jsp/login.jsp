@@ -64,7 +64,7 @@
 		<div class="messages">
 				<div id="message-error" class="message message-error">
 					<div class="image">
-						<img src="resources/images/icons/error.png" alt="Error" height="32" />
+						<img src="images/error.png" alt="Error" height="32" />
 					</div>
 					<div class="text">
 						<h6>Error Message</h6>

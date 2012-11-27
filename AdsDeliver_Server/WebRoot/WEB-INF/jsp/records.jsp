@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="css/records.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
@@ -25,11 +25,9 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				
-				$("input:submit").button();
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>AdsDeliver Account Records</title>
 </head>
 <body>
 	<!-- header -->
@@ -66,6 +64,7 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
+						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -95,13 +94,14 @@
 					<li><a href="#">查看广告</a></li>
 					<li class="last"><a href="">撤销广告</a></li>
 				</ul>
-				<h6 id="h-menu-events"><a href="#"><span>账户</span></a></h6>
-				<ul id="menu-events" class="closed">
+				<h6 id="h-menu-events" class="selected"><a href="#"><span>账户</span></a></h6>
+				<ul id="menu-events" class="opened">
 					<li><a href="#">查看账户余额</a></li>
+					<li><a href="#">查看交易记录</a></li>
 					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
-				<h6 id="h-menu-settings"><a href="#"><span>设置</span></a></h6>
-				<ul id="menu-settings" class="closed">
+				<h6 id="h-menu-settings" class="selected"><a href="#"><span>设置</span></a></h6>
+				<ul id="menu-settings" class="opened">
 					<li><a href="#">账户设置</a></li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
@@ -111,32 +111,52 @@
 		<!-- end content/left -->
 		<!-- content/right -->
 		<div id="right">
-			<!-- forms -->
+			<!-- table -->
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>你的账户:</h5>
 				</div>
 				<!-- end box/title -->
-				<form id="form" action="" method="post">
-					<div class="form">
-						<div class="fields">
-							<div class="field field-first">
-								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
-								</div>
-								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
-									<div class="button highlight">
-										<input type="submit" value="充值" name="submit" />
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</form>
+				<div class="table">
+					<form action="" method="post">
+						<table>
+							<thead>
+								<tr>
+									<th class="left">交易时间</th>
+									<th>收入金额</th>
+									<th>支出金额</th>
+									<th>当前余额</th>
+									<th class="last">交易类别</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="title">2012-12-12 12:12:12</td>
+									<td class="price">1000</td>
+									<td class="price">1000</td>
+									<td class="date">2000</td>
+									<td class="category">银行转账</td>
+								</tr>
+								<tr>
+									<td class="title">2012-12-12 12:12:12</td>
+									<td class="price">1000</td>
+									<td class="price">1000</td>
+									<td class="date">2000</td>
+									<td class="category">银行转账</td>
+								</tr>
+								<tr>
+									<td class="title">2012-12-12 12:12:12</td>
+									<td class="price">1000</td>
+									<td class="price">1000</td>
+									<td class="date">2000</td>
+									<td class="category">银行转账</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
 			</div>
-			<!-- end forms -->
 		</div>
 		<!-- end content/right -->
 	</div>
