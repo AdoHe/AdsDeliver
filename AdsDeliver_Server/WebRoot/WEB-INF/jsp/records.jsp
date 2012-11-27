@@ -13,12 +13,10 @@
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.tinymce.js"></script>
-<script type="text/javascript" src="js/tiny_mce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script type="text/javascript" src="js/smooth.autocomplete.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -88,20 +86,20 @@
 		<!-- content/left -->
 		<div id="left">
 			<div id="menu">
-				<h6 id="h-menu-products" class="selected"><a href="#"><span>广告</span></a></h6>
-				<ul id="menu-products" class="opened">
+				<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
+				<ul id="menu-ads" class="opened">
 					<li><a href="#">投放广告</a></li>
 					<li><a href="#">查看广告</a></li>
 					<li class="last"><a href="">撤销广告</a></li>
 				</ul>
-				<h6 id="h-menu-events" class="selected"><a href="#"><span>账户</span></a></h6>
-				<ul id="menu-events" class="opened">
+				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
+				<ul id="menu-events">
 					<li><a href="#">查看账户余额</a></li>
 					<li><a href="#">查看交易记录</a></li>
 					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
-				<h6 id="h-menu-settings" class="selected"><a href="#"><span>设置</span></a></h6>
-				<ul id="menu-settings" class="opened">
+				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
+				<ul id="menu-settings">
 					<li><a href="#">账户设置</a></li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
