@@ -3,6 +3,7 @@
  */
 package edu.tongji.se.serviceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.tongji.se.dao.AccountDao;
@@ -36,7 +37,7 @@ public class AccountServiceImpl implements AccountService
 	public int getAccountBalance(User user) 
 	{
 		// TODO Auto-generated method stub
-		List<Account> accounts = (List<Account>)mAccountDao.findByProperty("user", user);
+		List<Account> accounts = (ArrayList<Account>)mAccountDao.findByUser(user);
 		if(accounts.size() != 0)
 		{
 			Account account = accounts.get(0);
@@ -50,9 +51,10 @@ public class AccountServiceImpl implements AccountService
 	 * @see edu.tongji.se.service.AccountService#accountRecharge(edu.tongji.se.model.User, int)
 	 */
 	@Override
-	public void accountRecharge(User user, int number) 
+	public void saveAccountRecharge(Account account, int number) 
 	{
-		// TODO Auto-generated method stub
+		account.setAcBalance(account.getAcBalance() + number);
+		mAccountDao.save(account);
 
 	}
 

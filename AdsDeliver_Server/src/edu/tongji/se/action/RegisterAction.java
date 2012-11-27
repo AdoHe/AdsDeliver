@@ -30,7 +30,7 @@ public class RegisterAction extends ActionSupport
 	private String telePhone;
 	private String address;
 	
-	private UserServiceImpl mUserService;
+	private UserService mUserService;
 	
 	public String getName() 
 	{
@@ -110,14 +110,10 @@ public class RegisterAction extends ActionSupport
 		
 		return "SUCCESS";
 	}
-	public UserServiceImpl getmUserService() 
-	{
-		return mUserService;
-	}
-	public void setmUserService(UserServiceImpl mUserService) 
-	{
+	public void setmUserService(UserService mUserService) {
 		this.mUserService = mUserService;
 	}
+	
 	
 	
 }

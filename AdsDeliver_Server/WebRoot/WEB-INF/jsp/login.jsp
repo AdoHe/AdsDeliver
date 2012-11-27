@@ -17,7 +17,7 @@
 	$(document).ready(function() {
 		style_path = "css";
 		
-		$("input:submit").button();
+		$("input:button").button();
 	});
 </script>
 <script type="text/javascript">
@@ -48,12 +48,9 @@
 					});
 					
 		});
+
+		
 	});
-	
-	$("#signin").click(function() {
-		alert("11");
-	});
-	
 </script>
 </head>
 <body>

@@ -28,12 +28,43 @@
 				$("#date-picker").datepicker();
 				
 				$("input:submit").button();
+				
+				
+				
+				$("button#testButton").click(function() {
+					$.post(
+							"GetBalance!getUserBalance.action",
+							function(data, textStatus) {
+								if(textStatus == "success") {
+									alert("balance:" + data.balance);
+								}
+							}
+						);
+				}); 
+				
+				$("button#testRecharge").click(function() {
+					$.post(
+							"GetBalance!recharge.action",
+							{rechargeAmount : 10},
+							function(data, textStatus) {
+								alert(textStatus);
+							}
+						);
+				}); 
+				
 			});
 </script>
 
 <title>AdsDeliver Administer Page</title>
 </head>
 <body>
+
+	<!-- 测试区域 -->
+	<div>
+			<button id="testButton">查看余额</button>
+			<button id="testRecharge">充值10元</button>
+	</div>
+	
 	<!-- header -->
 	<div id="header">
 		<!-- logo -->

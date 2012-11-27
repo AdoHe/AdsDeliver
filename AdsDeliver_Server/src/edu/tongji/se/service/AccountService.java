@@ -3,6 +3,7 @@
  */
 package edu.tongji.se.service;
 
+import edu.tongji.se.model.Account;
 import edu.tongji.se.model.User;
 
 /**
@@ -30,5 +31,5 @@ public interface AccountService
 	 * @param user
 	 * @param number
 	 */
-	public void accountRecharge(User user, int number);
+	public void saveAccountRecharge(Account account, int number);
 }

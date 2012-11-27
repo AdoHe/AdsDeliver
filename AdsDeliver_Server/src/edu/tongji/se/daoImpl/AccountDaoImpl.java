@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import edu.tongji.se.dao.AccountDao;
 import edu.tongji.se.model.Account;
+import edu.tongji.se.model.User;
 
 /**
  * A data access object (DAO) providing persistence and search support for
@@ -146,5 +147,19 @@ public class AccountDaoImpl extends HibernateDaoSupport
 
 	public static AccountDaoImpl getFromApplicationContext(ApplicationContext ctx) {
 		return (AccountDaoImpl) ctx.getBean("AccountDAO");
+	}
+
+	@Override
+	public List findByUser(User user) {
+		try {
+			String queryString = "from Account model where model.user"
+					 + "= ?";
+			return getHibernateTemplate().find(queryString, (Object)user);
+		} catch (RuntimeException re) {
+			log.error("find by user failed", re);
+			throw re;
+		}
+		
+		//return findByProperty("user", (Object)user);
 	}
 }

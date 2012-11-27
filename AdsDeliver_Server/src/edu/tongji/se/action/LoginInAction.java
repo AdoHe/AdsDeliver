@@ -15,6 +15,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.service.AdminService;
 import edu.tongji.se.serviceImpl.AdminServiceImpl;
 import edu.tongji.se.tools.AuthorInterceptor;
 
@@ -33,7 +34,7 @@ public class LoginInAction extends ActionSupport implements SessionAware, Cookie
 	private Map<String, String> cookie; //implements CookiesAware to get the access to cookie
 	
 	
-	private AdminServiceImpl mAdminService;
+	private AdminService mAdminService;
 	
 	private String name = null;
 	private String password;
@@ -96,11 +97,8 @@ public class LoginInAction extends ActionSupport implements SessionAware, Cookie
 		}
 	}
 	
-	public AdminServiceImpl getmAdminService() {
-		return mAdminService;
-	}
 
-	public void setmAdminService(AdminServiceImpl mAdminService) {
+	public void setmAdminService(AdminService mAdminService) {
 		this.mAdminService = mAdminService;
 	}
 

@@ -5,6 +5,7 @@
 	<constant name="strtus.objectFactory.spring.autoWire" value="name" />
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
 	
 	<package name="default" extends="json-default" namespace="/">
 	</package>
@@ -41,7 +42,9 @@
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
 		</action>
 		
-		<action name="AccountManage" class="AccountManageAction">
+		<action name="GetBalance" class="AccountManageAction">
+			<result type="json"/>
+			<!--result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result-->
 		</action>
 		
 	</package>

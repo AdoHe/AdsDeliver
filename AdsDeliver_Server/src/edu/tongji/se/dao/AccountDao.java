@@ -6,6 +6,7 @@ package edu.tongji.se.dao;
 import java.util.List;
 
 import edu.tongji.se.model.Account;
+import edu.tongji.se.model.User;
 
 /**
  * @author hezibo
@@ -30,4 +31,6 @@ public interface AccountDao
 	
 	//merge two accounts
 	public Account merge(Account detachedInstance);
+	
+	public List findByUser(User user);
 }

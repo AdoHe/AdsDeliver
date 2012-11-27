@@ -3,7 +3,15 @@
 	xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+    http://www.springframework.org/schema/aop 
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
 	<bean id="dataSource"
@@ -43,7 +51,34 @@
 				<value>edu/tongji/se/model/Advertisement.hbm.xml</value>
 				<value>edu/tongji/se/model/User.hbm.xml</value>
 				<value>edu/tongji/se/model/Record.hbm.xml</value></list>
-		</property></bean>
+		</property>
+	</bean>
+	
+	
+	<!-- 配置事务管理器 -->
+ 	<bean id="transactionManager"
+     class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+         <property name="sessionFactory" ref="sessionFactory"/>
+	 </bean>
+	 
+	<!-- 配置事务的传播特性 ，指定事务管理器-->
+ 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+  	<!-- 配置详细的事务语义 -->
+  		<tx:attributes>
+   			<tx:method name="*" propagation="REQUIRED" />
+   			
+  		</tx:attributes>
+ 	</tx:advice>
+ 	
+ 	<!-- 哪些类的哪些方法参与事务 -->
+ 	<aop:config>
+  		<!--配置切入点，匹配edu.tongji.se.daoImpl包下所有的类的所有方法的执行-->
+  		<aop:pointcut id="allServiceMethod"
+   			expression="execution(* edu.tongji.se.serviceImpl.*.*(..))" />
+  		<!-- 指定在txAdvice切入点应用txAdvice事务切面 -->
+  		<aop:advisor advice-ref="txAdvice" pointcut-ref="allServiceMethod" />
+ 	</aop:config>
+	
 	
 	<!-- declare dao and inject sessionFactory into dao -->
 	<bean id="AdministratorDAO"
@@ -141,6 +176,9 @@
 	<bean id="AccountManageAction" class="edu.tongji.se.action.AccountManageAction">
 		<property name="mAccountService">
 			<ref bean="accountService"/>
+		</property>
+		<property name="mUserService">
+			<ref bean="userService"/>
 		</property>
 	</bean>
 	

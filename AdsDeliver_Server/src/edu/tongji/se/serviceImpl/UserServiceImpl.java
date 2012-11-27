@@ -102,7 +102,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUser(String name) {
-		return ((ArrayList<User>)mUserDao.findByUsName(name)).get(0);
+		List<User> result = (ArrayList<User>)mUserDao.findByUsName(name);
+		if(result != null & result.size() > 0)
+			return result.get(0);
+		else 
+			return null;
 	}
 
 	@Override

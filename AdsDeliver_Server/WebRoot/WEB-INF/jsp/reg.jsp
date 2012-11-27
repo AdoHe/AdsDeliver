@@ -27,7 +27,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#form").submit(function(e) {
-			if($("#username").attr("value") != "1") {
+			if($("#username").attr("value") == "") {
 				e.preventDefault();
 			    alert("Submit prevented");
 			}
