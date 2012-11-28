@@ -47,6 +47,11 @@
 			<!--result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result-->
 		</action>
 		
+		<action name="UserInfo" class="UserInfoAction">
+			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+			<result name="SAVE_SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>    
