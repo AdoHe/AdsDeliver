@@ -10,13 +10,13 @@
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/smooth.form.js"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -25,43 +25,11 @@
 				$("#date-picker").datepicker();
 				
 				$("input:submit").button();
-				
-				
-				
-				$("button#testButton").click(function() {
-					$.post(
-							"GetBalance!getUserBalance.action",
-							function(data, textStatus) {
-								if(textStatus == "success") {
-									alert("balance:" + data.balance);
-								}
-							}
-						);
-				}); 
-				
-				$("button#testRecharge").click(function() {
-					$.post(
-							"GetBalance!recharge.action",
-							{rechargeAmount : 10},
-							function(data, textStatus) {
-								alert(textStatus);
-							}
-						);
-				}); 
-				
 			});
 </script>
-
-<title>AdsDeliver Administer Page</title>
+<title>Ads Deliver Account Recharge</title>
 </head>
 <body>
-
-	<!-- 测试区域 -->
-	<div>
-			<button id="testButton">查看余额</button>
-			<button id="testRecharge">充值10元</button>
-	</div>
-	
 	<!-- header -->
 	<div id="header">
 		<!-- logo -->
@@ -96,7 +64,6 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
-						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -107,7 +74,7 @@
 						<li>
 							<a href="#" class="childs">账户设置</a>
 							<ul>
-								<li><a href="">修改用户资料</a></li>
+								<li><a href="">修改用户信息</a></li>
 								<li class="last"><a href="">修改用户密码</a></li>
 							</ul>
 						</li>
@@ -134,17 +101,16 @@
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
-					<li><a href="">查看账户余额</a></li>
-					<li><a href="">查看交易记录</a></li>
-					<li class="last"><a href="">账户充值</a></li>
+					<li><a href="#">查看账户余额</a></li>
+					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">
 					<li class="collapsible">
 						<a href="#" class="plus">账户设置</a>
 						<ul class="collapsed">
-							<li><a href="">修改用户资料</a></li>
-							<li class="last"><a href="">修改用户密码</a></li>
+							<li><a href=""></a></li>
+							<li class="last"><a href=""></a></li>
 						</ul>
 					</li>
 					<li class="last"><a href="#">广告设置</a></li>
@@ -155,51 +121,37 @@
 		<!-- end content/left -->
 		<!-- content/right -->
 		<div id="right">
-			<!-- table -->
+			<!-- forms -->
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>广告</h5>
-					<div class="search">
-						<form action="#" method="post">
-							<div class="input">
-								<input type="text" id="search" name="search" />
-							</div>
-							<div class="button">
-								<input type="submit" name="submit" value="搜索" />
-							</div>
-						</form>
-					</div>
+					<h5>账户充值</h5>
 				</div>
 				<!-- end box/title -->
-				<div class="table">
-					<form action="" method="post">
-						<table>
-							<thead>
-								<tr>
-									<th class="left">Title</th>
-									<th>Price</th>
-									<th>Added</th>
-									<th>Status</th>
-									<th class="selected last"><input type="checkbox" class="checkall" /></th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="title">shit</td>
-									<td class="price">fuck</td>
-									<td class="date">gan</td>
-									<td class="category">ri</td>
-									<td class="selected last"><input type="checkbox" /></td>
-								</tr>
-							</tbody>
-						</table>
-					</form>
-				</div>
+				<form id="form" action="" method="post">
+					<div class="form">
+						<div class="fields">
+							<div class="field field-first">
+								<div class="label">
+									<label for="input">请输入你要充值的数目:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="input" name="input" class="small" />
+									<div class="button highlight">
+										<input type="submit" value="充值" name="submit" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
+			<!-- end forms -->
 		</div>
 		<!-- end content/right -->
 	</div>
 	<!-- end content -->
 </body>
 </html>
+
+
