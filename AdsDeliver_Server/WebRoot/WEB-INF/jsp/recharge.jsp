@@ -22,9 +22,34 @@
 			$(document).ready(function () {
 				style_path = "css";
 
-				$("#date-picker").datepicker();
+				//$("#date-picker").datepicker();
 				
-				$("input:submit").button();
+				//$("input:button").button();
+				
+				$( "#success-message" ).dialog({
+		            modal: true,
+		            buttons: {
+		                Ok: function() {
+		                    $( this ).dialog( "close" );
+		                }
+		            }
+		        });
+				
+				$("#recharge").click(function() {
+					alert("");
+					$.post(
+							"GetBalance!recharge.action",
+							{rechargeAmount : $("input#input").attr("value")},
+							function(data, textStatus) {
+								if(textStatus == "success") {
+									$( "#success-message" ).dialog("open");
+								}else {
+									
+								}
+							}
+						);
+				});
+				
 			});
 </script>
 <title>Ads Deliver Account Recharge</title>
@@ -85,6 +110,19 @@
 	<!-- content -->
 	<div id="content">
 		<!-- content/left -->
+		
+		<!-- 对话框 -->
+		<div id="success-message" title="充值成功">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			Your files have downloaded successfully into the My Downloads folder.
+    		</p>
+    		<p>
+       			Currently using <b>36% of your storage space</b>.
+    		</p>
+		</div>
+		
+		
 		<div id="left">
 			<div id="menu">
 				<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
@@ -126,7 +164,7 @@
 								<div class="input">
 									<input type="text" id="input" name="input" class="small" />
 									<div class="button highlight">
-										<input type="submit" value="充值" name="submit" />
+										<input type="button" value="充值" name="submit" id="recharge"/>
 									</div>
 								</div>
 							</div>

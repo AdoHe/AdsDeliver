@@ -39,16 +39,6 @@
 						);
 				}); 
 				
-				$("button#testRecharge").click(function() {
-					$.post(
-							"GetBalance!recharge.action",
-							{rechargeAmount : 10},
-							function(data, textStatus) {
-								alert(textStatus);
-							}
-						);
-				}); 
-				
 			});
 </script>
 
@@ -95,9 +85,9 @@
 					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
 					<span>账户管理</span></a>
 					<ul>
-						<li><a href="#">查看账户余额</a></li>
+						<li><a href="UserAccount.action">查看账户余额</a></li>
 						<li><a href="">查看交易记录</a></li>
-						<li class="last"><a href="#">账户充值</a></li>
+						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
 				</li>
 				<li>
@@ -128,9 +118,9 @@
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
-					<li><a href="">查看账户余额</a></li>
+					<li><a href="UserAccount.action">查看账户余额</a></li>
 					<li><a href="">查看交易记录</a></li>
-					<li class="last"><a href="">账户充值</a></li>
+					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">

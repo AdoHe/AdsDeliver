@@ -97,6 +97,15 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		return SUCCESS;
 	}
 	
+	// 查看余额界面
+	public String accountPage() throws Exception {
+		return "ACCOUNT_PAGE";
+	}
+	
+	public String rechargePage() throws Exception {
+		return "RECHARGE_PAGE";
+	}
+	
 	public void setmAccountService(AccountService mAccountService) 
 	{
 		this.mAccountService = mAccountService;
