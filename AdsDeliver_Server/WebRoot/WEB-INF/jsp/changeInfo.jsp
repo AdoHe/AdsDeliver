@@ -16,18 +16,18 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				
 				$("input:submit").button();
+				$("input:reset").button();
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>Ads Deliver Change UserInfo</title>
 </head>
 <body>
 	<!-- header -->
@@ -74,7 +74,7 @@
 						<li>
 							<a href="#" class="childs">账户设置</a>
 							<ul>
-								<li><a href="">修改用户信息</a></li>
+								<li><a href="#">修改用户信息</a></li>
 								<li class="last"><a href="">修改用户密码</a></li>
 							</ul>
 						</li>
@@ -125,7 +125,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>修改个人资料</h5>
 				</div>
 				<!-- end box/title -->
 				<form id="form" action="" method="post">
@@ -133,21 +133,58 @@
 						<div class="fields">
 							<div class="field field-first">
 								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
+									<label for="userName">用户名:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
-									<div class="button highlight">
-										<input type="submit" value="充值" name="submit" />
-									</div>
+									<input type="text" id="userName" name="userName" class="medium" />
 								</div>
 							</div>
-						</div>
-						<div class="fields">
-							<div class="field"></div>
-						</div>
-						<div class="fields">
-							<div class="field"></div>
+							<div class="field">
+								<div class="label">
+									<label for="realName">真实姓名:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="realName" name="realName" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="company">公司:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="company" name="company" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="mobile">手机号:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="mobile" name="mobilePhone" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="telephone">固定电话:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="telephone" name="telephone" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="address">地址:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="address" name="address" class="medium" />
+								</div>
+							</div>
+							<div class="buttons">
+								<div class="highlight">
+									<input type="submit" name="submit" value="保存修改" />
+								</div>
+								<input type="reset" name="reset" value="取消" />
+							</div>
 						</div>
 					</div>
 				</form>

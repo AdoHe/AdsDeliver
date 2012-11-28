@@ -16,7 +16,7 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -27,7 +27,7 @@
 				$("input:submit").button();
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>Ads Deliver Change Password</title>
 </head>
 <body>
 	<!-- header -->
@@ -125,7 +125,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>修改用户密码</h5>
 				</div>
 				<!-- end box/title -->
 				<form id="form" action="" method="post">
@@ -133,13 +133,31 @@
 						<div class="fields">
 							<div class="field field-first">
 								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
+									<label for="oldPwd">请输入你现在的密码:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
-									<div class="button highlight">
-										<input type="submit" value="充值" name="submit" />
-									</div>
+									<input type="password" id="oldPwd" name="oldPwd" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="newPwd">请输入新密码:</label>
+								</div>
+								<div class="input">
+									<input type="password" id="newPwd" name="newPwd" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="newPwdAck">请确认新密码:</label>
+								</div>
+								<div class="input">
+									<input type="password" id="newPwdAck" name="newPwdAck" class="medium" />
+								</div>
+							</div>
+							<div class="buttons">
+								<div class="highlight">
+									<input type="submit" name="submit" value="完成" />
 								</div>
 							</div>
 						</div>

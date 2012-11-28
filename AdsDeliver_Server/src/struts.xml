@@ -39,7 +39,7 @@
 		</action>
 		
 		<action name="UserIndex" class="UserIndexAction">
-			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+			<result name="SUCCESS">/WEB-INF/jsp/changePwd.jsp</result>
 		</action>
 		
 		<action name="GetBalance" class="AccountManageAction">
