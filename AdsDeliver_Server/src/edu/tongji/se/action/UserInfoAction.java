@@ -11,7 +11,13 @@ import edu.tongji.se.model.Userinfo;
 import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.AuthorInterceptor;
 
-public class UserInfoAction extends ActionSupport implements SessionAware{
+public class UserInfoAction extends ActionSupport implements SessionAware
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private String userName;
 	
 	private String realName;

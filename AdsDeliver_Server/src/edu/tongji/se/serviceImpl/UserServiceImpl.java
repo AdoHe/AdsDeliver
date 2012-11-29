@@ -116,6 +116,21 @@ public class UserServiceImpl implements UserService {
 		
 		mUserDao.save(user);
 	}
+
+	@Override
+	public void updateUserPwd(int id, String newPwd) 
+	{
+		// TODO Auto-generated method stub
+		User user = mUserDao.findById(id);
+		
+		String newRand = Encry.generateSalt();
+		String password = Encry.generatePasswordInDatabase(newPwd, newRand);
+		
+		user.setUsPassword(password);
+		user.setUsRand(newRand);
+		
+		mUserDao.save(user);
+	}
 	
 	
 }

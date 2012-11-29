@@ -62,6 +62,8 @@ public class AccountServiceImpl implements AccountService
 		Record record = new Record();
 		record.setAccount(account);
 		record.setReIncome(number);
+		record.setReOutcome(0);
+		record.setReBalance(account.getAcBalance());
 		
 		mRecordDao.save(record);
 	}

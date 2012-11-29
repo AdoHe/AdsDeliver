@@ -6,7 +6,6 @@ package edu.tongji.se.action;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.service.UserService;
-import edu.tongji.se.serviceImpl.UserServiceImpl;
 import edu.tongji.se.tools.Encry;
 
 /**

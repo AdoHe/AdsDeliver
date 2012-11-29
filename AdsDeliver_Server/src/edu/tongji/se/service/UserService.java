@@ -54,4 +54,9 @@ public interface UserService {
 	 */
 	public void updateUserAccount(int id, Account account);
 	
+	
+	/**
+	 * 
+	 */
+	public void updateUserPwd(int id, String newPwd);
 }

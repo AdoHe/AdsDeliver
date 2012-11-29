@@ -16,7 +16,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.service.AdminService;
-import edu.tongji.se.serviceImpl.AdminServiceImpl;
 import edu.tongji.se.tools.AuthorInterceptor;
 
 /**

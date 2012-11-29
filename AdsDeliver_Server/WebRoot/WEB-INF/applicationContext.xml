@@ -196,4 +196,10 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="UserPwdAction" class="edu.tongji.se.action.UserPwdAction">
+		<property name="mUserService">
+			<ref bean="userService"/>
+		</property>
+	</bean>
+	
 </beans>
