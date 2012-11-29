@@ -6,7 +6,6 @@ package edu.tongji.se.action;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
-import org.apache.struts2.json.annotations.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,17 +58,6 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 
 	public void setRechargeAmount(int rechargeAmount) {
 		this.rechargeAmount = rechargeAmount;
-	}
-
-	private void putResultIntoRequest()
-	{
-		
-	}
-	
-	public String accountCheck()
-	{
-		putResultIntoRequest();
-		return SUCCESS;
 	}
 	
 	// ²é¿´Óà¶î

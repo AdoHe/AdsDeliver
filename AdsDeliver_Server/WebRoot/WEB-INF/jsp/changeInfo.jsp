@@ -22,37 +22,12 @@
 			$(document).ready(function () {
 				style_path = "css";
 
-				//$("#date-picker").datepicker();
-				
-				//$("input:button").button();
-				
-				$( "#success-message" ).dialog({
-		            modal: true,
-		            buttons: {
-		                Ok: function() {
-		                    $( this ).dialog( "close" );
-		                }
-		            }
-		        });
-				
-				$("#recharge").click(function() {
-					alert("");
-					$.post(
-							"GetBalance!recharge.action",
-							{rechargeAmount : $("input#input").attr("value")},
-							function(data, textStatus) {
-								if(textStatus == "success") {
-									$( "#success-message" ).dialog("open");
-								}else {
-									
-								}
-							}
-						);
-				});
-				
+				$("#date-picker").datepicker();
+				$("input:submit").button();
+				$("input:reset").button();
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>Ads Deliver Change UserInfo</title>
 </head>
 <body>
 	<!-- header -->
@@ -96,7 +71,13 @@
 					<a href="#" title="设置"><span class="icon"><img src="images/cog.png" alt="设置" /></span>
 					<span>常用设置</span></a>
 					<ul>
-						<li><a href="#">账户设置</a></li>
+						<li>
+							<a href="#" class="childs">账户设置</a>
+							<ul>
+								<li><a href="#">修改用户信息</a></li>
+								<li class="last"><a href="">修改用户密码</a></li>
+							</ul>
+						</li>
 						<li class="last"><a href="#">广告设置</a></li>
 					</ul>
 				</li>
@@ -110,19 +91,6 @@
 	<!-- content -->
 	<div id="content">
 		<!-- content/left -->
-		
-		<!-- 对话框 -->
-		<div id="success-message" title="充值成功">
-    		<p>
-        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			Your files have downloaded successfully into the My Downloads folder.
-    		</p>
-    		<p>
-       			Currently using <b>36% of your storage space</b>.
-    		</p>
-		</div>
-		
-		
 		<div id="left">
 			<div id="menu">
 				<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
@@ -138,7 +106,13 @@
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">
-					<li><a href="#">账户设置</a></li>
+					<li class="collapsible">
+						<a href="#" class="plus">账户设置</a>
+						<ul class="collapsed">
+							<li><a href="">修改用户资料</a></li>
+							<li class="last"><a href="">修改用户密码</a></li>
+						</ul>
+					</li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
 			</div>
@@ -151,7 +125,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>修改个人资料</h5>
 				</div>
 				<!-- end box/title -->
 				<form id="form" action="" method="post">
@@ -159,14 +133,57 @@
 						<div class="fields">
 							<div class="field field-first">
 								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
+									<label for="userName">用户名:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
-									<div class="button highlight">
-										<input type="button" value="充值" name="submit" id="recharge"/>
-									</div>
+									<input type="text" id="userName" name="userName" class="medium" />
 								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="realName">真实姓名:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="realName" name="realName" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="company">公司:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="company" name="company" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="mobile">手机号:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="mobile" name="mobilePhone" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="telephone">固定电话:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="telephone" name="telephone" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="address">地址:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="address" name="address" class="medium" />
+								</div>
+							</div>
+							<div class="buttons">
+								<div class="highlight">
+									<input type="submit" name="submit" value="保存修改" />
+								</div>
+								<input type="reset" name="reset" value="取消" />
 							</div>
 						</div>
 					</div>
@@ -179,3 +196,4 @@
 	<!-- end content -->
 </body>
 </html>
+

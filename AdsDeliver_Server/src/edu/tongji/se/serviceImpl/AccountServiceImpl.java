@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.tongji.se.dao.AccountDao;
+import edu.tongji.se.dao.RecordDao;
 import edu.tongji.se.model.Account;
+import edu.tongji.se.model.Record;
 import edu.tongji.se.model.User;
 import edu.tongji.se.service.AccountService;
 
@@ -18,6 +20,7 @@ import edu.tongji.se.service.AccountService;
 public class AccountServiceImpl implements AccountService 
 {
 	private AccountDao mAccountDao;
+	private RecordDao mRecordDao;
 	/* (non-Javadoc)
 	 * @see edu.tongji.se.service.AccountService#getAccountBalance(int)
 	 */
@@ -56,6 +59,11 @@ public class AccountServiceImpl implements AccountService
 		account.setAcBalance(account.getAcBalance() + number);
 		mAccountDao.save(account);
 
+		Record record = new Record();
+		record.setAccount(account);
+		record.setReIncome(number);
+		
+		mRecordDao.save(record);
 	}
 
 	public AccountDao getmAccountDao() 
@@ -66,6 +74,14 @@ public class AccountServiceImpl implements AccountService
 	public void setmAccountDao(AccountDao mAccountDao) 
 	{
 		this.mAccountDao = mAccountDao;
+	}
+
+	public RecordDao getmRecordDao() {
+		return mRecordDao;
+	}
+
+	public void setmRecordDao(RecordDao mRecordDao) {
+		this.mRecordDao = mRecordDao;
 	}
 
 }

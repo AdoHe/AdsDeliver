@@ -123,6 +123,11 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<bean id="RecordDAO" class="edu.tongji.se.daoImpl.RecordDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	
 	<!-- declare service -->
 	<bean id="adminService" class="edu.tongji.se.serviceImpl.AdminServiceImpl">
@@ -145,6 +150,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	<bean id="accountService" class="edu.tongji.se.serviceImpl.AccountServiceImpl">
 		<property name="mAccountDao">
 			<ref bean="AccountDAO"/>
+		</property>
+		<property name="mRecordDao">
+			<ref bean="RecordDAO"/>
 		</property>
 	</bean>
 	

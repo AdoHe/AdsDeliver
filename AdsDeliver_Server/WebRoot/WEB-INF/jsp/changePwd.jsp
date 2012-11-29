@@ -22,37 +22,12 @@
 			$(document).ready(function () {
 				style_path = "css";
 
-				//$("#date-picker").datepicker();
+				$("#date-picker").datepicker();
 				
-				//$("input:button").button();
-				
-				$( "#success-message" ).dialog({
-		            modal: true,
-		            buttons: {
-		                Ok: function() {
-		                    $( this ).dialog( "close" );
-		                }
-		            }
-		        });
-				
-				$("#recharge").click(function() {
-					alert("");
-					$.post(
-							"GetBalance!recharge.action",
-							{rechargeAmount : $("input#input").attr("value")},
-							function(data, textStatus) {
-								if(textStatus == "success") {
-									$( "#success-message" ).dialog("open");
-								}else {
-									
-								}
-							}
-						);
-				});
-				
+				$("input:submit").button();
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>Ads Deliver Change Password</title>
 </head>
 <body>
 	<!-- header -->
@@ -96,7 +71,13 @@
 					<a href="#" title="设置"><span class="icon"><img src="images/cog.png" alt="设置" /></span>
 					<span>常用设置</span></a>
 					<ul>
-						<li><a href="#">账户设置</a></li>
+						<li>
+							<a href="#" class="childs">账户设置</a>
+							<ul>
+								<li><a href="">修改用户信息</a></li>
+								<li class="last"><a href="">修改用户密码</a></li>
+							</ul>
+						</li>
 						<li class="last"><a href="#">广告设置</a></li>
 					</ul>
 				</li>
@@ -110,19 +91,6 @@
 	<!-- content -->
 	<div id="content">
 		<!-- content/left -->
-		
-		<!-- 对话框 -->
-		<div id="success-message" title="充值成功">
-    		<p>
-        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			Your files have downloaded successfully into the My Downloads folder.
-    		</p>
-    		<p>
-       			Currently using <b>36% of your storage space</b>.
-    		</p>
-		</div>
-		
-		
 		<div id="left">
 			<div id="menu">
 				<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
@@ -138,7 +106,13 @@
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">
-					<li><a href="#">账户设置</a></li>
+					<li class="collapsible">
+						<a href="#" class="plus">账户设置</a>
+						<ul class="collapsed">
+							<li><a href=""></a></li>
+							<li class="last"><a href=""></a></li>
+						</ul>
+					</li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
 			</div>
@@ -151,7 +125,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>修改用户密码</h5>
 				</div>
 				<!-- end box/title -->
 				<form id="form" action="" method="post">
@@ -159,13 +133,31 @@
 						<div class="fields">
 							<div class="field field-first">
 								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
+									<label for="oldPwd">请输入你现在的密码:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
-									<div class="button highlight">
-										<input type="button" value="充值" name="submit" id="recharge"/>
-									</div>
+									<input type="password" id="oldPwd" name="oldPwd" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="newPwd">请输入新密码:</label>
+								</div>
+								<div class="input">
+									<input type="password" id="newPwd" name="newPwd" class="medium" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="newPwdAck">请确认新密码:</label>
+								</div>
+								<div class="input">
+									<input type="password" id="newPwdAck" name="newPwdAck" class="medium" />
+								</div>
+							</div>
+							<div class="buttons">
+								<div class="highlight">
+									<input type="submit" name="submit" value="完成" />
 								</div>
 							</div>
 						</div>
@@ -179,3 +171,5 @@
 	<!-- end content -->
 </body>
 </html>
+
+
