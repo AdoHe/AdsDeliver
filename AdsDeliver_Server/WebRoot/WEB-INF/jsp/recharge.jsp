@@ -22,21 +22,22 @@
 			$(document).ready(function () {
 				style_path = "css";
 
-				//$("#date-picker").datepicker();
+				$("#date-picker").datepicker();
 				
-				//$("input:button").button();
+				$("input:button").button();
 				
 				$( "#success-message" ).dialog({
+					autoOpen: false,
 		            modal: true,
 		            buttons: {
 		                Ok: function() {
 		                    $( this ).dialog( "close" );
+		                    location.href="UserAccount.action";
 		                }
 		            }
 		        });
 				
 				$("#recharge").click(function() {
-					alert("");
 					$.post(
 							"GetBalance!recharge.action",
 							{rechargeAmount : $("input#input").attr("value")},
@@ -88,7 +89,7 @@
 					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
 					<span>账户管理</span></a>
 					<ul>
-						<li><a href="#">查看账户余额</a></li>
+						<li><a href="UserAccount.action">查看账户余额</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -115,10 +116,7 @@
 		<div id="success-message" title="充值成功">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			Your files have downloaded successfully into the My Downloads folder.
-    		</p>
-    		<p>
-       			Currently using <b>36% of your storage space</b>.
+        			恭喜你，你的充值操作已经成功！
     		</p>
 		</div>
 		
@@ -133,7 +131,7 @@
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
-					<li><a href="#">查看账户余额</a></li>
+					<li><a href="UserAccount.action">查看账户余额</a></li>
 					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>

@@ -3,7 +3,9 @@
  */
 package edu.tongji.se.serviceImpl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import edu.tongji.se.dao.AccountDao;
@@ -62,6 +64,10 @@ public class AccountServiceImpl implements AccountService
 		Record record = new Record();
 		record.setAccount(account);
 		record.setReIncome(number);
+		record.setReCategory("≥‰÷µ");
+		record.setReDate(new Timestamp(System.currentTimeMillis()));
+		record.setReOutcome(0);
+		record.setReBalance(account.getAcBalance() + number);
 		
 		mRecordDao.save(record);
 	}

@@ -23,6 +23,16 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
+				
+				$.post(
+					"GetBalance.action",
+					function(data, textStatus) {
+						if(textStatus == "success") {
+							$("#account_balance").html(data.balance + "元");
+						}
+					}						
+				);
+				
 			});
 </script>
 <title>Ads Deliver Account Info</title>
@@ -63,7 +73,7 @@
 					<ul>
 						<li><a href="#">查看账户余额</a></li>
 						<li><a href="">查看交易记录</a></li>
-						<li class="last"><a href="#">账户充值</a></li>
+						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
 				</li>
 				<li>
@@ -96,7 +106,7 @@
 				<ul id="menu-accounts" class="closed">
 					<li><a href="#">查看账户余额</a></li>
 					<li><a href="#">查看交易记录</a></li>
-					<li class="last"><a href="#">账户充值</a></li>
+					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">
@@ -120,11 +130,11 @@
 					<table>
 						<tr>
 							<td>当前余额:</td>
-							<td>1000</td>
+							<td id="account_balance">1000</td>
 						</tr>
-						<tr>
+						<!-- tr>
 							<td>可用余额:</td>
-							<td>1000</td>
+							<td>1000</td -->
 						</tr>
 					</table>
 				</div>

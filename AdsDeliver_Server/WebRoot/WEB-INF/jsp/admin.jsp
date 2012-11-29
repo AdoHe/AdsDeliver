@@ -26,19 +26,6 @@
 				
 				$("input:submit").button();
 				
-				
-				
-				$("button#testButton").click(function() {
-					$.post(
-							"GetBalance!getUserBalance.action",
-							function(data, textStatus) {
-								if(textStatus == "success") {
-									alert("balance:" + data.balance);
-								}
-							}
-						);
-				}); 
-				
 			});
 </script>
 
