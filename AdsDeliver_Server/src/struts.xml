@@ -39,12 +39,20 @@
 		</action>
 		
 		<action name="UserIndex" class="UserIndexAction">
-			<result name="SUCCESS">/WEB-INF/jsp/changePwd.jsp</result>
+			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
 		</action>
 		
 		<action name="GetBalance" class="AccountManageAction">
 			<result type="json"/>
 			<!--result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result-->
+		</action>
+		
+		<action name="UserAccount" class="AccountManageAction" method="accountPage">
+			<result name="ACCOUNT_PAGE">/WEB-INF/jsp/accountInfo.jsp</result>
+		</action>
+		
+		<action name="AccountRecharge" class="AccountManageAction" method="rechargePage">
+			<result name="RECHARGE_PAGE">/WEB-INF/jsp/recharge.jsp</result>
 		</action>
 		
 		<action name="UserInfo" class="UserInfoAction">
