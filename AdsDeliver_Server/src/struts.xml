@@ -42,7 +42,7 @@
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
 		</action>
 		
-		<action name="GetBalance" class="AccountManageAction">
+		<action name="GetBalance" class="AccountManageAction" method="getUserBalance">
 			<result type="json"/>
 			<!--result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result-->
 		</action>
@@ -55,14 +55,22 @@
 			<result name="RECHARGE_PAGE">/WEB-INF/jsp/recharge.jsp</result>
 		</action>
 		
-		<action name="UserInfo" class="UserInfoAction">
-			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
-			<result name="SAVE_SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+		<action name="GetUserInfo" class="UserInfoAction" method="userInfo">
+			<result type="json" />
+			<!-- result type="redirect" name="SAVE_SUCCESS">/WEB-INF/jsp/admin.jsp</result-->
+		</action>
+		
+		<action name="UserInfo" class="UserInfoAction" method="userInfoPage">
+			<result name="USER_INFO">/WEB-INF/jsp/changeInfo.jsp</result>
+		</action>
+		
+		<action name="SaveUserInfo" class="UserInfoAction" method="saveInfo">
+			<result name="SAVE_SUCCESS" type="redirect">UserInfo.action</result>
 		</action>
 		
 		<action name="UserPwd" class="UserPwdAction">
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
-			<result name="FAIL">/WEB-INF/jsp/changePwd.jsp</result>
+			<result type="redirect" name="FAIL">/WEB-INF/jsp/changePwd.jsp</result>
 		</action>
 		
 	</package>

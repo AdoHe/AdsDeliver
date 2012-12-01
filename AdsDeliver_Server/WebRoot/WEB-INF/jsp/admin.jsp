@@ -32,13 +32,6 @@
 <title>AdsDeliver Administer Page</title>
 </head>
 <body>
-
-	<!-- 测试区域 -->
-	<div>
-			<button id="testButton">查看余额</button>
-			<button id="testRecharge">充值10元</button>
-	</div>
-	
 	<!-- header -->
 	<div id="header">
 		<!-- logo -->
@@ -84,7 +77,7 @@
 						<li>
 							<a href="#" class="childs">账户设置</a>
 							<ul>
-								<li><a href="">修改用户资料</a></li>
+								<li><a href="UserInfo.action">修改用户资料</a></li>
 								<li class="last"><a href="">修改用户密码</a></li>
 							</ul>
 						</li>
@@ -120,7 +113,7 @@
 					<li class="collapsible">
 						<a href="#" class="plus">账户设置</a>
 						<ul class="collapsed">
-							<li><a href="">修改用户资料</a></li>
+							<li><a href="UserInfo.action">修改用户资料</a></li>
 							<li class="last"><a href="">修改用户密码</a></li>
 						</ul>
 					</li>

@@ -92,6 +92,10 @@ public class UserInfoAction extends ActionSupport implements SessionAware
 		this.mUserService = mUserService;
 	}
 	
+	public String userInfoPage() {
+		return "USER_INFO";
+	}
+	
 	/** 
 	 * 获取用户信息
 	 */
