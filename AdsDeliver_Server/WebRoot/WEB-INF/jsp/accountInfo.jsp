@@ -130,11 +130,11 @@
 					<table>
 						<tr>
 							<td>当前余额:</td>
-							<td id="account_balance">1000</td>
+							<td id="account_balance"></td>
 						</tr>
-						<!-- tr>
+						<tr>
 							<td>可用余额:</td>
-							<td>1000</td -->
+							<td>1000</td>
 						</tr>
 					</table>
 				</div>

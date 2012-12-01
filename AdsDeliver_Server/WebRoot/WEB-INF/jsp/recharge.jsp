@@ -90,6 +90,7 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="UserAccount.action">查看账户余额</a></li>
+						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="#">账户充值</a></li>
 					</ul>
 				</li>
@@ -132,6 +133,7 @@
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
 					<li><a href="UserAccount.action">查看账户余额</a></li>
+					<li><a href="">查看交易记录</a></li>
 					<li class="last"><a href="#">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
@@ -160,7 +162,7 @@
 									<label for="input">请输入你要充值的数目:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="small" />
+									<input type="text" id="input" name="input" class="medium" />
 									<div class="button highlight">
 										<input type="button" value="充值" name="submit" id="recharge"/>
 									</div>
