@@ -73,7 +73,7 @@
 		</action>
 		
 		<action name="SaveUserPwd" class="UserPwdAction" method="changePwd">
-			<result name="SUCCESS" type="redirect">UserPwd.action</result>
+			<result name="SAVE_SUCCESS" type="redirect">UserPwd.action</result>
 		</action>
 		
 		<action name="GetRecords" class="AccountRecordsAction" method="getRecord">
