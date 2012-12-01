@@ -72,6 +72,13 @@ public class AccountServiceImpl implements AccountService
 		mRecordDao.save(record);
 	}
 
+	@Override
+	public List<Record> getAccountRecords(String userName, int offset,
+			int length) {
+		// TODO Auto-generated method stub
+		return mRecordDao.findRe(userName, offset, length);
+	}
+
 	public AccountDao getmAccountDao() 
 	{
 		return mAccountDao;
@@ -89,5 +96,4 @@ public class AccountServiceImpl implements AccountService
 	public void setmRecordDao(RecordDao mRecordDao) {
 		this.mRecordDao = mRecordDao;
 	}
-
 }

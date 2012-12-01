@@ -19,7 +19,9 @@ public interface RecordDao
 	
 	public Record findById( java.lang.Integer id);
 	
-	 public List findByProperty(String propertyName, Object value);
+	 public List<Record> findByProperty(String propertyName, Object value);
 	 
-	 public List findAll();
+	 public List<Record> findAll();
+	 
+	 public List<Record> findRe(final String userName, final int offset, final int length);
 }

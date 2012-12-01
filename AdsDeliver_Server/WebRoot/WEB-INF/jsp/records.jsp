@@ -25,6 +25,27 @@
 				$("#date-picker").datepicker();
 			});
 </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.post("GetRecords.action", function(data,textStatus) {
+			if(textStatus == "success")
+			{
+				var records = data.records;
+				$.each(records,function(index, record) {
+					var tbody = "";
+					
+					tbody += "<tr><td class='title'>" + record.reDate + "</td>"
+					+ "<td class='price'>" + re.reIncome + "</td>"
+					+ "<td class='price'>" + re.reOutcome + "</td>"
+					+ "<td class='date'>" + re.reBalance + "</td>"
+					+ "<td class='category'>" + re.reCategory + "</td></tr>";
+					
+					$("#table_body").append(tbody);
+				});
+			}
+		}, "json");
+	});
+</script>
 <title>AdsDeliver Account Records</title>
 </head>
 <body>
@@ -125,7 +146,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>你的账户:</h5>
+					<h5>你的交易记录:</h5>
 				</div>
 				<!-- end box/title -->
 				<div class="table">
@@ -140,7 +161,7 @@
 									<th class="last">交易类别</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="table_body">
 								<tr>
 									<td class="title">2012-12-12 12:12:12</td>
 									<td class="price">1000</td>

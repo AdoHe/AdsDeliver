@@ -65,6 +65,10 @@
 			<result name="FAIL">/WEB-INF/jsp/changePwd.jsp</result>
 		</action>
 		
+		<action name="GetRecords" class="AccountRecordsAction" method="getRecord">
+			<result type="json" />
+		</action>
+		
 	</package>
 	
 </struts>    
