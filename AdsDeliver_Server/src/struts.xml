@@ -68,9 +68,12 @@
 			<result name="SAVE_SUCCESS" type="redirect">UserInfo.action</result>
 		</action>
 		
-		<action name="UserPwd" class="UserPwdAction">
-			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
-			<result type="redirect" name="FAIL">/WEB-INF/jsp/changePwd.jsp</result>
+		<action name="UserPwd" class="UserPwdAction" method="changePwdPage">
+			<result name="CHANGE_PWD_PAGE">/WEB-INF/jsp/changePwd.jsp</result>
+		</action>
+		
+		<action name="SaveUserPwd" class="UserPwdAction" method="changePwd">
+			<result name="SUCCESS" type="redirect">UserPwd.action</result>
 		</action>
 		
 		<action name="GetRecords" class="AccountRecordsAction" method="getRecord">

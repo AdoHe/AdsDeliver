@@ -74,8 +74,11 @@ public class UserPwdAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 	
-	@Override
-	public String execute() throws Exception 
+	public String changePwdPage() {
+		return "CHANGE_PWD_PAGE";
+	}
+	
+	public String changePwd() throws Exception 
 	{
 		// TODO Auto-generated method stub
 		String userName = (String)session.get(AuthorInterceptor.USER_SESSION_KEY);

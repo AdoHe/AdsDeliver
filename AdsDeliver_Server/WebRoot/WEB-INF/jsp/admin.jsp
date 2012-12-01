@@ -78,7 +78,7 @@
 							<a href="#" class="childs">账户设置</a>
 							<ul>
 								<li><a href="UserInfo.action">修改用户资料</a></li>
-								<li class="last"><a href="">修改用户密码</a></li>
+								<li class="last"><a href="UserPwd.action">修改用户密码</a></li>
 							</ul>
 						</li>
 						<li class="last"><a href="#">广告设置</a></li>
@@ -114,7 +114,7 @@
 						<a href="#" class="plus">账户设置</a>
 						<ul class="collapsed">
 							<li><a href="UserInfo.action">修改用户资料</a></li>
-							<li class="last"><a href="">修改用户密码</a></li>
+							<li class="last"><a href="UserPwd.action">修改用户密码</a></li>
 						</ul>
 					</li>
 					<li class="last"><a href="#">广告设置</a></li>
