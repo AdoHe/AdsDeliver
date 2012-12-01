@@ -173,6 +173,7 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		return (AdvertisementDaoImpl) ctx.getBean("AdvertisementDAO");
 	}
 	
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Advertisement> findAd(final int uid, final int offset, final int length) {
 		

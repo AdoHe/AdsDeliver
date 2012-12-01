@@ -90,8 +90,14 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		return "ACCOUNT_PAGE";
 	}
 	
+	//充值界面
 	public String rechargePage() throws Exception {
 		return "RECHARGE_PAGE";
+	}
+	
+	//交易记录页面
+	public String recordPage() throws Exception {
+		return "RECORD_PAGE";
 	}
 	
 	public void setmAccountService(AccountService mAccountService) 

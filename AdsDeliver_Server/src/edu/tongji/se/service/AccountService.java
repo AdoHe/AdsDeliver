@@ -3,7 +3,10 @@
  */
 package edu.tongji.se.service;
 
+import java.util.List;
+
 import edu.tongji.se.model.Account;
+import edu.tongji.se.model.Record;
 import edu.tongji.se.model.User;
 
 /**
@@ -32,4 +35,10 @@ public interface AccountService
 	 * @param number
 	 */
 	public void saveAccountRecharge(Account account, int number);
+	
+	/**
+	 * 查看交易记录
+	 * @param
+	 */
+	public List<Record> getAccountRecords(String userName, int offset, int length);
 }

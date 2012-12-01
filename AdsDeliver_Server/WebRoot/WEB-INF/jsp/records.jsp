@@ -25,6 +25,27 @@
 				$("#date-picker").datepicker();
 			});
 </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.post("GetRecords.action", function(data,textStatus) {
+			if(textStatus == "success")
+			{
+				var records = data.records;
+				$.each(records,function(index, record) {
+					var tbody = "";
+					
+					tbody += "<tr><td class='title'>" + record.reDate + "</td>"
+					+ "<td class='price'>" + re.reIncome + "</td>"
+					+ "<td class='price'>" + re.reOutcome + "</td>"
+					+ "<td class='date'>" + re.reBalance + "</td>"
+					+ "<td class='category'>" + re.reCategory + "</td></tr>";
+					
+					$("#table_body").append(tbody);
+				});
+			}
+		}, "json");
+	});
+</script>
 <title>AdsDeliver Account Records</title>
 </head>
 <body>
@@ -70,7 +91,13 @@
 					<a href="#" title="设置"><span class="icon"><img src="images/cog.png" alt="设置" /></span>
 					<span>常用设置</span></a>
 					<ul>
-						<li><a href="#">账户设置</a></li>
+						<li>
+							<a href="#" class="childs">账户设置</a>
+							<ul>
+								<li><a href="">修改用户资料</a></li>
+								<li class="last"><a href="">修改用户密码</a></li>
+							</ul>
+						</li>
 						<li class="last"><a href="#">广告设置</a></li>
 					</ul>
 				</li>
@@ -100,7 +127,13 @@
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings">
-					<li><a href="#">账户设置</a></li>
+					<li class="collapsible">
+						<a href="#" class="plus">账户设置</a>
+						<ul class="collapsed">
+							<li><a href="">修改用户资料</a></li>
+							<li class="last"><a href="">修改用户密码</a></li>
+						</ul>
+					</li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
 			</div>
@@ -113,7 +146,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>你的账户:</h5>
+					<h5>你的交易记录:</h5>
 				</div>
 				<!-- end box/title -->
 				<div class="table">
@@ -128,7 +161,7 @@
 									<th class="last">交易类别</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="table_body">
 								<tr>
 									<td class="title">2012-12-12 12:12:12</td>
 									<td class="price">1000</td>

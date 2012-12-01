@@ -1,14 +1,20 @@
 package edu.tongji.se.daoImpl;
 
+import java.sql.SQLException;
 import java.util.List;
+
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import edu.tongji.se.dao.RecordDao;
+import edu.tongji.se.model.Account;
 import edu.tongji.se.model.Record;
 
 /**
@@ -82,7 +88,7 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
         }
     }    
     
-    public List findByProperty(String propertyName, Object value) {
+    public List<Record> findByProperty(String propertyName, Object value) {
       log.debug("finding Record instance with property: " + propertyName
             + ", value: " + value);
       try {
@@ -90,7 +96,7 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
          						+ propertyName + "= ?";
          Query queryObject = getSession().createQuery(queryString);
 		 queryObject.setParameter(0, value);
-		 return queryObject.list();
+		 return (List<Record>)queryObject.list();
       } catch (RuntimeException re) {
          log.error("find by property name failed", re);
          throw re;
@@ -168,4 +174,31 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
             throw re;
         }
     }
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Record> findRe(final String userName, final int offset, final int length) 
+	{
+		// TODO Auto-generated method stub
+		final String HQL = "from Record as r where "
+				+ "r.account.user.usName=?"
+				+ "order by r.reData desc";
+		
+		List<Record> results = getHibernateTemplate().executeFind(new HibernateCallback() 
+		{
+			@Override
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException 
+					{
+				// TODO Auto-generated method stub
+				List<Record> list = session.createQuery(HQL).setFirstResult(offset)
+						.setParameter(0, userName)
+						.setMaxResults(length)
+						.list();
+				return list;
+			}	
+		});
+		
+		return results;
+	}
 }
