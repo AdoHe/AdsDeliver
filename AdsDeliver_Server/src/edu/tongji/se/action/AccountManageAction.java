@@ -95,6 +95,11 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		return "RECHARGE_PAGE";
 	}
 	
+	//交易记录页面
+	public String recordPage() throws Exception {
+		return "RECORD_PAGE";
+	}
+	
 	public void setmAccountService(AccountService mAccountService) 
 	{
 		this.mAccountService = mAccountService;

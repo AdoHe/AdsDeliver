@@ -55,6 +55,10 @@
 			<result name="RECHARGE_PAGE">/WEB-INF/jsp/recharge.jsp</result>
 		</action>
 		
+		<action name="AccountRecord" class="AccountManageAction" method="recordPage">
+			<result name="RECORD_PAGE">/WEB-INF/jsp/records.jsp</result>
+		</action>
+		
 		<action name="UserInfo" class="UserInfoAction">
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
 			<result name="SAVE_SUCCESS">/WEB-INF/jsp/admin.jsp</result>

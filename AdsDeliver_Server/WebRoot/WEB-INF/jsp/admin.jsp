@@ -73,7 +73,7 @@
 					<span>账户管理</span></a>
 					<ul>
 						<li><a href="UserAccount.action">查看账户余额</a></li>
-						<li><a href="">查看交易记录</a></li>
+						<li><a href="AccountRecord.action">查看交易记录</a></li>
 						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
 				</li>
@@ -112,7 +112,7 @@
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
 					<li><a href="UserAccount.action">查看账户余额</a></li>
-					<li><a href="">查看交易记录</a></li>
+					<li><a href="AccountRecord.action">查看交易记录</a></li>
 					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
