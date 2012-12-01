@@ -74,21 +74,25 @@ public class UserPwdAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 	
-	@Override
-	public String execute() throws Exception 
+	/**
+	 * ÐÞ¸ÄÃÜÂë
+	 * @return
+	 * @throws Exception
+	 */
+	public String savePwd() throws Exception
 	{
-		// TODO Auto-generated method stub
-		String userName = (String)session.get(AuthorInterceptor.USER_SESSION_KEY);
+		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY)?
+				 (String)session.get(AuthorInterceptor.USER_SESSION_KEY):"";
 		User user = mUserService.findUser(userName);
 		
 		String rand = user.getUsRand();
 		if(Encry.checkPasswordByInput(oldPwd, rand, user.getUsPassword()))
 		{
 			mUserService.updateUserPwd(user.getId(), newPwdAck);
-			return "SUCCESS";
+			return "SAVE_SUCCESS";
 		}else
 		{
-			return "FAIL";
+			return "OLD_WRONG";
 		}
 	}
 }
