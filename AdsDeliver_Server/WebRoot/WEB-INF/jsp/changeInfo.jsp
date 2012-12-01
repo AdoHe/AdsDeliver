@@ -63,8 +63,9 @@
 					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
 					<span>账户管理</span></a>
 					<ul>
-						<li><a href="#">查看账户余额</a></li>
-						<li class="last"><a href="#">账户充值</a></li>
+						<li><a href="UserAccount.action">查看账户余额</a></li>
+						<li><a href="">查看交易记录</a></li>
+						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
 				</li>
 				<li>

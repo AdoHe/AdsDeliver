@@ -29,6 +29,7 @@
 					function(data, textStatus) {
 						if(textStatus == "success") {
 							$("#account_balance").html(data.balance + "元");
+							$("#use_balance").html(data.balance + "元");
 						}
 					}						
 				);
@@ -71,7 +72,7 @@
 					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
 					<span>账户管理</span></a>
 					<ul>
-						<li><a href="#">查看账户余额</a></li>
+						<li><a href="">查看账户余额</a></li>
 						<li><a href="">查看交易记录</a></li>
 						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
@@ -80,7 +81,13 @@
 					<a href="#" title="设置"><span class="icon"><img src="images/cog.png" alt="设置" /></span>
 					<span>常用设置</span></a>
 					<ul>
-						<li><a href="#">账户设置</a></li>
+						<li>
+							<a href="#" class="childs">账户设置</a>
+							<ul>
+								<li><a href="">修改用户资料</a></li>
+								<li class="last"><a href="">修改用户密码</a></li>
+							</ul>
+						</li>
 						<li class="last"><a href="#">广告设置</a></li>
 					</ul>
 				</li>
@@ -104,13 +111,19 @@
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
-					<li><a href="#">查看账户余额</a></li>
+					<li><a href="">查看账户余额</a></li>
 					<li><a href="#">查看交易记录</a></li>
 					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 				<ul id="menu-settings" class="closed">
-					<li><a href="#">账户设置</a></li>
+					<li class="collapsible">
+						<a href="#" class="plus">账户设置</a>
+						<ul class="collapsed">
+							<li><a href="">修改用户资料</a></li>
+							<li class="last"><a href="">修改用户密码</a></li>
+						</ul>
+					</li>
 					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
 			</div>
@@ -134,7 +147,7 @@
 						</tr>
 						<tr>
 							<td>可用余额:</td>
-							<td>1000</td>
+							<td id="use_balance"></td>
 						</tr>
 					</table>
 				</div>

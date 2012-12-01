@@ -90,6 +90,7 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		return "ACCOUNT_PAGE";
 	}
 	
+	//≥‰÷µΩÁ√Ê
 	public String rechargePage() throws Exception {
 		return "RECHARGE_PAGE";
 	}
