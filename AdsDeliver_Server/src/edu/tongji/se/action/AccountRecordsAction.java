@@ -40,7 +40,7 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 	
-	public String getRecord()
+	public String records()
 	{
 		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY) ?
 				(String)session.get(AuthorInterceptor.USER_SESSION_KEY):"";
@@ -48,10 +48,6 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, 0, 3);
 		
 		return SUCCESS;
-	}
-	
-	public AccountService getmAccountService() {
-		return mAccountService;
 	}
 
 	public void setmAccountService(AccountService mAccountService) {

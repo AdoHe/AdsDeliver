@@ -27,25 +27,26 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$.post("GetRecords.action", function(data,textStatus) {
+		$.get("GetRecords.action", function(data,textStatus) {
 			if(textStatus == "success")
 			{
-				var records = data.records;
-				$.each(records,function(index, record) {
+				var re = data.records;
+				$.each(re,function(index, record) {
 					var tbody = "";
 					
-					tbody += "<tr><td class='title'>" + record.reDate + "</td>"
-					+ "<td class='price'>" + re.reIncome + "</td>"
-					+ "<td class='price'>" + re.reOutcome + "</td>"
-					+ "<td class='date'>" + re.reBalance + "</td>"
-					+ "<td class='category'>" + re.reCategory + "</td></tr>";
+					tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
+					+ "<td class='price'>" + record.reIncome + "</td>"
+					+ "<td class='price'>" + record.reOutcome + "</td>"
+					+ "<td class='date'>" + record.reBalance + "</td>"
+					+ "<td class='category'>" + record.reCategory + "</td></tr>";
 					
 					$("#table_body").append(tbody);
 				});
 			}
-		}, "json");
+		},"json");
 	});
 </script>
+
 <title>AdsDeliver Account Records</title>
 </head>
 <body>
@@ -120,13 +121,13 @@
 					<li class="last"><a href="">撤销广告</a></li>
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
-				<ul id="menu-events">
+				<ul id="menu-accounts" class="closed">
 					<li><a href="UserAccount.action">查看账户余额</a></li>
 					<li><a href="#">查看交易记录</a></li>
 					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
-				<ul id="menu-settings">
+				<ul id="menu-settings" class="closed">
 					<li class="collapsible">
 						<a href="#" class="plus">账户设置</a>
 						<ul class="collapsed">
@@ -162,27 +163,6 @@
 								</tr>
 							</thead>
 							<tbody id="table_body">
-								<tr>
-									<td class="title">2012-12-12 12:12:12</td>
-									<td class="price">1000</td>
-									<td class="price">1000</td>
-									<td class="date">2000</td>
-									<td class="category">银行转账</td>
-								</tr>
-								<tr>
-									<td class="title">2012-12-12 12:12:12</td>
-									<td class="price">1000</td>
-									<td class="price">1000</td>
-									<td class="date">2000</td>
-									<td class="category">银行转账</td>
-								</tr>
-								<tr>
-									<td class="title">2012-12-12 12:12:12</td>
-									<td class="price">1000</td>
-									<td class="price">1000</td>
-									<td class="date">2000</td>
-									<td class="category">银行转账</td>
-								</tr>
 							</tbody>
 						</table>
 					</form>

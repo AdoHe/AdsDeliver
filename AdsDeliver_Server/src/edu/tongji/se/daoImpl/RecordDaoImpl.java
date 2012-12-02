@@ -179,10 +179,11 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
 	@Override
 	public List<Record> findRe(final String userName, final int offset, final int length) 
 	{
+		log.debug("find record for special account");
 		// TODO Auto-generated method stub
 		final String HQL = "from Record as r where "
 				+ "r.account.user.usName=?"
-				+ "order by r.reData desc";
+				+ " order by r.reDate asc";
 		
 		List<Record> results = getHibernateTemplate().executeFind(new HibernateCallback() 
 		{
@@ -199,6 +200,7 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
 			}	
 		});
 		
+		log.debug("the size is:" + results.size());
 		return results;
 	}
 }
