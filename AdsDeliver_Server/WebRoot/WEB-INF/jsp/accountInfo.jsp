@@ -72,8 +72,8 @@
 					<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
 					<span>账户管理</span></a>
 					<ul>
-						<li><a href="">查看账户余额</a></li>
-						<li><a href="">查看交易记录</a></li>
+						<li><a href="#">查看账户余额</a></li>
+						<li><a href="AccountRecord.action">查看交易记录</a></li>
 						<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 					</ul>
 				</li>
@@ -84,8 +84,8 @@
 						<li>
 							<a href="#" class="childs">账户设置</a>
 							<ul>
-								<li><a href="">修改用户资料</a></li>
-								<li class="last"><a href="">修改用户密码</a></li>
+								<li><a href="UserInfo.action">修改用户资料</a></li>
+								<li class="last"><a href="UserPwd.action">修改用户密码</a></li>
 							</ul>
 						</li>
 						<li class="last"><a href="#">广告设置</a></li>
@@ -111,8 +111,8 @@
 				</ul>
 				<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 				<ul id="menu-accounts" class="closed">
-					<li><a href="">查看账户余额</a></li>
-					<li><a href="#">查看交易记录</a></li>
+					<li><a href="#">查看账户余额</a></li>
+					<li><a href="AccountRecord.action">查看交易记录</a></li>
 					<li class="last"><a href="AccountRecharge.action">账户充值</a></li>
 				</ul>
 				<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
@@ -120,8 +120,8 @@
 					<li class="collapsible">
 						<a href="#" class="plus">账户设置</a>
 						<ul class="collapsed">
-							<li><a href="">修改用户资料</a></li>
-							<li class="last"><a href="">修改用户密码</a></li>
+							<li><a href="UserInfo.action">修改用户资料</a></li>
+							<li class="last"><a href="UserPwd.action">修改用户密码</a></li>
 						</ul>
 					</li>
 					<li class="last"><a href="#">广告设置</a></li>
