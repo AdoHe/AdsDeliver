@@ -185,7 +185,7 @@
 									<label for="company">公司:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="company" name="company" class="medium validate[required,length[0,50]]"" />
+									<input type="text" id="company" name="company" class="medium validate[required,length[0,50]]" />
 								</div>
 							</div>
 							<div class="field">

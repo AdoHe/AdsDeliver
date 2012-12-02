@@ -65,7 +65,7 @@
 		</action>
 		
 		<action name="SaveUserInfo" class="UserInfoAction" method="saveInfo">
-			<result name="SAVE_SUCCESS" type="redirect">UserInfo.action</result>
+			<result name="SAVE_SUCCESS" type="redirect-action">UserInfo.action</result>
 		</action>
 		
 		<action name="UserPwd" class="UserPwdAction" method="changePwdPage">
