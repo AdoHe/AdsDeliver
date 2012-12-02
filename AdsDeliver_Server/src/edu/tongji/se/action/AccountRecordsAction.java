@@ -30,6 +30,8 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 	private ArrayList<Record> records;
 	
 	private AccountService mAccountService;
+	
+	private int totalPage = 0;
 	/* (non-Javadoc)
 	 * @see org.apache.struts2.interceptor.SessionAware#setSession(java.util.Map)
 	 */
@@ -47,6 +49,14 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 				
 		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, 0, 3);
 		
+		if(records.size() <= 5)
+		{
+			totalPage = 1;
+		}else
+		{
+			totalPage = ((totalPage%5)==0)?(totalPage/5):(totalPage/5+1);
+		}
+		
 		return SUCCESS;
 	}
 
@@ -59,6 +69,14 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 	}
 	public void setRecords(ArrayList<Record> records) {
 		this.records = records;
+	}
+
+	public int getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
 	}
 
 }
