@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/records.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/jquery.paginate.js"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -46,6 +48,54 @@
 				});
 			}
 		},"json");
+		
+		
+		$("#picpagenate").paginate({ 
+            count         : 50, 
+            start         : 1, 
+            display     : 4, 
+            border                    : true, 
+            border_color            : '#BEF8B8', 
+            text_color              : '#79B5E3', 
+            background_color        : '#FFB344',     
+            border_hover_color        : '#68BA64', 
+            text_hover_color          : '#2573AF', 
+            background_hover_color    : '#FFFFFF',  
+            images                    : false, 
+            mouse                    : 'press',  
+            onChange                 : function(page){
+                                            $.post(
+                                               "GetPagedRecords.action",
+                                               {
+                                                   start: (page-1) * 10,
+                                                   length: 10
+                                               },
+                                               function(data, textStatus){
+                                            	   
+                                                   if(textStatus == "success") {  
+                                                        $("#table_body").empty();
+                                                        
+                                                        var re = data.records;
+                                        				var page = data.totalPage;
+                                        				
+                                        				$.each(re,function(index, record) {
+                                        					var tbody = "";
+                                        					
+                                        					tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
+                                        					+ "<td class='price'>" + record.reIncome + "</td>"
+                                        					+ "<td class='price'>" + record.reOutcome + "</td>"
+                                        					+ "<td class='date'>" + record.reBalance + "</td>"
+                                        					+ "<td class='category'>" + record.reCategory + "</td></tr>";
+                                        					
+                                        					$("#table_body").append(tbody);
+                                        				});
+                                                   }
+                                               }
+                                            );
+                                        } 
+            });
+		
+		
 	});
 </script>
 
@@ -85,6 +135,7 @@
 							<ul class="pager" id="pages">
 							</ul>
 						</div>
+						<div id="picpagenate" pagination pagination-left></div> 
 					</form>
 				</div>
 			</div>

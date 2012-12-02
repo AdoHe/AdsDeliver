@@ -84,7 +84,11 @@
 			</result>
 		</action>
 		
-		<action name="GetRecords" class="AccountRecordsAction" method="records">
+		<action name="GetRecords" class="AccountRecordsAction" method="firstTenRecords">
+			<result type="json"/>
+		</action>
+		
+		<action name="GetPagedRecords" class="AccountRecordsAction" method="getPagedRecords">
 			<result type="json"/>
 		</action>
 		
