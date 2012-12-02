@@ -33,7 +33,6 @@
 			if(textStatus == "success")
 			{
 				var re = data.records;
-				var page = data.totalPage;
 				
 				$.each(re,function(index, record) {
 					var tbody = "";

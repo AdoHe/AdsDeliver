@@ -208,4 +208,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="AdNewAction" class="edu.tongji.se.action.AdNewAction">
+	</bean>
+	
 </beans>

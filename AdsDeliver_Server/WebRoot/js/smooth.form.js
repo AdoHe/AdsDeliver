@@ -69,8 +69,9 @@ $(document).ready(function () {
     /* date picker */
     $(".date").datepicker({
         showOn: 'both',
-        buttonImage: 'resources/images/ui/calendar.png',
-        buttonImageOnly: true
+        buttonImage: 'images/calendar.png',
+        buttonImageOnly: true,
+        dateFormat:'yy-mm-dd'
     });
 
     /* select styling */
