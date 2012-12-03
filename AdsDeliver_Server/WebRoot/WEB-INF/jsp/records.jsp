@@ -5,10 +5,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/records.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
-<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
@@ -40,7 +40,6 @@
 					{
 						recordCount = data.count;
 						var re = data.records;
-						var page = data.totalPage;
 						
 						$.each(re,function(index, record) {
 							var tbody = "";
@@ -60,13 +59,11 @@
 				            count         : ((recordCount % 10 == 0) ? parseInt(recordCount / 10) :  parseInt(recordCount / 10) + 1), 
 				            start         : 1, 
 				            display     : 6, 
-				            border                    : true, 
-				            border_color            : '#656565', 
+				            border                    : false, 
 				            text_color              : '#79B5E3', 
-				            background_color        : '#959595',     
-				            border_hover_color        : '#68BA64', 
+				            background_color        : 'none',     
 				            text_hover_color          : '#2573AF', 
-				            background_hover_color    : '#FFFFFF',  
+				            background_hover_color    : 'none',  
 				            images                    : false, 
 				            mouse                    : 'press',  
 				            onChange                 : function(page){
@@ -82,7 +79,6 @@
 				                                                        $("#table_body").empty();
 				                                                        
 				                                                        var re = data.records;
-				                                        				var page = data.totalPage;
 				                                        				
 				                                        				$.each(re,function(index, record) {
 				                                        					var tbody = "";
@@ -137,12 +133,7 @@
 							<tbody id="table_body">
 							</tbody>
 						</table>
-						<!-- pagination -->
-						<div class="pagination pagination-left">
-							<ul class="pager" id="pages">
-							</ul>
-						</div>
-						<div id="picpagenate"></div> 
+						<div id="picpagenate"></div>
 					</form>
 				</div>
 			</div>

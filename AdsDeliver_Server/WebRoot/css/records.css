@@ -1956,7 +1956,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 #content div.box div.table
 {
 	margin: 0;
-	padding: 0 20px 10px 20px;
+	padding: 0 20px 0 20px;
 	clear: both;
 	overflow: hidden;
 }
@@ -2143,7 +2143,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 
 #content div.box div.action a.ui-selectmenu-focus span.ui-icon
 {
-	background-image: url(../../resources/images/ui/ui-icons_222222_256x240.png);
+	background-image: url(../images/ui-icons_222222_256x240.png);
 }
 
 /* -----------------------------------------------------------
