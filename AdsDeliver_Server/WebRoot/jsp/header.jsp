@@ -21,7 +21,7 @@
 		<!-- quick -->
 		<ul id="quick">
 			<li>
-				<a href="" title="广告"><span class="icon"><img src="images/application_double.png" alt="广告" /></span>
+				<a href="" title="广告"><span class="icon"><img src="images/application_double.png" alt="广告管理" /></span>
 				<span>广告管理</span></a>
 				<ul>
 					<li><a href="AdNew.action">投放广告</a></li>
@@ -30,7 +30,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="#" title="账户"><span class="icon"><img src="images/calendar.png" alt="账户" /></span>
+				<a href="#" title="账户"><span class="icon"><img src="images/account.png" alt="账户管理" /></span>
 				<span>账户管理</span></a>
 				<ul>
 					<li><a href="UserAccount.action">查看账户余额</a></li>

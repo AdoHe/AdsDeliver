@@ -95,7 +95,7 @@ $(document).ready(function () {
 
     /* tinymce (text editor) */
     $("textarea.editor").tinymce({
-        script_url: "resources/scripts/tiny_mce/tiny_mce.js",
+        script_url: "js/tiny_mce/tiny_mce.js",
         mode: "textareas",
         theme: "advanced",
         theme_advanced_buttons1: "newdocument,separator,bold,italic,underline,strikethrough,separator,justifyleft, justifycenter,justifyright,justifyfull,separator,cut,copy,paste,pastetext,pasteword,separator,help",

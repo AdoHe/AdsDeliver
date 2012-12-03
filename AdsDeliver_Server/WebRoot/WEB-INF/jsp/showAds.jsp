@@ -25,7 +25,7 @@
 			});
 </script>
 
-<title>AdsDeliver New Advertisement</title>
+<title>AdsDeliver Ads List</title>
 </head>
 <body>
 	<%@ include file="/jsp/header.jsp" %>
@@ -34,6 +34,21 @@
 		<%@ include file="/jsp/right_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
+			<!-- table -->
+			<div class="box">
+				<!-- box/title -->
+				<div class="title">
+				</div>
+				<!-- end box/title -->
+				<div class="table">
+					<form action="" method="post">
+						<table>
+							<thead></thead>
+							<tbody></tbody>
+						</table>
+					</form>
+				</div>
+			</div>
 		</div>
 		<!-- end content/right -->
 	</div>

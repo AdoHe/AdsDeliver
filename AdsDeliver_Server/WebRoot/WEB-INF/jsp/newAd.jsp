@@ -13,18 +13,21 @@
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript" src="js/tiny_mce/jquery.tinymce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript">
 			$(document).ready(function () {
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				
 			});
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
+
 <title>AdsDeliver New Advertisement</title>
 </head>
 <body>
@@ -49,8 +52,8 @@
 									<label for="title">广告名称:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="title" name="title" class="medium error" />
-									<span class="error">This means a required field!</span>
+									<input type="text" id="title" name="title" class="small error" />
+									<span class="error">请输入一个有助于你识别该广告的名称!</span>
 								</div>
 							</div>
 							<div class="field">
@@ -58,23 +61,31 @@
 									<label for="address">广告投放地址:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="address" name="address" class="medium error" />
+									<input type="text" id="address" name="address" class="small" />
 								</div>
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="time">广告开始时间:</label>
+									<label for="bannerWordOne">广告Banner大标题:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="time" name="time" class="date" />
+									<input type="text" name="bannerWordOne" id="bannerWordOne" class="small" />
 								</div>
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="banner">广告Banner制作:</label>
+									<label for="bannerWordTwo">广告Banner小标题:</label>
 								</div>
 								<div class="input">
-									<span class="error">请选择你喜欢的Banner模板！</span>
+									<input type="text" name="bannerWordTwo" id="bannerWordTwo" class="small" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="bannerPic">广告Banner图片上传:</label>
+								</div>
+								<div class="input input-file">
+									<input type="file" id="bannerPic" name="bannerPic" size="40" />
 								</div>
 							</div>
 							<div class="field">
@@ -89,14 +100,18 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="edition">排版方式:</label>
+									<label for="contentPic">广告内容图片上传:</label>
 								</div>
-								<div class="select">
-									<select id="edition" name="edition">
-										<option value="1">上图下文</option>
-										<option value="2">左图右文</option>
-										<option value="3">右图左文</option>
-									</select>
+								<div class="input input-file">
+									<input type="file" id="contetPic" name="contentPic" size="40" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label label-textarea">
+									<label for="textarea">广告文字内容:</label>
+								</div>
+								<div class="textarea textarea-editor">
+									<textarea id="textarea" name="textarea" rows="12" cols="50" class="editor"></textarea>
 								</div>
 							</div>
 						</div>

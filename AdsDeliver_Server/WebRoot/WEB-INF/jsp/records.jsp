@@ -142,7 +142,7 @@
 							<ul class="pager" id="pages">
 							</ul>
 						</div>
-						<div id="picpagenate" pagination pagination-left></div> 
+						<div id="picpagenate"></div> 
 					</form>
 				</div>
 			</div>
