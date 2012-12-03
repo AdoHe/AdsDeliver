@@ -36,6 +36,8 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 	private int length;
 	
 	private int totalPage = 0;
+	
+	private int count = 0;
 	/* (non-Javadoc)
 	 * @see org.apache.struts2.interceptor.SessionAware#setSession(java.util.Map)
 	 */
@@ -46,26 +48,26 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 	
-	public String firstTenRecords()
-	{
-		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY) ?
-				(String)session.get(AuthorInterceptor.USER_SESSION_KEY):"";
-				
-		if(records != null) {
-			records.clear();
-		}
-		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, 0, 10);
-		
-		if(records.size() <= 5)
-		{
-			totalPage = 1;
-		}else
-		{
-			totalPage = ((totalPage%5)==0)?(totalPage/5):(totalPage/5+1);
-		}
-		
-		return SUCCESS;
-	}
+//	public String firstTenRecords()
+//	{
+//		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY) ?
+//				(String)session.get(AuthorInterceptor.USER_SESSION_KEY):"";
+//				
+//		if(records != null) {
+//			//records.clear();
+//		}
+//		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, 0, 10);
+//		
+//		if(records.size() <= 5)
+//		{
+//			totalPage = 1;
+//		}else
+//		{
+//			totalPage = ((totalPage%5)==0)?(totalPage/5):(totalPage/5+1);
+//		}
+//		
+//		return SUCCESS;
+//	}
 	
 	public String getPagedRecords() {
 		
@@ -77,7 +79,8 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 		}
 		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, start, length);
 		
-		return "PAGED_SUCCESS";
+		count = mAccountService.getRecordsCount(userName);
+		return SUCCESS;
 	}
 
 	public void setmAccountService(AccountService mAccountService) {
@@ -113,6 +116,14 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 
 	public void setLength(int length) {
 		this.length = length;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	

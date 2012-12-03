@@ -3,6 +3,8 @@ package edu.tongji.se.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.struts2.json.annotations.JSON;
+
 /**
  * Account entity. @author MyEclipse Persistence Tools
  */
@@ -17,6 +19,7 @@ public class Account implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Integer acBalance;
+	
 	private User user;
 
 	// Constructors
@@ -54,6 +57,7 @@ public class Account implements java.io.Serializable {
 		this.acBalance = acBalance;
 	}
 
+	@JSON(serialize=false)
 	public User getUser() {
 		return user;
 	}

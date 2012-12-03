@@ -41,4 +41,6 @@ public interface AccountService
 	 * @param
 	 */
 	public List<Record> getAccountRecords(String userName, int offset, int length);
+
+	int getRecordsCount(String userName);
 }

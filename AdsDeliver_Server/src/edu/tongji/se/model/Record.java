@@ -2,6 +2,8 @@ package edu.tongji.se.model;
 
 import java.sql.Timestamp;
 
+import org.apache.struts2.json.annotations.JSON;
+
 
 /**
  * Record entity. @author MyEclipse Persistence Tools
@@ -53,6 +55,7 @@ public class Record  implements java.io.Serializable {
         this.id = id;
     }
 
+    @JSON(deserialize=true)
     public Account getAccount() {
         return this.account;
     }

@@ -183,7 +183,7 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
 		// TODO Auto-generated method stub
 		final String HQL = "from Record as r where "
 				+ "r.account.user.usName=?"
-				+ " order by r.reDate asc";
+				+ " order by r.reDate desc";
 		
 		List<Record> results = getHibernateTemplate().executeFind(new HibernateCallback() 
 		{
@@ -202,5 +202,14 @@ public class RecordDaoImpl extends HibernateDaoSupport implements RecordDao
 		
 		log.debug("the size is:" + results.size());
 		return results;
+	}
+	
+	@Override
+	public int getCount(final String userName) {
+		log.debug("find record count");
+		List list = getHibernateTemplate().find("select count(*) from Record as r where "
+				+ "r.account.user.usName=?", (Object)userName);
+        return ((Long)list.iterator().next()).intValue();
+
 	}
 }

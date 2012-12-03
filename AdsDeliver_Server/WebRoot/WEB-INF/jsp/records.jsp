@@ -29,71 +29,81 @@
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$.get("GetRecords.action", function(data,textStatus) {
-			if(textStatus == "success")
-			{
-				var re = data.records;
-				var page = data.totalPage;
-				
-				$.each(re,function(index, record) {
-					var tbody = "";
-					
-					tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
-					+ "<td class='price'>" + record.reIncome + "</td>"
-					+ "<td class='price'>" + record.reOutcome + "</td>"
-					+ "<td class='date'>" + record.reBalance + "</td>"
-					+ "<td class='category'>" + record.reCategory + "</td></tr>";
-					
-					$("#table_body").append(tbody);
-				});
-			}
-		},"json");
+		var recordCount;
+		$.get("GetPagedRecords.action", 
+				{
+				start : 0,
+				length : 10
+				},
+				function(data,textStatus) {
+					if(textStatus == "success")
+					{
+						recordCount = data.count;
+						var re = data.records;
+						var page = data.totalPage;
+						
+						$.each(re,function(index, record) {
+							var tbody = "";
+							
+							tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
+							+ "<td class='price'>" + record.reIncome + "</td>"
+							+ "<td class='price'>" + record.reOutcome + "</td>"
+							+ "<td class='date'>" + record.reBalance + "</td>"
+							+ "<td class='category'>" + record.reCategory + "</td></tr>";
+							
+							$("#table_body").append(tbody);
+						});
+						
+						//初始化分页组件
+						
+						$("#picpagenate").paginate({ 
+				            count         : ((recordCount % 10 == 0) ? parseInt(recordCount / 10) :  parseInt(recordCount / 10) + 1), 
+				            start         : 1, 
+				            display     : 6, 
+				            border                    : true, 
+				            border_color            : '#656565', 
+				            text_color              : '#79B5E3', 
+				            background_color        : '#959595',     
+				            border_hover_color        : '#68BA64', 
+				            text_hover_color          : '#2573AF', 
+				            background_hover_color    : '#FFFFFF',  
+				            images                    : false, 
+				            mouse                    : 'press',  
+				            onChange                 : function(page){
+				                                            $.post(
+				                                               "GetPagedRecords.action",
+				                                               {
+				                                                   start: (page-1) * 10,
+				                                                   length: 10
+				                                               },
+				                                               function(data, textStatus){
+				                                            	   
+				                                                   if(textStatus == "success") {  
+				                                                        $("#table_body").empty();
+				                                                        
+				                                                        var re = data.records;
+				                                        				var page = data.totalPage;
+				                                        				
+				                                        				$.each(re,function(index, record) {
+				                                        					var tbody = "";
+				                                        					
+				                                        					tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
+				                                        					+ "<td class='price'>" + record.reIncome + "</td>"
+				                                        					+ "<td class='price'>" + record.reOutcome + "</td>"
+				                                        					+ "<td class='date'>" + record.reBalance + "</td>"
+				                                        					+ "<td class='category'>" + record.reCategory + "</td></tr>";
+				                                        					
+				                                        					$("#table_body").append(tbody);
+				                                        				});
+				                                                   }
+				                                               }
+				                                            );
+				                                        } 
+				            });
+					}
+				},"json");
 		
 		
-		$("#picpagenate").paginate({ 
-            count         : 50, 
-            start         : 1, 
-            display     : 4, 
-            border                    : true, 
-            border_color            : '#BEF8B8', 
-            text_color              : '#79B5E3', 
-            background_color        : '#FFB344',     
-            border_hover_color        : '#68BA64', 
-            text_hover_color          : '#2573AF', 
-            background_hover_color    : '#FFFFFF',  
-            images                    : false, 
-            mouse                    : 'press',  
-            onChange                 : function(page){
-                                            $.post(
-                                               "GetPagedRecords.action",
-                                               {
-                                                   start: (page-1) * 10,
-                                                   length: 10
-                                               },
-                                               function(data, textStatus){
-                                            	   
-                                                   if(textStatus == "success") {  
-                                                        $("#table_body").empty();
-                                                        
-                                                        var re = data.records;
-                                        				var page = data.totalPage;
-                                        				
-                                        				$.each(re,function(index, record) {
-                                        					var tbody = "";
-                                        					
-                                        					tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
-                                        					+ "<td class='price'>" + record.reIncome + "</td>"
-                                        					+ "<td class='price'>" + record.reOutcome + "</td>"
-                                        					+ "<td class='date'>" + record.reBalance + "</td>"
-                                        					+ "<td class='category'>" + record.reCategory + "</td></tr>";
-                                        					
-                                        					$("#table_body").append(tbody);
-                                        				});
-                                                   }
-                                               }
-                                            );
-                                        } 
-            });
 		
 		
 	});

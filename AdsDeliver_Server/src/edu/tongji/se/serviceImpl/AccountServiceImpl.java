@@ -78,6 +78,11 @@ public class AccountServiceImpl implements AccountService
 		// TODO Auto-generated method stub
 		return mRecordDao.findRe(userName, offset, length);
 	}
+	
+	@Override
+	public int getRecordsCount(String userName) {
+		return mRecordDao.getCount(userName);
+	}
 
 	public AccountDao getmAccountDao() 
 	{

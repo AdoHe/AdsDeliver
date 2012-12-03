@@ -84,12 +84,16 @@
 			</result>
 		</action>
 		
-		<action name="GetRecords" class="AccountRecordsAction" method="firstTenRecords">
+		<!--action name="GetRecords" class="AccountRecordsAction" method="firstTenRecords">
 			<result type="json"/>
-		</action>
+		</action-->
 		
 		<action name="GetPagedRecords" class="AccountRecordsAction" method="getPagedRecords">
-			<result type="json"/>
+			<result type="json">
+				<param name="excludeProperties">
+			    	records.*\.account
+			  	</param>
+	  		</result>
 		</action>
 		
 	</package>

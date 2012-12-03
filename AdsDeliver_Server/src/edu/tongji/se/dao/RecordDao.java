@@ -24,4 +24,6 @@ public interface RecordDao
 	 public List<Record> findAll();
 	 
 	 public List<Record> findRe(final String userName, final int offset, final int length);
+
+	 public int getCount(final String userName);
 }
