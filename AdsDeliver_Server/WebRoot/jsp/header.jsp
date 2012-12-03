@@ -24,7 +24,7 @@
 				<a href="" title="广告"><span class="icon"><img src="images/application_double.png" alt="广告" /></span>
 				<span>广告管理</span></a>
 				<ul>
-					<li><a href="#">投放广告</a></li>
+					<li><a href="AdNew.action">投放广告</a></li>
 					<li><a href="#">查看广告</a></li>
 					<li class="last"><a href="#">撤销广告</a></li>
 				</ul>

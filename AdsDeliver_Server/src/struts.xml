@@ -96,6 +96,14 @@
 	  		</result>
 		</action>
 		
+		<action name="AdNew" class="AdsCreateAction" method="newAdPage">
+			<result name="NEW_AD_PAGE">/WEB-INF/jsp/newAd.jsp</result>
+		</action>
+		
+		<action name="CreateAd" class="AdsCreateAction" method="createAd">
+			<result type="json"></result>
+		</action>
+		
 	</package>
 	
 </struts>    

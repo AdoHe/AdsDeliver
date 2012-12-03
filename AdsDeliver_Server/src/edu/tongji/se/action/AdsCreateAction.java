@@ -50,6 +50,10 @@ public class AdsCreateAction extends ActionSupport implements SessionAware{
 		return SUCCESS;
 	}
 	
+	public String newAdPage() {
+		return "NEW_AD_PAGE";
+	}
+	
 	
 	
 	public String getName() {

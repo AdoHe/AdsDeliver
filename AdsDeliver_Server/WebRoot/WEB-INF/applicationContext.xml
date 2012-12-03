@@ -223,7 +223,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
-	<bean id="AdsCreateAction" class="edu.tongji.se.actionAdsCreateAction">
+	<bean id="AdsCreateAction" class="edu.tongji.se.action.AdsCreateAction">
 		<property name="mAdservice">
 			<ref bean="adverService"/>
 		</property>

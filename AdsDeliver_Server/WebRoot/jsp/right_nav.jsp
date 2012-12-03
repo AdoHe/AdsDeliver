@@ -5,7 +5,7 @@
 	<div id="menu">
 		<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
 		<ul id="menu-ads" class="opened">
-			<li><a href="#">投放广告</a></li>
+			<li><a href="AdNew.action">投放广告</a></li>
 			<li><a href="#">查看广告</a></li>
 			<li class="last"><a href="">撤销广告</a></li>
 		</ul>
