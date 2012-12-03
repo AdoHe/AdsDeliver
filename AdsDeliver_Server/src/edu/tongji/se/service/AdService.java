@@ -8,14 +8,13 @@ import edu.tongji.se.model.Location;
 
 public interface AdService {
 	
-	public void addAd(int userId, Location location, String name, 
-			String address);
-	
+	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo);
+
 	public void delAd(Advertisement ad);
 	
 	public void updateAd(Advertisement ad);
 	
 	public void updateAdInfo(int id, Adverinfo adinfo);
 	
-	public List<Advertisement> getAds(int uid, int offset, int limit);
+	public List<Advertisement> getAds(String userName, int offset, int limit);
 }

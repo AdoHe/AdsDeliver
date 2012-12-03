@@ -34,6 +34,6 @@ public interface AdvertisementDao {
 	
 	public void attachClean(Advertisement instance);
 
-	public List<Advertisement> findAd(final int uid, final int offset, final int length);
+	public List<Advertisement> findAd(final String userName, final int offset, final int length);
 
 }

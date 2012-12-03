@@ -175,20 +175,19 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Advertisement> findAd(final int uid, final int offset, final int length) {
+	public List<Advertisement> findAd(final String userName, final int offset, final int length) {
 		
+		log.debug("find paged advertisement for special account");
 		final String HQL = "from Advertisement as ad "
-                + "where ad.user.id in"
-                + "( select relation.uid2 from Userrelation as relation  where relation.uid1=?)"
-                + "OR ad.userinfo.uid=?"
-                + "order by ad.feedId desc";
+                + "where ad.user.usName=?"
+                + "order by ad.id desc";
         
         List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
               
             public Object doInHibernate(Session session) throws HibernateException,  
                     SQLException {  
                 List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)  
-                                .setParameter(0, uid).setParameter(1, uid)  
+                                .setParameter(0, userName)
                                 .setMaxResults(length)  
                                 .list();  
                 return result;  

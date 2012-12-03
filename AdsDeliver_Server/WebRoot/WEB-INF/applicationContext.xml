@@ -156,6 +156,21 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="adverService" class="edu.tongji.se.serviceImpl.AdServiceImpl">
+		<property name="mAdDao">
+			<ref bean="AdvertisementDAO" />
+		</property>
+		<property name="mUserDao">
+			<ref bean="UserDAO" />
+		</property>
+		<property name="mLocationDao">
+			<ref bean="LocationDAO" />
+		</property>
+		<property name="mAdverinfoDao">
+			<ref bean="AdverinfoDAO" />
+		</property>
+	</bean>
+	
 	<!-- declare action -->
 	<bean id="LoginInAction" class="edu.tongji.se.action.LoginInAction">
 		<property name="mAdminService">
@@ -205,6 +220,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	<bean id="AccountRecordsAction" class="edu.tongji.se.action.AccountRecordsAction">
 		<property name="mAccountService">
 			<ref bean="accountService"/>
+		</property>
+	</bean>
+	
+	<bean id="AdsCreateAction" class="edu.tongji.se.actionAdsCreateAction">
+		<property name="mAdservice">
+			<ref bean="adverService"/>
 		</property>
 	</bean>
 	
