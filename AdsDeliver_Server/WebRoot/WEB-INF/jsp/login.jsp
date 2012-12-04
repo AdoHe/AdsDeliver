@@ -46,14 +46,15 @@
 			if($("input#password").attr("value") == "") {
 				return false;
 			}
-			// 先把错误提示隐藏
+			// 先把错误提示隐藏			
 			$("div.messages").hide();			
 			// 登录请求
 			$.post(
 					"UserLogin!login.action",
 					{
 						loginname : $("input#username").attr("value"),
-						password : $("input#password").attr("value")
+						password : $("input#password").attr("value"),
+						remember : $("input#remember").attr("checked")
 					},
 					function(data, textStatus) {
 						
@@ -66,8 +67,8 @@
 							$("div.messages").show();
 							$("#errorMsg").html("用户名不存在");
 						}
-					});
-					
+					});					
+		
 		});
 
 		
