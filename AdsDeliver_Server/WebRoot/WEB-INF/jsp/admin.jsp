@@ -35,7 +35,7 @@
 	<%@ include file="/jsp/header.jsp" %>
 	<!-- content -->
 	<div id="content">
-		<%@ include file="/jsp/right_nav.jsp" %>
+		<%@ include file="/jsp/left_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
 			<!-- table -->
@@ -60,10 +60,10 @@
 						<table>
 							<thead>
 								<tr>
-									<th class="left">Title</th>
-									<th>Price</th>
-									<th>Added</th>
-									<th>Status</th>
+									<th class="left">广告名称</th>
+									<th>广告价格</th>
+									<th>投放时间</th>
+									<th>投放地点</th>
 									<th class="selected last"><input type="checkbox" class="checkall" /></th>
 								</tr>
 							</thead>

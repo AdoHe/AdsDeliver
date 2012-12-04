@@ -70,7 +70,7 @@
 		</div>
 		
 		
-		<%@ include file="/jsp/right_nav.jsp" %>
+		<%@ include file="/jsp/left_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
 			<!-- forms -->

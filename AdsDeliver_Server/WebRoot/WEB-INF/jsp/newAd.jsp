@@ -24,9 +24,56 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
+				
+				$("#map").dialog({
+					autoOpen:false,
+					modal:true,
+					height:500,
+					width:800,
+					buttons: {
+						OK: function() {
+							$(this).dialog("close");
+						}
+					}
+				});
+				
+				$("input:button").button();
+				
+				$("input:button").click(function() {
+					$("#map").dialog("open");
+					
+					var map = new BMap.Map("map");
+					var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+					map.centerAndZoom(point, 6);
+					map.enableScrollWheelZoom();
+					
+					// 添加控件
+					map.addControl(new BMap.NavigationControl());  
+					map.addControl(new BMap.ScaleControl());  
+					map.addControl(new BMap.OverviewMapControl());  
+					map.addControl(new BMap.MapTypeControl()); 
+					
+					function myFun(result) {
+   		 				var cityName = result.name;
+    					map.setCenter(cityName);
+						}
+					var myCity = new BMap.LocalCity();
+					myCity.get(myFun);
+	
+					var myIcon = new BMap.Icon("fox.gif", new BMap.Size(300,157));
+					var marker1;
+					
+					map.addEventListener("click",function(e) {
+					map.removeOverlay(marker1);
+    				marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
+					var tMarker = marker1;
+					map.addOverlay(tMarker);
+						});
+				});
 			});
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
 
 <title>AdsDeliver New Advertisement</title>
 </head>
@@ -34,7 +81,8 @@
 	<%@ include file="/jsp/header.jsp" %>
 	<!-- content -->
 	<div id="content">
-		<%@ include file="/jsp/right_nav.jsp" %>
+		<%@ include file="/jsp/left_nav.jsp" %>
+		<div id="map" title="Baidu Map" style="width:500px;height:250px;"></div>
 		<!-- content/right -->
 		<div id="right">
 			<!-- forms -->
@@ -62,6 +110,9 @@
 								</div>
 								<div class="input">
 									<input type="text" id="address" name="address" class="small" />
+									<div class="button highlight">
+										<input type="button" name="submit" value="查看地图" class="map" />
+									</div>
 								</div>
 							</div>
 							<div class="field">
