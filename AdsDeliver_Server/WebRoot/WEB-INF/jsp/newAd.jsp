@@ -39,36 +39,44 @@
 				
 				$("input:button").button();
 				
-				$("input:button").click(function() {
-					$("#map").dialog("open");
+				
+				//初始化地图
+				var map = new BMap.Map("map");
+				var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+				map.centerAndZoom(point, 11);
+				map.enableScrollWheelZoom();
+				// 添加地图控件
+				map.addControl(new BMap.NavigationControl());  
+				map.addControl(new BMap.ScaleControl());  
+				map.addControl(new BMap.OverviewMapControl());  
+				map.addControl(new BMap.MapTypeControl()); 
+				
+				function myFun(result) {
+		 				var cityName = result.name;
+					map.setCenter(cityName);
+					}
+				var myCity = new BMap.LocalCity();
+				myCity.get(myFun);
+
+				var marker1;
+				map.addEventListener("click",function(e) {
 					
-					var map = new BMap.Map("map");
-					var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
-					map.centerAndZoom(point, 6);
-					map.enableScrollWheelZoom();
-					
-					// 添加控件
-					map.addControl(new BMap.NavigationControl());  
-					map.addControl(new BMap.ScaleControl());  
-					map.addControl(new BMap.OverviewMapControl());  
-					map.addControl(new BMap.MapTypeControl()); 
-					
-					function myFun(result) {
-   		 				var cityName = result.name;
-    					map.setCenter(cityName);
-						}
-					var myCity = new BMap.LocalCity();
-					myCity.get(myFun);
-	
-					var myIcon = new BMap.Icon("fox.gif", new BMap.Size(300,157));
-					var marker1;
-					
-					map.addEventListener("click",function(e) {
 					map.removeOverlay(marker1);
     				marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
 					var tMarker = marker1;
 					map.addOverlay(tMarker);
-						});
+					
+					// 记录经纬度
+					$("input#lng").attr("value", e.point.lng); 
+					$("input#lat").attr("value", e.point.lat);
+				});
+				
+				
+				
+				$("input:button").click(function() {
+					$("#map").dialog("open");
+					
+					
 				});
 			});
 </script>
@@ -110,8 +118,17 @@
 								</div>
 								<div class="input">
 									<input type="text" id="address" name="address" class="small" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="address">地理信息:</label>
+								</div>
+								<div class="input">
+									<input type="text" id="lng" name="longitude"  />
+									<input type="text" id="lat" name="latitude"  />
 									<div class="button highlight">
-										<input type="button" name="submit" value="查看地图" class="map" />
+										<input type="button" name="submit" value="从地图标注" class="map" />
 									</div>
 								</div>
 							</div>
