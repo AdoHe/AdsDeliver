@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="css/template.css" type="text/css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
@@ -17,6 +19,8 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.table.js"></script>
+<script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -25,6 +29,13 @@
 				$("#date-picker").datepicker();
 				
 				$("input:button").button();
+				
+				$("#form").validationEngine({
+					validationEventTriggers:"blur",
+					inlineValidation:true,
+					success:false,
+					promptPosition:"topRight"
+				});
 				
 				$( "#success-message" ).dialog({
 					autoOpen: false,
@@ -80,7 +91,7 @@
 					<h5>账户充值</h5>
 				</div>
 				<!-- end box/title -->
-				<form id="form" action="" method="post">
+				<form id="form" method="post">
 					<div class="form">
 						<div class="fields">
 							<div class="field field-first">
@@ -88,7 +99,7 @@
 									<label for="input">请输入你要充值的数目:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="medium" />
+									<input type="text" id="input" name="input" class="medium validate[required,min[1],max[1000]]" />
 									<div class="button highlight">
 										<input type="button" value="充值" name="submit" id="recharge"/>
 									</div>
