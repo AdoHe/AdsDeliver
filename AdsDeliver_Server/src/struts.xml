@@ -104,6 +104,10 @@
 			<result type="json"></result>
 		</action>
 		
+		<action name="UploadImage" class="UploadImageAction">
+			<result type="json"></result>
+		</action>
+		
 	</package>
 	
 </struts>    
