@@ -37,7 +37,7 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 	public static final String AV_STATUS = "avStatus";
 	public static final String AV_CLICK_TIMES = "avClickTimes";
 	public static final String AV_SHOW_TIMES = "avShowTimes";
-
+	public static final String AV_DESC = "avDesc";
 	protected void initDao() {
 		// do nothing
 	}
@@ -121,7 +121,11 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 	public List findByAvShowTimes(Object avShowTimes) {
 		return findByProperty(AV_SHOW_TIMES, avShowTimes);
 	}
-
+	
+	public List findByAvDesc(Object avDesc) {
+		return findByProperty(AV_DESC, avDesc);
+	}
+	
 	public List findAll() {
 		log.debug("finding all Advertisement instances");
 		try {

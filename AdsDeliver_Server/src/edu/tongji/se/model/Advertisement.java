@@ -24,7 +24,8 @@ public class Advertisement implements java.io.Serializable {
 	private Integer avClickTimes;
 	private Integer avShowTimes;
 	private Timestamp avPublishTime;
-
+	private String avDesc;
+	
 	// Constructors
 
 	/** default constructor */
@@ -34,7 +35,7 @@ public class Advertisement implements java.io.Serializable {
 	/** full constructor */
 	public Advertisement(Adverinfo adverinfo, Location location, User user,
 			String avName, String avAddress, Short avStatus,
-			Integer avClickTimes, Integer avShowTimes, Timestamp avPublishTime) {
+			Integer avClickTimes, Integer avShowTimes, Timestamp avPublishTime, String avDesc) {
 		this.adverinfo = adverinfo;
 		this.location = location;
 		this.user = user;
@@ -44,6 +45,7 @@ public class Advertisement implements java.io.Serializable {
 		this.avClickTimes = avClickTimes;
 		this.avShowTimes = avShowTimes;
 		this.avPublishTime = avPublishTime;
+		this.avDesc = avDesc;
 	}
 
 	// Property accessors
@@ -126,6 +128,14 @@ public class Advertisement implements java.io.Serializable {
 
 	public void setAvPublishTime(Timestamp avPublishTime) {
 		this.avPublishTime = avPublishTime;
+	}
+
+	public String getAvDesc() {
+		return avDesc;
+	}
+
+	public void setAvDesc(String avDesc) {
+		this.avDesc = avDesc;
 	}
 
 }

@@ -225,6 +225,7 @@ CREATE TABLE `advertisement` (
   `av_Location` bigint(20) unsigned NOT NULL,
   `av_Info` int(10) unsigned NOT NULL,
   `av_User` int(10) unsigned NOT NULL,
+  `av_Desc` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `av_fk1` (`av_Location`),
   KEY `av_fk2` (`av_Info`),
