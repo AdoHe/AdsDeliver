@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+    String path = request.getContextPath();
+%> 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link rel="stylesheet" type="text/css" href="css/uploadify.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
@@ -15,6 +19,7 @@
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
 <script type="text/javascript" src="js/tiny_mce/jquery.tinymce.js"></script>
+<script type="text/javascript" src="js/jquery.uploadify.min.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
@@ -75,10 +80,23 @@
 				
 				$("input:button").click(function() {
 					$("#map").dialog("open");
-					
-					
 				});
 			});
+</script>
+<script type="text/javascript">
+		$(function() {
+			$("#bannerPic").uploadify({
+			'swf' : '<%=path%>/images/uploadify.swf',
+			'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
+			'uploader' : '',
+			'method' : 'post',
+			'fileObjName' : 'bannerPic',
+			'auto' : false,
+			'multi' : false,
+			'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
+			'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif'
+			});
+		});
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
@@ -150,10 +168,11 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="bannerPic">广告Banner图片上传:</label>
+									<label for="bannerPic">广告Banner图片:</label>
 								</div>
-								<div class="input input-file">
-									<input type="file" id="bannerPic" name="bannerPic" size="40" />
+								<div class="chooseFile">
+									<input type="file" name="bannerPic" id="bannerPic" size="40" />
+									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
 								</div>
 							</div>
 							<div class="field">

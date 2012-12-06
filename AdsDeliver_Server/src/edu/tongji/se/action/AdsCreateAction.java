@@ -12,7 +12,12 @@ import edu.tongji.se.model.Location;
 import edu.tongji.se.service.AdService;
 import edu.tongji.se.tools.AuthorInterceptor;
 
-public class AdsCreateAction extends ActionSupport implements SessionAware{
+public class AdsCreateAction extends ActionSupport implements SessionAware
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String name;
 	private String address;
 	

@@ -86,13 +86,6 @@ $(document).ready(function () {
 	    ]
     });
 
-    /* file input styling */
-    $("input[type=file]").file({
-        image_height: 28,
-        image_width: 28,
-        width: 250
-    });
-
     /* tinymce (text editor) */
     $("textarea.editor").tinymce({
         script_url: "js/tiny_mce/tiny_mce.js",

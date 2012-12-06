@@ -1793,6 +1793,10 @@ div.form div.fields div.field div.radios div.radio label
 /* -----------------------------------------------------------
 	content -> right -> forms -> button
 ----------------------------------------------------------- */
+div.form div.fields div.field div.chooseFile
+{
+	margin-left:200px;
+}
 
 div.form div.fields div.field div.button
 {
@@ -2109,7 +2113,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #e5e3e3 url("../../resources/images/button.png") repeat-x;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
 	border-right: 1px solid #DDDDDD;
@@ -2121,7 +2125,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	margin: 0;
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;
@@ -2971,8 +2975,8 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	jquery ui -> misc visuals
 ----------------------------------------------------------- */
 
-.ui-widget-overlay { background: #666666 url(../../resources/images/ui/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat; opacity: .50;filter:Alpha(Opacity=50); }
-.ui-widget-shadow { margin: -5px 0 0 -5px; padding: 5px; background: #000000 url(../../resources/images/ui/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x; opacity: .20;filter:Alpha(Opacity=20); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
+.ui-widget-overlay { background: #666666 url(../images/ui-bg_diagonals-thick_20_666666_40x40.png) 50% 50% repeat; opacity: .50;filter:Alpha(Opacity=50); }
+.ui-widget-shadow { margin: -5px 0 0 -5px; padding: 5px; background: #000000 url(../images/ui-bg_flat_10_000000_40x100.png) 50% 50% repeat-x; opacity: .20;filter:Alpha(Opacity=20); -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 
 /* -----------------------------------------------------------
 	jquery ui -> resizable
@@ -3139,7 +3143,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 .ui-dialog .ui-dialog-buttonpane .ui-state-default
 {
 	padding: 6px 12px 6px 12px;
-	background: #e5e3e3 url("../../resources/images/button.png") repeat-x;
+	background: #e5e3e3 url("../images/button.png") repeat-x;
 	border-top: 1px solid #DDDDDD;
 	border-left: 1px solid #c6c6c6;
 	border-right: 1px solid #DDDDDD;
@@ -3151,7 +3155,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 .ui-dialog .ui-dialog-buttonpane .ui-state-hover
 {
 	padding: 6px 12px 6px 12px;
-	background: #b4b4b4 url("../../resources/images/button_selected.png") repeat-x;
+	background: #b4b4b4 url("../images/button_selected.png") repeat-x;
 	border-top: 1px solid #cccccc;
 	border-left: 1px solid #bebebe;
 	border-right: 1px solid #b1b1b1;

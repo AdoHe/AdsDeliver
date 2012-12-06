@@ -199,4 +199,29 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
         });  
         return list;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Advertisement> findAd(final String userName, final int status, final int offset,
+			final int length) {
+		// TODO Auto-generated method stub
+		log.debug("find paged advertisement for special account");
+		final String HQL = "from Advertisement as ad "
+                + "where ad.user.usName=? and ad.avStatus=? "
+                + "order by ad.id desc";
+        
+        List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
+              
+            public Object doInHibernate(Session session) throws HibernateException,  
+                    SQLException {  
+                List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)  
+                                .setParameter(0, userName)
+                                .setParameter(1, status)
+                                .setMaxResults(length)  
+                                .list();  
+                return result;  
+            }  
+        });  
+        return list;
+	}
 }

@@ -87,6 +87,13 @@ public class AdServiceImpl implements AdService {
 		return mAdDao.findAd(userName, offset, limit);
 	}
 
+	@Override
+	public List<Advertisement> getAds(String userName, int status, int offset,
+			int limit) {
+		// TODO Auto-generated method stub
+		return mAdDao.findAd(userName, status, offset, limit);
+	}
+
 
 
 	
