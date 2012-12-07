@@ -30,8 +30,10 @@ public class ImageUploadAction extends ActionSupport {
 		return fileName.substring(pos);
 	}
 
-        
+    @Override
 	public String execute() {
+		
+		imageFileName = image.getName();
 		
 		Random r = new Random();
         //生成随机文件名：当前年月日时分秒+五位随机数（为了在实际项目中防止文件同名而进行的处理）   

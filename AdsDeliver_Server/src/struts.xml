@@ -105,7 +105,11 @@
 		</action>
 		
 		<action name="UploadImage" class="UploadImageAction">
-			<result type="json"></result>
+			<result type="json">
+				<param name="includeProperties">
+					imageFileName
+				</param>
+			</result>
 		</action>
 		
 		<action name="GetPagedAdsForAll" class="AdsListAction" method="getPagedAdsForAll">

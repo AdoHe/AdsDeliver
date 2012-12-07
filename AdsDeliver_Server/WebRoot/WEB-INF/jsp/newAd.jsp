@@ -44,57 +44,74 @@
 				
 				$("input:button").button();
 				
-				//初始化地图
-				var map = new BMap.Map("map");
-				var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
-				map.centerAndZoom(point, 11);
-				map.enableScrollWheelZoom();
-				// 添加地图控件
-				map.addControl(new BMap.NavigationControl());  
-				map.addControl(new BMap.ScaleControl());  
-				map.addControl(new BMap.OverviewMapControl());  
-				map.addControl(new BMap.MapTypeControl()); 
-				
-				function myFun(result) {
-		 				var cityName = result.name;
-					map.setCenter(cityName);
-					}
-				var myCity = new BMap.LocalCity();
-				myCity.get(myFun);
-
-				var marker1;
-				map.addEventListener("click",function(e) {
-					
-					map.removeOverlay(marker1);
-    				marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
-					var tMarker = marker1;
-					map.addOverlay(tMarker);
-					
-					// 记录经纬度
-					$("input#lng").attr("value", e.point.lng); 
-					$("input#lat").attr("value", e.point.lat);
-				});
 				
 				
 				
-				$("input:button").click(function() {
+				
+				$("input.map").click(function() {
 					$("#map").dialog("open");
 				});
 			});
 </script>
 <script type="text/javascript">
 		$(function() {
-			$("#bannerPic").uploadify({
+			$("#image").uploadify({
 			'swf' : '<%=path%>/images/uploadify.swf',
-			'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
-			'uploader' : '',
+			'cancelImg' : '/images/uploadify-cancel.png',
+			'uploader' : 'UploadImage.action',
 			'method' : 'post',
-			'fileObjName' : 'bannerPic',
-			'auto' : false,
+			'fileObjName' : 'image',
+			'auto' : true,
 			'multi' : false,
 			'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
 			'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif'
 			});
+			
+			
+			$("#contentImage").uploadify({
+				'swf' : '<%=path%>/images/uploadify.swf',
+				'cancelImg' : '/images/uploadify-cancel.png',
+				'uploader' : 'UploadImage.action',
+				'method' : 'post',
+				'fileObjName' : 'image',
+				'auto' : true,
+				'multi' : false,
+				'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
+				'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif'
+				});
+		});
+		
+		
+		
+		//初始化地图
+		var map = new BMap.Map("map");
+		var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+		map.centerAndZoom(point, 11);
+		map.enableScrollWheelZoom();
+		// 添加地图控件
+		map.addControl(new BMap.NavigationControl());  
+		map.addControl(new BMap.ScaleControl());  
+		map.addControl(new BMap.OverviewMapControl());  
+		map.addControl(new BMap.MapTypeControl()); 
+		
+		function myFun(result) {
+ 				var cityName = result.name;
+			map.setCenter(cityName);
+			}
+		var myCity = new BMap.LocalCity();
+		myCity.get(myFun);
+
+		var marker1;
+		map.addEventListener("click",function(e) {
+			
+			map.removeOverlay(marker1);
+			marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
+			var tMarker = marker1;
+			map.addOverlay(tMarker);
+			
+			// 记录经纬度
+			$("input#lng").attr("value", e.point.lng); 
+			$("input#lat").attr("value", e.point.lat);
 		});
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
@@ -170,7 +187,7 @@
 									<label for="bannerPic">广告Banner图片:</label>
 								</div>
 								<div class="chooseFile">
-									<input type="file" name="bannerPic" id="bannerPic" size="40" />
+									<input type="file" name="image" id="image" size="40" />
 									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
 								</div>
 							</div>
@@ -189,7 +206,7 @@
 									<label for="contentPic">广告内容图片上传:</label>
 								</div>
 								<div class="chooseFile">
-									<input type="file" name="bannerPic" id="bannerPic" size="40" />
+									<input type="file" name="contentImage" id="contentImage" size="40" />
 									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
 								</div>
 							</div>
