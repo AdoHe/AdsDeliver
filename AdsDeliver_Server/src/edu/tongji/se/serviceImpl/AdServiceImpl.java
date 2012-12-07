@@ -1,5 +1,6 @@
 package edu.tongji.se.serviceImpl;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,8 +52,14 @@ public class AdServiceImpl implements AdService {
 		User user = ((ArrayList<User>)mUserDao.findByUsName(userName)).get(0);
 		ad.setUser(user);
 		
+		//初始化一些默认值
+		ad.setAvShowTimes(0);
 		ad.setAvStatus((short)0);
 		ad.setAvClickTimes(0);
+		ad.setAvPublishTime(new Timestamp(0));
+		ad.setAvDesc("");
+		
+		System.out.println("------------------------" + location.getLcLongitude() + "-" + location.getLcLatitude());
 		
 		mLocationDao.save(location);
 		mAdverinfoDao.save(adverinfo);

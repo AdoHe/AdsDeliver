@@ -107,7 +107,8 @@
 		<action name="UploadImage" class="UploadImageAction">
 			<result type="json">
 				<param name="includeProperties">
-					imageFileName
+					imageFileName,
+					imageFilePath
 				</param>
 			</result>
 		</action>

@@ -22,8 +22,8 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	private String address;
 	
 	// 位置信息
-	private Float longitude;
-	private Float latitude;
+	private float longitude;
+	private float latitude;
 	
 	// 广告详细信息
 	private String bannerPic;
@@ -86,6 +86,64 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	public void setSession(Map<String, Object> arg0) {
 		this.session = arg0;
 	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getBannerPic() {
+		return bannerPic;
+	}
+
+	public void setBannerPic(String bannerPic) {
+		this.bannerPic = bannerPic;
+	}
+
+	public String getBannerWordOne() {
+		return bannerWordOne;
+	}
+
+	public void setBannerWordOne(String bannerWordOne) {
+		this.bannerWordOne = bannerWordOne;
+	}
+
+	public String getBannerWordTwo() {
+		return bannerWordTwo;
+	}
+
+	public void setBannerWordTwo(String bannerWordTwo) {
+		this.bannerWordTwo = bannerWordTwo;
+	}
+
+	public String getContentPic() {
+		return contentPic;
+	}
+
+	public void setContentPic(String contentPic) {
+		this.contentPic = contentPic;
+	}
+
+	public String getContents() {
+		return contents;
+	}
+
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	
+	
 	
 	
 }

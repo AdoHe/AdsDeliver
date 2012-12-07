@@ -23,6 +23,7 @@ public class ImageUploadAction extends ActionSupport {
 	private String imageContentType;
 	private int imageHeigth;
 	private int imageWidth;
+	private String imageFilePath;
 	
 	
 	private static String getExtention(String fileName) {
@@ -32,8 +33,6 @@ public class ImageUploadAction extends ActionSupport {
 
     @Override
 	public String execute() {
-		
-		imageFileName = image.getName();
 		
 		Random r = new Random();
         //生成随机文件名：当前年月日时分秒+五位随机数（为了在实际项目中防止文件同名而进行的处理）   
@@ -47,12 +46,12 @@ public class ImageUploadAction extends ActionSupport {
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss E");
         System.out.println(sf.format(date));
         
-       
+        imageFilePath = ServletActionContext.getServletContext()
+				.getRealPath("/upload/")
+				+ "/" + imageFileName;
 
                 
-		File imageFile = new File(ServletActionContext.getServletContext()
-				.getRealPath("/images/")
-				+ "/" + imageFileName);
+		File imageFile = new File(imageFilePath);
                 
 		try {
 			FileUtils.copyFile(image, imageFile);
@@ -115,6 +114,14 @@ public class ImageUploadAction extends ActionSupport {
 
 	public void setImageWidth(int imageWidth) {
 		this.imageWidth = imageWidth;
+	}
+
+	public String getImageFilePath() {
+		return imageFilePath;
+	}
+
+	public void setImageFilePath(String imageFilePath) {
+		this.imageFilePath = imageFilePath;
 	}
 	
 	

@@ -45,7 +45,20 @@
 				$("input:button").button();
 				
 				
-				
+				$("input#submit").click(function() {
+					$.post(
+						'CreateAd.action',
+						$("form#form").serialize(),
+						function(data, textStatus) {
+							if(textStatus == "success") {
+								alert("广告" + data.name + "创建成功");
+							}else {
+								alert("广告新建失败");
+							}
+						}
+						
+					);
+				});
 				
 				
 				$("input.map").click(function() {
@@ -61,10 +74,16 @@
 			'uploader' : 'UploadImage.action',
 			'method' : 'post',
 			'fileObjName' : 'image',
+			'buttonText'     : '选择图片',
 			'auto' : true,
 			'multi' : false,
 			'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
-			'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif'
+			'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif',
+			'onUploadSuccess'    : function(file, data, response) { 
+                   var result = eval("(" + data + ")");  
+                   $("#bannerPic").attr("value", result.imageFilePath);
+	         }
+			
 			});
 			
 			
@@ -74,45 +93,52 @@
 				'uploader' : 'UploadImage.action',
 				'method' : 'post',
 				'fileObjName' : 'image',
+				'buttonText'     : '选择图片',
 				'auto' : true,
 				'multi' : false,
 				'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
-				'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif'
+				'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif',
+				'onUploadSuccess'    : function(file, data, response) { 
+						var result = eval("(" + data + ")");  
+	                   $("#contentPic").attr("value", result.imageFilePath);
+		         }
 				});
-		});
-		
-		
-		
-		//初始化地图
-		var map = new BMap.Map("map");
-		var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
-		map.centerAndZoom(point, 11);
-		map.enableScrollWheelZoom();
-		// 添加地图控件
-		map.addControl(new BMap.NavigationControl());  
-		map.addControl(new BMap.ScaleControl());  
-		map.addControl(new BMap.OverviewMapControl());  
-		map.addControl(new BMap.MapTypeControl()); 
-		
-		function myFun(result) {
- 				var cityName = result.name;
-			map.setCenter(cityName);
-			}
-		var myCity = new BMap.LocalCity();
-		myCity.get(myFun);
+			
+			
+			//初始化地图
+			var map = new BMap.Map("map");
+			var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+			map.centerAndZoom(point, 11);
+			map.enableScrollWheelZoom();
+			// 添加地图控件
+			map.addControl(new BMap.NavigationControl());  
+			map.addControl(new BMap.ScaleControl());  
+			map.addControl(new BMap.OverviewMapControl());  
+			map.addControl(new BMap.MapTypeControl()); 
+			
+			function myFun(result) {
+	 				var cityName = result.name;
+				map.setCenter(cityName);
+				}
+			var myCity = new BMap.LocalCity();
+			myCity.get(myFun);
 
-		var marker1;
-		map.addEventListener("click",function(e) {
+			var marker1;
+			map.addEventListener("click",function(e) {
+				
+				map.removeOverlay(marker1);
+				marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
+				var tMarker = marker1;
+				map.addOverlay(tMarker);
+				
+				// 记录经纬度
+				$("input#lng").attr("value", e.point.lng); 
+				$("input#lat").attr("value", e.point.lat);
+			});
 			
-			map.removeOverlay(marker1);
-			marker1 = new BMap.Marker(new BMap.Point(e.point.lng , e.point.lat));  // 创建标注
-			var tMarker = marker1;
-			map.addOverlay(tMarker);
 			
-			// 记录经纬度
-			$("input#lng").attr("value", e.point.lng); 
-			$("input#lat").attr("value", e.point.lat);
 		});
+		
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
@@ -142,7 +168,7 @@
 									<label for="title">广告名称:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="title" name="title" class="small error" />
+									<input type="text" id="name" name="name" class="small error" />
 									<span class="error">请输入一个有助于你识别该广告的名称!</span>
 								</div>
 							</div>
@@ -187,8 +213,8 @@
 									<label for="bannerPic">广告Banner图片:</label>
 								</div>
 								<div class="chooseFile">
+									<input type="text" id="bannerPic" name="bannerPic"/>
 									<input type="file" name="image" id="image" size="40" />
-									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
 								</div>
 							</div>
 							<div class="field">
@@ -206,8 +232,8 @@
 									<label for="contentPic">广告内容图片上传:</label>
 								</div>
 								<div class="chooseFile">
+									<input type="text" id="contentPic" name="contentPic"/>
 									<input type="file" name="contentImage" id="contentImage" size="40" />
-									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
 								</div>
 							</div>
 							<div class="field">
@@ -215,8 +241,12 @@
 									<label for="textarea">广告文字内容:</label>
 								</div>
 								<div class="textarea textarea-editor">
-									<textarea id="textarea" name="textarea" rows="12" cols="50" class="editor"></textarea>
+									<textarea id="textarea" name="contents" rows="12" cols="50" class="editor"></textarea>
 								</div>
+							</div>
+							
+							<div class="buttons">
+								<input type="button" id="submit" value="Submit" />
 							</div>
 						</div>
 					</div>
