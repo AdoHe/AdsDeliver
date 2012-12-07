@@ -231,4 +231,10 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	
 	<bean id="UploadImageAction" class="edu.tongji.se.action.ImageUploadAction"></bean>
 	
+	<bean id="AdsListAction" class="edu.tongji.se.action.AdsListAction">
+		<property name="mAdService">
+			<ref bean="adverService"/>
+		</property>
+	</bean>
+	
 </beans>
