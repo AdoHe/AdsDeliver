@@ -47,7 +47,7 @@ public interface AdService {
 	public List<Advertisement> getAds(String userName, int offset, int limit); 
 	
 	/**
-	 * 得到该用户所有正在运行中的广告
+	 * 得到该用户所有审核已经通过的广告
 	 * @param userName
 	 * @param status
 	 * @param offset
@@ -55,18 +55,4 @@ public interface AdService {
 	 * @return
 	 */
 	public List<Advertisement> getAds(String userName, int status, int offset, int limit);
-	
-	/**
-	 * 得到用户已经投放的所有广告的数量
-	 * @param userName
-	 * @return
-	 */
-	public int getAllAdsCount(String userName);
-	
-	/**
-	 * 得到用户当前正在运行的广告的数量
-	 * @param userName
-	 * @return
-	 */
-	public int getActiveAdsCount(String userName);
 }

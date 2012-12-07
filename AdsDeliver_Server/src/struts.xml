@@ -108,16 +108,6 @@
 			<result type="json"></result>
 		</action>
 		
-		<action name="GetPagedAdsForAll" class="AdsListAction" method="getPagedAdsForAll">
-			<result type="json">
-			</result>
-		</action>
-		
-		<action name="GetPagedAdsForActive" class="AdsListAction" method="getPagedAdsForActive">
-			<result type="json">
-			</result>
-		</action>
-		
 	</package>
 	
 </struts>    

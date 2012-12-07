@@ -1,5 +1,5 @@
 /* path to the stylesheets for the color picker */
-var style_path = "css";
+var style_path = "resources/css/colors";
 
 $(document).ready(function () {
     /* messages fade away when dismiss is clicked */

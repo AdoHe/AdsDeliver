@@ -42,10 +42,5 @@ public interface AccountService
 	 */
 	public List<Record> getAccountRecords(String userName, int offset, int length);
 
-	/**
-	 * 得到用户的账户交易记录
-	 * @param userName
-	 * @return
-	 */
 	int getRecordsCount(String userName);
 }

@@ -94,18 +94,6 @@ public class AdServiceImpl implements AdService {
 		return mAdDao.findAd(userName, status, offset, limit);
 	}
 
-	@Override
-	public int getAllAdsCount(String userName) {
-		// TODO Auto-generated method stub
-		return mAdDao.getAllAdCount(userName);
-	}
-
-	@Override
-	public int getActiveAdsCount(String userName) {
-		// TODO Auto-generated method stub
-		return mAdDao.getPaAdCount(userName, 2);
-	}
-
 
 
 	

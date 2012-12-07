@@ -11,16 +11,10 @@
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
 <link rel="stylesheet" href="css/template.css" type="text/css" />
-<!-- scripts(jquery) -->
+<!-- scripts -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
-<script type="text/javascript" src="js/jquery.flot.min.js"></script>
-<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
-<script type="text/javascript" src="js/tiny_mce/jquery.tinymce.js"></script>
-<!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
 <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -111,7 +105,7 @@
 					<div class="fields">
 						<div class="field">
 							<div class="label">
-								<label for="loginname">用户名:</label>
+								<label for="loginname">Username:</label>
 							</div>
 							<div class="input">
 								<input type="text" name="loginname" id="username" size="40" class="focus validate[required]" />
@@ -119,27 +113,16 @@
 						</div>
 						<div class="field">
 							<div class="label">
-								<label for="password">密码:</label>
+								<label for="password">Password:</label>
 							</div>
 							<div class="input">
 								<input type="password" name="password" id="password" size="40" class="focus validate[required]" />
 							</div>
 						</div>
-						<div class="field field-select">
-							<div class="label">
-								<label for="select">身份:</label>
-							</div>
-							<div class="select">
-								<select id="select" name="select">
-									<option value="1">管理员</option>
-									<option value="2">广告商</option>
-								</select>
-							</div>
-						</div>
 						<div class="field">
 							<div class="checkbox">
 								<input type="checkbox" id="remember" name="remember" />
-								<label for="remember">记住我</label>
+								<label for="remember">Remember me</label>
 							</div>
 						</div>
 						<div class="buttons">
@@ -149,7 +132,7 @@
 					<!-- end fields -->
 					<!-- links -->
 					<div class="links">
-						<a href="">忘记密码?</a>
+						<a href="">Forget your passwords?</a>
 					</div>
 					<!-- end links -->
 				</div>

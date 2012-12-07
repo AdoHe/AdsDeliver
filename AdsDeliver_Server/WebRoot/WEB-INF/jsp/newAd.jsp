@@ -44,6 +44,7 @@
 				
 				$("input:button").button();
 				
+				
 				//初始化地图
 				var map = new BMap.Map("map");
 				var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
@@ -188,9 +189,8 @@
 								<div class="label">
 									<label for="contentPic">广告内容图片上传:</label>
 								</div>
-								<div class="chooseFile">
-									<input type="file" name="bannerPic" id="bannerPic" size="40" />
-									<a href="javascript:$('bannerPic').uploadify('upload','*')" ><input type="button" value="submit" /></a>
+								<div class="input input-file">
+									<input type="file" id="contetPic" name="contentPic" size="40" />
 								</div>
 							</div>
 							<div class="field">

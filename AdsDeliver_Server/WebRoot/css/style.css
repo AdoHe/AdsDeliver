@@ -2149,14 +2149,6 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	background-image: url(../images/ui-icons_222222_256x240.png);
 }
 
-#content div.box div.messages div.links
-{
-	margin: 10px 0 0 0;
-	padding: 0 0 2px 0;
-	clear: both;
-	overflow: hidden;
-}
-
 /* -----------------------------------------------------------
 	content -> right -> pagination
 ----------------------------------------------------------- */
@@ -2494,7 +2486,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	height: 16px;
 	width: 16px;
 	display: block;
-	background: url("../images/cross.png") no-repeat;
+	background: url("../../resources/images/icons/cross.png") no-repeat;
 }
 
 #login div.messages div.message div.text h1,
@@ -2775,48 +2767,9 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	margin: 10px 0 0 0;
 	padding: 0 0 2px 0;
 	clear: both;
-	overflow:hidden;
+	overflow: hidden;
 }
 
-/* -----------------------------------------------------------
-	login -> select
------------------------------------------------------------ */
-#login div.form div.fields div.field-select
-{
-	margin-top:10px;
-}
-
-#login div.form div.fields div.field div.select
-{
-	margin: -18px 0 0 188px;
-	padding: 0;
-	float: left;
-}
-
-#login div.form div.fields div.field div.select select
-{
-	margin: 0;
-}
-
-/* -----------------------------------------------------------
-	login -> forms -> select (jquery styling)
------------------------------------------------------------ */
-#login div.fields div.field div.select a.ui-selectmenu-focus
-{
-	border: 1px solid #666666;
-}
-
-#login div.fields div.field div.select a.ui-selectmenu  
-{
-	color: #565656; 
-	text-decoration: none;
-}
-
-#login div.fields div.field div.select a.ui-selectmenu:hover  
-{
-	color: #000000;
-	text-decoration: none; 
-}
 /* -----------------------------------------------------------
 	jquery ui
 ----------------------------------------------------------- */
