@@ -46,12 +46,12 @@
 </head>
 <body>
 	<div id="content">
-		<div id="right">
+		<div id="right" style="margin-top: 40px;">
 			<!-- forms -->
 			<div class="box">
 				<!-- box title -->
 				<div class="title">
-					<h5>注册</h5>
+					<h5>Register to AdsDeliver</h5>
 				</div>
 				<!-- end box title -->
 				<form id="form" action="Register.action" method="post">
@@ -62,8 +62,7 @@
 									<label for="username">用户名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="userName" id="username" class="validate[required,custom[noSpecialCaracters],length[0,100]] small error" />
-									<span class="error">红色为必填项</span>
+									<input type="text" name="userName" id="username" class="validate[required,custom[noSpecialCaracters],length[0,100]] medium error" />
 								</div>
 							</div>
 							<div class="field">
@@ -71,7 +70,7 @@
 									<label for="password">密码：</label>
 								</div>
 								<div class="input">
-									<input type="password" name="password" id="password" class="small error validate[required,length[6,20]] text-input" />
+									<input type="password" name="password" id="password" class="medium error validate[required,length[6,20]] text-input" />
 								</div>
 							</div>
 							<div class="field">
@@ -79,7 +78,7 @@
 									<label for="passwordAck">确认密码：</label>
 								</div>
 								<div class="input">
-									<input type="password" name="passwordAck" id="passwordAck" class="small error validate[required,confirm[password]] text-input" />
+									<input type="password" name="passwordAck" id="passwordAck" class="medium error validate[required,confirm[password]] text-input" />
 								</div>
 							</div>
 							<div class="field">
@@ -87,7 +86,7 @@
 									<label for="realname">真实姓名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="realName" id="realname" class="small error validate[required,length[0,50]]" />
+									<input type="text" name="realName" id="realname" class="medium error validate[required,length[0,50]]" />
 								</div>
 							</div>
 							<div class="field">
@@ -95,7 +94,7 @@
 									<label for="company">公司：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="corperation" id="company" class="small error validate[required,length[0,50]]" />
+									<input type="text" name="corperation" id="company" class="medium error validate[required,length[0,50]]" />
 								</div>
 							</div>
 							<div class="field">
@@ -103,7 +102,7 @@
 									<label for="mobile">手机号：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="mobilePhone" id="mobile" class="small validate[required,custom[mobilephone]]" />
+									<input type="text" name="mobilePhone" id="mobile" class="medium validate[required,custom[mobilephone]]" />
 								</div>
 							</div>
 							<div class="field">
@@ -111,7 +110,7 @@
 									<label for="telephone">固定电话：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="telePhone" id="telephone" class="small validate[required,custom[telephone]]"/>
+									<input type="text" name="telePhone" id="telephone" class="medium validate[required,custom[telephone]]"/>
 								</div>
 							</div>
 							<div class="field">
@@ -119,11 +118,11 @@
 									<label for="address">地址：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="address" id="address" class="small validate[required,length[0,50]]" />
+									<input type="text" name="address" id="address" class="medium validate[required,length[0,50]]" />
 								</div>
 							</div>  
 							<div class="buttons">
-								<input type="submit" id="submit" value="Submit" />
+								<input type="submit" id="submit" value="Register" />
 							</div>
 						</div>
 					</div>

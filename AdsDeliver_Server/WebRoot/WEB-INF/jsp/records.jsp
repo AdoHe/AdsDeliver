@@ -133,7 +133,7 @@
 						</div>
 						<div class="text">
 							<h6>Notice Message</h6>
-							<span>This is the notice message.</span>
+							<span>你暂且还没有任何的交易记录.</span>
 						</div>
 						<div class="dismiss">
 							<a href="#message-notice"></a>
