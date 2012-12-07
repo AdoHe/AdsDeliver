@@ -29,7 +29,7 @@
 			});
 </script>
 
-<title>AdsDeliver Administer Page</title>
+<title>AdsDeliver User Page</title>
 </head>
 <body>
 	<%@ include file="/jsp/header.jsp" %>

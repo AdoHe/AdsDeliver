@@ -37,4 +37,8 @@ public interface AdvertisementDao {
 	public List<Advertisement> findAd(final String userName, final int offset, final int length);
 
 	public List<Advertisement> findAd(final String userName, final int status, final int offset, final int length);
+	
+	public int getAllAdCount(final String userName);
+	
+	public int getPaAdCount(final String userName, final int status);
 }

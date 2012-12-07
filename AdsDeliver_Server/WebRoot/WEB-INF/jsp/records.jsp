@@ -25,6 +25,8 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
+				
+				$("div.message").hide();
 			});
 </script>
 <script type="text/javascript">
@@ -41,7 +43,9 @@
 						recordCount = data.count;
 						var re = data.records;
 						
-						$.each(re,function(index, record) {
+						if(recordCount != 0)
+						{
+							$.each(re,function(index, record) {
 							var tbody = "";
 							
 							tbody += "<tr><td class='title'>" + record.reDate.replace("T","  ") + "</td>"
@@ -52,6 +56,11 @@
 							
 							$("#table_body").append(tbody);
 						});
+						}else
+						{
+							$("div.message").show();
+							$("div.table").hide();
+						}
 						
 						//初始化分页组件
 						
@@ -116,6 +125,23 @@
 				<!-- box/title -->
 				<div class="title">
 					<h5>你的交易记录:</h5>
+				</div>
+				<div class="messages">
+					<div id="message-notice" class="message message-notice">
+						<div class="image">
+							<img src="images/notice.png" alt="Notice" height="32" />
+						</div>
+						<div class="text">
+							<h6>Notice Message</h6>
+							<span>This is the notice message.</span>
+						</div>
+						<div class="dismiss">
+							<a href="#message-notice"></a>
+						</div>
+					</div>
+					<div class="links" style="height:15px;">
+						<a href="">Do you want to charge now?</a>
+					</div>
 				</div>
 				<!-- end box/title -->
 				<div class="table">

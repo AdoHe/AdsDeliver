@@ -224,4 +224,24 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
         });  
         return list;
 	}
+
+	@Override
+	public int getAllAdCount(String userName) 
+	{
+		// TODO Auto-generated method stub
+		log.debug("find all advertisement count");
+		List list = getHibernateTemplate().find("select count(*) from Advertisement as a where "
+				+ "a.user.usName=?", (Object)userName);
+        return ((Long)list.iterator().next()).intValue();
+	}
+
+	@Override
+	public int getPaAdCount(String userName, int status) 
+	{
+		// TODO Auto-generated method stub
+		log.debug("fina all passed advertisement count");
+		List list = getHibernateTemplate().find("select count(*) from Advertisement as a where "
+				+ "a.user.usName=? and a.avStatus=?", (Object)userName,(Object)status);
+		return ((Long)list.iterator().next()).intValue();
+	}
 }
