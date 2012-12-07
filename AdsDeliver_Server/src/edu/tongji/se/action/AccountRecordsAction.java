@@ -48,27 +48,6 @@ public class AccountRecordsAction extends ActionSupport implements SessionAware
 		this.session = session;
 	}
 	
-//	public String firstTenRecords()
-//	{
-//		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY) ?
-//				(String)session.get(AuthorInterceptor.USER_SESSION_KEY):"";
-//				
-//		if(records != null) {
-//			//records.clear();
-//		}
-//		records = (ArrayList<Record>) mAccountService.getAccountRecords(userName, 0, 10);
-//		
-//		if(records.size() <= 5)
-//		{
-//			totalPage = 1;
-//		}else
-//		{
-//			totalPage = ((totalPage%5)==0)?(totalPage/5):(totalPage/5+1);
-//		}
-//		
-//		return SUCCESS;
-//	}
-	
 	public String getPagedRecords() {
 		
 		String userName = session.containsKey(AuthorInterceptor.USER_SESSION_KEY) ?
