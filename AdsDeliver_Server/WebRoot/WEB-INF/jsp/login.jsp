@@ -20,7 +20,6 @@
 <script type="text/javascript" src="js/tiny_mce/jquery.tinymce.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
 <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -44,6 +43,18 @@
 		
 		$("div.messages").hide();	
 		
+		/* select styling */
+    	$("select").selectmenu({
+        	style: 'dropdown',
+        	width: 190,
+        	menuWidth: 190,
+        	icons: [
+		    	{ find: '.locked', icon: 'ui-icon-locked' },
+		    	{ find: '.unlocked', icon: 'ui-icon-unlocked' },
+		    	{ find: '.folder-open', icon: 'ui-icon-folder-open' }
+	    		]
+    		});
+    		
 		$("#signin").click(function() {
 			// 检查是否为空
 			if($("input#username").attr("value") == "") {

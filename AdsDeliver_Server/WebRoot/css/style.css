@@ -2721,6 +2721,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 {
 	color: #565656;
 	font-weight: bold;
+	line-height:14px;
 }
 
 #login div.form div.fields div.buttons
@@ -2783,7 +2784,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 ----------------------------------------------------------- */
 #login div.form div.fields div.field-select
 {
-	margin-top:10px;
+	margin-top:5px;
 }
 
 #login div.form div.fields div.field div.select
