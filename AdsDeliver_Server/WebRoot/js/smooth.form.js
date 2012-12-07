@@ -77,8 +77,8 @@ $(document).ready(function () {
     /* select styling */
     $("select").selectmenu({
         style: 'dropdown',
-        width: 200,
-        menuWidth: 200,
+        width: 190,
+        menuWidth: 190,
         icons: [
 		    { find: '.locked', icon: 'ui-icon-locked' },
 		    { find: '.unlocked', icon: 'ui-icon-unlocked' },
