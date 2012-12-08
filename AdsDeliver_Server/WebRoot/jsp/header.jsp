@@ -4,7 +4,7 @@
 <div id="header">
 	<!-- logo -->
 	<div id="logo">
-		<h1><a href="" title="SmoothAdmin"><img src="images/logo.png" alt="Smooth Adimn" /></a></h1>
+		<h1><a href="UserIndex.action" title="SmoothAdmin"><img src="images/logo.png" alt="Smooth Adimn" /></a></h1>
 	</div>
 	<!-- end logo -->
 	<!-- user -->
@@ -16,7 +16,7 @@
 	<!-- end user -->
 	<div id="header-inner">
 		<div id="home">
-			<a href="" title="Home"></a>
+			<a href="UserIndex.action" title="Home"></a>
 		</div>
 		<!-- quick -->
 		<ul id="quick">
