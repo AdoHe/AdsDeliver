@@ -52,11 +52,11 @@
 		</action>
 		
 		<action name="AccountRecharge" class="AccountManageAction" method="rechargePage">
-			<result name="RECHARGE_PAGE">/WEB-INF/jsp/recharge.jsp</result>
+			<result name="RECHARGE_PAGE">/WEB-INF/jsp/accountRecharge.jsp</result>
 		</action>
 		
 		<action name="AccountRecord" class="AccountManageAction" method="recordPage">
-			<result name="RECORD_PAGE">/WEB-INF/jsp/records.jsp</result>
+			<result name="RECORD_PAGE">/WEB-INF/jsp/accountRecords.jsp</result>
 		</action>
 		
 		<action name="GetUserInfo" class="UserInfoAction" method="userInfo">
@@ -97,7 +97,7 @@
 		</action>
 		
 		<action name="AdNew" class="AdsCreateAction" method="newAdPage">
-			<result name="NEW_AD_PAGE">/WEB-INF/jsp/newAd.jsp</result>
+			<result name="NEW_AD_PAGE">/WEB-INF/jsp/adNew.jsp</result>
 		</action>
 		
 		<action name="CreateAd" class="AdsCreateAction" method="createAd">
