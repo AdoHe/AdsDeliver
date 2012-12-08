@@ -124,6 +124,10 @@
 		
 		<action name="GetPagedAdsForActive" class="AdsListAction" method="getPagedAdsForActive">
 			<result type="json">
+				<param name="excludeProperties">
+			    	aAds.*\.adverinfo,
+			    	aAds.*\.location.advertisements
+			  	</param>
 			</result>
 		</action>
 		

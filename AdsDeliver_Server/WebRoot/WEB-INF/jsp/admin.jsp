@@ -58,6 +58,48 @@
 								$("div.message").show();
 								$("div.table").hide();
 							}
+							
+							//初始化分页组件
+							$("#picpagenate").paginate({ 
+					            count         : ((adCount % 10 == 0) ? parseInt(adCount / 10) :  parseInt(adCount / 10) + 1), 
+					            start         : 1, 
+					            display     : 6, 
+					            border                    : false, 
+					            text_color              : '#79B5E3', 
+					            background_color        : 'none',     
+					            text_hover_color          : '#2573AF', 
+					            background_hover_color    : 'none',  
+					            images                    : false, 
+					            mouse                    : 'press',  
+					            onChange                 : function(page){
+					                                            $.post(
+					                                               "GetPagedAdsForActive.action",
+					                                               {
+					                                                   start: (page-1) * 10,
+					                                                   length: 10
+					                                               },
+					                                               function(data, textStatus){
+					                                            	   
+					                                                   if(textStatus == "success") {  
+					                                                        $("#table_body").empty();
+					                                                        
+					                                                        var ad = data.aAds;
+					                                        				
+					                                        				$.each(ad, function(index, a) {
+					                                        					var tbody = "";
+					                                        					tbody += "<tr><td class='title'>" + a.avName + "</td>"
+					                        									+ "<td class='price'>" + a.avClickTimes + "</td>"
+					                        									+ "<td class='date'>" + a.avPublishTime.replace("T", "  ") + "</td>"
+					                        									+ "<td class='date'>" + a.avAddress + "</td>"
+					                        									+ "<td class='selected last'><input type='checkbox'/></td></tr>";
+					                    										
+					                    										$("#table_body").append(tbody);
+					                                        				});
+					                                                   }
+					                                               }
+					                                            );
+					                                        } 
+					            });
 						}
 					});
 		});
@@ -122,6 +164,7 @@
 							<tbody id="table_body">
 							</tbody>
 						</table>
+						<div id="picpagenate"></div>
 					</form>
 				</div>
 			</div>
