@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
@@ -16,6 +17,7 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/jquery.paginate.js"></script>
 <script type="text/javascript">
 			$(document).ready(function () {
 				style_path = "css";
@@ -56,6 +58,49 @@
 									$("div.message").show();
 									$("div.table").hide();
 								}
+								
+								//初始化分页组件
+								$("#picpagenate").paginate({ 
+						            count         : ((adCount % 10 == 0) ? parseInt(adCount / 10) :  parseInt(adCount / 10) + 1), 
+						            start         : 1, 
+						            display     : 6, 
+						            border                    : false, 
+						            text_color              : '#79B5E3', 
+						            background_color        : 'none',     
+						            text_hover_color          : '#2573AF', 
+						            background_hover_color    : 'none',  
+						            images                    : false, 
+						            mouse                    : 'press',  
+						            onChange                 : function(page){
+						                                            $.post(
+						                                               "GetPagedAdsForAll.action",
+						                                               {
+						                                                   start: (page-1) * 10,
+						                                                   length: 10
+						                                               },
+						                                               function(data, textStatus){
+						                                            	   
+						                                                   if(textStatus == "success") {  
+						                                                        $("#table_body").empty();
+						                                                        
+						                                                        var ad = data.aAds;
+						                                        				
+						                                        				$.each(ad, function(index, a) {
+						                                        					var tbody = "";
+						                    										tbody += "<tr><td class='left'>" + a.avName + "</td>"
+						                    										+ "<td>" + a.avPublishTime.replace("T","  ") + "</td>"
+						                    										+ "<td>" + a.avAddress + "</td>"
+						                    										+ "<td>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
+						                    										+ "<td>" + a.avDesc + "</td></tr>";
+						                    										
+						                    										$("#table_body").append(tbody);
+						                                        				});
+						                                                   }
+						                                               }
+						                                            );
+						                                        } 
+						            });
+								
 							}
 						});
 			});
@@ -119,6 +164,7 @@
 							</thead>
 							<tbody id="table_body"></tbody>
 						</table>
+						<div id="picpagenate"></div>
 					</form>
 				</div>
 			</div>
