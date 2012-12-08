@@ -216,7 +216,7 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
                     SQLException {  
                 List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)  
                                 .setParameter(0, userName)
-                                .setParameter(1, status)
+                                .setParameter(1, (short)status)
                                 .setMaxResults(length)  
                                 .list();  
                 return result;  
@@ -241,7 +241,7 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		// TODO Auto-generated method stub
 		log.debug("fina all passed advertisement count");
 		List list = getHibernateTemplate().find("select count(*) from Advertisement as a where "
-				+ "a.user.usName=? and a.avStatus=?", (Object)userName,(Object)status);
+				+ "a.user.usName=? and a.avStatus=?", (Object)userName,(short)status);
 		return ((Long)list.iterator().next()).intValue();
 	}
 }

@@ -1180,7 +1180,7 @@ div.color a.greyblue
 	height: 16px;
 	width: 16px;
 	display: block;
-	background: url("../../resources/images/icons/cross.png") no-repeat;
+	background: url("../images/cross.png") no-repeat;
 }
 
 #content div.box div.message div.text h1,

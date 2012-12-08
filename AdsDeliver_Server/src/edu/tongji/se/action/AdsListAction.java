@@ -48,7 +48,7 @@ public class AdsListAction extends ActionSupport implements SessionAware
 		aAds = (ArrayList<Advertisement>)mAdService.getAds(userName, start, length);
 		
 		all_count = mAdService.getAllAdsCount(userName);
-		return "SUCCESS";
+		return SUCCESS;
 	}
 	
 	public String getPagedAdsForActive()
@@ -64,7 +64,7 @@ public class AdsListAction extends ActionSupport implements SessionAware
 		
 		active_count = mAdService.getActiveAdsCount(userName);
 		
-		return "SUCCESS";
+		return SUCCESS;
 	}
 	
 	//some set/get methods
@@ -103,9 +103,6 @@ public class AdsListAction extends ActionSupport implements SessionAware
 	}
 	public void setActive_count(int active_count) {
 		this.active_count = active_count;
-	}
-	public AdService getmAdService() {
-		return mAdService;
 	}
 	public void setmAdService(AdService mAdService) {
 		this.mAdService = mAdService;
