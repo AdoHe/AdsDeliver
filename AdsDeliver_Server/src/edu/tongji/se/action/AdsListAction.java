@@ -67,6 +67,11 @@ public class AdsListAction extends ActionSupport implements SessionAware
 		return SUCCESS;
 	}
 	
+	public String adListPage()
+	{
+		return "AD_LIST";
+	}
+	
 	//some set/get methods
 	public ArrayList<Advertisement> getpAds() {
 		return pAds;

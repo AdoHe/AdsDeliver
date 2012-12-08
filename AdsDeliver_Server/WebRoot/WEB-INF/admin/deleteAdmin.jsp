@@ -13,7 +13,7 @@
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
-<title>AdsDeliver Administrator Page</title>
+<title>AdsDeliver Delete Administrator</title>
 </head>
 <body>
 	<%@ include file="/admin/header.jsp" %>

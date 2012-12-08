@@ -87,6 +87,8 @@
 						</form>
 					</div>
 				</div>
+				<!-- end box/title -->
+				<!-- notice message -->
 				<div class="messages">
 					<div id="message-notice" class="message message-notice">
 						<div class="image">
@@ -104,7 +106,7 @@
 						<a href="">Do you want to deliver an advertisement now?</a>
 					</div>
 				</div>
-				<!-- end box/title -->
+				<!-- end notice message -->
 				<div class="table">
 					<form action="" method="post">
 						<table>

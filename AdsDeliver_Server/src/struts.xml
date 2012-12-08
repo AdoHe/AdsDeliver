@@ -123,6 +123,14 @@
 			</result>
 		</action>
 		
+		<action name="AdList" class="AdsListAction" method="adListPage">
+			<result name="AD_LIST">/WEB-INF/jsp/adList.jsp</result>
+		</action>
+		
+		<action name="AdminAdd" class="AdminAddAction" method="adminAddPage">
+			<result name="ADD_ADMIN">/WEB-INF/admin/addAdmin.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>    
