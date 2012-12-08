@@ -42,7 +42,6 @@ public class AdServiceImpl implements AdService {
 	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo) {
 		Advertisement ad = new Advertisement();
 		
-		adverinfo.setAdvertisement(ad);
 		
 		ad.setLocation(location);
 		ad.setAdverinfo(adverinfo);
@@ -59,7 +58,7 @@ public class AdServiceImpl implements AdService {
 		ad.setAvPublishTime(new Timestamp(0));
 		ad.setAvDesc("");
 		
-		System.out.println("------------------------" + location.getLcLongitude() + "-" + location.getLcLatitude());
+		adverinfo.setAdvertisement(ad);
 		
 		mLocationDao.save(location);
 		mAdverinfoDao.save(adverinfo);

@@ -41,9 +41,13 @@
 								if(adCount != 0)
 								{
 									$.each(ad, function(index, a) {
-										var tbody = "";
 										
-										tbody += "";
+										var tbody = "";
+										tbody += "<tr><td class='left'>" + a.avName + "</td>"
+										+ "<td>" + a.avPublishTime.replace("T","  ") + "</td>"
+										+ "<td>" + a.avAddress + "</td>"
+										+ "<td>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
+										+ "<td>" + a.avDesc + "</td></tr>";
 										
 										$("#table_body").append(tbody);
 									});
