@@ -58,7 +58,8 @@ public class AccountServiceImpl implements AccountService
 	@Override
 	public void saveAccountRecharge(Account account, int number) 
 	{
-		account.setAcBalance(account.getAcBalance() + number);
+		int currentBalance = account.getAcBalance();
+		account.setAcBalance(currentBalance + number);
 		mAccountDao.save(account);
 
 		Record record = new Record();
@@ -67,7 +68,7 @@ public class AccountServiceImpl implements AccountService
 		record.setReCategory("≥‰÷µ");
 		record.setReDate(new Timestamp(System.currentTimeMillis()));
 		record.setReOutcome(0);
-		record.setReBalance(account.getAcBalance() + number);
+		record.setReBalance(currentBalance + number);
 		
 		mRecordDao.save(record);
 	}

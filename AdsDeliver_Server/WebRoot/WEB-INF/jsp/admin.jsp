@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
@@ -17,6 +18,7 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/jquery.paginate.js"></script>
 <script type="text/javascript">
 		$(document).ready(function () {
 			style_path = "css";
@@ -88,7 +90,7 @@
 					                                        				$.each(ad, function(index, a) {
 					                                        					var tbody = "";
 					                                        					tbody += "<tr><td class='title'>" + a.avName + "</td>"
-					                        									+ "<td class='price'>" + a.avClickTimes + "</td>"
+					                        									+ "<td class=\"price\">" + a.avClickTimes + "</td>"
 					                        									+ "<td class='date'>" + a.avPublishTime.replace("T", "  ") + "</td>"
 					                        									+ "<td class='date'>" + a.avAddress + "</td>"
 					                        									+ "<td class='selected last'><input type='checkbox'/></td></tr>";
