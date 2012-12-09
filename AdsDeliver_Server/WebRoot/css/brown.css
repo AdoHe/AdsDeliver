@@ -165,6 +165,34 @@
 }
 
 /* -----------------------------------------------------------
+	content -> right -> reg / title
+----------------------------------------------------------- */
+
+#content div.reg div.title
+{
+	background: #5c330a url("../images/header_inner.png") repeat-x;
+}
+
+#content div.reg div.title div.corner
+{
+	background: url("../images/login_corners.png") no-repeat;
+}
+
+#content div.reg div.title div.tl
+{
+	top: 0;
+	left: 0;
+	background-position: 0 0;
+}
+
+#content div.reg div.title div.tr
+{
+	top: 0;
+	right: 0;
+	background-position: -6px 0;
+}
+
+/* -----------------------------------------------------------
 	content -> right -> box / search
 ----------------------------------------------------------- */ 
 

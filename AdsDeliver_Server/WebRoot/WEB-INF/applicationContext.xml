@@ -20,7 +20,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 			value="com.mysql.jdbc.Driver">
 		</property>
 		<property name="url"
-			value="jdbc:mysql://localhost:3306/adsdeliever">
+			value="jdbc:mysql://localhost:3306/adsdeliever?useUnicode=true&amp;characterEncoding=UTF8">
 		</property>
 		<property name="username" value="root"></property>
 		<property name="password" value="root"></property>

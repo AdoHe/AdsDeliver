@@ -105,7 +105,7 @@
 		$(function() {
 			$("#image").uploadify({
 			'swf' : '<%=path%>/images/uploadify.swf',
-			'cancelImg' : '/images/uploadify-cancel.png',
+			'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
 			'uploader' : 'UploadImage.action',
 			'method' : 'post',
 			'fileObjName' : 'image',
@@ -124,7 +124,7 @@
 			
 			$("#contentImage").uploadify({
 				'swf' : '<%=path%>/images/uploadify.swf',
-				'cancelImg' : '/images/uploadify-cancel.png',
+				'cancelImg' : '<%=path%> /images/uploadify-cancel.png',
 				'uploader' : 'UploadImage.action',
 				'method' : 'post',
 				'fileObjName' : 'image',
@@ -219,7 +219,7 @@
 								</div>
 								<div class="input">
 									<input type="text" id="name" name="name" class="small error" />
-									<span class="error">请输入一个有助于你识别该广告的名称!</span>
+									<span class="error" style="height:15px;">请输入一个有助于你识别该广告的名称!</span>
 								</div>
 							</div>
 							<div class="field">

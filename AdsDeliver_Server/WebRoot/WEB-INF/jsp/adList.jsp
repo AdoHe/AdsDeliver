@@ -55,7 +55,7 @@
 									});
 								}else
 								{
-									$("div.message").show();
+									$("div.messages").show();
 									$("div.table").hide();
 								}
 								

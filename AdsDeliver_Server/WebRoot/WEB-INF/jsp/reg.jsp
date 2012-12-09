@@ -48,10 +48,12 @@
 	<div id="content">
 		<div id="right" style="margin-top: 40px;">
 			<!-- forms -->
-			<div class="box">
+			<div class="reg box">
 				<!-- box title -->
 				<div class="title">
 					<h5>Register to AdsDeliver</h5>
+					<div class="corner tl"></div>
+					<div class="corner tr"></div>
 				</div>
 				<!-- end box title -->
 				<form id="form" action="Register.action" method="post">
@@ -62,7 +64,7 @@
 									<label for="username">用户名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="userName" id="username" class="validate[required,custom[noSpecialCaracters],length[0,100]] medium error" />
+									<input type="text" name="userName" id="username" class="validate[required,custom[noSpecialCaracters],length[0,100]] medium" />
 								</div>
 							</div>
 							<div class="field">
@@ -70,7 +72,7 @@
 									<label for="password">密码：</label>
 								</div>
 								<div class="input">
-									<input type="password" name="password" id="password" class="medium error validate[required,length[6,20]] text-input" />
+									<input type="password" name="password" id="password" class="medium validate[required,length[6,20]] text-input" />
 								</div>
 							</div>
 							<div class="field">
@@ -78,7 +80,7 @@
 									<label for="passwordAck">确认密码：</label>
 								</div>
 								<div class="input">
-									<input type="password" name="passwordAck" id="passwordAck" class="medium error validate[required,confirm[password]] text-input" />
+									<input type="password" name="passwordAck" id="passwordAck" class="medium validate[required,confirm[password]] text-input" />
 								</div>
 							</div>
 							<div class="field">
@@ -86,7 +88,7 @@
 									<label for="realname">真实姓名：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="realName" id="realname" class="medium error validate[required,length[0,50]]" />
+									<input type="text" name="realName" id="realname" class="medium validate[required,length[0,50]]" />
 								</div>
 							</div>
 							<div class="field">
@@ -94,7 +96,7 @@
 									<label for="company">公司：</label>
 								</div>
 								<div class="input">
-									<input type="text" name="corperation" id="company" class="medium error validate[required,length[0,50]]" />
+									<input type="text" name="corperation" id="company" class="medium validate[required,length[0,50]]" />
 								</div>
 							</div>
 							<div class="field">
