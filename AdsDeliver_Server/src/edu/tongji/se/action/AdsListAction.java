@@ -63,7 +63,6 @@ public class AdsListAction extends ActionSupport implements SessionAware
 		pAds = (ArrayList<Advertisement>)mAdService.getAds(userName, 2, start, length);
 		
 		active_count = mAdService.getActiveAdsCount(userName);
-		
 		return SUCCESS;
 	}
 	

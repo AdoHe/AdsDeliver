@@ -11,7 +11,7 @@
             <generator class="native" />
         </id>
         <property name="afBannerPic" type="java.lang.String">
-            <column name="af_BannerPic" length="100" not-null="true" />
+            <column name="af_BannerPic" length="500" not-null="true" />
         </property>
         <property name="afBannerWordOne" type="java.lang.String">
             <column name="af_BannerWordOne" length="100" not-null="true" />
@@ -20,7 +20,7 @@
             <column name="af_BannerWordTwo" length="300" not-null="true" />
         </property>
         <property name="afContentPic" type="java.lang.String">
-            <column name="af_ContentPic" length="100" not-null="true" />
+            <column name="af_ContentPic" length="500" not-null="true" />
         </property>
         <property name="afContents" type="java.lang.String">
             <column name="af_Contents" length="65535" not-null="true" />

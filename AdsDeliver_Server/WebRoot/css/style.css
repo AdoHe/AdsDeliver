@@ -3158,7 +3158,7 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 ----------------------------------------------------------- */
 
 .ui-dialog { position: absolute; padding: 0; width: 300px; overflow: hidden; background: #ffffff; border: 1px solid #336699; }
-.ui-dialog .ui-dialog-titlebar { padding: 8px; position: relative; clear: both; overflow: hidden; background: #336699 url("../../resources/images/colors/blue/title.png") repeat-x; color: #ffffff; font-weight: bold; }
+.ui-dialog .ui-dialog-titlebar { padding: 8px; position: relative; clear: both; overflow: hidden; background: #336699 url("../images/title.png") repeat-x; color: #ffffff; font-weight: bold; }
 .ui-dialog .ui-dialog-title { float: left; margin: .1em 16px .2em 0; } 
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
