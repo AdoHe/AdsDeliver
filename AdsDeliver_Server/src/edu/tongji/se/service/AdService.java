@@ -16,7 +16,7 @@ public interface AdService {
 	 * @param address
 	 * @param adverinfo
 	 */
-	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo);
+	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo, short status);
 
 	/**
 	 * É¾³ý¹ã¸æ

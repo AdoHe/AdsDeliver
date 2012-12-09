@@ -44,6 +44,26 @@
 				
 				$("input:button").button();
 				
+				$( "#success-message" ).dialog({
+					autoOpen: false,
+		            modal: true,
+		            buttons: {
+		                Ok: function() {
+		                    $( this ).dialog( "close" );
+		                    location.href="AdList.action";
+		                }
+		            }
+		        });
+				
+				$( "#fail-message" ).dialog({
+					autoOpen: false,
+		            modal: true,
+		            buttons: {
+		                Ok: function() {
+		                    $( this ).dialog( "close" );
+		                }
+		            }
+		        });
 				
 				$("input#submit").click(function() {
 					$.post(
@@ -51,9 +71,24 @@
 						$("form#form").serialize(),
 						function(data, textStatus) {
 							if(textStatus == "success") {
-								alert("广告" + data.name + "创建成功");
+								$( "#success-message" ).dialog("open");
 							}else {
-								alert("广告新建失败");
+								$( "#fail-message" ).dialog("open");
+							}
+						}
+						
+					);
+				});
+				
+				$("input#save").click(function() {
+					$.post(
+						'CreateAdForDraft.action',
+						$("form#form").serialize(),
+						function(data, textStatus) {
+							if(textStatus == "success") {
+								$( "#success-message" ).dialog("open");
+							}else {
+								$( "#fail-message" ).dialog("open");
 							}
 						}
 						
@@ -150,6 +185,21 @@
 	<!-- content -->
 	<div id="content">
 		<%@ include file="/jsp/left_nav.jsp" %>
+		
+		<!-- 对话框 -->
+		<div id="success-message" title="充值成功">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			恭喜你，你的操作已经成功！
+    		</p>
+		</div>
+		<div id="fail-message" title="充值成功">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			对不起，你的操作没有成功，请重试！
+    		</p>
+		</div>
+		
 		<div id="map" title="Baidu Map" style="width:500px;height:250px;"></div>
 		<!-- content/right -->
 		<div id="right">
@@ -246,7 +296,10 @@
 							</div>
 							
 							<div class="buttons">
-								<input type="button" id="submit" value="Submit" />
+								<input type="button" id="save" value="保存草稿" />
+								<div class="highlight">
+									<input type="button" id="submit" value="提交审核" />
+								</div>
 							</div>
 						</div>
 					</div>

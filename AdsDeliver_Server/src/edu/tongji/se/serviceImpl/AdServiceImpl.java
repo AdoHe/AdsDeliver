@@ -39,7 +39,7 @@ public class AdServiceImpl implements AdService {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo) {
+	public void addAd(String userName, Location location, String name, String address, Adverinfo adverinfo, short status) {
 		Advertisement ad = new Advertisement();
 		
 		
@@ -53,7 +53,7 @@ public class AdServiceImpl implements AdService {
 		
 		//初始化一些默认值
 		ad.setAvShowTimes(0);
-		ad.setAvStatus((short)0);
+		ad.setAvStatus(status);
 		ad.setAvClickTimes(0);
 		ad.setAvPublishTime(new Timestamp(0));
 		ad.setAvDesc("");

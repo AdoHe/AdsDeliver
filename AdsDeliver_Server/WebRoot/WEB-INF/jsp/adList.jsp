@@ -23,7 +23,7 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				$("div.message").hide();
+				$("div.messages").hide();
 			});
 </script>
 <script type="text/javascript">

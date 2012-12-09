@@ -104,6 +104,10 @@
 			<result type="json"></result>
 		</action>
 		
+		<action name="CreateAdForDraft" class="AdsCreateAction" method="createAdForDraft">
+			<result type="json"></result>
+		</action>
+		
 		<action name="UploadImage" class="UploadImageAction">
 			<result type="json">
 				<param name="includeProperties">
@@ -117,7 +121,8 @@
 			<result type="json">
 				<param name="excludeProperties">
 			    	aAds.*\.adverinfo,
-			    	aAds.*\.location.advertisements
+			    	aAds.*\.user,
+			    	aAds.*\.location
 			  	</param>
 			</result>
 		</action>
@@ -126,7 +131,8 @@
 			<result type="json">
 				<param name="excludeProperties">
 			    	aAds.*\.adverinfo,
-			    	aAds.*\.location.advertisements
+			    	aAds.*\.user,
+			    	aAds.*\.location
 			  	</param>
 			</result>
 		</action>

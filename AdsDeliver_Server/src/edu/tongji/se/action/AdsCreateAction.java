@@ -32,6 +32,7 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	private String contentPic;
 	private String contents;
 	
+	
 	private Map<String, Object> session;
 	
 	private AdService mAdservice;
@@ -50,9 +51,32 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 		adverInfo.setAfContents(contents);
 		
 		mAdservice.addAd((String)session.get(AuthorInterceptor.USER_SESSION_KEY), 
-				location, name, address, adverInfo);
+				location, name, address, adverInfo, (short)1);
 		
 		return SUCCESS;
+	}
+	
+	/**
+	 * ±£´æ²Ý¸å
+	 * @return
+	 * @throws Exception
+	 */
+	public String createAdForDraft() throws Exception {
+		Location location = new Location();
+		location.setLcLongitude(longitude);
+		location.setLcLatitude(latitude);
+		
+		Adverinfo adverInfo = new Adverinfo();
+		adverInfo.setAfBannerPic(bannerPic);
+		adverInfo.setAfBannerWordOne(bannerWordOne);
+		adverInfo.setAfBannerWordTwo(bannerWordTwo);
+		adverInfo.setAfContentPic(contentPic);
+		adverInfo.setAfContents(contents);
+		
+		mAdservice.addAd((String)session.get(AuthorInterceptor.USER_SESSION_KEY), 
+				location, name, address, adverInfo, (short)0);
+		
+		return "SAVE_SUCCESS";
 	}
 	
 	public String newAdPage() {
@@ -142,8 +166,5 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	
-	
-	
-	
+
 }
