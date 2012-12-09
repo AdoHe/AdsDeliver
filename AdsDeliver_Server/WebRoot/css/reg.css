@@ -91,6 +91,31 @@ h5
 }
 
 /* -----------------------------------------------------------
+	content -> right -> box / title corner
+----------------------------------------------------------- */
+#content div.reg div.title corner
+{
+	height: 6px;
+	width: 6px;
+	position: absolute;
+	background: url("../images/login_corners.png") no-repeat;
+}
+
+#content div.reg div.title div.tl
+{
+	top: 0;
+	left: 0;
+	background-position: 0 0;
+}
+
+#content div.reg div.title div.tr
+{
+	top: 0;
+	right: 0;
+	background-position: -6px 0;
+}
+
+/* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
 

@@ -23,7 +23,7 @@
 
 			$("#date-picker").datepicker();
 			$("input:submit").button();
-			$("div.message").hide();
+			$("div.messages").hide();
 		});
 </script>
 <script type="text/javascript">
@@ -55,7 +55,7 @@
 								});
 							}else
 							{
-								$("div.message").show();
+								$("div.messages").show();
 								$("div.table").hide();
 							}
 						}
