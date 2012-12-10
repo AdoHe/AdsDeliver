@@ -34,6 +34,27 @@
 		<%@ include file="/jsp/left_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
+			<div class="box">
+				<!-- box/title -->
+				<div class="title">
+					<h5>广告详情</h5>
+				</div>
+				<!-- end box/title -->
+				<form action="" method="post">
+					<div class="form">
+						<div class="fields">
+							<div class="field">
+								<div class="label">
+									<label for="title">广告标题</label>
+								</div>
+								<div class="span">
+									<span id="title" class="title"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
 		</div>
 		<!-- end content/right -->
 	</div>

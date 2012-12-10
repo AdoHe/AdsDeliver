@@ -92,21 +92,6 @@
 					);
 				});
 				
-				$("input#save").click(function() {
-					$.post(
-						'CreateAdForDraft.action',
-						$("form#form").serialize(),
-						function(data, textStatus) {
-							if(textStatus == "success") {
-								$( "#success-message" ).dialog("open");
-							}else {
-								$( "#fail-message" ).dialog("open");
-							}
-						}
-						
-					);
-				});
-				
 				
 				$("input.map").click(function() {
 					$("#map").dialog("open");
@@ -312,7 +297,6 @@
 							</div>
 							
 							<div class="buttons">
-								<input type="button" id="save" value="保存草稿" />
 								<div class="highlight">
 									<input type="button" id="submit" value="提交审核" />
 								</div>

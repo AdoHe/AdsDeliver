@@ -1798,6 +1798,18 @@ div.form div.fields div.field div.chooseFile
 	margin-left:200px;
 }
 
+div.form div.fields div.field div.chooseFile input
+{
+	background: #FFFFFF;
+	border-top: 1px solid #b3b3b3;
+	border-left: 1px solid #b3b3b3;
+	border-right: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+	color: #000000;
+	font-family: Lucida Grande, Verdana, Lucida Sans Regular, Lucida Sans Unicode, Arial, sans-serif;
+	font-size: 11px;
+}
+
 div.form div.fields div.field div.button
 {
 	margin: 0;
@@ -2090,15 +2102,25 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 
 #content div.box table td.status
 {
-	width: 15%;
+	width: 10%;
 	text-align:center;
 }
 
 #content div.box table td.desc
 {
-	width: 15%;
+	width: 10%;
 	text-align: center;
+}
+
+#content div.box table td.action
+{	
+	width: 10%;
 	border-right: none;
+}
+
+#content div.box table td.action a.edit
+{
+	padding-left: 13px;
 }
 /* -----------------------------------------------------------
 	content -> right -> box / table action
