@@ -46,11 +46,11 @@
 									$.each(ad, function(index, a) {
 										
 										var tbody = "";
-										tbody += "<tr><td class='left'>" + a.avName + "</td>"
-										+ "<td class='date'>" + a.avPublishTime.replace("T","  ") + "</td>"
-										+ "<td>" + a.avAddress + "</td>"
-										+ "<td>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td>" + a.avDesc + "</td></tr>";
+										tbody += "<tr><td class='name'>" + a.avName + "</td>"
+										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
+										+ "<td class='address'>" + a.avAddress + "</td>"
+										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
+										+ "<td class='desc'>" + a.avDesc + "</td></tr>";
 										
 										$("#table_body").append(tbody);
 									});
@@ -88,11 +88,11 @@
 						                                        				
 						                                        				$.each(ad, function(index, a) {
 						                                        					var tbody = "";
-						                    										tbody += "<tr><td class='left'>" + a.avName + "</td>"
-						                    										+ "<td>" + a.avPublishTime.replace("T","  ") + "</td>"
-						                    										+ "<td>" + a.avAddress + "</td>"
-						                    										+ "<td>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-						                    										+ "<td>" + a.avDesc + "</td></tr>";
+						                    										tbody += "<tr><td class='name'>" + a.avName + "</td>"
+						                    										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
+						                    										+ "<td class='address'>" + a.avAddress + "</td>"
+						                    										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
+						                    										+ "<td class='desc'>" + a.avDesc + "</td></tr>";
 						                    										
 						                    										$("#table_body").append(tbody);
 						                                        				});
@@ -156,7 +156,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th class="left">广告名称</th>
+									<th>广告名称</th>
 									<th>投放时间</th>
 									<th>投放地点</th>
 									<th>是否通过审核</th>

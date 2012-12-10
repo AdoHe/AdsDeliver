@@ -2068,6 +2068,39 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 }
 
 /* -----------------------------------------------------------
+	content -> right -> box / table ad list
+----------------------------------------------------------- */
+#content div.box table td.name
+{
+	width: 20%;
+	text-align: center;
+}
+
+#content div.box table td.time
+{
+	width: 25%;
+	text-align: center;
+}
+
+#content div.box table td.address
+{
+	width: 25%;
+	text-align: center;
+}
+
+#content div.box table td.status
+{
+	width: 15%;
+	text-align:center;
+}
+
+#content div.box table td.desc
+{
+	width: 15%;
+	text-align: center;
+	border-right: none;
+}
+/* -----------------------------------------------------------
 	content -> right -> box / table action
 ----------------------------------------------------------- */
 
