@@ -12,6 +12,18 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
 <link rel="stylesheet" type="text/css" href="css/uploadify.css" />
+<style type="text/css">
+.uploadify-button
+{
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+.uploadify:hover .uploadify-button
+{
+	background-color: transparent;
+}
+</style>
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
@@ -112,6 +124,8 @@
 			'buttonText'     : '选择图片',
 			'auto' : true,
 			'multi' : false,
+			'height' : 28,
+			'width' : 92,
 			'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
 			'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif',
 			'onUploadSuccess'    : function(file, data, response) { 
@@ -131,6 +145,8 @@
 				'buttonText'     : '选择图片',
 				'auto' : true,
 				'multi' : false,
+				'height' : 28,
+				'width' : 92,
 				'fileTypeDesc' : '支持图片格式/png/jpg/jpeg/bmp/gif',
 				'fileTypeExts' : '*.png;*.jpg;*.jpeg;*.bmp;*.gif',
 				'onUploadSuccess'    : function(file, data, response) { 
@@ -264,7 +280,7 @@
 								</div>
 								<div class="chooseFile">
 									<input type="text" id="bannerPic" name="bannerPic"/>
-									<input type="file" name="image" id="image" size="40" />
+									<input type="file" name="image" id="image" style="height:28px;"/>
 								</div>
 							</div>
 							<div class="field">
