@@ -10,7 +10,7 @@
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
-<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <link rel="stylesheet" type="text/css" href="css/uploadify.css" />
 <style type="text/css">
 .uploadify-button

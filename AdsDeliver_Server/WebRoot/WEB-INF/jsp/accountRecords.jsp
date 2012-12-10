@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/records.css" media="screen"/>
-<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>

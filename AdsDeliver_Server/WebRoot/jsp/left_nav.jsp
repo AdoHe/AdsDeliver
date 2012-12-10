@@ -7,7 +7,7 @@
 		<ul id="menu-ads" class="opened">
 			<li><a href="AdNew.action">投放广告</a></li>
 			<li><a href="AdList.action">查看广告</a></li>
-			<li class="last"><a href="">撤销广告</a></li>
+			<li class="last"><a href="AdCancel.action">撤销广告</a></li>
 		</ul>
 		<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 		<ul id="menu-accounts" class="closed">

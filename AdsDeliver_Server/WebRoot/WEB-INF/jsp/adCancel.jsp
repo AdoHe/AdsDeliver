@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
-<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
@@ -17,6 +17,7 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript" src="js/jquery.paginate.js"></script>
 <script type="text/javascript">
 			$(document).ready(function () {
@@ -30,7 +31,7 @@
 <script type="text/javascript">
 			$(document).ready(function() {
 				var adCount;
-				$.get("GetPagedAdsForAll.action",
+				$.get("GetPagedAdsForCancel.action",
 						{
 							start : 0,
 							length : 10,
@@ -50,8 +51,7 @@
 										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='action'>" 
-										+ "<a href=''>" + "查看" + "</a>" + "<a href='' class='edit'>" + "编辑" + "</a></td>" + "</tr>";
+										+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});
@@ -75,7 +75,7 @@
 						            mouse                    : 'press',  
 						            onChange                 : function(page){
 						                                            $.post(
-						                                               "GetPagedAdsForAll.action",
+						                                               "GetPagedAdsForCancel.action",
 						                                               {
 						                                                   start: (page-1) * 10,
 						                                                   length: 10
@@ -90,11 +90,10 @@
 						                                        				$.each(ad, function(index, a) {
 						                                        					var tbody = "";
 						                    										tbody += "<tr><td class='name'>" + a.avName + "</td>"
-						                    										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
-						                    										+ "<td class='address'>" + a.avAddress + "</td>"
-						                    										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-						                    										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='action'>"
-						                    										+ "<a href=''>" + "查看" + "</a>" + "<a href='' class='edit'>" + "编辑" + "</a></td>" + "</tr>";
+																					+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
+																					+ "<td class='address'>" + a.avAddress + "</td>"
+																					+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
+																					+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
 						                    										
 						                    										$("#table_body").append(tbody);
 						                                        				});
@@ -161,15 +160,22 @@
 									<th>广告名称</th>
 									<th>投放时间</th>
 									<th>投放地点</th>
-									<th>通过审核</th>
-									<th>理由</th>
-									<th class="last">操作</th>
+									<th>状态</th>
+									<th class="selected last"><input type="checkbox" class="checkall" /></th>
 								</tr>
 							</thead>
 							<tbody id="table_body">
 							</tbody>
 						</table>
 						<div id="picpagenate"></div>
+						<div class="action">
+							<select name="action">
+								<option value="" class="unlocked">撤销广告</option>
+							</select>
+							<div class="button">
+								<input type="submit" name="submit" value="Apply to selected" />
+							</div>
+						</div>
 					</form>
 				</div>
 			</div>

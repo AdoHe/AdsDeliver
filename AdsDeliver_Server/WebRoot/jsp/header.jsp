@@ -26,7 +26,7 @@
 				<ul>
 					<li><a href="AdNew.action">投放广告</a></li>
 					<li><a href="AdList.action">查看广告</a></li>
-					<li class="last"><a href="#">撤销广告</a></li>
+					<li class="last"><a href="AdCancel.action">撤销广告</a></li>
 				</ul>
 			</li>
 			<li>

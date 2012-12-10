@@ -8,7 +8,7 @@
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/reg.css" media="screen"/>
-<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
 <link rel="stylesheet" href="css/template.css" type="text/css" />
 <!-- scripts(jquery) -->
