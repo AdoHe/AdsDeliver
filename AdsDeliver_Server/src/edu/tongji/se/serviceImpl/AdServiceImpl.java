@@ -56,7 +56,7 @@ public class AdServiceImpl implements AdService {
 		ad.setAvStatus(status);
 		ad.setAvClickTimes(0);
 		ad.setAvPublishTime(new Timestamp(0));
-		ad.setAvDesc("");
+		ad.setAvDesc("µ»¥˝…Û∫À÷–");
 		
 		adverinfo.setAdvertisement(ad);
 		
