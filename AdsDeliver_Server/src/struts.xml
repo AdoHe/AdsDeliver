@@ -122,7 +122,8 @@
 				<param name="excludeProperties">
 			    	aAds.*\.adverinfo,
 			    	aAds.*\.user,
-			    	aAds.*\.location
+			    	aAds.*\.location,
+			    	pAds
 			  	</param>
 			</result>
 		</action>
@@ -130,9 +131,10 @@
 		<action name="GetPagedAdsForActive" class="AdsListAction" method="getPagedAdsForActive">
 			<result type="json">
 				<param name="excludeProperties">
-			    	aAds.*\.adverinfo,
-			    	aAds.*\.user,
-			    	aAds.*\.location
+			    	pAds.*\.adverinfo,
+			    	pAds.*\.user,
+			    	pAds.*\.location,
+			    	aAds
 			  	</param>
 			</result>
 		</action>
