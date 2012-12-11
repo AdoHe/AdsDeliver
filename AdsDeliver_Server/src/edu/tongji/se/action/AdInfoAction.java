@@ -16,11 +16,10 @@ public class AdInfoAction extends ActionSupport implements SessionAware{
 	
 	private Map<String, Object> session;
 	
-	private AdService mAdservice;
+	private AdService mAdService;
 
-	@Override
-	public String execute() throws Exception {
-		ad = mAdservice.getAd(id);
+	public String getAdInfo() throws Exception {
+		ad = mAdService.getAd(id);
 		
 		return SUCCESS;
 	}
@@ -47,8 +46,8 @@ public class AdInfoAction extends ActionSupport implements SessionAware{
 		this.session = session;
 	}
 
-	public void setmAdservice(AdService mAdservice) {
-		this.mAdservice = mAdservice;
+	public void setmAdService(AdService mAdService) {
+		this.mAdService = mAdService;
 	}
 	
 	

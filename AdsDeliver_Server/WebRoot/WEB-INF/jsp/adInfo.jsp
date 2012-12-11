@@ -48,7 +48,9 @@
 									<label for="title">广告标题</label>
 								</div>
 								<div class="span">
-									<span id="title" class="title"></span>
+									<span id="title" class="title">
+										${ad.avName}
+									</span>
 								</div>
 							</div>
 						</div>

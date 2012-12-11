@@ -157,8 +157,8 @@
 			</result>
 		</action>
 		
-		<action name="AdInfo" class="AdInfoAction">
-			<result name="SUCCESS">/WEB-INF/jsp/adInfo.jsp</result>
+		<action name="AdInfo" class="AdInfoAction" method="getAdInfo">
+			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
 		</action>
 		
 		<action name="AdminAdd" class="AdminAddAction" method="adminAddPage">
