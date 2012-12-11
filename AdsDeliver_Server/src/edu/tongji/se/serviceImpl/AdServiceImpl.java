@@ -112,6 +112,12 @@ public class AdServiceImpl implements AdService {
 		return mAdDao.getPaAdCount(userName, 2);
 	}
 
+	@Override
+	public Advertisement getAd(int id) {
+		// TODO Auto-generated method stub
+		return mAdDao.findById(id);
+	}
+
 
 
 	

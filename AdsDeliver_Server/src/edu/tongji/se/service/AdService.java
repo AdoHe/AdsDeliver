@@ -69,4 +69,11 @@ public interface AdService {
 	 * @return
 	 */
 	public int getActiveAdsCount(String userName);
+	
+	/**
+	 * 通过广告id获得广告对象
+	 * @param id
+	 * @return
+	 */
+	public Advertisement getAd(int id);
 }

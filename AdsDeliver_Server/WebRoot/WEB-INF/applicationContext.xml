@@ -243,6 +243,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="AdInfoAction" class="edu.tongji.se.action.AdInfoAction">
+		<property name="mAdService">
+			<ref bean="adverService"/>
+		</property>
+	</bean>
+	
 	<bean id="AdminAddAction" class="edu.tongji.se.action.AdminAddAction">
 	</bean>
 	
