@@ -270,17 +270,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="select">广告内容模板选择:</label>
-								</div>
-								<div class="select">
-									<select id="select" name="select">
-										<option value="1">图文模板</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<div class="label">
-									<label for="contentPic">广告内容图片上传:</label>
+									<label for="contentPic">广告内容图片:</label>
 								</div>
 								<div class="chooseFile">
 									<input type="text" id="contentPic" name="contentPic" style="height: 23px;width: 30%;"/>
@@ -298,7 +288,7 @@
 							
 							<div class="buttons">
 								<div class="highlight">
-									<input type="button" id="submit" value="提交审核" />
+									<input type="button" id="submit" value="保存修改" />
 								</div>
 							</div>
 						</div>

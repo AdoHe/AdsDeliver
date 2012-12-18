@@ -45,9 +45,29 @@
 						<div class="fields">
 							<div class="field">
 								<div class="label">
-									<label for="title">广告标题</label>
+									<label for="title">广告标题:</label>
 								</div>
-								<div class="span">
+								<div class="input">
+									<span id="title" class="title">
+										${ad.avName}
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="banner">广告banner部份:</label>
+								</div>
+								<div class="input">
+									<span id="title" class="title">
+										${ad.avName}
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="content">广告主体部份:</label>
+								</div>
+								<div class="input">
 									<span id="title" class="title">
 										${ad.avName}
 									</span>
