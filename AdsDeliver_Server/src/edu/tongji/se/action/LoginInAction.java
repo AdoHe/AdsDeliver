@@ -38,6 +38,7 @@ public class LoginInAction extends ActionSupport implements SessionAware, Cookie
 	private String name = null;
 	private String password;
 	private boolean remember;
+	private int select;
 	private String gtUrl;
 	/**
 	 * 
@@ -137,6 +138,14 @@ public class LoginInAction extends ActionSupport implements SessionAware, Cookie
 
 	public void setGtUrl(String gtUrl) {
 		this.gtUrl = gtUrl;
+	}
+
+	public int getSelect() {
+		return select;
+	}
+
+	public void setSelect(int select) {
+		this.select = select;
 	}
 
 }

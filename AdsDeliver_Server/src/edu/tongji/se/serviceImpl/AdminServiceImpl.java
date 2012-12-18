@@ -38,7 +38,7 @@ public class AdminServiceImpl implements AdminService
 				return 2; //the password is wrong
 		}else
 		{
-			return 3; //there is no such a user
+			return 3; //there is no such an administrator
 		}
 	}
 

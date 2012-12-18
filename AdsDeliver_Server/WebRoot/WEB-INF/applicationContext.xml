@@ -178,7 +178,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
-	<bean id="AdminIndexAction" class="edu.tongji.se.action.AdminIndexAction">
+	<bean id="AdminIndexAction" class="edu.tongji.se.action.AdminIndex">
 	</bean>
 	
 	<bean id="RegisterAction" class="edu.tongji.se.action.RegisterAction">
@@ -190,6 +190,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	<bean id="UserLoginAction" class="edu.tongji.se.action.UserLoginAction">
 		<property name="mUserService">
 			<ref bean="userService"/>
+		</property>
+		<property name="mAdminService">
+			<ref bean="adminService"/>
 		</property>
 	</bean>
 	

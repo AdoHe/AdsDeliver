@@ -71,18 +71,25 @@
 					{
 						loginname : $("input#username").attr("value"),
 						password : $("input#password").attr("value"),
-						remember : $("input#remember").attr("checked")
+						remember : $("input#remember").attr("checked"),
+						select : $("#select").val()
 					},
 					function(data, textStatus) {
 						
 						if(data.result == 1) {
-							location.href = "UserIndex.action";
+							if(data.select == 1)
+							{
+								location.href = "AdminIndex.action";
+							}else
+							{
+								location.href = "UserIndex.action";
+							}
 						}else if(data.result == 2){
 							$("div.messages").show();
 							$("#errorMsg").html("密码错误");
 						}else if(data.result == 3) {
 							$("div.messages").show();
-							$("#errorMsg").html("用户名不存在");
+							$("#errorMsg").html("该用户不存在");
 						}
 					});					
 		
