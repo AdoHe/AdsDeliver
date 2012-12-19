@@ -13,6 +13,17 @@
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<!-- scripts(custom) -->
+<script type="text/javascript" src="js/smooth.js"></script>
+<script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		style_path = "css";
+		
+		$("#date-picker").datepicker();
+	});
+</script>
 <title>AdsDeliver Administrator Page</title>
 </head>
 <body>
