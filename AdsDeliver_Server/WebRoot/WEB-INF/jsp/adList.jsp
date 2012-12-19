@@ -51,7 +51,8 @@
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
 										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='action'>" 
-										+ "<a href='AdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + " <a href='' clsass='edit'>" + "编辑" + "</a></td>" + "</tr>";
+										+ "<a href='AdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + "<a href='AdEdit.action?id=" + a.id + "'" + "class='edit'>" 
+										+ "编辑" + "</a></td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});

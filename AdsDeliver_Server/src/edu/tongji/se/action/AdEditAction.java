@@ -22,8 +22,8 @@ public class AdEditAction extends ActionSupport
 	private int id;
 	private String title;
 	private String address;
-	private long lng;
-	private long lat;
+	private float lng;
+	private float lat;
 	
 	private String bannerPic;
 	private String bannerTitleOne;
@@ -52,16 +52,16 @@ public class AdEditAction extends ActionSupport
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public long getLng() {
+	public float getLng() {
 		return lng;
 	}
-	public void setLng(long lng) {
+	public void setLng(float lng) {
 		this.lng = lng;
 	}
-	public long getLat() {
+	public float getLat() {
 		return lat;
 	}
-	public void setLat(long lat) {
+	public void setLat(float lat) {
 		this.lat = lat;
 	}
 	public String getBannerPic() {
@@ -107,6 +107,16 @@ public class AdEditAction extends ActionSupport
 	public String getAdInfo() throws Exception
 	{
 		Advertisement ad = mAdService.getAd(id);
+		
+		this.title = ad.getAvName();
+		this.address = ad.getAvAddress();
+		this.lng = ad.getLocation().getLcLongitude();
+		this.lat = ad.getLocation().getLcLatitude();
+		this.bannerTitleOne = ad.getAdverinfo().getAfBannerWordOne();
+		this.bannerTitleTwo = ad.getAdverinfo().getAfBannerWordTwo();
+		this.bannerPic = ad.getAdverinfo().getAfBannerPic();
+		this.contentPic = ad.getAdverinfo().getAfContentPic();
+		this.content = ad.getAdverinfo().getAfContents();
 		
 		return SUCCESS;
 	}

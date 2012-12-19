@@ -1457,6 +1457,13 @@ div.form div.fields div.field div.input input
 	font-size: 11px;
 }
 
+div.form div.fields div.field div.input span
+{
+	margin: 0;
+	padding-top: 10px;
+	float: left;
+}
+
 .ui-dialog div.form div.fields div.field div.input input,
 div.box-left div.form div.fields div.field div.input input,
 div.box-right div.form div.fields div.field div.input input
