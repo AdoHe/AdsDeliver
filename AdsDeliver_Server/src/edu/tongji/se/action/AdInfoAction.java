@@ -1,8 +1,5 @@
 package edu.tongji.se.action;
 
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 

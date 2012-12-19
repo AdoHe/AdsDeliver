@@ -83,6 +83,7 @@ public class AdServiceImpl implements AdService {
 		ad.setAdverinfo(adinfo);
 		
 		mAdDao.attachDirty(ad);
+		mAdDao.save(ad);
 	}
 
 

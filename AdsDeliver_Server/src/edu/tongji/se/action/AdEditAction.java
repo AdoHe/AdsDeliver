@@ -5,6 +5,7 @@ package edu.tongji.se.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.model.Adverinfo;
 import edu.tongji.se.model.Advertisement;
 import edu.tongji.se.service.AdService;
 
@@ -126,6 +127,17 @@ public class AdEditAction extends ActionSupport
 	 */
 	public String saveAdInfo() throws Exception
 	{
-		return SUCCESS;
+		Advertisement ad = mAdService.getAd(id);
+		
+		Adverinfo info = ad.getAdverinfo();
+		info.setAfBannerPic(bannerPic);
+		info.setAfBannerWordOne(bannerTitleOne);
+		info.setAfBannerWordTwo(bannerTitleTwo);
+		info.setAfContents(content);
+		info.setAfContentPic(contentPic);
+		
+		mAdService.updateAdInfo(id, info);
+		
+		return "SAVE_SUCCESS";
 	}
 }
