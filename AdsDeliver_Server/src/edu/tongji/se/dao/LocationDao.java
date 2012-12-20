@@ -27,4 +27,5 @@ public interface LocationDao
 	
 	//get all locations
 	public List findAll();
+	
 }

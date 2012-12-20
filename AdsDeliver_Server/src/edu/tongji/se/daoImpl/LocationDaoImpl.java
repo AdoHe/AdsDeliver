@@ -153,4 +153,5 @@ public class LocationDaoImpl extends HibernateDaoSupport
 	public static LocationDaoImpl getFromApplicationContext(ApplicationContext ctx) {
 		return (LocationDaoImpl) ctx.getBean("LocationDAO");
 	}
+
 }

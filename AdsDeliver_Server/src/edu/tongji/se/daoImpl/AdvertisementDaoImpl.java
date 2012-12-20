@@ -244,4 +244,13 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 				+ "a.user.usName=? and a.avStatus=?", (Object)userName,(short)status);
 		return ((Long)list.iterator().next()).intValue();
 	}
+
+	/**
+	 * 通过经纬度查找周围一定距离的广告
+	 */
+	@Override
+	public List findAdsNearBy(float distance, float lon, float lat) {
+
+		return null;
+	}
 }
