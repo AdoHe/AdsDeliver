@@ -7,12 +7,23 @@
 <!-- stylesheets -->
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
-<link id="color" rel="stylesheet" type="text/css" href="css/brown.css" />
+<link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<!-- scripts(custom) -->
+<script type="text/javascript" src="js/smooth.js"></script>
+<script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		style_path = "css";
+		
+		$("#date-picker").datepicker();
+	});
+</script>
 <title>AdsDeliver Administrator Page</title>
 </head>
 <body>

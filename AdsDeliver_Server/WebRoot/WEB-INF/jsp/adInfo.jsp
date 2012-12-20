@@ -45,9 +45,45 @@
 						<div class="fields">
 							<div class="field">
 								<div class="label">
-									<label for="title">广告标题</label>
+									<label for="title">广告标题:</label>
 								</div>
-								<div class="span">
+								<div class="input" style="padding-left: 50px;">
+									<span id="title" class="title">
+										${ad.avName}
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="banner">广告banner部份:</label>
+								</div>
+								<div class="input" style="padding-left: 50px;">
+									<img alt="pic" src="images/app_info_icon.png" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="content">广告主体部份:</label>
+								</div>
+								<div class="input" style="padding-left: 50px;">
+									<img alt="pic" src="images/app_info_icon.png" />
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="time">广告正式投放时间:</label>
+								</div>
+								<div class="input" style="padding-left: 50px;">
+									<span id="title" class="title">
+										${ad.avName}
+									</span>
+								</div>
+							</div>
+							<div class="field">
+								<div class="label">
+									<label for="time">广告显示次数:</label>
+								</div>
+								<div class="input" style="padding-left: 50px;">
 									<span id="title" class="title">
 										${ad.avName}
 									</span>

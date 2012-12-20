@@ -23,9 +23,6 @@
 			<result name="LOGIN">/WEB-INF/jsp/login.jsp</result>
 		</action>
 		
-		<action name="AdminIndex" class="AdminIndexAction">
-		</action>
-		
 		<action name="Register" class="RegisterAction">
 			<result name="SUCCESS">/WEB-INF/jsp/login.jsp</result>
 			<result name="ERROR">/WEB-INF/jsp/error.jsp</result>
@@ -34,12 +31,19 @@
 		
 		<action name="UserLogin" class="UserLoginAction" method="login">
 			<result type="json">
-				<param name="result" />
+				<param name="includeProperties">
+					result,
+					select
+				</param>
 			</result>
 		</action>
 		
 		<action name="UserIndex" class="UserIndexAction">
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
+		</action>
+		
+		<action name="AdminIndex" class="AdminIndexAction">
+			<result name="SUCCESS">/WEB-INF/admin/admin.jsp</result>
 		</action>
 		
 		<action name="GetBalance" class="AccountManageAction" method="getUserBalance">
@@ -159,6 +163,10 @@
 		
 		<action name="AdInfo" class="AdInfoAction" method="getAdInfo">
 			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
+		</action>
+		
+		<action name="AdEdit" class="AdEditAction" method="getAdInfo">
+			<result name="success">/WEB-INF/jsp/adEdit.jsp</result>
 		</action>
 		
 		<action name="AdminAdd" class="AdminAddAction" method="adminAddPage">

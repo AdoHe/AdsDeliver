@@ -12,6 +12,7 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.service.AdminService;
 import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.AuthorInterceptor;
 
@@ -24,11 +25,15 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 	
 	private UserService mUserService;
 	
+	private AdminService mAdminService;
+	
 	private String loginname;
 	
 	private String password;
 	
 	private boolean remember;
+	
+	private int select;
 	
 	private String gtUrl;
 	
@@ -78,10 +83,8 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 		this.session = arg0;
 	}
 	
-	public String login() throws Exception {
-		
-		result = mUserService.validateUser(loginname, password);
-
+	private void storeCookie()
+	{
 		if(result == 1) 
 		{
 			session.put(AuthorInterceptor.USER_SESSION_KEY, loginname);
@@ -106,8 +109,24 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 				this.setGtUrl("");
 			}
 		}
+	}
+	
+	public String login() throws Exception 
+	{
 		
-		return SUCCESS;
+		if(select == 2)
+		{
+			result = mUserService.validateUser(loginname, password);
+			storeCookie();
+			
+			return SUCCESS;
+		}else
+		{
+			result = mAdminService.validateAdmin(loginname, password);
+			storeCookie();
+			
+			return SUCCESS;
+		}
 	}
 
 	
@@ -127,6 +146,18 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 
 	public void setGtUrl(String gtUrl) {
 		this.gtUrl = gtUrl;
+	}
+
+	public int getSelect() {
+		return select;
+	}
+
+	public void setSelect(int select) {
+		this.select = select;
+	}
+
+	public void setmAdminService(AdminService mAdminService) {
+		this.mAdminService = mAdminService;
 	}
 	
 }

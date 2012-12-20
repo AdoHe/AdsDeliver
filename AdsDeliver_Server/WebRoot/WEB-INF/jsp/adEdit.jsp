@@ -219,7 +219,7 @@
 									<label for="title">广告名称:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="name" name="name" class="small error" />
+									<input type="text" id="name" name="name" value="${title}" class="small error" />
 									<span class="error" style="height:15px;">请输入一个有助于你识别该广告的名称!</span>
 								</div>
 							</div>
@@ -228,7 +228,7 @@
 									<label for="address">广告投放地址:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="address" name="address" class="small" />
+									<input type="text" id="address" name="address" value="${address}" class="small" />
 								</div>
 							</div>
 							<div class="field">
@@ -236,8 +236,8 @@
 									<label for="address">地理信息:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="lng" name="longitude"  />
-									<input type="text" id="lat" name="latitude"  />
+									<input type="text" id="lng" name="longitude" value="${lng}"/>
+									<input type="text" id="lat" name="latitude" value="${lat}"/>
 									<div class="button highlight">
 										<input type="button" name="submit" value="从地图标注" class="map" />
 									</div>
@@ -248,7 +248,7 @@
 									<label for="bannerWordOne">广告Banner大标题:</label>
 								</div>
 								<div class="input">
-									<input type="text" name="bannerWordOne" id="bannerWordOne" class="small" />
+									<input type="text" name="bannerWordOne" id="bannerWordOne" value="${bannerTitleOne}" class="small" />
 								</div>
 							</div>
 							<div class="field">
@@ -256,7 +256,7 @@
 									<label for="bannerWordTwo">广告Banner小标题:</label>
 								</div>
 								<div class="input">
-									<input type="text" name="bannerWordTwo" id="bannerWordTwo" class="small" />
+									<input type="text" name="bannerWordTwo" id="bannerWordTwo" value="${bannerTitleTwo}" class="small" />
 								</div>
 							</div>
 							<div class="field">
@@ -270,17 +270,7 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="select">广告内容模板选择:</label>
-								</div>
-								<div class="select">
-									<select id="select" name="select">
-										<option value="1">图文模板</option>
-									</select>
-								</div>
-							</div>
-							<div class="field">
-								<div class="label">
-									<label for="contentPic">广告内容图片上传:</label>
+									<label for="contentPic">广告内容图片:</label>
 								</div>
 								<div class="chooseFile">
 									<input type="text" id="contentPic" name="contentPic" style="height: 23px;width: 30%;"/>
@@ -298,7 +288,7 @@
 							
 							<div class="buttons">
 								<div class="highlight">
-									<input type="button" id="submit" value="提交审核" />
+									<input type="button" id="submit" value="保存修改" />
 								</div>
 							</div>
 						</div>

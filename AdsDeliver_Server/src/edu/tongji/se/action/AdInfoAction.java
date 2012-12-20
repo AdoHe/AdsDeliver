@@ -1,20 +1,21 @@
 package edu.tongji.se.action;
 
-import java.util.Map;
-
-import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.model.Advertisement;
 import edu.tongji.se.service.AdService;
 
-public class AdInfoAction extends ActionSupport implements SessionAware{
+public class AdInfoAction extends ActionSupport
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int id;
 	
 	private Advertisement ad;
-	
-	private Map<String, Object> session;
 	
 	private AdService mAdService;
 
@@ -40,10 +41,6 @@ public class AdInfoAction extends ActionSupport implements SessionAware{
 
 	public void setAd(Advertisement ad) {
 		this.ad = ad;
-	}
-
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
 	}
 
 	public void setmAdService(AdService mAdService) {
