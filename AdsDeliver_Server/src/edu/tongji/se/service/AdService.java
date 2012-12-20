@@ -49,7 +49,7 @@ public interface AdService {
 	/**
 	 * 得到该用户所有正在运行中的广告
 	 * @param userName
-	 * @param status
+	 * @param status 广告状态
 	 * @param offset
 	 * @param limit
 	 * @return
@@ -76,4 +76,5 @@ public interface AdService {
 	 * @return
 	 */
 	public Advertisement getAd(int id);
+	
 }
