@@ -1,6 +1,6 @@
 DROP FUNCTION IF EXISTS RAD;
 
-delimiter
+delimiter //
 CREATE FUNCTION RAD(d FLOAT) 
 	RETURNS FLOAT 
 
@@ -11,7 +11,8 @@ BEGIN
 END;
 
 
-DROP FUNCTION IF EXISTS GET_DISTANCE(lng1 float,
+DROP FUNCTION IF EXISTS GET_DISTANCE;
+CREATE FUNCTION GET_DISTANCE(lng1 float,
 		lat1 float,
 		lng2 float,
 		lat2 float)
@@ -36,6 +37,6 @@ BEGIN
 	SET s = ROUND(s * 1000) / 10000;
 
 	RETURN s;
-END;
+END; //
 
-delimiter;
+delimiter ;
