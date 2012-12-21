@@ -36,39 +36,53 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/smooth.form.js"></script>
 <script type="text/javascript">
-			$(document).ready(function () {
-				style_path = "css";
-
-				$("#date-picker").datepicker();
-				
-				$("input:button").button();
-				
-				$( "#success-message" ).dialog({
-					autoOpen: false,
-		            modal: true,
-		            buttons: {
-		                Ok: function() {
-		                    $( this ).dialog( "close" );
-		                    location.href="AdList.action";
-		                }
-		            }
-		        });
-				
-				$( "#fail-message" ).dialog({
-					autoOpen: false,
-		            modal: true,
-		            buttons: {
-		                Ok: function() {
-		                    $( this ).dialog( "close" );
-		                }
-		            }
-		        });
-			});
+	$(document).ready(function() {
+		style_path = "css";
+		$("#date-picker").datepicker();
+		$("input:button").button();
+		
+		$("#success-message").dialog({
+			autoOpen : false,
+			modal : true,
+			buttons : {
+				OK : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		
+		$("#fail-message").dialog({
+			autoOpen : false,
+			modal : true,
+			buttons : {
+				OK : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		
+		$("input#save").click(function() {
+			$.post(
+				'SaveAdInfo.action',
+				$("form#form").serialize(),
+				function(data, textStatus) {
+					if(textStatus == "success")
+					{
+						$("#success-message").dialog("open");
+					}else
+					{
+						$("#fail-message").dialog("open");
+					}
+				}
+			);
+		});
+	});
 </script>
 <script type="text/javascript">
-		$(function() {
-			$("#image").uploadify({
+	$(function() {
+		$("#image").uploadify({
 			'swf' : '<%=path%>/images/uploadify.swf',
 			'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
 			'uploader' : 'UploadImage.action',
@@ -88,7 +102,6 @@
 			
 			});
 			
-			
 			$("#contentImage").uploadify({
 				'swf' : '<%=path%>/images/uploadify.swf',
 				'cancelImg' : '<%=path%> /images/uploadify-cancel.png',
@@ -107,12 +120,10 @@
 	                   $("#contentPic").attr("value", result.imageFilePath);
 		         }
 				});
-		});
-		
+	});
 </script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
 
-<title>AdsDeliver New Advertisement</title>
+<title>AdsDeliver Edit Advertisement</title>
 </head>
 <body>
 	<%@ include file="/jsp/header.jsp" %>
@@ -120,7 +131,7 @@
 	<div id="content">
 		<%@ include file="/jsp/left_nav.jsp" %>
 		
-		<!-- 对话框 -->
+		<!-- dialog -->
 		<div id="success-message" title="编辑成功">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
@@ -133,6 +144,7 @@
         			对不起，你的操作没有成功，请重试！
     		</p>
 		</div>
+		
 		<!-- content/right -->
 		<div id="right">
 			<!-- forms -->
@@ -150,7 +162,7 @@
 									<label for="bannerTitleOne">广告Banner大标题:</label>
 								</div>
 								<div class="input">
-									<input type="text" name="bannerTitleOne" id="bannerTitleOne" value="${bannerTitleOne}" class="small" />
+									<input type="text" id="bannerTitleOne" name="bannerTitleOne" value="${bannerTitleOne}" class="small" />
 								</div>
 							</div>
 							<div class="field">
@@ -166,7 +178,7 @@
 									<label for="bannerPic">广告Banner图片:</label>
 								</div>
 								<div class="chooseFile">
-									<input type="text" id="bannerPic" name="bannerPic" value="${bannerPic}" style="height:23px;width:35%;"/>
+									<input type="text" id="bannerPic" name="bannerPic" value="${bannerPic}" style="height:23px;width:33%;"/>
 									<input type="file" name="image" id="image"/>
 								</div>
 							</div>
@@ -175,21 +187,22 @@
 									<label for="contentPic">广告内容图片:</label>
 								</div>
 								<div class="chooseFile">
-									<input type="text" id="contentPic" name="contentPic" value="${contentPic}" style="height: 23px;width: 30%;"/>
+									<input type="text" id="contentPic" name="contentPic" value="${contentPic}" style="height: 23px;width: 33%;"/>
 									<input type="file" name="contentImage" id="contentImage" size="40" />
 								</div>
 							</div>
 							<div class="field">
 								<div class="label label-textarea">
-									<label for="content">广告文字内容:</label>
+									<label for="textarea">广告文字内容:</label>
 								</div>
 								<div class="textarea textarea-editor">
-									<textarea id="content" name="content" rows="12" cols="50" class="editor">${content}</textarea>
+									<textarea id="textarea" name="content" rows="12" cols="50" class="editor">${content}</textarea>
 								</div>
 							</div>
+							
 							<div class="buttons">
 								<div class="highlight">
-									<input type="button" id="submit" value="保存修改" />
+									<input type="button" id="save" value="保存修改" />
 								</div>
 							</div>
 						</div>
@@ -197,8 +210,6 @@
 				</form>
 			</div>
 		</div>
-		<!-- end content/right -->
 	</div>
-	<!-- end content -->
 </body>
 </html>

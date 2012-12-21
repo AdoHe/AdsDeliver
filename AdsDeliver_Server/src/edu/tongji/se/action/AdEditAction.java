@@ -106,6 +106,6 @@ public class AdEditAction extends ActionSupport
 		
 		mAdService.updateAdInfo(id, info);
 		
-		return "SAVE_SUCCESS";
+		return SUCCESS;
 	}
 }
