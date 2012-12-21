@@ -2,6 +2,9 @@ package edu.tongji.se.action;
 
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +18,11 @@ import org.apache.struts2.ServletActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ImageUploadAction extends ActionSupport {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private static final int BUFFER_SIZE = 16 * 1024;
 	
@@ -32,7 +40,8 @@ public class ImageUploadAction extends ActionSupport {
 	}
 
     @Override
-	public String execute() {
+	public String execute() throws FileNotFoundException, IOException
+    {
 		
 		Random r = new Random();
         //生成随机文件名：当前年月日时分秒+五位随机数（为了在实际项目中防止文件同名而进行的处理）   
@@ -46,12 +55,32 @@ public class ImageUploadAction extends ActionSupport {
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss E");
         System.out.println(sf.format(date));
         
-        imageFilePath = ServletActionContext.getServletContext()
-				.getRealPath("/upload/")
-				+ "/" + imageFileName;
+        String path = "/upload/";
+        
+        File folder = new File(ServletActionContext.getServletContext().getRealPath(path));
+        if(!folder.exists())
+        {
+        	folder.mkdirs();
+        }
+        
+        File realFile = new File(ServletActionContext.getServletContext().getRealPath(path + imageFileName));
+        
+        FileOutputStream outStream = new FileOutputStream(realFile);
+		FileInputStream inStream = new FileInputStream(image);
+		
+		byte[] buffer = new byte[1024];
+		int l = 0;
+        
+		while((l = inStream.read(buffer)) > 0)
+		{
+			outStream.write(buffer, 0, l);
+		}
+		
+		inStream.close();
+		outStream.close();
 
-                
-		File imageFile = new File(imageFilePath);
+        imageFilePath = ServletActionContext.getRequest().getContextPath() + path + imageFileName;
+		/*File imageFile = new File(imageFilePath);
                 
 		try {
 			FileUtils.copyFile(image, imageFile);
@@ -62,7 +91,7 @@ public class ImageUploadAction extends ActionSupport {
                 bi.setImage(bi.getImage().getScaledInstance(50, 40, Image.SCALE_DEFAULT));
 		System.out.println(bi.getIconHeight()+" "+bi.getIconWidth());
 		setImageHeigth(bi.getIconHeight());
-		setImageWidth(bi.getIconWidth());
+		setImageWidth(bi.getIconWidth());*/
 		return SUCCESS;
 	}
 

@@ -203,13 +203,13 @@
 		<%@ include file="/jsp/left_nav.jsp" %>
 		
 		<!-- 对话框 -->
-		<div id="success-message" title="充值成功">
+		<div id="success-message" title="投放广告成功">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
         			恭喜你，你的操作已经成功！
     		</p>
 		</div>
-		<div id="fail-message" title="充值成功">
+		<div id="fail-message" title="投放失败">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
         			对不起，你的操作没有成功，请重试！

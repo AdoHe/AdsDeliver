@@ -58,7 +58,7 @@
 									<label for="banner">广告banner部份:</label>
 								</div>
 								<div class="input" style="padding-left: 50px;">
-									<img alt="pic" src="images/app_info_icon.png" />
+									<img alt="pic" src="${ad.adverinfo.afBannerPic}" />
 								</div>
 							</div>
 							<div class="field">
@@ -66,7 +66,7 @@
 									<label for="content">广告主体部份:</label>
 								</div>
 								<div class="input" style="padding-left: 50px;">
-									<img alt="pic" src="images/app_info_icon.png" />
+									<img alt="pic" src="${ad.adverinfo.afContentPic}" />
 								</div>
 							</div>
 							<div class="field">
@@ -85,7 +85,7 @@
 								</div>
 								<div class="input" style="padding-left: 50px;">
 									<span id="title" class="title">
-										${ad.avName}
+										${ad.avClickTimes}
 									</span>
 								</div>
 							</div>
