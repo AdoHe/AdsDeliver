@@ -33,6 +33,57 @@
 		<%@ include file="/admin/left_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
+			<!-- table -->
+			<div class="box">
+				<!-- box/title -->
+				<div class="title">
+					<h5>广告列表</h5>
+					<div class="search">
+						<form action="#" method="post">
+							<div class="input">
+								<input type="text" id="search" name="search" />
+							</div>
+							<div class="button">
+								<input type="submit" name="submit" value="搜索" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<!-- end box/title -->
+				<!-- notice message -->
+				<div class="messages">
+					<div id="message-notice" class="message message-notice">
+						<div class="image">
+							<img src="images/notice.png" alt="Notice" height="32" />
+						</div>
+						<div class="text">
+							<h6>Notice Message</h6>
+							<span>还没有受到任何广告商投放的广告!</span>
+						</div>
+						<div class="dismiss">
+							<a href="#message-notice"></a>
+						</div>
+					</div>
+				</div>
+				<!-- end notice message -->
+				<div class="table">
+					<form action="" method="post">
+						<table>
+							<thead>
+								<tr>
+									<th class="left">广告名称</th>
+									<th>广告价格</th>
+									<th>投放地点</th>
+									<th class="last">操作</th>
+								</tr>
+							</thead>
+							<tbody id="table_body">
+							</tbody>
+						</table>
+						<div id="picpagenate"></div>
+					</form>
+				</div>
+			</div>
 		</div>
 		<!-- end content/right -->
 	</div>

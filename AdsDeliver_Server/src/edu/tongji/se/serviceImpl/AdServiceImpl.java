@@ -131,6 +131,18 @@ public class AdServiceImpl implements AdService {
 		return (Advertisement)mAdDao.findAdsRandom().get(0);
 	}
 
+	@Override
+	public List<Advertisement> getAllAds(short status, int offset, int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getAllAdsCount(short status) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 
 	

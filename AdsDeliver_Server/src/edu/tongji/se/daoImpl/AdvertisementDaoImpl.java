@@ -296,4 +296,37 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		
 		return list;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Advertisement> findAd(final short status, final int offset, final int length) {
+		// TODO Auto-generated method stub
+		log.debug("find all unpassed ad");
+		
+		final String HQL = "from Advertisement as ad" +
+				"where ad.avStatus = ? order ad.id desc";
+		
+		List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
+            
+            public Object doInHibernate(Session session) throws HibernateException,  
+                    SQLException {  
+                List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)  
+                                .setParameter(0, status)
+                                .setMaxResults(length)  
+                                .list();  
+                return result;  
+            }  
+        });  
+		
+		return list;
+	}
+
+	@Override
+	public int getAllAdCount(short status) {
+		// TODO Auto-generated method stub
+		log.debug("get count for all unpassed ad");
+		List list = getHibernateTemplate().find("select count(*) from Advertisement as a where "
+				+ "a.avStatus=?", status);
+		return ((Long)list.iterator().next()).intValue();
+	}
 }
