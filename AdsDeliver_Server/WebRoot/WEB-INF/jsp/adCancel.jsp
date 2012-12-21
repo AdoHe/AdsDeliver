@@ -107,6 +107,7 @@
 						});
 			});
 </script>
+<script type="text/javascript" src="js/smooth.form.js"></script>
 <title>AdsDeliver Ads List</title>
 </head>
 <body>
@@ -168,6 +169,7 @@
 							</tbody>
 						</table>
 						<div id="picpagenate"></div>
+						<!-- table/action -->
 						<div class="action">
 							<select name="action">
 								<option value="" class="unlocked">撤销广告</option>
@@ -176,6 +178,7 @@
 								<input type="submit" name="submit" value="Apply to selected" />
 							</div>
 						</div>
+						<!-- end table/action -->
 					</form>
 				</div>
 			</div>

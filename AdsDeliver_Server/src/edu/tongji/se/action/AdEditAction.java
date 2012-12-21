@@ -21,10 +21,6 @@ public class AdEditAction extends ActionSupport
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
-	private String title;
-	private String address;
-	private float lng;
-	private float lat;
 	
 	private String bannerPic;
 	private String bannerTitleOne;
@@ -40,30 +36,6 @@ public class AdEditAction extends ActionSupport
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public float getLng() {
-		return lng;
-	}
-	public void setLng(float lng) {
-		this.lng = lng;
-	}
-	public float getLat() {
-		return lat;
-	}
-	public void setLat(float lat) {
-		this.lat = lat;
 	}
 	public String getBannerPic() {
 		return bannerPic;
@@ -109,10 +81,6 @@ public class AdEditAction extends ActionSupport
 	{
 		Advertisement ad = mAdService.getAd(id);
 		
-		this.title = ad.getAvName();
-		this.address = ad.getAvAddress();
-		this.lng = ad.getLocation().getLcLongitude();
-		this.lat = ad.getLocation().getLcLatitude();
 		this.bannerTitleOne = ad.getAdverinfo().getAfBannerWordOne();
 		this.bannerTitleTwo = ad.getAdverinfo().getAfBannerWordTwo();
 		this.bannerPic = ad.getAdverinfo().getAfBannerPic();
@@ -138,6 +106,6 @@ public class AdEditAction extends ActionSupport
 		
 		mAdService.updateAdInfo(id, info);
 		
-		return "SAVE_SUCCESS";
+		return SUCCESS;
 	}
 }
