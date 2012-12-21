@@ -249,8 +249,51 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 	 * 通过经纬度查找周围一定距离的广告
 	 */
 	@Override
-	public List findAdsNearBy(float distance, float lon, float lat) {
+	public List findAdsNearBy(final float distance, final float lon, final float lat, final int length) {
+		final String HQL = "from Advertisement as ad " +
+				"where get_distance(ad.location.lcLongitude, " +
+				"ad.location.lcLatitude, " +
+				"?, ?) < ? order by ad.id desc";
+		
+		List list = getHibernateTemplate().executeFind(new HibernateCallback() {
 
-		return null;
+			@Override
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				List result = session.createQuery(HQL).setFirstResult(0)  
+                        .setParameter(0, lon)
+                        .setParameter(1, lat)
+                        .setParameter(2, distance)
+                        .setMaxResults(length)  
+                        .list(); 
+				
+				return result;
+			}
+			
+		});
+		
+		return list;
+	}
+
+	@Override
+	public List findAdsRandom() {
+		
+		final String HQL = "from Advertisement order by rand() limit 1";
+		
+		List list = getHibernateTemplate().executeFind(new HibernateCallback() {
+
+			@Override
+			public Object doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				List result = session.createQuery(HQL)
+                        .setMaxResults(1)  
+                        .list(); 
+				
+				return result;
+			}
+			
+		});
+		
+		return list;
 	}
 }

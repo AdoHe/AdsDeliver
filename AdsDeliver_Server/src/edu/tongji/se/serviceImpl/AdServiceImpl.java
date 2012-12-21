@@ -119,6 +119,18 @@ public class AdServiceImpl implements AdService {
 		return mAdDao.findById(id);
 	}
 
+	@Override
+	public List<Advertisement> getAdsNearby(float lng, float lat,
+			float distance, int count) {
+		return mAdDao.findAdsNearBy(distance, lng, lat, count);
+	}
+
+	@Override
+	public Advertisement getAdRand() {
+		// TODO Auto-generated method stub
+		return (Advertisement)mAdDao.findAdsRandom().get(0);
+	}
+
 
 
 	

@@ -173,6 +173,11 @@
 			<result name="ADD_ADMIN">/WEB-INF/admin/addAdmin.jsp</result>
 		</action>
 		
+		<action name="AdRequest" class="AdRequestAction" method="requestAd">
+			<!-- 这里先这样写着再说 -->
+			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>    

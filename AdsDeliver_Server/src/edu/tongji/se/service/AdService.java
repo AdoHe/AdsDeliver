@@ -77,4 +77,15 @@ public interface AdService {
 	 */
 	public Advertisement getAd(int id);
 	
+	/**
+	 * 通过地理位置查找一定范围内的广告
+	 * @param lng
+	 * @param lat
+	 * @param distance 到中心点的半径
+	 * @param count 请求的数量
+	 * @return
+	 */
+	public List<Advertisement> getAdsNearby(float lng, float lat, float distance, int count);
+	
+	public Advertisement getAdRand();
 }

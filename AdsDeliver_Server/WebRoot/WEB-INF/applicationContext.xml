@@ -36,6 +36,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 				<prop key="hibernate.dialect">
 					org.hibernate.dialect.MySQLDialect
 				</prop>
+				<prop key="hibernate.dialect">
+					edu.tongji.se.tools.DialectRegExp
+				</prop>
 				<prop key="hibernate.show_sql">true</prop>  
                 <prop key="hibernate.format_sql">true</prop> 
 			</props>
@@ -259,6 +262,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	</bean>
 	
 	<bean id="AdminAddAction" class="edu.tongji.se.action.AdminAddAction">
+	</bean>
+	
+	<bean id="AdRequestAction" class="edu.tongji.se.action.AdRequestAction">
+		<property name="mAdService">
+			<ref bean="adverService"/>
+		</property>
 	</bean>
 	
 </beans>

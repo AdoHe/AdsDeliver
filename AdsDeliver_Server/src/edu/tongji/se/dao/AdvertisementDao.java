@@ -42,5 +42,7 @@ public interface AdvertisementDao {
 	
 	public int getPaAdCount(final String userName, final int status);
 	
-	public List findAdsNearBy(float distance, float lon, float lat);
+	public List findAdsNearBy(final float distance, final float lon, final float lat, final int length);
+	
+	public List findAdsRandom();
 }
