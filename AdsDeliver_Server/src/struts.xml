@@ -178,8 +178,13 @@
 		</action>
 		
 		<action name="AdRequest" class="AdRequestAction" method="requestAd">
-			<!-- 这里先这样写着再说 -->
-			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
+			<result type="json">
+				<param name="excludeProperties">
+					ad.user,
+					ad.location.advertisements,
+					ad.adverinfo.advertisement
+				</param>
+			</result>
 		</action>
 		
 	</package>

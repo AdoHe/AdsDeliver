@@ -24,7 +24,7 @@ public class AdRequestAction extends ActionSupport{
 		}
 		
 		
-		return "SUCCESS";
+		return "success";
 	}
 
 	public float getLng() {
