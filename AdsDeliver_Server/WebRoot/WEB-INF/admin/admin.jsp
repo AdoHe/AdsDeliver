@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- stylesheets -->
+<link rel="stylesheet" type="text/css" href="css/jpagenation-style.css" />
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
@@ -17,11 +18,93 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript" src="js/smooth.table.js"></script>
+<script type="text/javascript" src="js/jquery.paginate.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		style_path = "css";
 		
 		$("#date-picker").datepicker();
+		$("input:submit").button();
+		$("div.messages").hide();
+	});
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var adCount;
+	
+		$.get("GetPagedAdsForAdmin.action",
+				{
+					start : 0,
+					length : 10
+				},
+				function(data, textStatus) {
+					if(textStatus == "success")
+					{
+						adCount = data.ads_count;
+						var ad = data.ads;
+						
+						if(adCount != 0)
+						{
+							$.each(ad, function(index, a) {
+								var tbody = "";
+								
+								tbody += "<tr><td class='admin_title'>" + a.avName + "</td>"
+										+ "<td class='admin_price'>" + a.avClickTimes + "</td>"
+										+ "<td class='admin_address'>" + a.avAddress + "</td>"
+										+ "<td class='admin_action'>" + "<a href='AdminAdCheck.action?id=" + a.id + "'>"
+										+ "审核" + "</a></td></tr>";
+										
+								$("#table_body").append(tbody);
+							});
+						}else
+						{
+							$("div.messages").show();
+							$("div.table").hide();
+						}
+						
+						//初始化分页组件
+						$("#picpagenate").paginate({ 
+				            count         : ((adCount % 10 == 0) ? parseInt(adCount / 10) :  parseInt(adCount / 10) + 1), 
+				            start         : 1, 
+				            display     : 6, 
+				            border                    : false, 
+				            text_color              : '#79B5E3', 
+				            background_color        : 'none',     
+				            text_hover_color          : '#2573AF', 
+				            background_hover_color    : 'none',  
+				            images                    : false, 
+				            mouse                    : 'press',  
+				            onChange                 : function(page){
+				                                            $.post(
+				                                               "GetPagedAdsForAdmin.action",
+				                                               {
+				                                                   start: (page-1) * 10,
+				                                                   length: 10
+				                                               },
+				                                               function(data, textStatus){
+				                                            	   
+				                                                   if(textStatus == "success") {  
+				                                                        $("#table_body").empty();
+				                                                        
+				                                                        var ad = data.ads;
+				                                        				
+				                                        				$.each(ad, function(index, a) {
+				                                        					var tbody = "";
+				                                        					tbody += "<tr><td class='title'>" + a.avName + "</td>"
+																					+ "<td class='price'>" + a.avClickTimes + "</td>"
+																					+ "<td class='address'>" + a.avAddress + "</td>"
+																					+ "<td class='action'>" + "<a href=''>" + "审核"
+																					+ "</a></td></tr>";
+				                    										
+				                    										$("#table_body").append(tbody);
+				                                        				});
+				                                                   }
+				                                               }
+				                                            );
+				                                        } 
+				            });
+					}
+				});
 	});
 </script>
 <title>AdsDeliver Administrator Page</title>
@@ -71,7 +154,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th class="left">广告名称</th>
+									<th>广告名称</th>
 									<th>广告价格</th>
 									<th>投放地点</th>
 									<th class="last">操作</th>

@@ -71,18 +71,32 @@ public interface AdService {
 	public int getActiveAdsCount(String userName);
 	
 	/**
-	 * 得到所有还未通过审核的广告
+	 * 根据广告的当前状态获得广告列表
 	 * @param status
 	 * @return
 	 */
 	public List<Advertisement> getAllAds(short status, int offset, int limit);
 	
 	/**
-	 * 得到所有为审核的广告的数量
+	 * 得到某种状态的广告的数量
 	 * @param status
 	 * @return
 	 */
 	public int getAllAdsCount(short status);
+	
+	/**
+	 * 为管理员得到所有的广告列表
+	 * @param offset
+	 * @param limit
+	 * @return
+	 */
+	public List<Advertisement> getAllAds(int offset, int limit);
+	
+	/**
+	 * 为管理员得到所有的广告的数量
+	 * @return
+	 */
+	public int getAllAdsCount();
 	
 	/**
 	 * 通过广告id获得广告对象

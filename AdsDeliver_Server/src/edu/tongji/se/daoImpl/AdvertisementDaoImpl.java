@@ -303,8 +303,8 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		// TODO Auto-generated method stub
 		log.debug("find all unpassed ad");
 		
-		final String HQL = "from Advertisement as ad" +
-				"where ad.avStatus = ? order ad.id desc";
+		final String HQL = "from Advertisement as ad " +
+				"where ad.avStatus =? order by ad.id desc";
 		
 		List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
             
@@ -326,7 +326,37 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		// TODO Auto-generated method stub
 		log.debug("get count for all unpassed ad");
 		List list = getHibernateTemplate().find("select count(*) from Advertisement as a where "
-				+ "a.avStatus=?", status);
+				+ "a.avStatus=?", (Object)status);
+		return ((Long)list.iterator().next()).intValue();
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Advertisement> findAd(final int offset, final int length) {
+		// TODO Auto-generated method stub
+		log.debug("get all ads for administrator");
+		final String HQL = "from Advertisement as ad order by ad.id desc";
+		
+		List<Advertisement> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
+		            
+		            public Object doInHibernate(Session session) throws HibernateException,  
+		                    SQLException {  
+		                List<Advertisement> result = session.createQuery(HQL).setFirstResult(offset)
+		                                .setMaxResults(length)  
+		                                .list();  
+		                return result;  
+		            }  
+		        });
+		
+		return list;
+	}
+
+	@Override
+	public int getAllAdCount() {
+		// TODO Auto-generated method stub
+		log.debug("get all ads count for administrator");
+		
+		List list = getHibernateTemplate().find("select count(*) from Advertisement");
 		return ((Long)list.iterator().next()).intValue();
 	}
 }

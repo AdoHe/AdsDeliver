@@ -17,14 +17,19 @@
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
 <script type="text/javascript">
-			
-			$(document).ready(function () {
-				style_path = "css";
+	$(document).ready(function () {
+		style_path = "css";
 
-				$("#date-picker").datepicker();
-			});
+		$("input:button").button();
+		$("#date-picker").datepicker();
+	});
 </script>
-
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("input#check").click(function() {
+		});
+	});
+</script>
 <title>AdsDeliver New Advertisement</title>
 </head>
 <body>
@@ -37,7 +42,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>广告详情</h5>
+					<h5>广告审核</h5>
 				</div>
 				<!-- end box/title -->
 				<form action="" method="post">
@@ -71,11 +76,11 @@
 							</div>
 							<div class="field">
 								<div class="label">
-									<label for="time">广告投放地点:</label>
+									<label for="time">广告正式投放时间:</label>
 								</div>
 								<div class="input" style="padding-left: 50px;">
 									<span id="title" class="title">
-										${ad.avAddress}
+										${ad.avName}
 									</span>
 								</div>
 							</div>
@@ -87,6 +92,11 @@
 									<span id="title" class="title">
 										${ad.avClickTimes}
 									</span>
+								</div>
+							</div>
+							<div class="buttons">
+								<div class="highlight">
+									<input type="button" id="check" value="审核通过" style="margin-left:50px;"/>
 								</div>
 							</div>
 						</div>
