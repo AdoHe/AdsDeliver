@@ -2089,6 +2089,34 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 /* -----------------------------------------------------------
 	content -> right -> box / table ad list
 ----------------------------------------------------------- */
+#content div.box table td.admin_title
+{
+	width: 35%;
+	text-align: center;
+}
+
+#content div.box table td.admin_price
+{
+	width: 10%;
+	text-align: center;
+}
+
+#content div.box table td.admin_address
+{
+	width: 35%;
+	text-align: center;
+}
+
+#content div.box table td.admin_action
+{
+	width: 20%;
+	border-right: none;
+	text-align: center;
+}
+
+/* -----------------------------------------------------------
+	content -> right -> box / table ad list
+----------------------------------------------------------- */
 #content div.box table td.name
 {
 	width: 20%;

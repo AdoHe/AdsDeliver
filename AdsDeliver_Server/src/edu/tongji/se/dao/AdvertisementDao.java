@@ -40,11 +40,15 @@ public interface AdvertisementDao {
 	
 	public List<Advertisement> findAd(final short status, final int offset, final int length);
 	
+	public List<Advertisement> findAd(final int offset, final int length);
+	
 	public int getAllAdCount(final short status);
 	
 	public int getAllAdCount(final String userName);
 	
 	public int getPaAdCount(final String userName, final int status);
+	
+	public int getAllAdCount();
 	
 	public List findAdsNearBy(final float distance, final float lon, final float lat, final int length);
 	
