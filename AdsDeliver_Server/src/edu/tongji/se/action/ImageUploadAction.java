@@ -69,11 +69,11 @@ public class ImageUploadAction extends ActionSupport {
 		FileInputStream inStream = new FileInputStream(image);
 		
 		byte[] buffer = new byte[1024];
-		int l = 0;
+		int length = 0;
         
-		while((l = inStream.read(buffer)) > 0)
+		while((length = inStream.read(buffer)) > 0)
 		{
-			outStream.write(buffer, 0, l);
+			outStream.write(buffer, 0, length);
 		}
 		
 		inStream.close();
