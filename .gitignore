@@ -2,3 +2,5 @@
 /AdsDeliver_Server/.springBeans
 ~*
 *swp
+/AdsDeliverSDK/bin
+/AdsDeliverSDK/gen
