@@ -253,7 +253,7 @@ public class AdvertisementDaoImpl extends HibernateDaoSupport implements Adverti
 		final String HQL = "from Advertisement as ad " +
 				"where get_distance(ad.location.lcLongitude, " +
 				"ad.location.lcLatitude, " +
-				"?, ?) < ? order by ad.id desc";
+				"?, ?) < ? and ad.avStatus=2 order by ad.id desc";
 		
 		List list = getHibernateTemplate().executeFind(new HibernateCallback() {
 
