@@ -1,8 +1,5 @@
 package edu.tongji.se.model;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * Adverinfo entity. @author MyEclipse Persistence Tools
  */
