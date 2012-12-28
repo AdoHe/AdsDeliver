@@ -177,8 +177,20 @@
 			<result name="ADD_ADMIN">/WEB-INF/admin/addAdmin.jsp</result>
 		</action>
 		
-		<action name="AdminAdCheck" class="AdminAdsCheckAction" method="getAdInfo">
+		<action name="AdminAdCheckPage" class="AdminAdsCheckAction" method="getAdInfo">
 			<result name="success">/WEB-INF/admin/adCheck.jsp</result>
+		</action>
+		
+		<action name="AdminAdPass" class="AdminAdsCheckAction" method="passAd">
+			<result type="json">
+				<param name="excludeProperties">
+					ad
+				</param>
+			</result>
+		</action>
+		
+		<action name="AdminAdUnPass" class="AdminAdsCheckAction" method="unPassAd">
+			<result type="json" />
 		</action>
 		
 		<action name="GetPagedAdsForAdmin" class="AdminAdsListAction" method="getPagedAds">
@@ -193,14 +205,24 @@
 			</result>
 		</action>
 		
+		<action name="AdminAdsShowPage" class="AdminAdsListAction" method="adsShowPage">
+			<result name="AD_SHOW">/WEB-INF/admin/adShow.jsp</result>
+		</action>
+		
 		<action name="GetPagedAdsForAdminAll" class="AdminAdsListAction" method="getPagedAdsForAll">
 			<result type="json">
 				<param name="excludeProperties">
-					ads.*\.adverinfo,
-					ads.*\.user,
-					ads.*\.location
+					aAds.*\.adverinfo,
+					aAds.*\.user,
+					aAds.*\.location,
+					ads,
+					pAds
 				</param>
 			</result>
+		</action>
+		
+		<action name="AdminAdsCancelPage" class="AdminAdsListAction" method="adsCancelPage">
+			<result name="AD_CANCEL">/WEB-INF/admin/adCancel.jsp</result>
 		</action>
 		
 		<action name="GetPagedAdsForAdminActive" class="AdminAdsListAction" method="getPagedAdsForActive">

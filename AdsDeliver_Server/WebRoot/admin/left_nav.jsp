@@ -5,9 +5,9 @@
 	<div id="menu">
 		<h6 id="h-menu-ads" class="selected"><a href="#ads"><span>广告</span></a></h6>
 		<ul id="menu-ads" class="opened">
-			<li><a href="#">审核广告</a></li>
-			<li><a href="#">查看广告</a></li>
-			<li class="last"><a href="">撤销广告</a></li>
+			<li><a href="AdminIndex.action">审核广告</a></li>
+			<li><a href="AdminAdsShowPage.action">查看广告</a></li>
+			<li class="last"><a href="AdminAdsCancelPage.action">撤销广告</a></li>
 		</ul>
 		<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 		<ul id="menu-accounts" class="closed">

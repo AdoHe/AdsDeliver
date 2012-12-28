@@ -10,17 +10,33 @@
 <link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
+<!-- scripts(custom) -->
+<script type="text/javascript" src="js/smooth.js"></script>
+<script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/smooth.table.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		style_path = "css";
-		
-		$("#date-picker").datepicker();
-	});
+			
+			$(document).ready(function () {
+				style_path = "css";
+
+				$("#date-picker").datepicker();
+				
+				$.post(
+					"GetBalance.action",
+					function(data, textStatus) {
+						if(textStatus == "success") {
+							$("#account_balance").html(data.balance + "元");
+							$("#use_balance").html(data.balance + "元");
+						}
+					}						
+				);
+				
+			});
 </script>
-<title>AdsDeliver Delete Administrator</title>
+<title>AdsDeliver Price Info</title>
 </head>
 <body>
 	<%@ include file="/admin/header.jsp" %>
@@ -33,33 +49,20 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>删除管理员</h5>
+					<h5>你的账户:</h5>
 				</div>
 				<!-- end box/title -->
-				<div class="table">
-					<form id="form" action="" method="post">
-						<table>
-							<thead>
-								<tr>
-									<th>管理员编号</th>
-									<th>管理员名称</th>
-									<th>管理员等级</th>
-								</tr>
-							</thead>
-							<tbody id="table_body"></tbody>
-						</table>
-						<div id="picpagenate"></div>
-						<!-- table/action -->
-						<div class="action">
-							<select name="action">
-								<option value="" class="unlocked">删除管理员</option>
-							</select>
-							<div class="button">
-								<input type="submit" name="submit" value="Apply to selected" />
-							</div>
-						</div>
-						<!-- end table/action -->
-					</form>
+				<div>
+					<table>
+						<tr>
+							<td>当前余额:</td>
+							<td id="account_balance"></td>
+						</tr>
+						<tr>
+							<td>可用余额:</td>
+							<td id="use_balance"></td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>

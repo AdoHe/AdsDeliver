@@ -120,7 +120,7 @@
 						<a href="#message-error"></a>
 					</div>
 				</div>
-			</div>
+		</div>
 				
 		<div class="inner">
 			<form id="login_form" method="post">

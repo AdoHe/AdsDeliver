@@ -14,23 +14,50 @@ import edu.tongji.se.model.User;
  */
 public interface AccountDao 
 {
-	//save an account
+	/**
+	 * 保存账户
+	 * @param transientInstance
+	 */
 	public void save(Account transientInstance);
 	
-	//delete an account
+	/**
+	 * 删除某个账户
+	 * @param persistentInstance
+	 */
 	public void delete(Account persistentInstance);
 	
-	//find account by id
+	/**
+	 * 通过id获得账户
+	 * @param id
+	 * @return
+	 */
 	public Account findById(java.lang.Integer id);
 	
-	//find account by one property
+	/**
+	 * 通过某个属性获得账户
+	 * @param propertyName
+	 * @param value
+	 * @return
+	 */
 	public List findByProperty(String propertyName, Object value);
 	
-	//get all account
+	/**
+	 * 得到所有的账户
+	 * @return
+	 */
 	public List findAll();
 	
-	//merge two accounts
+	/**
+	 * 合并两个账户
+	 * @param detachedInstance
+	 * @return
+	 */
 	public Account merge(Account detachedInstance);
 	
+	/**
+	 * 获取某个用户的账户
+	 * @param user
+	 * @return
+	 */
 	public List findByUser(User user);
 }

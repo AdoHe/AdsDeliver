@@ -2,6 +2,8 @@ package edu.tongji.se.daoImpl;
 
 import java.util.List;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
@@ -150,5 +152,25 @@ public class PriceDaoImpl extends HibernateDaoSupport
 
 	public static PriceDaoImpl getFromApplicationContext(ApplicationContext ctx) {
 		return (PriceDaoImpl) ctx.getBean("PriceDAO");
+	}
+
+	@Override
+	public void updatePrice(float bannerPrice, float contentPrice) {
+		// TODO Auto-generated method stub
+		log.debug("update the banner and content price");
+		
+		Session s = this.getSession();
+		s.beginTransaction();
+		
+		String hqlString = "update Price as p set p.pcBanner = :bannerPrice and p.pcContent = :contentPrice where p.id = 1";
+		Query query = s.createQuery(hqlString);
+		
+		query.executeUpdate();
+		
+		query.setParameter("bannerPrice", (Object)bannerPrice);
+		query.setParameter("contentPrice", (Object)contentPrice);
+		
+		s.getTransaction().commit();
+		s.close();
 	}
 }

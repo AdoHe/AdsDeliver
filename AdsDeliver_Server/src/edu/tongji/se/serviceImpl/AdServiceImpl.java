@@ -119,10 +119,11 @@ public class AdServiceImpl implements AdService {
 		return mAdDao.findById(id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Advertisement> getAdsNearby(float lng, float lat,
 			float distance, int count) {
-		return mAdDao.findAdsNearBy(distance, lng, lat, count);
+		return (List<Advertisement>)mAdDao.findAdsNearBy(distance, lng, lat, count);
 	}
 
 	@Override
@@ -153,5 +154,17 @@ public class AdServiceImpl implements AdService {
 	public int getAllAdsCount() {
 		// TODO Auto-generated method stub
 		return mAdDao.getAllAdCount();
+	}
+
+	@Override
+	public void updateAdStatus(int id, short status, String desc) {
+		// TODO Auto-generated method stub
+		Advertisement advertisement = mAdDao.findById(id);
+		
+		advertisement.setAvDesc(desc);
+		advertisement.setAvStatus(status);
+		
+		//mAdDao.attachDirty(advertisement);
+		mAdDao.save(advertisement);
 	}
 }
