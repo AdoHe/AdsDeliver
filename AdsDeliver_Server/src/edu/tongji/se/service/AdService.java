@@ -38,6 +38,14 @@ public interface AdService {
 	public void updateAdInfo(int id, Adverinfo adinfo);
 	
 	/**
+	 * 更新广告的状态和描述信息
+	 * @param id
+	 * @param status
+	 * @param desc
+	 */
+	public void updateAdStatus(int id, short status, String desc);
+	
+	/**
 	 * 获得该用户的所有广告
 	 * @param userName
 	 * @param offset

@@ -16,27 +16,83 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
+<script type="text/javascript" src="js/jQuery.textSlider.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
 		style_path = "css";
 
 		$("input:button").button();
 		$("#date-picker").datepicker();
+		
+		$("#scrollDiv").textSlider({line: 1, speed: 800, timer: 3000});
+		
+		$("#success-message").dialog({
+			autoOpen : false,
+			modal : true,
+			buttons : {
+				OK : function() {
+					$(this).dialog("close");
+					location.href = "AdminIndex.action";
+				}
+			}
+		});
+		
+		$("#fail-message").dialog({
+			autoOpen : false,
+			modal : true,
+			buttons : {
+				OK : function() {
+					$(this).dialog("close");
+				}
+			}
+		});
 	});
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("input#check").click(function() {
+	
+		$("input#checkPass").click(function() {
+			$.post(
+					"AdminAdPass.action",
+					function(data, textStatus) {
+						if(textStatus == "success")
+						{
+							$("#success-message").dialog("open");
+						}
+					});
+		});
+		
+		$("input#checkUnPass").click(function() {
 		});
 	});
 </script>
+<style type="text/css">
+.up{ margin-left:310px; width:50px; height:50px; background:#F90}
+.down{ margin:0 0 0 310px; zoom:1; width:50px; height:50px; background:#960}
+</style>
+
 <title>AdsDeliver New Advertisement</title>
 </head>
 <body>
-	<%@ include file="/jsp/header.jsp" %>
+	<%@ include file="/admin/header.jsp" %>
 	<!-- content -->
 	<div id="content">
-		<%@ include file="/jsp/left_nav.jsp" %>
+		<%@ include file="/admin/left_nav.jsp" %>
+		
+		<!-- dialog -->
+		<div id="success-message" title="审核通过">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			该广告已经通过审核！
+    		</p>
+		</div>
+		<div id="fail-message" title="审核不通过">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			该广告暂时还未通过审核！
+    		</p>
+		</div>
+		
 		<!-- content/right -->
 		<div id="right">
 			<div class="box">
@@ -62,8 +118,18 @@
 								<div class="label">
 									<label for="banner">广告banner部份:</label>
 								</div>
-								<div class="input" style="padding-left: 50px;">
-									<img alt="pic" src="${ad.adverinfo.afBannerPic}" />
+								<div style="padding-left: 250px;">
+									<div class="ban" style="background: url(./images/try.png) no-repeat; height: 50px;">
+										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left;">
+										<div id="scrollDiv" style="overflow: auto;">
+											<div id="scroll" style="padding: 10px 0 0 20px; height: 25px; line-height: 25px; overflow: hidden;">
+												<ul class="list">
+													<li style="padding-left: 14px; height: 25px; font-size: 15px;">${ad.adverinfo.afBannerWordOne}</li>
+													<li style="padding-left: 14px; height: 25px; font-size: 15px;">${ad.adverinfo.afBannerWordTwo}</li>
+												</ul>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<div class="field">
@@ -71,7 +137,11 @@
 									<label for="content">广告主体部份:</label>
 								</div>
 								<div class="input" style="padding-left: 50px;">
-									<img alt="pic" src="${ad.adverinfo.afContentPic}" />
+									<div class="cont" style="height:480px; background: url(${ad.adverinfo.afContentPic}) no-repeat;">
+										<span style="font-size: 18px;">
+											${ad.adverinfo.afContents}
+										</span>
+									</div> 
 								</div>
 							</div>
 							<div class="field">
@@ -95,8 +165,9 @@
 								</div>
 							</div>
 							<div class="buttons">
+								<input type="button"  id="checkUnPass" name="submit" value="审核不通过" style="margin-left: 50px;"/>
 								<div class="highlight">
-									<input type="button" id="check" value="审核通过" style="margin-left:50px;"/>
+									<input type="button" id="checkPass" value="审核通过"/>
 								</div>
 							</div>
 						</div>

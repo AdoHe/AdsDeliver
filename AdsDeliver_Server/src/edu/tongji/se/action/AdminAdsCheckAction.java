@@ -47,4 +47,16 @@ public class AdminAdsCheckAction extends ActionSupport
 		
 		return SUCCESS;
 	}
+	
+	public String passAd()
+	{
+		mAdService.updateAdStatus(id, (short)2, "正在运行中");
+		
+		return SUCCESS;
+	}
+	
+	public String unPassAd()
+	{
+		return SUCCESS;
+	}
 }

@@ -208,7 +208,7 @@
 		<div id="success-message" title="投放广告成功">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			恭喜你，你的操作已经成功！
+        			恭喜你，投放广告成功！请等待审核通过。
     		</p>
 		</div>
 		<div id="fail-message" title="投放失败">

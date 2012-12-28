@@ -51,7 +51,7 @@
 								tbody += "<tr><td class='admin_title'>" + a.avName + "</td>"
 										+ "<td class='admin_price'>" + a.avClickTimes + "</td>"
 										+ "<td class='admin_address'>" + a.avAddress + "</td>"
-										+ "<td class='admin_action'>" + "<a href='AdminAdCheck.action?id=" + a.id + "'>"
+										+ "<td class='admin_action'>" + "<a href='AdminAdCheckPage.action?id=" + a.id + "'>"
 										+ "审核" + "</a></td></tr>";
 										
 								$("#table_body").append(tbody);
@@ -90,10 +90,10 @@
 				                                        				
 				                                        				$.each(ad, function(index, a) {
 				                                        					var tbody = "";
-				                                        					tbody += "<tr><td class='title'>" + a.avName + "</td>"
-																					+ "<td class='price'>" + a.avClickTimes + "</td>"
-																					+ "<td class='address'>" + a.avAddress + "</td>"
-																					+ "<td class='action'>" + "<a href=''>" + "审核"
+				                                        					tbody += "<tr><td class='admin_title'>" + a.avName + "</td>"
+																					+ "<td class='admin_price'>" + a.avClickTimes + "</td>"
+																					+ "<td class='admin_address'>" + a.avAddress + "</td>"
+																					+ "<td class='admin_action'>" + "<a href='AdminAdCheckPage.action?id=" + a.id + "'>" + "审核"
 																					+ "</a></td></tr>";
 				                    										
 				                    										$("#table_body").append(tbody);

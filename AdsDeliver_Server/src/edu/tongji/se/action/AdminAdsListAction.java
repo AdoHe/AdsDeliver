@@ -147,4 +147,14 @@ public class AdminAdsListAction extends ActionSupport implements SessionAware
 		active_count = mAdService.getAllAdsCount((short)2);
 		return SUCCESS;
 	}
+	
+	public String adsShowPage()
+	{
+		return "AD_SHOW";
+	}
+	
+	public String adsCancelPage()
+	{
+		return "AD_CANCEL";
+	}
 }
