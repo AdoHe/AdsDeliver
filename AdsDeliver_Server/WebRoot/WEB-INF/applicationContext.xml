@@ -174,6 +174,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="priceService" class="edu.tongji.se.serviceImpl.PriceServiceImpl">
+		<property name="mPriceDao">
+			<ref bean="PriceDAO"/>
+		</property>
+	</bean>
+	
 	<!-- declare action -->
 	<bean id="LoginInAction" class="edu.tongji.se.action.LoginInAction">
 		<property name="mAdminService">
@@ -232,6 +238,15 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	<bean id="AdsCreateAction" class="edu.tongji.se.action.AdsCreateAction">
 		<property name="mAdservice">
 			<ref bean="adverService"/>
+		</property>
+		<property name="mUserService">
+			<ref bean="userService"/>
+		</property>
+		<property name="mAccountService">
+			<ref bean="accountService"/>
+		</property>
+		<property name="mPriceService">
+			<ref bean="priceService"/>
 		</property>
 	</bean>
 	

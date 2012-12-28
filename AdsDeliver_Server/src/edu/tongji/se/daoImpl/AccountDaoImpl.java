@@ -3,6 +3,8 @@ package edu.tongji.se.daoImpl;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
+import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;

@@ -47,5 +47,12 @@ public interface AccountService
 	 * @param userName
 	 * @return
 	 */
-	int getRecordsCount(String userName);
+	public int getRecordsCount(String userName);
+	
+	/**
+	 * 更新用户的账户，用于广告费的扣除
+	 * @param id
+	 * @param fee
+	 */
+	public void updateAccount(Account account, int fee);
 }

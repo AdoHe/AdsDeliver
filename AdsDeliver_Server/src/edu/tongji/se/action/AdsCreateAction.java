@@ -4,12 +4,18 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.model.Account;
 import edu.tongji.se.model.Adverinfo;
-import edu.tongji.se.model.Advertisement;
 import edu.tongji.se.model.Location;
+import edu.tongji.se.model.Price;
+import edu.tongji.se.model.User;
+import edu.tongji.se.service.AccountService;
 import edu.tongji.se.service.AdService;
+import edu.tongji.se.service.PriceService;
+import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.AuthorInterceptor;
 
 public class AdsCreateAction extends ActionSupport implements SessionAware
@@ -36,24 +42,45 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	private Map<String, Object> session;
 	
 	private AdService mAdservice;
-
+	
+	private UserService mUserService;
+	
+	private AccountService mAccountService;
+	
+	private PriceService mPriceService;
 	
 	public String createAd() throws Exception {
-		Location location = new Location();
-		location.setLcLongitude(longitude);
-		location.setLcLatitude(latitude);
 		
-		Adverinfo adverInfo = new Adverinfo();
-		adverInfo.setAfBannerPic(bannerPic);
-		adverInfo.setAfBannerWordOne(bannerWordOne);
-		adverInfo.setAfBannerWordTwo(bannerWordTwo);
-		adverInfo.setAfContentPic(contentPic);
-		adverInfo.setAfContents(contents);
+		String userName = (String)session.get(AuthorInterceptor.USER_SESSION_KEY);
+		User user = mUserService.findUser(userName);
 		
-		mAdservice.addAd((String)session.get(AuthorInterceptor.USER_SESSION_KEY), 
-				location, name, address, adverInfo, (short)1);
+		Account account = user.getAccount();
+		Price price = mPriceService.getPrice();
+		int totalPrice = (int)(price.getPcBanner() + price.getPcContent());
 		
-		return SUCCESS;
+		if(account.getAcBalance() > totalPrice)
+		{
+			Location location = new Location();
+			location.setLcLongitude(longitude);
+			location.setLcLatitude(latitude);
+			
+			Adverinfo adverInfo = new Adverinfo();
+			adverInfo.setAfBannerPic(bannerPic);
+			adverInfo.setAfBannerWordOne(bannerWordOne);
+			adverInfo.setAfBannerWordTwo(bannerWordTwo);
+			adverInfo.setAfContentPic(contentPic);
+			adverInfo.setAfContents(contents);
+			
+			mAdservice.addAd((String)session.get(AuthorInterceptor.USER_SESSION_KEY), 
+					location, name, address, adverInfo, (short)1);
+			
+			mAccountService.updateAccount(account, totalPrice);
+			
+			return SUCCESS;
+		}else
+		{
+			return Action.ERROR;
+		}
 	}
 	
 	/**
@@ -167,4 +194,15 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 		this.contents = contents;
 	}
 
+	public void setmUserService(UserService mUserService) {
+		this.mUserService = mUserService;
+	}
+
+	public void setmAccountService(AccountService mAccountService) {
+		this.mAccountService = mAccountService;
+	}
+
+	public void setmPriceService(PriceService mPriceService) {
+		this.mPriceService = mPriceService;
+	}
 }
