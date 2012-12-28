@@ -17,21 +17,26 @@ import android.util.Log;
 
 public class AdClient {
 	
+	private static final String DOMAIN = "http://192.168.1.104:8080";
+	
 	private static final String TAG = "AdsDeliver_SDK";
-	private static final String METHOD_URL = "http://localhost:8080/AdsDeliver_Server/AdRequest.action";
+	private static final String METHOD_URL = DOMAIN + "/AdsDeliver_Server/AdRequest.action";
 	
 	private String request_url;
 	private String responseStr;
 	private AdverInfo adverInfo;
+	private boolean hasError;
 	
 	private HttpClient httpClient;
 	private HttpGet request;
+	
 	
 	
 	private AdClient() {
 		httpClient = new DefaultHttpClient();
 		request = new HttpGet();
 		adverInfo = null;
+		hasError = false;
 	}
 	
 	private static class AdClientContainer
@@ -57,10 +62,12 @@ public class AdClient {
 		case 200: {
 			Log.d(TAG, "advertisement request success");
 			requestSuccess(response);
+			hasError = false;
 			break;
 		}
 		default: {
 			Log.d(TAG, "advertisement request failed.");
+			hasError = true;
 			break;
 		}
 		
@@ -72,6 +79,7 @@ public class AdClient {
 	// 请求成功后处理返回信息
 	private void requestSuccess(HttpResponse resp) throws ParseException, IOException, JSONException {
 		responseStr = EntityUtils.toString(resp.getEntity());
+		Log.d(TAG, "responseString: " + responseStr);
 		
 		// 解析返回的JSON
 		JSONObject json = new JSONObject(responseStr);
@@ -84,7 +92,7 @@ public class AdClient {
 		adverInfo.setBanner_word_two(adInfo_json.getString("afBannerWordTwo"));
 		adverInfo.setContent_pic(adInfo_json.getString("afContentPic"));
 		adverInfo.setContent_word(adInfo_json.getString("afContents"));
-		adverInfo.setAd_address(adInfo_json.getString("avAddress"));
+		adverInfo.setAd_address(ad_json.getString("avAddress"));
 	}
 
 
@@ -92,6 +100,9 @@ public class AdClient {
 		return adverInfo;
 	}
 	
+	public boolean hasError() {
+		return hasError;
+	}
 	
 	
 }
