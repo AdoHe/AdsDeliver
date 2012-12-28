@@ -5,7 +5,7 @@ package edu.tongji.se.serviceImpl;
 
 import java.util.List;
 
-import edu.tongji.se.daoImpl.AdministratorDaoImpl;
+import edu.tongji.se.dao.AdministratorDao;
 import edu.tongji.se.model.Administrator;
 import edu.tongji.se.service.AdminService;
 import edu.tongji.se.tools.Encry;
@@ -16,16 +16,17 @@ import edu.tongji.se.tools.Encry;
  */
 public class AdminServiceImpl implements AdminService 
 {
-	private AdministratorDaoImpl mAdminDao;
+	private AdministratorDao mAdminDao;
 	
 	/* (non-Javadoc)
 	 * @see edu.tongji.se.service.AdminService#validateAdmin(java.lang.String, java.lang.String)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public int validateAdmin(String name, String password) 
 	{
 		// TODO Auto-generated method stub
-		List<Administrator> admin = (List<Administrator>)mAdminDao.findByAdName((Object)name);
+		List<Administrator> admin = (List<Administrator>)mAdminDao.findByProperty("adName", (Object)name);
 		
 		if(admin.size() != 0)
 		{
@@ -42,11 +43,49 @@ public class AdminServiceImpl implements AdminService
 		}
 	}
 
-	public AdministratorDaoImpl getmAdminDao() {
+	public AdministratorDao getmAdminDao() {
 		return mAdminDao;
 	}
 
-	public void setmAdminDao(AdministratorDaoImpl mAdminDao) {
+	public void setmAdminDao(AdministratorDao mAdminDao) {
 		this.mAdminDao = mAdminDao;
+	}
+
+	@Override
+	public void addAdmin(String name, String password, String rand, short level) {
+		// TODO Auto-generated method stub
+		Administrator admin = new Administrator();
+		
+		admin.setAdName(name);
+		admin.setAdPassword(password);
+		admin.setAdRand(rand);
+		admin.setAdLevel(level);
+		
+		mAdminDao.save(admin);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Administrator> getAdmins() {
+		// TODO Auto-generated method stub
+		return (List<Administrator>)mAdminDao.findAll();
+	}
+
+	@Override
+	public void deleteAdmin(short id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Administrator findAdmin(String name) {
+		// TODO Auto-generated method stub
+		List<Administrator> admins = (List<Administrator>)mAdminDao.findByProperty("adName", (Object)name);
+		
+		if(admins != null & admins.size() > 0)
+			return admins.get(0);
+		else
+			return null;
 	} 
 }

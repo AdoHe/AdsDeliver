@@ -64,10 +64,10 @@
 				
 			});
 </script>
-<title>Ads Deliver Account Recharge</title>
+<title>AdsDeliver Change BannerPrice</title>
 </head>
 <body>
-	<%@ include file="/jsp/header.jsp" %>
+	<%@ include file="/admin/header.jsp" %>
 	<!-- content -->
 	<div id="content">
 		<!-- content/left -->
@@ -81,7 +81,7 @@
 		</div>
 		
 		
-		<%@ include file="/jsp/left_nav.jsp" %>
+		<%@ include file="/admin/left_nav.jsp" %>
 		<!-- content/right -->
 		<div id="right">
 			<!-- forms -->
