@@ -49,6 +49,7 @@
 			buttons : {
 				OK : function() {
 					$(this).dialog("close");
+					location.href="AdInfo.action";
 				}
 			}
 		});
@@ -87,6 +88,7 @@
 			'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
 			'uploader' : 'UploadImage.action',
 			'method' : 'post',
+			'formData' : {'type' : 'banner'},
 			'fileObjName' : 'image',
 			'buttonText'     : '选择图片',
 			'auto' : true,
@@ -98,6 +100,7 @@
 			'onUploadSuccess'    : function(file, data, response) { 
                    var result = eval("(" + data + ")");  
                    $("#bannerPic").attr("value", result.imageFilePath);
+                   $("#banPic").attr("src", result.imageFilePath);
 	         }
 			
 			});
@@ -107,6 +110,7 @@
 				'cancelImg' : '<%=path%> /images/uploadify-cancel.png',
 				'uploader' : 'UploadImage.action',
 				'method' : 'post',
+				'formData' : {'type' : 'content'},
 				'fileObjName' : 'image',
 				'buttonText'     : '选择图片',
 				'auto' : true,
@@ -118,6 +122,7 @@
 				'onUploadSuccess'    : function(file, data, response) { 
 						var result = eval("(" + data + ")");  
 	                   $("#contentPic").attr("value", result.imageFilePath);
+	                   $("#conPic").attr("src", result.imageFilePath);
 		         }
 				});
 	});
@@ -177,8 +182,9 @@
 								<div class="label">
 									<label for="bannerPic">广告Banner图片:</label>
 								</div>
+								<img id="banPic" alt="bannerPic" src="${bannerPic}" style="margin-left: 200px;">
 								<div class="chooseFile">
-									<input type="text" id="bannerPic" name="bannerPic" value="${bannerPic}" style="height:23px;width:33%;"/>
+									<input type="text" id="bannerPic" name="bannerPic" value="${bannerPic}" style="height:5px;width:33%;visibility:hidden;"/>
 									<input type="file" name="image" id="image"/>
 								</div>
 							</div>
@@ -186,8 +192,9 @@
 								<div class="label">
 									<label for="contentPic">广告内容图片:</label>
 								</div>
+								<img id="conPic" alt="contentPic" src="${contentPic}" style="margin-left: 200px;">
 								<div class="chooseFile">
-									<input type="text" id="contentPic" name="contentPic" value="${contentPic}" style="height: 23px;width: 33%;"/>
+									<input type="text" id="contentPic" name="contentPic" value="${contentPic}" style="height: 5px;width: 33%;visibility: hidden;"/>
 									<input type="file" name="contentImage" id="contentImage" size="40" />
 								</div>
 							</div>
