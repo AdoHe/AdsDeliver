@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="56dp"
+    android:background="@drawable/bg_black"
+    android:gravity="center"
     android:orientation="horizontal" >
     
     
@@ -13,6 +15,9 @@
     
     <ViewFlipper 
         android:id="@+id/ads_banner_fliper"
+        android:layout_marginLeft="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:flipInterval="4000"
@@ -22,14 +27,16 @@
             android:id="@+id/ads_banner_text1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="dddddddddd"
+            android:textColor="#ffffff"
+            android:text="LBS Ad"
             />
         
         <TextView
             android:id="@+id/ads_banner_text2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="ppppppppppp"            
+            android:textColor="#ffffff"
+            android:text="基于地理位置的移动广告专家"            
             />
         
     </ViewFlipper>

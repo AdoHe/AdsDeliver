@@ -15,7 +15,7 @@ public class AdRequestAction extends ActionSupport{
 	
 	private AdService mAdService;
 	
-	public String requestAd() {
+	public String requestAd() {                                                                                                                                                                                                                                                                                                                                                                              
 		
 		Random random = new Random();
 		if(lng != 0 && lat != 0) {

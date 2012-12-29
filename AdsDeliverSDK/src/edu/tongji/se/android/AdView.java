@@ -3,10 +3,14 @@ package edu.tongji.se.android;
 import com.androidquery.AQuery;
 
 import android.content.Context;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,6 +18,8 @@ import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 public class AdView extends LinearLayout{
+	
+	private static final String TAG = "AdsDeliverSDK";
 	
 	ImageView iv_banner_pic;
 	TextView tv_banner_text1;
@@ -26,6 +32,7 @@ public class AdView extends LinearLayout{
 	RequestAdTask mRequestAdTask;
 	AdverInfo mAdverInfo;
 	AQuery aq;
+	Location mLocation;
 
 	public AdView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -46,6 +53,8 @@ public class AdView extends LinearLayout{
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
 		
+		AdView.this.setVisibility(View.GONE);
+
 		// 设置ViewFliper
 		vp_banner_flipper.setInAnimation(mContext, R.anim.roll_up);
 		vp_banner_flipper.setOutAnimation(mContext, R.anim.roll_down);
@@ -53,30 +62,64 @@ public class AdView extends LinearLayout{
 		vp_banner_flipper.setFlipInterval(5000);
 		
 		
-		try {
-			getAdFromNet();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		LocationUtil.getLocation(mContext, mLocationListener);
 		
-		Toast.makeText(mContext, "正在请求广告...", Toast.LENGTH_LONG).show();
+		
+		
+		
 	}
 	
+	private LocationListener mLocationListener = new LocationListener() {
+
+		@Override
+		public void onLocationChanged(Location location) {
+			LocationUtil.locationManager.removeUpdates(mLocationListener);
+			
+			mLocation = location;
+			try {
+				getAdFromNet();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			Toast.makeText(mContext, "正在请求广告...", Toast.LENGTH_LONG).show();
+			
+			
+		}
+
+		@Override
+		public void onProviderDisabled(String provider) {
+			Log.d(TAG, "provider disable");
+		}
+		@Override
+
+		public void onProviderEnabled(String provider) {
+			Log.d(TAG, "provider enable");
+		}
+
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			
+		}
+		
+	};
+
 	
 	private void getAdFromNet() throws Exception {
 		
 		mRequestAdTask = new RequestAdTask();
-		mRequestAdTask.execute();
+		mRequestAdTask.execute(mLocation);
 		
 	}
 	
-	private class RequestAdTask extends AsyncTask<Void, Void, Boolean> {
+	private class RequestAdTask extends AsyncTask<Location, Void, Boolean> {
 
 		@Override
-		protected Boolean doInBackground(Void... arg0) {
+		protected Boolean doInBackground(Location... locations) {
 			
+			Location location = locations[0];
 			try {
-				mAdClient.RequestAd((float)121.819, (float)31.1218);
+				mAdClient.RequestAd((float)location.getLongitude(), (float)location.getLatitude());
 			} catch (Exception e) {
 				
 				e.printStackTrace();
@@ -92,16 +135,16 @@ public class AdView extends LinearLayout{
 			if(!result) {
 				
 				mAdverInfo = mAdClient.getAdverInfo();
-				Log.d("AdsDeliverSDK", "banner_word_one: " + mAdverInfo.getBanner_word_one());
 				
 				if(mAdverInfo == null) {
 					Log.d("AdsDeliverSDK", "mAdverInfo is null");
 				}else {
+					tv_banner_text1.setText(mAdverInfo.getBanner_word_one());
+					tv_banner_text2.setText(mAdverInfo.getBanner_word_two());
+					aq.id(iv_banner_pic).image(AdClient.DOMAIN + mAdverInfo.getBanner_pic());
+					AdView.this.setVisibility(View.VISIBLE);
 				}
 				
-				tv_banner_text1.setText(mAdverInfo.getBanner_word_one());
-				tv_banner_text2.setText(mAdverInfo.getBanner_word_two());
-				aq.id(iv_banner_pic).image(mAdverInfo.getBanner_pic());
 			}
 			
 		}
