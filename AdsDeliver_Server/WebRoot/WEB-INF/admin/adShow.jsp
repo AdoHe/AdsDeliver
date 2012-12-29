@@ -50,8 +50,8 @@
 										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='action'>" 
-										+ "<a href='AdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + "</td>" + "</tr>";
+										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='admin_action'>" 
+										+ "<a href='AdminAdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + "</td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});
@@ -93,8 +93,8 @@
 						                    										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 						                    										+ "<td class='address'>" + a.avAddress + "</td>"
 						                    										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-						                    										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='action'>"
-						                    										+ "<a href='AdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + "</td>" + "</tr>";
+						                    										+ "<td class='desc'>" + a.avDesc + "</td>" + "<td class='admin_action'>"
+						                    										+ "<a href='AdminAdInfo.action?id=" + a.id + "'>" + "查看" + "</a>" + "</td>" + "</tr>";
 						                    										
 						                    										$("#table_body").append(tbody);
 						                                        				});
