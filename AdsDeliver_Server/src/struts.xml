@@ -165,6 +165,10 @@
 			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
 		</action>
 		
+		<action name="AdminAdInfo" class="AdInfoAction" method="getAdInfo">
+			<result name="success">/WEB-INF/admin/adInfo.jsp</result>
+		</action>
+		
 		<action name="AdEdit" class="AdEditAction" method="getAdInfo">
 			<result name="success">/WEB-INF/jsp/adEdit.jsp</result>
 		</action>
@@ -173,8 +177,12 @@
 			<result type="json" />
 		</action>
 		
-		<action name="AdminAdd" class="AdminAddAction" method="adminAddPage">
+		<action name="AdminAddPage" class="AdminAddAction" method="adminAddPage">
 			<result name="ADD_ADMIN">/WEB-INF/admin/addAdmin.jsp</result>
+		</action>
+		
+		<action name="AdminAdd" class="AdminAddAction" method="addAdmin">
+			<result type="json"></result>
 		</action>
 		
 		<action name="AdminAdCheckPage" class="AdminAdsCheckAction" method="getAdInfo">
@@ -228,9 +236,11 @@
 		<action name="GetPagedAdsForAdminActive" class="AdminAdsListAction" method="getPagedAdsForActive">
 			<result type="json">
 				<param name="excludeProperties">
-					ads.*\.adverinfo,
-					ads.*\.user,
-					ads.*\.location
+					pAds.*\.adverinfo,
+					pAds.*\.user,
+					pAds.*\.location,
+					aAds,
+					ads
 				</param>
 			</result>
 		</action>

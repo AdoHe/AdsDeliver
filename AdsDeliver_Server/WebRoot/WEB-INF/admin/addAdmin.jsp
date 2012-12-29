@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
+<link rel="stylesheet" href="css/template.css" type="text/css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
@@ -15,14 +17,28 @@
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
-<script type="text/javascript" src="js/smooth.form.js"></script>
+<script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
+<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		style_path = "css";
 		
 		$("input:button").button();
 		$("#date-picker").datepicker();
+		$("div.messages").hide();
 		
+		/* select styling */
+    	$("select").selectmenu({
+        	style: 'dropdown',
+        	width: 190,
+        	menuWidth: 190,
+        	icons: [
+		    	{ find: '.locked', icon: 'ui-icon-locked' },
+		    	{ find: '.unlocked', icon: 'ui-icon-unlocked' },
+		    	{ find: '.folder-open', icon: 'ui-icon-folder-open' }
+	    		]
+    		});
+    		
 		$( "#success-message" ).dialog({
 					autoOpen: false,
 		            modal: true,
@@ -42,14 +58,25 @@
 		                }
 		            }
 		        });
+		
+		$("#form").validationEngine({
+			validationEventTriggers:"blur",  //触发的事件  validationEventTriggers:"keyup blur",
+			inlineValidation: true,//是否即时验证，false为提交表单时验证,默认true
+			success :  false,//为true时即使有不符合的也提交表单,false表示只有全部通过验证了才能提交表单,默认false
+			promptPosition: "topRight",//提示所在的位置，topLeft, topRight, bottomLeft,  centerRight, bottomRight
+			//failure : function() { alert("验证失败，请检查。");  }//验证失败时调用的函数
+			//success : function() { $("#submit").attr("disabled", false); },//验证通过时调用的函数
+			});
 	});
 </script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#addAdmin").click(function() {
+			$.post();
 		});
 	});
 </script>
+
 <title>AdsDeliver Add Administrator</title>
 </head>
 <body>
@@ -105,7 +132,7 @@
 									<label for="name">管理员名称:</label>
 								</div>
 								<div class="input">
-									<input type="text" name="name" id="name" class="small" />
+									<input type="text" name="name" id="name" class="medium validate[required,custom[noSpecialCaracters],length[0,100]]" />
 								</div>
 							</div>
 							<div class="field">
@@ -113,7 +140,7 @@
 									<label for="password">密码:</label>
 								</div>
 								<div class="input">
-									<input type="password" name="password" id="password" class="small" />
+									<input type="password" name="password" id="password" class="medium validate[required,length[6,20]] text-input" />
 								</div>
 							</div>
 							<div class="field">
@@ -121,7 +148,7 @@
 									<label for="passwordAck">确认密码:</label>
 								</div>
 								<div class="input">
-									<input type="password" name="passwordAck" id="passwordAck" class="small" />
+									<input type="password" name="passwordAck" id="passwordAck" class="medium validate[required,confirm[password]] text-input" />
 								</div>
 							</div>
 							<div class="field field-select">
@@ -135,8 +162,10 @@
 									</select>
 								</div>
 							</div>
-							<div class="button highlight">
-								<input type="button" value="添加" name="add" id="addAdmin" />
+							<div class="buttons">
+								<div class="highlight">
+									<input type="button" value="添加" name="add" id="addAdmin" style="width: 80px;"/>
+								</div>
 							</div>
 						</div>
 					</div>
