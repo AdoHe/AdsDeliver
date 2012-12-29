@@ -177,8 +177,12 @@
 			<result type="json" />
 		</action>
 		
-		<action name="AdminAdd" class="AdminAddAction" method="adminAddPage">
+		<action name="AdminAddPage" class="AdminAddAction" method="adminAddPage">
 			<result name="ADD_ADMIN">/WEB-INF/admin/addAdmin.jsp</result>
+		</action>
+		
+		<action name="AdminAdd" class="AdminAddAction" method="addAdmin">
+			<result type="json"></result>
 		</action>
 		
 		<action name="AdminAdCheckPage" class="AdminAdsCheckAction" method="getAdInfo">
