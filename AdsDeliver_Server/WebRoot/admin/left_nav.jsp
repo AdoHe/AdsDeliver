@@ -20,8 +20,8 @@
 			<li class="collapsible">
 				<a href="#" class="plus">广告单价设置</a>
 				<ul class="collapsed">
-					<li><a href="#">Banner单价</a></li>
-					<li class="last"><a href="UserPwd.action">Content单价</a></li>
+					<li><a href="AdminChaBanPriPage.action">Banner单价</a></li>
+					<li class="last"><a href="AdminChaConPriPage.action">Content单价</a></li>
 				</ul>
 			</li>
 		</ul>

@@ -245,6 +245,14 @@
 			</result>
 		</action>
 		
+		<action name="AdminChaBanPriPage" class="AdminChaPriPageAction" method="changeBannerPricePage">
+			<result name="BANNER_PRICE">/WEB-INF/admin/changBannerPrice.jsp</result>
+		</action>
+		
+		<action name="AdminChaConPriPage" class="AdminChaPriPageAction" method="changeContentPricePage">
+			<result name="CONTENT_PRICE">/WEB-INF/admin/changeContentPrice.jsp</result>
+		</action>
+		
 		<action name="AdRequest" class="AdRequestAction" method="requestAd">
 			<result type="json">
 				<param name="excludeProperties">
