@@ -45,16 +45,7 @@
 		            buttons: {
 		                Ok: function() {
 		                    $( this ).dialog( "close" );
-		                }
-		            }
-		        });
-		        
-		$( "#fail-message" ).dialog({
-					autoOpen: false,
-		            modal: true,
-		            buttons: {
-		                Ok: function() {
-		                    $( this ).dialog( "close" );
+		                    location.href="";
 		                }
 		            }
 		        });
@@ -91,8 +82,17 @@
 					function(data, textStatus) {
 						if(textStatus == "success")
 						{
-							if(data.result == 2)
+							if(data.result == 1)
 							{
+								$("#success-message").dialog("open");
+							}else if(data.result == 3)
+							{
+								$("div.messages").show();
+								$("#errorMsg").html("对不起，你没有添加管理员的权限!");
+							}else
+							{
+								$("div.messages").show();
+								$("#errorMsg").html("对不起，该管理员已经存在!");
 							}
 						}
 					});
@@ -113,12 +113,6 @@
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
         			恭喜你,成功添加一位新的管理员!
-    		</p>
-		</div>
-		<div id="fail-message" title="添加失败">
-    		<p>
-        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			对不起,你没有添加管理员的权限!
     		</p>
 		</div>
 		
@@ -163,7 +157,7 @@
 									<label for="password">密码:</label>
 								</div>
 								<div class="input">
-									<input type="password" name="password" id="password" class="medium validate[required,length[6,20]] text-input" />
+									<input type="password" name="password" id="password" class="medium validate[required,length[5,20]] text-input" />
 								</div>
 							</div>
 							<div class="field">

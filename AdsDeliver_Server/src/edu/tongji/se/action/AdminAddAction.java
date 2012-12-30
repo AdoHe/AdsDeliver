@@ -9,7 +9,9 @@ import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.model.Administrator;
 import edu.tongji.se.service.AdminService;
+import edu.tongji.se.tools.AuthorInterceptor;
 import edu.tongji.se.tools.Encry;
 
 /**
@@ -48,20 +50,31 @@ public class AdminAddAction extends ActionSupport implements SessionAware
 
 	public String addAdmin()
 	{
-		if(mAdminService.findAdmin(name) != null)
+		String adminName = (String)session.get(AuthorInterceptor.USER_SESSION_KEY);
+		Administrator administrator = mAdminService.findAdmin(adminName);
+		
+		if(administrator.getAdLevel() == 1)
 		{
-			result = 2;
-			return SUCCESS;
+			if(mAdminService.findAdmin(name) != null)
+			{
+				result = 2;
+				return SUCCESS;
+			}else
+			{
+				String randString = Encry.generateSalt();
+				String passwordInDb = Encry.generatePasswordInDatabase(password, randString);
+				
+				mAdminService.addAdmin(name, passwordInDb, randString, (short)level);
+				
+				result = 1;
+				return SUCCESS;
+			}
 		}else
 		{
-			String randString = Encry.generateSalt();
-			String passwordInDb = Encry.generatePasswordInDatabase(password, randString);
-			
-			mAdminService.addAdmin(name, passwordInDb, randString, (short)level);
-			
-			result = 1;
+			result = 3;
 			return SUCCESS;
 		}
+		
 	}
 	
 	public String getName() {
