@@ -138,7 +138,7 @@ public class AdminAdsListAction extends ActionSupport implements SessionAware
 	 */
 	public String getPagedAdsForActive()
 	{
-		if(aAds != null)
+		if(pAds != null)
 		{
 		}
 		

@@ -39,8 +39,8 @@
 						function(data, textStatus) {
 							if(textStatus == "success")
 							{
-								adCount = data.all_count;
-								var ad = data.aAds;
+								adCount = data.active_count;
+								var ad = data.pAds;
 								
 								if(adCount != 0)
 								{
@@ -85,7 +85,7 @@
 						                                                   if(textStatus == "success") {  
 						                                                        $("#table_body").empty();
 						                                                        
-						                                                        var ad = data.aAds;
+						                                                        var ad = data.pAds;
 						                                        				
 						                                        				$.each(ad, function(index, a) {
 						                                        					var tbody = "";
@@ -108,7 +108,7 @@
 			});
 </script>
 <script type="text/javascript" src="js/smooth.form.js"></script>
-<title>AdsDeliver Ads List</title>
+<title>AdsDeliver Ads Cancel</title>
 </head>
 <body>
 	<%@ include file="/admin/header.jsp" %>
@@ -121,7 +121,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>广告列表</h5>
+					<h5>撤销广告</h5>
 					<div class="search">
 						<form action="#" method="post">
 							<div class="input">
