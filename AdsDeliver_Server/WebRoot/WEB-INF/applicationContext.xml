@@ -289,6 +289,9 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 	</bean>
 	
 	<bean id="AdminAddAction" class="edu.tongji.se.action.AdminAddAction">
+		<property name="mAdminService">
+			<ref bean="adminService"/>
+		</property>
 	</bean>
 	
 	<bean id="AdRequestAction" class="edu.tongji.se.action.AdRequestAction">

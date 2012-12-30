@@ -72,7 +72,30 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#addAdmin").click(function() {
-			$.post();
+			if($("input#name").attr("value")=="")
+			{
+				return false;
+			}
+			if($("input#password").attr("value")=="")
+			{
+				return false;
+			}
+			
+			$.post(
+					"AdminAdd.action",
+					{
+						name : $("input#name").attr("value"),
+						password : $("input#password").attr("value"),
+						level : $("#select").attr("checked")
+					},
+					function(data, textStatus) {
+						if(textStatus == "success")
+						{
+							if(data.result == 2)
+							{
+							}
+						}
+					});
 		});
 	});
 </script>
