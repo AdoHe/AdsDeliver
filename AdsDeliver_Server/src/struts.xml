@@ -253,11 +253,19 @@
 			<result name="CONTENT_PRICE">/WEB-INF/admin/changeContentPrice.jsp</result>
 		</action>
 		
+		<action name="AdminPriceInfoPage" class="AdminChaPriPageAction" method="priceInfoPage">
+			<result name="PRICE_INFO">/WEB-INF/admin/priceInfo.jsp</result>
+		</action>
+		
 		<action name="AdminChaBanPri" class="AdminChaPriAction" method="changeBannerPrice">
 			<result type="json"></result>
 		</action>
 		
 		<action name="AdminChaConPri" class="AdminChaPriAction" method="changeContentPrice">
+			<result type="json"></result>
+		</action>
+		
+		<action name="AdminPriceInfo" class="AdminPriceInfoAction" method="getPriceInfo">
 			<result type="json"></result>
 		</action>
 		

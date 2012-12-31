@@ -10,7 +10,6 @@
 <link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <!-- scripts(custom) -->
@@ -25,11 +24,11 @@
 				$("#date-picker").datepicker();
 				
 				$.post(
-					"GetBalance.action",
+					"AdminPriceInfo.action",
 					function(data, textStatus) {
 						if(textStatus == "success") {
-							$("#account_balance").html(data.balance + "元");
-							$("#use_balance").html(data.balance + "元");
+							$("#banner_price").html(data.bannerPrice + "元");
+							$("#content_price").html(data.contentPrice + "元");
 						}
 					}						
 				);
@@ -49,18 +48,18 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>你的账户:</h5>
+					<h5>广告单价:</h5>
 				</div>
 				<!-- end box/title -->
 				<div>
 					<table>
 						<tr>
-							<td>当前余额:</td>
-							<td id="account_balance"></td>
+							<td>Banner单价:</td>
+							<td id="banner_price"></td>
 						</tr>
 						<tr>
-							<td>可用余额:</td>
-							<td id="use_balance"></td>
+							<td>Content单价:</td>
+							<td id="content_price"></td>
 						</tr>
 					</table>
 				</div>

@@ -41,7 +41,7 @@
 		            buttons: {
 		                Ok: function() {
 		                    $( this ).dialog( "close" );
-		                    location.href="";
+		                    location.href="AdminPriceInfoPage.action";
 		                }
 		            }
 		        });

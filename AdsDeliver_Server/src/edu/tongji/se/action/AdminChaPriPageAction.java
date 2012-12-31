@@ -25,4 +25,9 @@ public class AdminChaPriPageAction extends ActionSupport
 	{
 		return "CONTENT_PRICE";
 	}
+	
+	public String priceInfoPage()
+	{
+		return "PRICE_INFO";
+	}
 }

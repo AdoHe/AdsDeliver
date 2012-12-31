@@ -41,12 +41,12 @@
 		            buttons: {
 		                Ok: function() {
 		                    $( this ).dialog( "close" );
-		                    location.href="";
+		                    location.href="AdminPriceInfoPage.action";
 		                }
 		            }
 		        });
 				
-				$("#recharge").click(function() {
+				$("#change").click(function() {
 					$.post(
 							"AdminChaConPri.action",
 							{contentPrice : $("input#input").attr("value")},
