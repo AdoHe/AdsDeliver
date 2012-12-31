@@ -41,4 +41,10 @@ public class PriceServiceImpl implements PriceService {
 		return mPriceDao.findById((short)1);
 	}
 
+	@Override
+	public void save(Price price) {
+		// TODO Auto-generated method stub
+		mPriceDao.save(price);
+	}
+
 }

@@ -253,6 +253,14 @@
 			<result name="CONTENT_PRICE">/WEB-INF/admin/changeContentPrice.jsp</result>
 		</action>
 		
+		<action name="AdminChaBanPri" class="AdminChaPriAction" method="changeBannerPrice">
+			<result type="json"></result>
+		</action>
+		
+		<action name="AdminChaConPri" class="AdminChaPriAction" method="changeContentPrice">
+			<result type="json"></result>
+		</action>
+		
 		<action name="AdRequest" class="AdRequestAction" method="requestAd">
 			<result type="json">
 				<param name="excludeProperties">

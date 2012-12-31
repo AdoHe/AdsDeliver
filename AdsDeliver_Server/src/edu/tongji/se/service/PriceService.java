@@ -23,4 +23,10 @@ public interface PriceService {
 	 * @return
 	 */
 	public Price getPrice();
+	
+	/**
+	 * ±£´æprice
+	 * @param price
+	 */
+	public void save(Price price);
 }

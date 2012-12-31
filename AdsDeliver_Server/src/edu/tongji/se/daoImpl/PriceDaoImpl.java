@@ -162,13 +162,13 @@ public class PriceDaoImpl extends HibernateDaoSupport
 		Session s = this.getSession();
 		s.beginTransaction();
 		
-		String hqlString = "update Price as p set p.pcBanner = :bannerPrice and p.pcContent = :contentPrice where p.id = 1";
+		String hqlString = "update Price as p set p.pcBanner = :bannerPrice, p.pcContent = :contentPrice where p.id = 1";
 		Query query = s.createQuery(hqlString);
-		
-		query.executeUpdate();
 		
 		query.setParameter("bannerPrice", (Object)bannerPrice);
 		query.setParameter("contentPrice", (Object)contentPrice);
+		
+		query.executeUpdate();
 		
 		s.getTransaction().commit();
 		s.close();

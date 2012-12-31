@@ -12,13 +12,11 @@
 <link rel="stylesheet" href="css/template.css" type="text/css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.ui.selectmenu.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.custom.min.js"></script>
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script type="text/javascript" src="js/smooth.table.js"></script>
 <script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
 <script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -43,15 +41,15 @@
 		            buttons: {
 		                Ok: function() {
 		                    $( this ).dialog( "close" );
-		                    location.href="UserAccount.action";
+		                    location.href="";
 		                }
 		            }
 		        });
 				
-				$("#recharge").click(function() {
+				$("#change").click(function() {
 					$.post(
-							"GetBalance!recharge.action",
-							{rechargeAmount : $("input#input").attr("value")},
+							"AdminChaBanPri.action",
+							{bannerPrice : $("input#input").attr("value")},
 							function(data, textStatus) {
 								if(textStatus == "success") {
 									$( "#success-message" ).dialog("open");
@@ -73,10 +71,10 @@
 		<!-- content/left -->
 		
 		<!-- 对话框 -->
-		<div id="success-message" title="充值成功">
+		<div id="success-message" title="修改成功">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			恭喜你，你的充值操作已经成功！
+        			恭喜你，你的操作已经成功！
     		</p>
 		</div>
 		
@@ -88,7 +86,7 @@
 			<div class="box">
 				<!-- box/title -->
 				<div class="title">
-					<h5>账户充值</h5>
+					<h5>Banner单价设置</h5>
 				</div>
 				<!-- end box/title -->
 				<form id="form" action="" method="post">
@@ -96,12 +94,12 @@
 						<div class="fields">
 							<div class="field field-first">
 								<div class="label">
-									<label for="input">请输入你要充值的数目:</label>
+									<label for="input">请输入合适的Banner单价:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="medium validate[required,min[1],max[1000]]" />
+									<input type="text" id="input" name="input" class="medium validate[required,min[1],max[10]]" />
 									<div class="button highlight">
-										<input type="button" value="充值" name="submit" id="recharge"/>
+										<input type="button" value="确定" name="submit" id="change"/>
 									</div>
 								</div>
 							</div>
