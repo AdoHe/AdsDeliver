@@ -24,8 +24,17 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				$("input:submit").button();
+				$("input:button").button();
 				$("div.messages").hide();
+				
+				$("input#cancel").click(function() {
+					$("input:checkbox").each(function() {
+						if($(this).attr("checked"))
+						{
+							alert($(this).val());
+						}
+					});
+				});
 			});
 </script>
 <script type="text/javascript">
@@ -51,7 +60,7 @@
 										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
+										+ "<td class='selected last'><input type='checkbox' value='" + a.id + "'/>"+ "</td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});
@@ -175,7 +184,7 @@
 								<option value="" class="unlocked">撤销广告</option>
 							</select>
 							<div class="button">
-								<input type="submit" name="submit" value="Apply to selected" />
+								<input type="button" name="submit" id="cancel" value="Apply to selected" />
 							</div>
 						</div>
 						<!-- end table/action -->
