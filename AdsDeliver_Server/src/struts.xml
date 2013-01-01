@@ -16,6 +16,19 @@
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
 		
+		<interceptors>
+			<interceptor name="authorInterceptor" class="edu.tongji.se.tools.AuthorInterceptor"></interceptor>
+			<interceptor-stack name="authorDefaultStack">
+				<interceptor-ref name="authorInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack> 
+		</interceptors>
+		
+		<default-interceptor-ref name="authorDefaultStack"></default-interceptor-ref>
+		
+		<global-results>
+			<result name="login" type="redirect">/WEB-INF/jsp/login.jsp</result>
+		</global-results>
 		
 		<action name="LoginIn" class="LoginInAction">
 			<result name="SUCCESS">/WEB-INF/jsp/admin.jsp</result>
