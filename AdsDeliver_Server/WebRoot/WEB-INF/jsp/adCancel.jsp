@@ -28,6 +28,16 @@
 				$("input:submit").button();
 				$("div.messages").hide();
 				
+				$("#success-message").dialog({
+					autoOpen: false,
+		            modal: true,
+		            buttons: {
+		                Ok: function() {
+		                    $( this ).dialog( "close" );
+		                }
+		            }
+		        });
+		        
 				$("input#cancel").click(function() {
 					var str = "";
 					
@@ -47,7 +57,9 @@
 						});
 					}
 					
-					$.post(
+					if(str != "")
+					{
+						$.post(
 							"CancelAds.action",
 							{
 								str : str
@@ -58,6 +70,10 @@
 									location.href = "AdCancel.action";
 								}
 							});
+					}else
+					{
+						$("#success-message").dialog("open");
+					}
 				});
 			});
 </script>
@@ -148,6 +164,15 @@
 	<!-- content -->
 	<div id="content">
 		<%@ include file="/jsp/left_nav.jsp" %>
+		
+		<!-- 对话框 -->
+		<div id="success-message" title="提醒">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			你还没有选中任何广告哦!。
+    		</p>
+		</div>
+		
 		<!-- content/right -->
 		<div id="right">
 			<!-- table -->
