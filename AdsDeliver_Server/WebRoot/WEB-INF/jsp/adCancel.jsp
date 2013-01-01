@@ -25,15 +25,39 @@
 
 				$("#date-picker").datepicker();
 				$("input:button").button();
+				$("input:submit").button();
 				$("div.messages").hide();
 				
 				$("input#cancel").click(function() {
-					$("input:checkbox").each(function() {
-						if($(this).attr("checked"))
-						{
-							alert($(this).val());
-						}
-					});
+					var str = "";
+					
+					if($("input.checkall").attr("checked"))
+					{
+						$("input.check").each(function() {
+							str += $(this).val() + ",";
+						});
+						alert(str);
+					}else
+					{
+						$("input.check").each(function() {
+							if($(this).attr("checked"))
+							{
+								str += $(this).val() + ",";
+							}
+						});
+					}
+					
+					$.post(
+							"CancelAds.action",
+							{
+								str : str
+							},
+							function(data, textStatus) {
+								if(textStatus == "success")
+								{
+									location.href = "AdCancel.action";
+								}
+							});
 				});
 			});
 </script>
@@ -60,7 +84,7 @@
 										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td class='selected last'><input type='checkbox' value='" + a.id + "'/>"+ "</td>" + "</tr>";
+										+ "<td class='selected last'><input type='checkbox' class='check' value='" + a.id + "'/>"+ "</td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});

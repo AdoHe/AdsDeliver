@@ -161,6 +161,16 @@
 			</result>
 		</action>
 		
+		<action name="CancelAds" class="AdsCancelAction" method="cancelAds">
+			<result type="json">
+				<param name="excludeProperties">
+					aAds.*\.adverinfo,
+					aAds.*\.user,
+					aAds.*\.location
+				</param>
+			</result>
+		</action>
+		
 		<action name="AdInfo" class="AdInfoAction" method="getAdInfo">
 			<result name="success">/WEB-INF/jsp/adInfo.jsp</result>
 		</action>

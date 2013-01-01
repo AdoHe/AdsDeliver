@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -25,6 +27,8 @@ public class AdsCancelAction extends ActionSupport implements SessionAware
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	private static final Logger log = LoggerFactory.getLogger(AdsCancelAction.class);
+	
 	private Map<String, Object> session;
 
 	private int start;
@@ -35,6 +39,8 @@ public class AdsCancelAction extends ActionSupport implements SessionAware
 	private int all_count;
 	
 	private AdService mAdService;
+	
+	private String str;
 	/* (non-Javadoc)
 	 * @see org.apache.struts2.interceptor.SessionAware#setSession(java.util.Map)
 	 */
@@ -54,9 +60,23 @@ public class AdsCancelAction extends ActionSupport implements SessionAware
 		{
 		}
 		
-		aAds = (ArrayList<Advertisement>)mAdService.getAds(userName, start, length);
+		aAds = (ArrayList<Advertisement>)mAdService.getAds(userName, (short)2, start, length);
 		
-		all_count = mAdService.getAllAdsCount(userName);
+		all_count = mAdService.getActiveAdsCount(userName);
+		return SUCCESS;
+	}
+	
+	public String cancelAds()
+	{
+		log.debug("this is the str" + str);
+		String[] strs = str.split(",");
+		
+		for(int i = 0; i < strs.length; i++)
+		{
+			int id = Integer.valueOf(strs[i]);
+			mAdService.updateAdStatus(id, (short)3, "ÒÑÍ£Ö¹ÔËÐÐ");
+		}
+		
 		return SUCCESS;
 	}
 	
@@ -100,6 +120,12 @@ public class AdsCancelAction extends ActionSupport implements SessionAware
 	public void setmAdService(AdService mAdService) {
 		this.mAdService = mAdService;
 	}
-	
-	
+
+	public String getStr() {
+		return str;
+	}
+
+	public void setStr(String str) {
+		this.str = str;
+	}
 }
