@@ -141,7 +141,7 @@
 						</div>
 						<div class="text">
 							<h6>Notice Message</h6>
-							<span>还没有受到任何广告商投放的广告!</span>
+							<span>暂时还没有新的广告哦!</span>
 						</div>
 						<div class="dismiss">
 							<a href="#message-notice"></a>

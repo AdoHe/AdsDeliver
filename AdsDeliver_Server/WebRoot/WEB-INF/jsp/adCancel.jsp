@@ -142,7 +142,7 @@
 																					+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 																					+ "<td class='address'>" + a.avAddress + "</td>"
 																					+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-																					+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
+																					+ "<td class='selected last'><input type='checkbox' class='check' value='"+ a.id +　"'/></td>" + "</tr>";
 						                    										
 						                    										$("#table_body").append(tbody);
 						                                        				});

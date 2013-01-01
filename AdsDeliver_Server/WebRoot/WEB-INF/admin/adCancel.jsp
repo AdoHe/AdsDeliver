@@ -25,7 +25,56 @@
 
 				$("#date-picker").datepicker();
 				$("input:submit").button();
+				$("input:button").button();
 				$("div.messages").hide();
+				
+				$("#success-message").dialog({
+					autoOpen: false,
+		            modal: true,
+		            buttons: {
+		                Ok: function() {
+		                    $( this ).dialog( "close" );
+		                }
+		            }
+		        });
+		        
+		        $("input#cancel").click(function() {
+					var str = "";
+					
+					if($("input.checkall").attr("checked"))
+					{
+						$("input.check").each(function() {
+							str += $(this).val() + ",";
+						});
+						alert(str);
+					}else
+					{
+						$("input.check").each(function() {
+							if($(this).attr("checked"))
+							{
+								str += $(this).val() + ",";
+							}
+						});
+					}
+					
+					if(str != "")
+					{
+						$.post(
+							"AdminAdsCancel.action",
+							{
+								str : str
+							},
+							function(data, textStatus) {
+								if(textStatus == "success")
+								{
+									location.href = "AdminAdsCancelPage.action";
+								}
+							});
+					}else
+					{
+						$("#success-message").dialog("open");
+					}
+				});
 			});
 </script>
 <script type="text/javascript">
@@ -51,7 +100,7 @@
 										+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 										+ "<td class='address'>" + a.avAddress + "</td>"
 										+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-										+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
+										+ "<td class='selected last'><input type='checkbox' class='check' value='" + a.id + "'/></td>" + "</tr>";
 										
 										$("#table_body").append(tbody);
 									});
@@ -93,7 +142,7 @@
 																					+ "<td class='time'>" + a.avPublishTime.replace("T","  ") + "</td>"
 																					+ "<td class='address'>" + a.avAddress + "</td>"
 																					+ "<td class='status'>" + (a.avStatus > 1 ? "是" : "否") + "</td>"
-																					+ "<td class='selected last'><input type='checkbox' /></td>" + "</tr>";
+																					+ "<td class='selected last'><input type='checkbox' class='check' value='" + a.id + "'/></td>" + "</tr>";
 						                    										
 						                    										$("#table_body").append(tbody);
 						                                        				});
@@ -115,6 +164,15 @@
 	<!-- content -->
 	<div id="content">
 		<%@ include file="/admin/left_nav.jsp" %>
+		
+		<!-- 对话框 -->
+		<div id="success-message" title="提醒">
+    		<p>
+        		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
+        			你还没有选中任何广告哦!。
+    		</p>
+		</div>
+		
 		<!-- content/right -->
 		<div id="right">
 			<!-- table -->
@@ -172,7 +230,7 @@
 								<option value="" class="unlocked">撤销广告</option>
 							</select>
 							<div class="button">
-								<input type="submit" name="submit" value="Apply to selected" />
+								<input type="button" name="submit" id="cancel" value="Apply to selected" />
 							</div>
 						</div>
 						<!-- end table/action -->
