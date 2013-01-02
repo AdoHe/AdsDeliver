@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     This is the index page. <br>
-    <a href="LoginIn.action">登录</a>
+    <a href="UserLoginPage.action">登录</a>
     <a href="Register.action">注册</a>
   </body>
 </html>

@@ -106,7 +106,7 @@ public class AuthorInterceptor extends AbstractInterceptor
 		String actionName = invocation.getProxy().getActionName();
 		if(StringUtils.isNotBlank(actionName))
 		{
-			url += actionName;
+			url += "/"+ actionName + ".action";
 		}
 		
 		session.put(GOING_TO_URL_KEY, url);

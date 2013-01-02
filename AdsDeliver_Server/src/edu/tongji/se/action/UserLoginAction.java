@@ -106,7 +106,7 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 				session.remove(AuthorInterceptor.GOING_TO_URL_KEY);
 			}else
 			{
-				this.setGtUrl("");
+				this.setGtUrl("UserLoginPage.action");
 			}
 		}
 	}
@@ -128,12 +128,12 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 			return SUCCESS;
 		}
 	}
-
 	
-	public String goindex() throws Exception {
-		return SUCCESS;
+	public String loginPage() throws Exception
+	{
+		return "LOGIN_PAGE";
 	}
-
+	
 	@Override
 	public void setCookiesMap(Map<String, String> cookies) {
 		// TODO Auto-generated method stub

@@ -10,7 +10,7 @@
 	<!-- user -->
 	<ul id="user">
 		<li class="first"><a href="">账户</a></li>
-		<li><a href="">注销</a></li>
+		<li><a href="UserLogout.action">注销</a></li>
 		<li class="highlight last"><a href="">回到首页</a></li>
 	</ul>
 	<!-- end user -->
