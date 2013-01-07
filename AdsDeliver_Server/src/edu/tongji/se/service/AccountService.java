@@ -54,5 +54,5 @@ public interface AccountService
 	 * @param id
 	 * @param fee
 	 */
-	public void updateAccount(Account account, int fee);
+	public void updateAccount(Account account, float fee);
 }

@@ -103,18 +103,17 @@ public class AccountServiceImpl implements AccountService
 	}
 
 	@Override
-	public void updateAccount(Account account, int fee) {
-		// TODO Auto-generated method stub
+	public void updateAccount(Account account, float fee) {
 		int currentBalance = account.getAcBalance();
-		account.setAcBalance(currentBalance - fee);
+		account.setAcBalance(currentBalance - (int)fee);
 		mAccountDao.save(account);
 		
 		Record record = new Record();
 		record.setAccount(account);
 		record.setReIncome(0);
-		record.setReOutcome(fee);
+		record.setReOutcome((int)fee);
 		record.setReCategory("¹ã¸æ·Ñ¿Û³ý");
-		record.setReBalance(currentBalance - fee);
+		record.setReBalance(currentBalance - (int)fee);
 		record.setReDate(new Timestamp(System.currentTimeMillis()));
 		
 		mRecordDao.save(record);

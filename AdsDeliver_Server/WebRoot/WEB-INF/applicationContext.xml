@@ -316,6 +316,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		<property name="mAdService">
 			<ref bean="adverService"/>
 		</property>
+		<property name="mAccountService">
+			<ref bean="accountService"/>
+		</property>
+		<property name="mPriceService">
+			<ref bean="priceService"/>
+		</property>
 	</bean>
 	
 </beans>

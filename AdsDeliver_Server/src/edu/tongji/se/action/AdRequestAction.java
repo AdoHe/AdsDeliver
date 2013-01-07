@@ -5,8 +5,12 @@ import java.util.Random;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import edu.tongji.se.model.Account;
 import edu.tongji.se.model.Advertisement;
+import edu.tongji.se.model.Price;
+import edu.tongji.se.service.AccountService;
 import edu.tongji.se.service.AdService;
+import edu.tongji.se.service.PriceService;
 
 public class AdRequestAction extends ActionSupport{
 	private float lng;
@@ -14,6 +18,8 @@ public class AdRequestAction extends ActionSupport{
 	private Advertisement ad;
 	
 	private AdService mAdService;
+	private AccountService mAccountService;
+	private PriceService mPriceService;
 	
 	public String requestAd() {                                                                                                                                                                                                                                                                                                                                                                              
 		
@@ -31,6 +37,12 @@ public class AdRequestAction extends ActionSupport{
 			ad = mAdService.getAdRand();
 		}
 		
+		
+		ad.setAvShowTimes(ad.getAvShowTimes() + 1);
+		
+		Price price = mPriceService.getPrice();
+		Account account = ad.getUser().getAccount();
+		mAccountService.updateAccount(account, (int)(price.getPcBanner() + price.getPcContent()));
 		
 		return "success";
 	}
@@ -62,6 +74,15 @@ public class AdRequestAction extends ActionSupport{
 	public void setAd(Advertisement ad) {
 		this.ad = ad;
 	}
+
+	public void setmAccountService(AccountService mAccountService) {
+		this.mAccountService = mAccountService;
+	}
+
+	public void setmPriceService(PriceService mPriceService) {
+		this.mPriceService = mPriceService;
+	}
+	
 	
 	
 }
