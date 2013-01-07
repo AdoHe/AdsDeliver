@@ -2,7 +2,9 @@ package edu.tongji.se.android;
 
 import com.androidquery.AQuery;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.os.AsyncTask;
@@ -34,7 +36,7 @@ public class AdView extends LinearLayout{
 	AQuery aq;
 	Location mLocation;
 
-	public AdView(Context context, AttributeSet attrs) {
+	public AdView(final Context context, AttributeSet attrs) {
 		super(context, attrs);
 		LayoutInflater.from(context).inflate(R.layout.adview_layout, this, true);
 		
@@ -47,13 +49,27 @@ public class AdView extends LinearLayout{
 		
 		mAdClient = AdClient.getInstance();
 		aq = new AQuery(context);
+		
+		// 点击跳转到AdActivity
+		AdView.this.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, AdsActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString(Constant.AD_IMAGE_PATH_KEY, Constant.DOMAIN + mAdverInfo.getContent_pic());
+				bundle.putString(Constant.AD_CONTENT_KEY, mAdverInfo.getContent_word());
+				intent.putExtras(bundle);
+				context.startActivity(intent);
+			}
+		});
 	}
 
 	@Override
 	protected void onAttachedToWindow() {
 		super.onAttachedToWindow();
 		
-		AdView.this.setVisibility(View.GONE);
+		//TODO 一开始广告设成不可见的
+		//AdView.this.setVisibility(View.GONE);
 
 		// 设置ViewFliper
 		vp_banner_flipper.setInAnimation(mContext, R.anim.roll_up);
@@ -141,7 +157,7 @@ public class AdView extends LinearLayout{
 				}else {
 					tv_banner_text1.setText(mAdverInfo.getBanner_word_one());
 					tv_banner_text2.setText(mAdverInfo.getBanner_word_two());
-					aq.id(iv_banner_pic).image(AdClient.DOMAIN + mAdverInfo.getBanner_pic());
+					aq.id(iv_banner_pic).image(Constant.DOMAIN + mAdverInfo.getBanner_pic());
 					AdView.this.setVisibility(View.VISIBLE);
 				}
 				

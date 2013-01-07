@@ -17,10 +17,8 @@ import android.util.Log;
 
 public class AdClient {
 	
-	public static final String DOMAIN = "http://192.168.1.103:8080";
-	
 	private static final String TAG = "AdsDeliver_SDK";
-	private static final String METHOD_URL = DOMAIN + "/AdsDeliver_Server/AdRequest.action";
+	private static final String METHOD_URL = Constant.DOMAIN + "/AdsDeliver_Server/AdRequest.action";
 	
 	private String request_url;
 	private String responseStr;

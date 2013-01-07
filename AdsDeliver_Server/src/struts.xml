@@ -309,6 +309,7 @@
 					ad.adverinfo.advertisement
 				</param>
 			</result>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 		
 	</package>
