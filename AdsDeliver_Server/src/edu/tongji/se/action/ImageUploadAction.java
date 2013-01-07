@@ -97,7 +97,7 @@ public class ImageUploadAction extends ActionSupport {
 
 		if(type.equals("banner"))
 		{
-			String cutBannerImageName = ImageUploadAction.cutImage(realFileAddress, imageFileName, 32, 32);
+			String cutBannerImageName = ImageUploadAction.cutImage(realFileAddress, imageFileName, 72, 72);
 			System.out.println(cutBannerImageName);
 		}else
 		{
