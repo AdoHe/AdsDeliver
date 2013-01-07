@@ -236,6 +236,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		<property name="mAdservice">
 			<ref bean="adverService"/>
 		</property>
+		<property name="mUserService">
+			<ref bean="userService"/>
+		</property>
+		<property name="mPriceService">
+			<ref bean="priceService"/>
+		</property>
 	</bean>
 	
 	<bean id="UploadImageAction" class="edu.tongji.se.action.ImageUploadAction"></bean>
