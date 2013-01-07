@@ -8,8 +8,6 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" media="screen"/>
 <link id="color" rel="stylesheet" type="text/css" href="css/green.css" />
-<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css" />
-<link rel="stylesheet" href="css/template.css" type="text/css" />
 <!-- scripts(jquery) -->
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/jquery.flot.min.js"></script>
@@ -17,8 +15,6 @@
 <!-- scripts(custom) -->
 <script type="text/javascript" src="js/smooth.js"></script>
 <script type="text/javascript" src="js/smooth.menu.js"></script>
-<script src="js/jquery.validationEngine-cn.js" type="text/javascript"></script>
-<script src="js/jquery.validationEngine.js" type="text/javascript"></script>
 <script type="text/javascript">
 			
 			$(document).ready(function () {
@@ -27,13 +23,6 @@
 				$("#date-picker").datepicker();
 				
 				$("input:button").button();
-				
-				$("#form").validationEngine({
-					validationEventTriggers:"blur",
-					inlineValidation:true,
-					success:false,
-					promptPosition:"topRight"
-				});
 				
 				$( "#success-message" ).dialog({
 					autoOpen: false,
@@ -46,7 +35,19 @@
 		            }
 		        });
 				
+				$("div.messages").hide();
+				
+				$("input#input").click(function() {
+					$("div.messages").hide();
+				});
+				
 				$("#recharge").click(function() {
+					if($("input#input").attr("value") == "")
+					{
+						$("div.messages").show();
+						$("#errorMsg").html("请输入充值金额");
+						return false;
+					}
 					$.post(
 							"GetBalance!recharge.action",
 							{rechargeAmount : $("input#input").attr("value")},
@@ -89,6 +90,22 @@
 					<h5>账户充值</h5>
 				</div>
 				<!-- end box/title -->
+				
+				<div class="messages">
+					<div id="message-error" class="message message-error">
+						<div class="image">
+							<img src="images/error.png" alt="Error" height="32" />
+						</div>
+						<div class="text">
+							<h6>Error Message</h6>
+							<span id="errorMsg"></span>
+						</div>
+						<div class="dismiss">
+							<a href="#message-error"></a>
+						</div>
+					</div>
+				</div>
+				
 				<form id="form" action="" method="post">
 					<div class="form">
 						<div class="fields">
@@ -97,7 +114,7 @@
 									<label for="input">请输入你要充值的数目:</label>
 								</div>
 								<div class="input">
-									<input type="text" id="input" name="input" class="medium validate[required,min[1],max[1000]]" />
+									<input type="text" id="input" name="input" class="medium"/>
 									<div class="button highlight">
 										<input type="button" value="充值" name="submit" id="recharge"/>
 									</div>
