@@ -4,6 +4,14 @@
 <meta charset="utf-8">	
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 <head>
+<style type="text/css">
+　　 <!--
+　　 a:link { text-decoration: none;color: blue}
+　　 a:active { text-decoration:none}
+　　 a:hover { text-decoration:none;color: red} 
+　　 a:visited { text-decoration: none;color: green}
+　　 -－> 
+</style>
 <title>Ads Server</title>	
 <link rel="stylesheet" href="stylesheets/ads.css">
 	
@@ -31,6 +39,7 @@ _gaq.push(['_trackPageview']);
 
 </script>
 
+
 </head>
 
 
@@ -53,14 +62,18 @@ _gaq.push(['_trackPageview']);
 			<h1><a class="brand" href="#home">Ads Server</a></h1>
 		</hgroup>
 						
-		<div id="language" class="btn-group language">
-						  <a href="UserLoginPage.action">登录</a>
-						  <a href="Register.action">注册</a>
+		<div id="language" class="btn-group language" >
+			
+				<a href="UserLoginPage.action" style="font-size:20px;">登录</a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="Register.action" style=" font-size:20px;">注册</a>
+			
+				
 		</div>
 						
 		<ul id="nav" class="nav">
-			<li class="active"><a lang="zh_cn" href="#download">下载</a></li>
-			<li><a lang="zh_cn" href="#features">功能特色</a></li>
+			<li><a href="#download">下载</a></li>
+			<li><a href="#features">功能特色</a></li>
 		</ul>
 						
 					
@@ -202,122 +215,4 @@ _gaq.push(['_trackPageview']);
 
 </div>
 </head>
-
-
-
-
-<script>
-
-$().ready(function () {
-
-
-var body = $('body')[0];
-
-var languageSwitcher = $('#language > button');
-
-
-window.lang = new jquery_lang_js();
-
-window.lang.run();
-window.changeLanguage = function(lang){
-$('body').removeClass('lang_zh_cn lang_en').addClass('lang_' + lang);
-	
-window.lang.change(lang);
-	languageSwitcher.attr('class','btn btn-inverse').each(function(index){
-		
-if(lang == $(this).attr('changeLanguageTo'))
-{
-			
-$(this).attr('class','btn btn-primary');
-		}
-	});
-}
-
-
-var language = window.navigator.userLanguage || window.navigator.language;
-
-if (language != 'zh-CN' && language != 'zh-cn'){
-	window.changeLanguage('en');
-}
-else{
-	window.changeLanguage('zh_cn');
-}
-
-
-languageSwitcher.click(function() 
-{
- 	window.changeLanguage($(this).attr('changeLanguageTo'));
-});
-
-
-$('#navbar a').click(function() 
-{
-	
-var elementClicked = $(this).attr("href");
-	
-var destination = $(elementClicked).offset().top;
-	
-$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-59}, 500 );
-	
-return false;
-});
-
-});
-
-
-
-var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
-
-var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
-
-var isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
-
-
-if(isiPhone > -1 || isiPad > -1 || isiPod > -1)
-{
-
-$("a.fancyvideo").each(function(){
-	var url = $(this).attr('name');
-	
-var parent = $(this).parent();
-	
-parent.empty();
-	
-if ('figure' == parent[0].className)
-{
-		
-parent.append('<video width="295" height="185" controls><source src="' + url + '.mp4" type="video/mp4" /></video>');
-	}
-});
-}
-
-else{
-
-$("a.fancyvideo").click(function () {
-    var url = $(this).attr('name');
-    
-$.fancybox({
-        'padding': 7,
-        'overlayOpacity': 0.7,
-        'autoDimensions': false,
-        'width': 768,
-        'height': 480,
-        'scrolling': 'hidden',
-        'content': '<div>' +
-                    '<video id="fancyplayer" width="768" height="480" controls="controls" autoplay="autoplay" preload="auto">' +
-	                    '<source src="' + url + '.mp4" type="video/mp4" />' +
-	                    '<source src="' + url + '.ogv" type="video/ogg" />' +
-	                    '<source src="' + url + '.webm" type="video/webm" />' +
-	                   	'Sorry, you need to upgrade your browser to play the video. <br/>您需要升级您的浏览器才能播放视频。' +
-                    '</video>' +
-                    '</div>',
-         'onComplete': function () { if(document.createElement('video').play) $("#fancyplayer")[0].play() }
-
-    });
-    return false;
-});
-}
-
-
-</script>
 </body></html>

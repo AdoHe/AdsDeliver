@@ -4,7 +4,7 @@
 <div id="header">
 	<!-- logo -->
 	<div id="logo">
-		<h1><a href="" title="SmoothAdmin"><img src="images/logo.png" alt="Smooth Adimn" /></a></h1>
+		<h1><a href="" title="AdsDeliver"><img src="images/logo.png" alt="Ads Deliver" /></a></h1>
 	</div>
 	<!-- end logo -->
 	<!-- user -->
