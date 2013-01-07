@@ -19,21 +19,21 @@ public class AdminPriceInfoAction extends ActionSupport
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private int bannerPrice;
-	private int contentPrice;
+	private float bannerPrice;
+	private float contentPrice;
 	
 	private PriceService mPriceService;
 	
-	public int getBannerPrice() {
+	public float getBannerPrice() {
 		return bannerPrice;
 	}
-	public void setBannerPrice(int bannerPrice) {
+	public void setBannerPrice(float bannerPrice) {
 		this.bannerPrice = bannerPrice;
 	}
-	public int getContentPrice() {
+	public float getContentPrice() {
 		return contentPrice;
 	}
-	public void setContentPrice(int contentPrice) {
+	public void setContentPrice(float contentPrice) {
 		this.contentPrice = contentPrice;
 	}
 	public void setmPriceService(PriceService mPriceService) {
@@ -44,8 +44,8 @@ public class AdminPriceInfoAction extends ActionSupport
 	{
 		Price price = mPriceService.getPrice();
 		
-		bannerPrice = (int)price.getPcBanner().floatValue();
-		contentPrice = (int)price.getPcContent().floatValue();
+		bannerPrice = price.getPcBanner();
+		contentPrice = price.getPcContent();
 		return SUCCESS;
 	}
 }
