@@ -46,7 +46,6 @@
 						function(data, textStatus) {
 							if(textStatus == "success") {
 								//设置页面的数据
-								
 								$("input#userName").attr("value", data.userName);
 								$("input#realName").attr("value", data.realName);
 								$("input#company").attr("value", data.corperation);
