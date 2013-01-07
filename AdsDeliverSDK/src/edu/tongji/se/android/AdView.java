@@ -54,6 +54,10 @@ public class AdView extends LinearLayout{
 		AdView.this.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if(mAdverInfo == null) {
+					return;
+				}
+				
 				Intent intent = new Intent(context, AdsActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putString(Constant.AD_IMAGE_PATH_KEY, Constant.DOMAIN + mAdverInfo.getContent_pic());
