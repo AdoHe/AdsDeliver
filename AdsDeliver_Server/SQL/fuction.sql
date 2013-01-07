@@ -32,9 +32,9 @@ BEGIN
 
 	SET a = radLat1 - radLat2;
 	SET b = RAD(lng1) - RAD(lng2);
-	SET s = ASIN(SQRT(POWER(SIN(a / 2), 2) + COS(radLat1) * cos(radLat2) * POWER(SIN(b / 2), 2)));
+	SET s = 2 * ASIN(SQRT(POWER(SIN(a / 2), 2) + COS(radLat1) * cos(radLat2) * POWER(SIN(b / 2), 2)));
 	SET s = s * earth_padius;
-	SET s = ROUND(s * 1000) / 10000;
+	SET s = ROUND(s * 1000) / 1000;
 
 	RETURN s;
 END; //
