@@ -40,6 +40,8 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		style_path = "css";
+		var id;
+		
 		$("#date-picker").datepicker();
 		$("input:button").button();
 		
@@ -49,7 +51,7 @@
 			buttons : {
 				OK : function() {
 					$(this).dialog("close");
-					location.href="AdInfo.action";
+					location.href="AdInfo.action?id=" + id;
 				}
 			}
 		});
@@ -71,6 +73,7 @@
 				function(data, textStatus) {
 					if(textStatus == "success")
 					{
+						id = data.id;
 						$("#success-message").dialog("open");
 					}else
 					{
@@ -192,7 +195,7 @@
 								<div class="label">
 									<label for="contentPic">广告内容图片:</label>
 								</div>
-								<img id="conPic" alt="contentPic" src="${contentPic}" style="margin-left: 200px;">
+								<img id="conPic" alt="contentPic" src="${contentPic}" style="margin-left: 200px; height: 200px; width: 200px;">
 								<div class="chooseFile">
 									<input type="text" id="contentPic" name="contentPic" value="${contentPic}" style="height: 5px;width: 33%;visibility: hidden;"/>
 									<input type="file" name="contentImage" id="contentImage" size="40" />

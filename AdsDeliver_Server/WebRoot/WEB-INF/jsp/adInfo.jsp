@@ -66,7 +66,7 @@
 								</div>
 								<div style="padding-left: 250px;">
 									<div class="ban" style="background: url(./images/banner_background.jpg) no-repeat; height: 44px;">
-										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left;">
+										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left; width: 32px; height: 32px;">
 										<div id="scrollDiv" style="overflow: auto;">
 											<div id="scroll" style="padding: 5px 0 0 20px; height: 25px; line-height: 25px; overflow: hidden;">
 												<ul class="list">
