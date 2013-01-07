@@ -51,7 +51,7 @@
 									+ "<td class='user_price'>" + a.avClickTimes + "</td>"
 									+ "<td class='user_date'>" + a.avPublishTime.replace("T", "  ") + "</td>"
 									+ "<td class='user_address'>" + a.avAddress + "</td>"
-									+ "<td class='selected last'><input type='checkbox'/></td></tr>";
+									+ "</tr>";
 									
 									$("#table_body").append(tbody);
 								});
@@ -93,7 +93,7 @@
 					                        									+ "<td class=\"user_price\">" + a.avClickTimes + "</td>"
 					                        									+ "<td class='user_date'>" + a.avPublishTime.replace("T", "  ") + "</td>"
 					                        									+ "<td class='user_address'>" + a.avAddress + "</td>"
-					                        									+ "<td class='selected last'><input type='checkbox'/></td></tr>";
+					                        									+ "</tr>";
 					                    										
 					                    										$("#table_body").append(tbody);
 					                                        				});
@@ -149,8 +149,7 @@
 									<th>广告名称</th>
 									<th>广告价格</th>
 									<th>投放时间</th>
-									<th>投放地点</th>
-									<th class="selected last"><input type="checkbox" class="checkall" /></th>
+									<th style="border-right: none;">投放地点</th>
 								</tr>
 							</thead>
 							<tbody id="table_body">

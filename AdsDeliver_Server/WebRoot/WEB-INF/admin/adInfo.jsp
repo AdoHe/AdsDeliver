@@ -65,10 +65,10 @@
 									<label for="banner">广告banner部份:</label>
 								</div>
 								<div style="padding-left: 250px;">
-									<div class="ban" style="background: url(./images/try.png) no-repeat; height: 50px;">
+									<div class="ban" style="background: url(./images/banner_background.jpg) no-repeat; height: 44px;">
 										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left;">
 										<div id="scrollDiv" style="overflow: auto;">
-											<div id="scroll" style="padding: 10px 0 0 20px; height: 25px; line-height: 25px; overflow: hidden;">
+											<div id="scroll" style="padding: 5px 0 0 20px; height: 25px; line-height: 25px; overflow: hidden;">
 												<ul class="list">
 													<li style="padding-left: 14px; height: 25px; font-size: 15px;">${ad.adverinfo.afBannerWordOne}</li>
 													<li style="padding-left: 14px; height: 25px; font-size: 15px;">${ad.adverinfo.afBannerWordTwo}</li>
