@@ -49,7 +49,6 @@
 							<li class="last"><a href="UserPwd.action">修改用户密码</a></li>
 						</ul>
 					</li>
-					<li class="last"><a href="#">广告设置</a></li>
 				</ul>
 			</li>
 		</ul>
