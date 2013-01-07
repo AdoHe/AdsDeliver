@@ -82,10 +82,12 @@
 						'CreateAd.action',
 						$("form#form").serialize(),
 						function(data, textStatus) {
-							if(textStatus == "success") {
-								$( "#success-message" ).dialog("open");
-							}else {
-								$( "#fail-message" ).dialog("open");
+							if(data.result == 1)
+							{
+								$("#success-message").dialog("open");
+							}else
+							{
+								$("#fail-message").dialog("open");
 							}
 						}
 						
@@ -214,7 +216,7 @@
 		<div id="fail-message" title="投放失败">
     		<p>
         		<span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0 7px 50px 0;"></span>
-        			对不起，你的操作没有成功，请重试！
+        			对不起，你的账户余额不足，请先去充值！
     		</p>
 		</div>
 		

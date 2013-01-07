@@ -2271,6 +2271,11 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	overflow: hidden;
 }
 
+#content div.box div.messages div.links a
+{
+	text-decoration: none;	
+}
+
 /* -----------------------------------------------------------
 	content -> right -> pagination
 ----------------------------------------------------------- */

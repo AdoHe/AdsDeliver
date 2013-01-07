@@ -200,14 +200,14 @@
 						</div>
 						<div class="text">
 							<h6>Notice Message</h6>
-							<span>你还没有投放任何广告哦.</span>
+							<span>你还没有正在运行中的广告哦.</span>
 						</div>
 						<div class="dismiss">
 							<a href="#message-notice"></a>
 						</div>
 					</div>
 					<div class="links" style="height:15px;">
-						<a href="">Do you want to deliver an advertisement now?</a>
+						<a href="AdNew.action">Do you want to deliver an advertisement now?</a>
 					</div>
 				</div>
 				<!-- end notice message -->

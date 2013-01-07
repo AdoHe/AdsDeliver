@@ -4,7 +4,15 @@
 <meta charset="utf-8">	
 <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 <head>
-<title>Ads Server</title>	
+<style type="text/css">
+　　 <!--
+　　 a:link { text-decoration: none;color: blue}
+　　 a:active { text-decoration:none}
+　　 a:hover { text-decoration:none;color: red} 
+　　 a:visited { text-decoration: none;color: green}
+　　 -－> 
+</style>
+<title>AdsDeliver</title>	
 <link rel="stylesheet" href="stylesheets/ads.css">
 	
 <link rel="stylesheet" href="stylesheets/jquery.fancybox-1.3.4.css">	
@@ -31,6 +39,7 @@ _gaq.push(['_trackPageview']);
 
 </script>
 
+
 </head>
 
 
@@ -53,14 +62,18 @@ _gaq.push(['_trackPageview']);
 			<h1><a class="brand" href="#home">Ads Server</a></h1>
 		</hgroup>
 						
-		<div id="language" class="btn-group language">
-						  <a href="UserLoginPage.action">登录</a>
-						  <a href="Register.action">注册</a>
+		<div id="language" class="btn-group language" >
+			
+				<a href="UserLoginPage.action" style="font-size:20px;">登录</a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="Register.action" style=" font-size:20px;">注册</a>
+			
+				
 		</div>
 						
 		<ul id="nav" class="nav">
-			<li class="active"><a lang="zh_cn" href="#download">下载</a></li>
-			<li><a lang="zh_cn" href="#features">功能特色</a></li>
+			<li><a href="#download">下载</a></li>
+			<li><a href="#features">功能特色</a></li>
 		</ul>
 						
 					
@@ -103,10 +116,10 @@ _gaq.push(['_trackPageview']);
 									<div class="figure"><a name="resources/window_en"><img src="images/channel.png"></a></div>
 								</figure>
 						</div>
-						<h3 class="middle " lang="zh_cn">校园信息整合发布</h3>
-						<p lang="zh_cn">重大新闻、活动演出、学术讲座、体育赛事、实习招聘......</p>
+						<h3 class="middle " lang="zh_cn">移动广告在线投放</h3>
+						<p lang="zh_cn">无论您在哪里，只要登录我们的平台......</p>
 					
-						<p lang="zh_cn">校园信息同一平台整合发布，不让你再错过任何一个学校精彩的瞬间，不再为没完没了的短信和飞信通知而烦恼。</p>
+						<p lang="zh_cn">您就可以随时随地的向世界各地投放广告。</p>
 			
 	<!--div class="lang-display-ctrl lang-display-ctrl-zh_cn">
 					
@@ -138,8 +151,8 @@ _gaq.push(['_trackPageview']);
 			  </div>
 	</figure>
 		  </div>
-				<h3 lang="zh_cn">实时查看管理内容</h3>
-				<p lang="zh_cn">微同济不仅仅是校园移动媒体，更是一个校园信息管理工具！把实时校园信息装进口袋，随时随地地查看并管理自己感兴趣的内容。</p>
+				<h3 lang="zh_cn">基于LBS的广告内容获取</h3>
+				<p lang="zh_cn">独立开发的Android SDK可以嵌入各种各样的移动app，让您的广告被更多的人看见。</p>
 				
 	
 	<!--div class="lang-display-ctrl lang-display-ctrl-zh_cn">
@@ -178,9 +191,9 @@ _gaq.push(['_trackPageview']);
 	</figure>
 				
 </div>
-		<h3 lang="zh_cn">全新校园生活模式</h3>
+		<h3 lang="zh_cn">全新的广告收费方式</h3>
 				
-<p lang="zh_cn">不管你是普通青年还是文艺青年又或者是XX青年，都能在微同济找到属于你自己的全新校园生活模式，体验大学的种种乐趣和缤纷。</p>
+<p lang="zh_cn">不论您投放怎样的广告，我们都会确保只有当您的广告被请求的时候才会产生资费。</p>
 				<!--div class="lang-display-ctrl lang-display-ctrl-zh_cn">
 					
 	<p><a href="javascript:void(0)" class="fancyvideo" name="resources/qqmail_zh-cn"><i class="icon-play"></i>观看视频演示</a></p>
@@ -202,122 +215,4 @@ _gaq.push(['_trackPageview']);
 
 </div>
 </head>
-
-
-
-
-<script>
-
-$().ready(function () {
-
-
-var body = $('body')[0];
-
-var languageSwitcher = $('#language > button');
-
-
-window.lang = new jquery_lang_js();
-
-window.lang.run();
-window.changeLanguage = function(lang){
-$('body').removeClass('lang_zh_cn lang_en').addClass('lang_' + lang);
-	
-window.lang.change(lang);
-	languageSwitcher.attr('class','btn btn-inverse').each(function(index){
-		
-if(lang == $(this).attr('changeLanguageTo'))
-{
-			
-$(this).attr('class','btn btn-primary');
-		}
-	});
-}
-
-
-var language = window.navigator.userLanguage || window.navigator.language;
-
-if (language != 'zh-CN' && language != 'zh-cn'){
-	window.changeLanguage('en');
-}
-else{
-	window.changeLanguage('zh_cn');
-}
-
-
-languageSwitcher.click(function() 
-{
- 	window.changeLanguage($(this).attr('changeLanguageTo'));
-});
-
-
-$('#navbar a').click(function() 
-{
-	
-var elementClicked = $(this).attr("href");
-	
-var destination = $(elementClicked).offset().top;
-	
-$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-59}, 500 );
-	
-return false;
-});
-
-});
-
-
-
-var isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
-
-var isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
-
-var isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
-
-
-if(isiPhone > -1 || isiPad > -1 || isiPod > -1)
-{
-
-$("a.fancyvideo").each(function(){
-	var url = $(this).attr('name');
-	
-var parent = $(this).parent();
-	
-parent.empty();
-	
-if ('figure' == parent[0].className)
-{
-		
-parent.append('<video width="295" height="185" controls><source src="' + url + '.mp4" type="video/mp4" /></video>');
-	}
-});
-}
-
-else{
-
-$("a.fancyvideo").click(function () {
-    var url = $(this).attr('name');
-    
-$.fancybox({
-        'padding': 7,
-        'overlayOpacity': 0.7,
-        'autoDimensions': false,
-        'width': 768,
-        'height': 480,
-        'scrolling': 'hidden',
-        'content': '<div>' +
-                    '<video id="fancyplayer" width="768" height="480" controls="controls" autoplay="autoplay" preload="auto">' +
-	                    '<source src="' + url + '.mp4" type="video/mp4" />' +
-	                    '<source src="' + url + '.ogv" type="video/ogg" />' +
-	                    '<source src="' + url + '.webm" type="video/webm" />' +
-	                   	'Sorry, you need to upgrade your browser to play the video. <br/>您需要升级您的浏览器才能播放视频。' +
-                    '</video>' +
-                    '</div>',
-         'onComplete': function () { if(document.createElement('video').play) $("#fancyplayer")[0].play() }
-
-    });
-    return false;
-});
-}
-
-
-</script>
 </body></html>

@@ -120,16 +120,6 @@
 				<!-- box/title -->
 				<div class="title">
 					<h5>广告列表</h5>
-					<div class="search">
-						<form action="#" method="post">
-							<div class="input">
-								<input type="text" id="search" name="search" />
-							</div>
-							<div class="button">
-								<input type="submit" name="submit" value="搜索" />
-							</div>
-						</form>
-					</div>
 				</div>
 				<!-- end box/title -->
 				<!-- notice message -->
@@ -140,14 +130,14 @@
 						</div>
 						<div class="text">
 							<h6>Notice Message</h6>
-							<span>你还没有投放任何广告哦.</span>
+							<span>你还没有正在运行中的广告哦.</span>
 						</div>
 						<div class="dismiss">
 							<a href="#message-notice"></a>
 						</div>
 					</div>
 					<div class="links" style="height:15px;">
-						<a href="">Do you want to deliver an advertisement now?</a>
+						<a href="AdNew.action">Do you want to deliver an advertisement now?</a>
 					</div>
 				</div>
 				<!-- end notice message -->

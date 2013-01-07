@@ -165,11 +165,6 @@
 						</div>
 					</div>
 					<!-- end fields -->
-					<!-- links -->
-					<div class="links">
-						<a href="">忘记密码?</a>
-					</div>
-					<!-- end links -->
 				</div>
 			</form>
 		</div>

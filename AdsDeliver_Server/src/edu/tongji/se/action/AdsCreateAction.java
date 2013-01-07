@@ -12,7 +12,6 @@ import edu.tongji.se.model.Adverinfo;
 import edu.tongji.se.model.Location;
 import edu.tongji.se.model.Price;
 import edu.tongji.se.model.User;
-import edu.tongji.se.service.AccountService;
 import edu.tongji.se.service.AdService;
 import edu.tongji.se.service.PriceService;
 import edu.tongji.se.service.UserService;
@@ -38,14 +37,13 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 	private String contentPic;
 	private String contents;
 	
+	private int result;
 	
 	private Map<String, Object> session;
 	
 	private AdService mAdservice;
 	
 	private UserService mUserService;
-	
-	private AccountService mAccountService;
 	
 	private PriceService mPriceService;
 	
@@ -71,15 +69,15 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 			adverInfo.setAfContentPic(contentPic);
 			adverInfo.setAfContents(contents);
 			
-			mAdservice.addAd((String)session.get(AuthorInterceptor.USER_SESSION_KEY), 
+			mAdservice.addAd(userName, 
 					location, name, address, adverInfo, (short)1);
 			
-			mAccountService.updateAccount(account, totalPrice);
-			
+			result = 1;
 			return SUCCESS;
 		}else
 		{
-			return Action.ERROR;
+			result = 2;
+			return SUCCESS;
 		}
 	}
 	
@@ -198,11 +196,15 @@ public class AdsCreateAction extends ActionSupport implements SessionAware
 		this.mUserService = mUserService;
 	}
 
-	public void setmAccountService(AccountService mAccountService) {
-		this.mAccountService = mAccountService;
-	}
-
 	public void setmPriceService(PriceService mPriceService) {
 		this.mPriceService = mPriceService;
+	}
+
+	public int getResult() {
+		return result;
+	}
+
+	public void setResult(int result) {
+		this.result = result;
 	}
 }
