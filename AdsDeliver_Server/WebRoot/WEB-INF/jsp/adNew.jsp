@@ -141,7 +141,7 @@
 			
 			$("#contentImage").uploadify({
 				'swf' : '<%=path%>/images/uploadify.swf',
-				'cancelImg' : '<%=path%> /images/uploadify-cancel.png',
+				'cancelImg' : '<%=path%>/images/uploadify-cancel.png',
 				'uploader' : 'UploadImage.action',
 				'method' : 'post',
 				'formData' : {'type' : 'content'},
