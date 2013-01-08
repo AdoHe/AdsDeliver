@@ -24,18 +24,17 @@
 				<a href="" title="广告"><span class="icon"><img src="images/application_double.png" alt="广告管理" /></span>
 				<span>广告管理</span></a>
 				<ul>
-					<li><a href="#">审核广告</a></li>
-					<li><a href="#">查看广告</a></li>
-					<li class="last"><a href="#">撤销广告</a></li>
+					<li><a href="AdminIndex.action">审核广告</a></li>
+					<li><a href="AdminAdsShowPage.action">查看广告</a></li>
+					<li class="last"><a href="AdminAdsCancelPage.action">撤销广告</a></li>
 				</ul>
 			</li>
 			<li>
 				<a href="#" title="账户"><span class="icon"><img src="images/account.png" alt="管理员管理" /></span>
 				<span>管理员管理</span></a>
 				<ul>
-					<li><a href="#">添加管理员</a></li>
-					<li><a href="#">删除管理员</a></li>
-					<li class="last"><a href="#">管理员权限管理</a></li>
+					<li><a href="AdminAddPage.action">添加管理员</a></li>
+					<li><a href="AdminAdsCancelPage.action">删除管理员</a></li>
 				</ul>
 			</li>
 			<li>
@@ -45,8 +44,8 @@
 					<li>
 						<a href="#" class="childs">广告单价设置</a>
 						<ul>
-							<li><a href="#">Banner单价</a></li>
-							<li class="last"><a href="#">Content单价</a></li>
+							<li><a href="AdminChaBanPriPage.action">Banner单价</a></li>
+							<li class="last"><a href="AdminChaConPriPage.action">Content单价</a></li>
 						</ul>
 					</li>
 				</ul>

@@ -309,6 +309,12 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		</property>
 	</bean>
 	
+	<bean id="AdminCancelAction" class="edu.tongji.se.action.AdminCancelAction">
+		<property name="mAdminService">
+			<ref bean="adminService"/>
+		</property>
+	</bean>
+	
 	<bean id="AdRequestAction" class="edu.tongji.se.action.AdRequestAction">
 		<property name="mAdService">
 			<ref bean="adverService"/>

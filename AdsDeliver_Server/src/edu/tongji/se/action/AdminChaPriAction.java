@@ -21,29 +21,29 @@ public class AdminChaPriAction extends ActionSupport
 	
 	private PriceService mPriceService;
 	
-	private int bannerPrice;
-	private int contentPrice;
+	private float bannerPrice;
+	private float contentPrice;
 	
 	public void setmPriceService(PriceService mPriceService) {
 		this.mPriceService = mPriceService;
 	}
-	public int getBannerPrice() {
+	public float getBannerPrice() {
 		return bannerPrice;
 	}
-	public void setBannerPrice(int bannerPrice) {
+	public void setBannerPrice(float bannerPrice) {
 		this.bannerPrice = bannerPrice;
 	}
-	public int getContentPrice() {
+	public float getContentPrice() {
 		return contentPrice;
 	}
-	public void setContentPrice(int contentPrice) {
+	public void setContentPrice(float contentPrice) {
 		this.contentPrice = contentPrice;
 	}
 	
 	public String changeBannerPrice()
 	{
 		Price price = mPriceService.getPrice();
-		price.setPcBanner((float)bannerPrice);
+		price.setPcBanner(bannerPrice);
 		
 		//mPriceService.updatePrice((float)bannerPrice, price.getPcContent());
 		mPriceService.save(price);
@@ -53,7 +53,7 @@ public class AdminChaPriAction extends ActionSupport
 	public String changeContentPrice()
 	{
 		Price price = mPriceService.getPrice();
-		price.setPcContent((float)contentPrice);
+		price.setPcContent(contentPrice);
 		
 		//mPriceService.updatePrice(price.getPcBanner(), (float)contentPrice);
 		mPriceService.save(price);

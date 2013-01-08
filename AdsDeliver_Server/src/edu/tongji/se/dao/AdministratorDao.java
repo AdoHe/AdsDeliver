@@ -32,4 +32,6 @@ public interface AdministratorDao
 	//merge two administrators
 	public Administrator merge(Administrator detachedInstance);
 	
+	//get all administrator for cancel
+	public List findAll(short level, int offset, int length);
 }

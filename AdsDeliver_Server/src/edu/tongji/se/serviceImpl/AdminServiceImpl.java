@@ -87,5 +87,12 @@ public class AdminServiceImpl implements AdminService
 			return admins.get(0);
 		else
 			return null;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Administrator> getAdmins(short level, int offset, int length) {
+		// TODO Auto-generated method stub
+		return mAdminDao.findAll(level, offset, length);
 	} 
 }

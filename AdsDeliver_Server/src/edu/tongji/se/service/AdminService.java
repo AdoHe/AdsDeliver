@@ -45,4 +45,10 @@ public interface AdminService
 	 * @return
 	 */
 	public Administrator findAdmin(String name);
+	
+	/**
+	 * 得到所有待删除的管理员
+	 * @return
+	 */
+	public List<Administrator> getAdmins(short level, int offset, int length);
 }
