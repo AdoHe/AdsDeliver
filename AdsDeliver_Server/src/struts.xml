@@ -301,6 +301,19 @@
 			<result type="json"></result>
 		</action>
 		
+		<!-- 和删除管理员有关的几个action的申明 -->
+		<action name="AdminCancelPage" class="AdminCancelAction" method="adminCancelPage">
+			<result name="ADMIN_CANCEL">/WEB-INF/admin/deleteAdmin.jsp</result>
+		</action>
+		
+		<action name="AdminCancel" class="AdminCancelAction" method="getPagedAdminForCancel">
+			<result type="json"></result>
+		</action>
+		
+		<action name="CancelAdmin" class="AdminCancelAction" method="adminCancel">
+			<result type="json"></result>
+		</action>
+		
 		<action name="AdRequest" class="AdRequestAction" method="requestAd">
 			<result type="json">
 				<param name="excludeProperties">

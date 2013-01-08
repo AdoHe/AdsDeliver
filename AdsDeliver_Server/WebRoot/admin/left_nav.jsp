@@ -12,7 +12,7 @@
 		<h6 id="h-menu-accounts"><a href="#accounts"><span>账户</span></a></h6>
 		<ul id="menu-accounts" class="closed">
 			<li><a href="AdminAddPage.action">添加管理员</a></li>
-			<li><a href="AdminAdsCancelPage.action">删除管理员</a></li>
+			<li><a href="AdminCancelPage.action">删除管理员</a></li>
 		</ul>
 		<h6 id="h-menu-settings"><a href="#settings"><span>设置</span></a></h6>
 		<ul id="menu-settings" class="closed">

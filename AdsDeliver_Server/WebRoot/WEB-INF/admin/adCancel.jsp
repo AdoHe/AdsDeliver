@@ -24,7 +24,6 @@
 				style_path = "css";
 
 				$("#date-picker").datepicker();
-				$("input:submit").button();
 				$("input:button").button();
 				$("div.messages").hide();
 				
@@ -180,16 +179,6 @@
 				<!-- box/title -->
 				<div class="title">
 					<h5>撤销广告</h5>
-					<div class="search">
-						<form action="#" method="post">
-							<div class="input">
-								<input type="text" id="search" name="search" />
-							</div>
-							<div class="button">
-								<input type="submit" name="submit" value="搜索" />
-							</div>
-						</form>
-					</div>
 				</div>
 				<!-- end box/title -->
 				<!-- notice message -->

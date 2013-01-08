@@ -14,7 +14,6 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import edu.tongji.se.dao.AdministratorDao;
 import edu.tongji.se.model.Administrator;
-import edu.tongji.se.model.Advertisement;
 
 
 /**
@@ -123,7 +122,7 @@ public class AdministratorDaoImpl extends HibernateDaoSupport
 	public List findAll() {
 		log.debug("finding all Administrator instances");
 		try {
-			String queryString = "from Administrator";
+			String queryString = "from Administrator as model where model.id = 2";
 			return getHibernateTemplate().find(queryString);
 		} catch (RuntimeException re) {
 			log.error("find all failed", re);
@@ -169,6 +168,29 @@ public class AdministratorDaoImpl extends HibernateDaoSupport
 	public static AdministratorDaoImpl getFromApplicationContext(
 			ApplicationContext ctx) {
 		return (AdministratorDaoImpl) ctx.getBean("AdministratorDAO");
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List findAll(final short level, final int offset, final int length) {
+		// TODO Auto-generated method stub
+		log.debug("find paged advertisement for special account");
+		final String HQL = "from Administrator as a "
+                + "where a.id=?"
+                + "order by a.id desc";
+        
+        List<Administrator> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
+              
+            public Object doInHibernate(Session session) throws HibernateException,  
+                    SQLException {  
+                List<Administrator> result = session.createQuery(HQL).setFirstResult(offset)  
+                                .setParameter(0, level)
+                                .setMaxResults(length)  
+                                .list();  
+                return result;  
+            }  
+        });  
+        return list;
 	}
 
 }
