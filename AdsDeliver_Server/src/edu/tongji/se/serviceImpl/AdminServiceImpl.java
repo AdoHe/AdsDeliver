@@ -74,7 +74,7 @@ public class AdminServiceImpl implements AdminService
 	@Override
 	public void deleteAdmin(short id) {
 		// TODO Auto-generated method stub
-		
+		mAdminDao.delete(id);
 	}
 
 	@SuppressWarnings("unchecked")

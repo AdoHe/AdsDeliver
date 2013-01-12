@@ -34,4 +34,7 @@ public interface AdministratorDao
 	
 	//get all administrator for cancel
 	public List findAll(short level, int offset, int length);
+	
+	//delete the administrator according to id
+	public void delete(short id);
 }

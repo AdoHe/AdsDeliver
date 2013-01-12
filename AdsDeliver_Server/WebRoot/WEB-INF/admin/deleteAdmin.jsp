@@ -36,6 +36,44 @@
 		                }
 		            }
 		 });
+		 
+		 $("input#cancel").click(function() {
+					var str = "";
+					
+					if($("input.checkall").attr("checked"))
+					{
+						$("input.check").each(function() {
+							str += $(this).val() + ",";
+						});
+						alert(str);
+					}else
+					{
+						$("input.check").each(function() {
+							if($(this).attr("checked"))
+							{
+								str += $(this).val() + ",";
+							}
+						});
+					}
+					
+					if(str != "")
+					{
+						$.post(
+							"CancelAdmin.action",
+							{
+								str : str
+							},
+							function(data, textStatus) {
+								if(textStatus == "success")
+								{
+									location.href = "AdminCancelPage.action";
+								}
+							});
+					}else
+					{
+						$("#success-message").dialog("open");
+					}
+				});
 	});
 </script>
 <script type="text/javascript">
@@ -177,7 +215,7 @@
 								<option value="" class="unlocked">删除管理员</option>
 							</select>
 							<div class="button">
-								<input type="button" name="submit" value="Apply to selected" />
+								<input type="button" name="submit" id="cancel" value="Apply to selected" />
 							</div>
 						</div>
 						<!-- end table/action -->

@@ -77,7 +77,7 @@
 					{
 						name : $("input#name").attr("value"),
 						password : $("input#password").attr("value"),
-						level : $("#select").attr("checked")
+						level : $("#select").val()
 					},
 					function(data, textStatus) {
 						if(textStatus == "success")

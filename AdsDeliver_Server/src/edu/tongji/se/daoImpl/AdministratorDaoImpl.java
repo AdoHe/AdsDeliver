@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -176,7 +177,7 @@ public class AdministratorDaoImpl extends HibernateDaoSupport
 		// TODO Auto-generated method stub
 		log.debug("find paged advertisement for special account");
 		final String HQL = "from Administrator as a "
-                + "where a.id=?"
+                + "where a.adLevel=?"
                 + "order by a.id desc";
         
         List<Administrator> list = getHibernateTemplate().executeFind(new HibernateCallback() {  
@@ -191,6 +192,13 @@ public class AdministratorDaoImpl extends HibernateDaoSupport
             }  
         });  
         return list;
+	}
+
+	@Override
+	public void delete(short id) {
+		// TODO Auto-generated method stub
+		Object a = getHibernateTemplate().load(Administrator.class, id);
+		getHibernateTemplate().delete(a);
 	}
 
 }

@@ -119,8 +119,8 @@
 									<label for="banner">广告banner部份:</label>
 								</div>
 								<div style="padding-left: 250px;">
-									<div class="ban" style="background: url(./images/try.png) no-repeat; height: 50px;">
-										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left;">
+									<div class="ban" style="background: url(./images/banner_background.jpg) no-repeat; height: 50px;">
+										<img alt="bannerPic" src="${ad.adverinfo.afBannerPic}" style="padding: 7px 0 0 7px; float:left; width:32px; height: 32px;">
 										<div id="scrollDiv" style="overflow: auto;">
 											<div id="scroll" style="padding: 10px 0 0 20px; height: 25px; line-height: 25px; overflow: hidden;">
 												<ul class="list">
@@ -136,12 +136,16 @@
 								<div class="label">
 									<label for="content">广告主体部份:</label>
 								</div>
-								<div class="input" style="padding-left: 50px;">
-									<div class="cont" style="height:480px; background: url(${ad.adverinfo.afContentPic}) no-repeat;">
-										<span style="font-size: 18px;">
-											${ad.adverinfo.afContents}
-										</span>
-									</div> 
+								<div style="padding-left: 250px;">
+									<div class="con" style="background: url(./images/content_background.png) no-repeat; 
+									padding:20px 0 0 20px; height: 480px;">
+										<img alt="contentPic" src="${ad.adverinfo.afContentPic}" style="width:200px; height: 200px;">
+										<div class="cont" style="margin-top: 20px;">
+											<span style="font-size: 18px;">
+												${ad.adverinfo.afContents}
+											</span>
+										</div> 
+									</div>
 								</div>
 							</div>
 							<div class="field">
