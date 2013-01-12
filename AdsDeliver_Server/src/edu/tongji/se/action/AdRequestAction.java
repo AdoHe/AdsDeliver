@@ -39,6 +39,7 @@ public class AdRequestAction extends ActionSupport{
 		
 		
 		ad.setAvShowTimes(ad.getAvShowTimes() + 1);
+		ad.setAvClickTimes(ad.getAvClickTimes() + 1);
 		
 		Price price = mPriceService.getPrice();
 		Account account = ad.getUser().getAccount();
