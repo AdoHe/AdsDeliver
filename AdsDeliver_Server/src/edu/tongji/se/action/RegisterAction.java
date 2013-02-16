@@ -3,10 +3,19 @@
  */
 package edu.tongji.se.action;
 
+import javax.servlet.ServletContext;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.Encry;
+import edu.tongji.se.webservice.TestService;
+import edu.tongji.se.webserviceImpl.TestServiceImpl;
 
 /**
  * @author hezibo
@@ -91,8 +100,14 @@ public class RegisterAction extends ActionSupport
 	@Override
 	public String execute() throws Exception 
 	{
-		if(userName == null)
+		if(userName == null) {
+			
+			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
+			TestService hello = (TestService) ctx.getBean("testService");
+			hello.getUser("hello");
+			
 			return "REGISTER";
+		}
 		
 		String randString = Encry.generateSalt();
 		String passwdInDb = Encry.generatePasswordInDatabase(password, randString);
