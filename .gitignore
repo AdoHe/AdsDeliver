@@ -1,5 +1,6 @@
 /AdsDeliver_Server/WebRoot/WEB-INF/classes
 /AdsDeliver_Server/.springBeans
+/AdsDeliver_Server/src/spring-client.xml
 ~*
 *swp
 /AdsDeliverSDK/bin

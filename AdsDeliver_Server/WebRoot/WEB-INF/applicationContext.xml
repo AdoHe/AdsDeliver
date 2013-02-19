@@ -339,11 +339,18 @@
 	<bean id="TestService" class="edu.tongji.se.webserviceImpl.TestServiceImpl">
 	</bean>
 
-	<jaxws:endpoint id="testServcie" address="/TestService">
-        <jaxws:implementor ref="TestService" />
+	<jaxws:endpoint id="testServcie" implementor="edu.tongji.se.webserviceImpl.TestServiceImpl" address="/TestService">
     </jaxws:endpoint>
     
+    <bean id="WSUser" class="edu.tongji.se.webserviceImpl.UserServiceImpl">
+    	<property name="UserDao">
+    		<ref bean="UserDAO"/>
+    	</property>
+    </bean>
     
-	
+    <jaxws:endpoint id="WSUserService" implementorClass="edu.tongji.se.webserviceImpl.UserServiceImpl" address="/UserService">
+    	<jaxws:implementor ref="WSUser" />
+    </jaxws:endpoint>
+    
 </beans>
 
