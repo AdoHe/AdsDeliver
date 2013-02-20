@@ -163,4 +163,14 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		
 		return user.getUsSessionId();
 	}
+
+	@Override
+	public void updateSession(String name, String session) 
+	{
+		// TODO Auto-generated method stub
+		User user = (User) this.findByProperty("usName", name);
+		user.setUsSessionId(session);
+		
+		this.save(user);
+	}
 }

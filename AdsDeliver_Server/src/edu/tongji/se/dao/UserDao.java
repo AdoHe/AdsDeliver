@@ -35,4 +35,10 @@ public interface UserDao {
 	 * @return
 	 */
 	public String getSession(int id);
+	
+	/**
+	 * 更新数据库中的session
+	 * @param id
+	 */
+	public void updateSession(String name, String session);
 }
