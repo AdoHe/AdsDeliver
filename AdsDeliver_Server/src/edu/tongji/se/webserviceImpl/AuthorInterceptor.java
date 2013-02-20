@@ -1,6 +1,5 @@
 package edu.tongji.se.webserviceImpl;
 
-import javax.xml.soap.SOAPException;
 import javax.xml.soap.SOAPHeader;
 import javax.xml.soap.SOAPMessage;
 
@@ -21,7 +20,8 @@ public class AuthorInterceptor extends AbstractPhaseInterceptor<SoapMessage>{
 	}
 
 	@Override
-	public void handleMessage(SoapMessage message) throws Fault {
+	public void handleMessage(SoapMessage message) throws Fault 
+	{
 
 		System.out.println("come in ServicesAuthorInterceptor ");  
         SOAPMessage mess = message.getContent(SOAPMessage.class);  
@@ -37,10 +37,18 @@ public class AuthorInterceptor extends AbstractPhaseInterceptor<SoapMessage>{
             }  
             if (head == null) {  
              return;  
-            }  
-            NodeList nodes = head.getElementsByTagName("tns:spId");  
-            NodeList nodepass = head.getElementsByTagName("tns:spSession");  
+            } 
 
+            NodeList idNode = head.getElementsByTagName("ads:id");
+            NodeList sessionNode = head.getElementsByTagName("ads:session");
+            
+            int id = Integer.valueOf(idNode.item(0).getTextContent());
+            String session = sessionNode.item(0).getTextContent();
+            
+            if(session.equals(""))
+            {
+            	
+            }
             
             System.out.println("—È÷§ÕÍ±œ");  
 

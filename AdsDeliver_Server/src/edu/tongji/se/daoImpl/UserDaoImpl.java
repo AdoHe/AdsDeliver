@@ -154,4 +154,13 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 	public static UserDaoImpl getFromApplicationContext(ApplicationContext ctx) {
 		return (UserDaoImpl) ctx.getBean("UserDAO");
 	}
+
+	@Override
+	public String getSession(int id) 
+	{
+		// TODO Auto-generated method stub
+		User user = this.findById(id);
+		
+		return user.getUsSessionId();
+	}
 }

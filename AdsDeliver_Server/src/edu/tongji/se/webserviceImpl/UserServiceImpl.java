@@ -24,6 +24,7 @@ public class UserServiceImpl implements UserService
 	/* (non-Javadoc)
 	 * @see edu.tongji.se.webservice.UserService#validateUser(java.lang.String, java.lang.String)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public int validateUser(String name, String pwd) 
 	{
