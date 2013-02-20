@@ -21,6 +21,7 @@ public class User implements java.io.Serializable {
 	private String usName;
 	private String usPassword;
 	private String usRand;
+	private String usSessionId;
 	private Set advertisements = new HashSet(0);
 
 	// Constructors
@@ -106,6 +107,14 @@ public class User implements java.io.Serializable {
 
 	public void setAdvertisements(Set advertisements) {
 		this.advertisements = advertisements;
+	}
+
+	public String getUsSessionId() {
+		return usSessionId;
+	}
+
+	public void setUsSessionId(String usSessionId) {
+		this.usSessionId = usSessionId;
 	}
 
 }

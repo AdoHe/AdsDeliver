@@ -25,6 +25,9 @@
         <property name="usRand" type="java.lang.String">
             <column name="us_Rand" length="100" not-null="true" />
         </property>
+        <property name="usSessionId" type="java.lang.String">
+        	<column name="us_SessionId" length="100" not-null="true"></column>
+        </property>
         <set name="advertisements" inverse="true">
             <key>
                 <column name="av_User" not-null="true" />

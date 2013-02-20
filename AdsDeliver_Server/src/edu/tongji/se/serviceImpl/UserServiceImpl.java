@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
 		user.setUsName(name);
 		user.setUsPassword(passwd);
 		user.setUsRand(rand);
+		user.setUsSessionId("0");
 		
 		Userinfo userInfo = new Userinfo();
 		userInfo.setUfName(realName);
