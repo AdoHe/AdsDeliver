@@ -336,10 +336,19 @@
 		</property>
 	</bean>
 	
+	<!-- WebService配置 -->
+	<!-- 授权拦截器配置 -->
+	<bean id="AuthorInterceptor" class="edu.tongji.se.webserviceImpl.AuthorInterceptor">
+		<constructor-arg  value="receive"/>
+	</bean>
+	
 	<bean id="TestService" class="edu.tongji.se.webserviceImpl.TestServiceImpl">
 	</bean>
 
 	<jaxws:endpoint id="testServcie" implementor="edu.tongji.se.webserviceImpl.TestServiceImpl" address="/TestService">
+    	<jaxws:inInterceptors>
+        	<ref bean="AuthorInterceptor"/>
+   		</jaxws:inInterceptors>
     </jaxws:endpoint>
     
     <bean id="WSUser" class="edu.tongji.se.webserviceImpl.UserServiceImpl">
