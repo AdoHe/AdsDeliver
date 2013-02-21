@@ -352,14 +352,30 @@
     </jaxws:endpoint>
     
     <bean id="WSUser" class="edu.tongji.se.webserviceImpl.UserServiceImpl">
-    	<property name="UserDao">
+    	<property name="mUserDao">
     		<ref bean="UserDAO"/>
     	</property>
     </bean>
     
-    <jaxws:endpoint id="WSUserService" implementorClass="edu.tongji.se.webserviceImpl.UserServiceImpl" address="/UserService">
-    	<jaxws:implementor ref="WSUser" />
-    </jaxws:endpoint>
+    <bean id="WSAccount" class="edu.tongji.se.webserviceImpl.AccountServiceImpl">
+    	<property name="mAccountDao">
+    		<ref bean="AccountDAO"/>
+    	</property>
+    </bean>
+    
+    <jaxws:server id="WSUserService" address="/UserService"
+    	serviceClass="edu.tongji.se.webservice.UserService">
+    	<jaxws:serviceBean>
+    		<ref bean="WSUser"></ref>
+    	</jaxws:serviceBean>
+    </jaxws:server>
+    
+    <jaxws:server id="WSAccountService" address="/AccountService"
+    	serviceClass="edu.tongji.se.webservice.AccountService">
+    	<jaxws:serviceBean>
+    		<ref bean="WSAccount"/>
+    	</jaxws:serviceBean>
+    </jaxws:server>
     
 </beans>
 
