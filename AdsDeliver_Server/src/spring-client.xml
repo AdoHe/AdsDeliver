@@ -8,9 +8,9 @@
     http://cxf.apache.org/jaxws   
     http://cxf.apache.org/schemas/jaxws.xsd">  
   
-    
+    <!-- address的host都改成localhost吧 -->
     <jaxws:client id="WSUserService" serviceClass="edu.tongji.se.webservice.UserService"
-    	address="http://hezibo-pc:8080/AdsDeliver_Server/services/UserService">
+    	address="http://localhost:8080/AdsDeliver_Server/services/UserService">
     </jaxws:client>
     
 </beans>  

@@ -1,4 +1,4 @@
-package edu.tongji.se.webserviceImpl;
+package edu.tongji.se.webclient;
 
 import javax.xml.namespace.QName;
 

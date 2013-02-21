@@ -102,9 +102,9 @@ public class RegisterAction extends ActionSupport
 	{
 		if(userName == null) {
 			
-			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
-			TestService hello = (TestService) ctx.getBean("testService");
-			hello.getUser("hello");
+//			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
+//			TestService hello = (TestService) ctx.getBean("testService");
+//			hello.getUser("hello");
 			
 			return "REGISTER";
 		}
