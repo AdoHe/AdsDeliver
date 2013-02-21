@@ -29,4 +29,11 @@ public interface UserService
 	@WebMethod(action = "updateUserPwd")
 	public void updateUserPwd(@WebParam(name="id") int id,
 			@WebParam(name="newPwd") String pwd);
+	
+	/*
+	 * webservice 层提供获得session的方法
+	 * @return
+	 */
+	@WebMethod(action = "getSessionById")
+	public String getSessionById(@WebParam(name="id") int id);
 }

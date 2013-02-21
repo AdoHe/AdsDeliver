@@ -72,4 +72,11 @@ public class UserServiceImpl implements UserService
 		UserDao.save(user);
 	}
 
+	@Override
+	public String getSessionById(int id) 
+	{
+		// TODO Auto-generated method stub
+		return UserDao.getSession(id);
+	}
+
 }
