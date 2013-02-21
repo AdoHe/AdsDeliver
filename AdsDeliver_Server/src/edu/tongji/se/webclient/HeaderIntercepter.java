@@ -1,4 +1,4 @@
-package edu.tongji.se.action;
+package edu.tongji.se.webclient;
 
 import java.util.List;
 
@@ -21,23 +21,28 @@ import org.w3c.dom.Element;
  */
 public class HeaderIntercepter extends AbstractSoapInterceptor {
 	private String qname;
-	public HeaderIntercepter() {
+	private String mUserId;
+	private String mSessionId;
+	public HeaderIntercepter(String userId, String sessionId) {
 		super(Phase.WRITE);
+		
+		this.mUserId = userId;
+		this.mSessionId = sessionId;
 	}
 	@Override
 	public void handleMessage(SoapMessage soapMessage) throws Fault {
 		// TODO Auto-generated method stub
 		/*这里有个问题，这两个东西怎么传到这里*/
-		String spName = "";
-		String spSession = "";
+		String spName = mUserId;
+		String spSession = mSessionId;
 		
 		QName name = new QName("RequestSOAPHeader");  
         Document doc = DOMUtils.createDocument();  
           
-        Element spId = doc.createElement("tns:spId");  
+        Element spId = doc.createElement("ads:id");  
         spId.setTextContent(spName);  
          
-        Element spPass = doc.createElement("tns:spSession");  
+        Element spPass = doc.createElement("ads:session");  
         spPass.setTextContent(spSession);  
           
         Element root = doc.createElementNS(qname, "tns:RequestSOAPHeader");  

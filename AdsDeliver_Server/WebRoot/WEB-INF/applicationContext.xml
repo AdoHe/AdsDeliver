@@ -339,7 +339,7 @@
 	<!-- WebService配置 -->
 	<!-- 授权拦截器配置 -->
 	<bean id="AuthorInterceptor" class="edu.tongji.se.webserviceImpl.AuthorInterceptor">
-		<constructor-arg  value="receive"/>
+		<!-- constructor-arg  value="receive"/-->
 	</bean>
 	
 	<bean id="TestService" class="edu.tongji.se.webserviceImpl.TestServiceImpl">
