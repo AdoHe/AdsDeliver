@@ -29,5 +29,16 @@ public interface UserDao {
 	
 	public void attachClean(User instance);
 
-
+	/**
+	 * 通过id去获取session
+	 * @param id
+	 * @return
+	 */
+	public String getSession(int id);
+	
+	/**
+	 * 更新数据库中的session
+	 * @param id
+	 */
+	public void updateSession(String name, String session);
 }

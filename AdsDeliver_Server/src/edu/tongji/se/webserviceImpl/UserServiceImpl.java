@@ -11,6 +11,7 @@ import javax.jws.WebService;
 import edu.tongji.se.dao.UserDao;
 import edu.tongji.se.model.User;
 import edu.tongji.se.tools.Encry;
+import edu.tongji.se.tools.SessionUtil;
 import edu.tongji.se.webservice.UserService;
 
 /**
@@ -24,6 +25,7 @@ public class UserServiceImpl implements UserService
 	/* (non-Javadoc)
 	 * @see edu.tongji.se.webservice.UserService#validateUser(java.lang.String, java.lang.String)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public int validateUser(String name, String pwd) 
 	{
@@ -35,9 +37,14 @@ public class UserServiceImpl implements UserService
 			String pwdInDb = lstUsers.get(0).getUsPassword();
 		
 			if(Encry.checkPasswordByInput(pwd, salt, pwdInDb))
+			{
+				String session = SessionUtil.generateSessionId();
+				UserDao.updateSession(name, session);
 				return 1; //login successfully
-			else
+			}else
+			{
 				return 2; //the password is wrong
+			}
 		}else
 		{
 			return 3; //there is no such a user
@@ -48,6 +55,21 @@ public class UserServiceImpl implements UserService
 	public void setUserDao(UserDao UserDao) 
 	{
 		this.UserDao = UserDao;
+	}
+
+	@Override
+	public void updateUserPwd(int id, String pwd) 
+	{
+		// TODO Auto-generated method stub
+		User user = UserDao.findById(id);
+		
+		String newRand = Encry.generateSalt();
+		String password = Encry.generatePasswordInDatabase(pwd, newRand);
+		
+		user.setUsPassword(password);
+		user.setUsRand(newRand);
+		
+		UserDao.save(user);
 	}
 
 }
