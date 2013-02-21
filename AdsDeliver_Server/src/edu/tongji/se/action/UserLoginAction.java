@@ -9,6 +9,8 @@ import org.apache.commons.lang.xwork.StringUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.CookiesAware;
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -116,7 +118,10 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 		
 		if(select == 2)
 		{
-			result = mUserService.validateUser(loginname, password);
+			//result = mUserService.validateUser(loginname, password);
+			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
+			edu.tongji.se.webservice.UserService userService = (edu.tongji.se.webservice.UserService)ctx.getBean("WSUserService");
+			result = userService.validateUser(loginname, password);
 			storeCookie();
 			
 			return SUCCESS;

@@ -8,9 +8,9 @@
     http://cxf.apache.org/jaxws   
     http://cxf.apache.org/schemas/jaxws.xsd">  
   
-    <jaxws:client id="testService" serviceClass="edu.tongji.se.webservice.TestService" 
-    	address="http://hezibo-pc:8080/AdsDeliver_Server/services/TestService">
-    </jaxws:client> 
     
+    <jaxws:client id="WSUserService" serviceClass="edu.tongji.se.webservice.UserService"
+    	address="http://hezibo-pc:8080/AdsDeliver_Server/services/UserService">
+    </jaxws:client>
     
 </beans>  
