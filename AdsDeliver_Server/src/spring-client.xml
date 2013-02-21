@@ -13,4 +13,8 @@
     	address="http://localhost:8080/AdsDeliver_Server/services/UserService">
     </jaxws:client>
     
+    <jaxws:client id="WSAccountService" serviceClass="edu.tongji.se.webservice.AccountService"
+    	address="http://localhost:8080/AdsDeliver_Server/services/AccountService">
+    </jaxws:client>
+    
 </beans>  

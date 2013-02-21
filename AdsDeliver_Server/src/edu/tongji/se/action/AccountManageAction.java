@@ -8,6 +8,8 @@ import java.util.Map;
 import org.apache.struts2.interceptor.SessionAware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -67,7 +69,12 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 				(String)session.get(AuthorInterceptor.USER_SESSION_KEY) : "";
 		User user = mUserService.findUser(userName);
 		
-		balance = user.getAccount().getAcBalance();
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
+		edu.tongji.se.webservice.AccountService accountService =
+					(edu.tongji.se.webservice.AccountService)ctx.getBean("WSAccountService");
+		
+		//TODO accountService改变方法
+		//balance = accountService.getAccountBalance(id);
 		log.debug("balance:::::" + balance);
 		
 		return SUCCESS;

@@ -40,8 +40,8 @@ public interface UserService
 	 * @param id
 	 * @return
 	 */
-	@WebMethod(action = "getSessionById")
-	public String getSessionById(@WebParam(name="id") int id);
+	@WebMethod(action = "getSessionByName")
+	public String getSessionByName(@WebParam(name="name") String name);
 	
 	/**
 	 * 更新用户账户

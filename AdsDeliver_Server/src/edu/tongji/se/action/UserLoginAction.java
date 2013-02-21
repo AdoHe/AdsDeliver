@@ -122,8 +122,11 @@ public class UserLoginAction extends ActionSupport implements SessionAware, Cook
 			ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
 			edu.tongji.se.webservice.UserService userService = (edu.tongji.se.webservice.UserService)ctx.getBean("WSUserService");
 			result = userService.validateUser(loginname, password);
+			
 			storeCookie();
 			
+			// ±£´æsessionId
+			session.put(AuthorInterceptor.SESSION_ID_KEY, userService.getSessionByName(loginname));
 			return SUCCESS;
 		}else
 		{

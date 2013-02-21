@@ -70,10 +70,10 @@ public class UserServiceImpl implements UserService
 	}
 
 	@Override
-	public String getSessionById(int id) 
+	public String getSessionByName(String name) 
 	{
-		// TODO Auto-generated method stub
-		return mUserDao.getSession(id);
+		User user = (User)mUserDao.findByUsName(name).get(0);
+		return mUserDao.getSession(user.getId());
 	}
 
 	@Resource(name="UserDAO")

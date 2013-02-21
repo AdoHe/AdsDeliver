@@ -32,6 +32,7 @@ public class AuthorInterceptor extends AbstractInterceptor
 	public static final String USER_SESSION_KEY = "USER_SESSION_NAME";
 	public static final String USER_COOKIE_KEY = "USER_COOKIE_NAME";
 	public static final String GOING_TO_URL_KEY = "GOING_TO";
+	public static final String SESSION_ID_KEY = "SESSION_ID";
 
 	private UserServiceImpl mUserService;
 	
