@@ -8,6 +8,7 @@ import javax.jws.WebService;
 
 import edu.tongji.se.model.Adverinfo;
 import edu.tongji.se.model.Advertisement;
+import edu.tongji.se.model.Advertisements;
 import edu.tongji.se.model.Location;
 
 @WebService
@@ -48,8 +49,8 @@ public interface AdService
 	 * @param limit
 	 * @return
 	 */
-	@WebMethod(action="getAds")
-	public List<Advertisement> getAds(@WebParam(name="userName") String userName, @WebParam(name="offset") int offset, 
+	@WebMethod(action="getAllAds")
+	public Advertisements getAllAds(@WebParam(name="userName") String userName, @WebParam(name="offset") int offset, 
 			@WebParam(name="limit") int limit);
 	
 	/**
@@ -75,4 +76,12 @@ public interface AdService
 	@WebMethod(action="getAdsNearby")
 	public List<Advertisement> getAdsNearby(@WebParam(name="lng") float lng, @WebParam(name="lat") float lat, 
 			@WebParam(name="distance") float distance, @WebParam(name="count") int count);
+	
+	/**
+	 * 通过id获取广告
+	 * @param id
+	 * @return
+	 */
+	@WebMethod(action="getAdById")
+	public Advertisement getAdById(@WebParam(name="id") int id);
 }

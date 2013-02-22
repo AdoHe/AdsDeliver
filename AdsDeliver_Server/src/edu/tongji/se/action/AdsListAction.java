@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.model.Advertisement;
+import edu.tongji.se.model.Advertisements;
 import edu.tongji.se.service.AdService;
 import edu.tongji.se.tools.AuthorInterceptor;
 
@@ -60,7 +63,11 @@ public class AdsListAction extends ActionSupport implements SessionAware
 		{
 		}
 		
-		pAds = (ArrayList<Advertisement>)mAdService.getAds(userName, 2, start, length);
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
+		edu.tongji.se.webservice.AdService adService = (edu.tongji.se.webservice.AdService)ctx.getBean("WSAdService");
+		//pAds = (ArrayList<Advertisement>)mAdService.getAds(userName, 2, start, length);
+		Advertisements advertisements = adService.getAllAds(userName, start, length);
+		pAds = advertisements.getAllAds();
 		
 		active_count = mAdService.getActiveAdsCount(userName);
 		return SUCCESS;
