@@ -363,6 +363,21 @@
     	</property>
     </bean>
     
+    <bean id="WSAd" class="edu.tongji.se.webserviceImpl.AdServiceImpl">
+    	<property name="mAdDao">
+    		<ref bean="AdvertisementDAO"/>
+    	</property>
+    	<property name="mUserDao">
+    		<ref bean="UserDAO"/>
+    	</property>
+    	<property name="mLocationDao">
+    		<ref bean="LocationDAO"/>
+    	</property>
+    	<property name="mAdverinfoDao">
+    		<ref bean="AdverinfoDAO"/>
+    	</property>
+    </bean>
+    
     <jaxws:server id="WSUserService" address="/UserService"
     	serviceClass="edu.tongji.se.webservice.UserService">
     	<jaxws:serviceBean>
@@ -374,6 +389,13 @@
     	serviceClass="edu.tongji.se.webservice.AccountService">
     	<jaxws:serviceBean>
     		<ref bean="WSAccount"/>
+    	</jaxws:serviceBean>
+    </jaxws:server>
+    
+    <jaxws:server id="WSAdService" address="/AdService"
+    	serviceClass="edu.tongji.se.webservice.AdService">
+    	<jaxws:serviceBean>
+    		<ref bean="WSAd"/>
     	</jaxws:serviceBean>
     </jaxws:server>
     
