@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService
 			if(Encry.checkPasswordByInput(pwd, salt, pwdInDb))
 			{
 				String session = SessionUtil.generateSessionId();
-				//mUserDao.updateSession(name, session);
+				mUserDao.updateSession(name, session);
 				System.out.println("The session is:" + session);
 				return 1; //login successfully
 			}else
