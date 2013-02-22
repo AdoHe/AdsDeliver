@@ -15,9 +15,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import edu.tongji.se.model.Account;
 import edu.tongji.se.model.User;
-import edu.tongji.se.service.AccountService;
+//import edu.tongji.se.service.AccountService;
 import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.AuthorInterceptor;
+import edu.tongji.se.webservice.AccountService;
 
 /**
  * @author hezibo
@@ -32,6 +33,7 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 
 	private AccountService mAccountService;
 	private UserService mUserService;
+	
 	
 	private int balance;
 	
@@ -87,7 +89,7 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		User user = mUserService.findUser(userName);
 		
 		Account account = user.getAccount();
-		mAccountService.saveAccountRecharge(account, rechargeAmount);
+		//mAccountService.saveAccountRecharge(account, rechargeAmount);
 		
 		return SUCCESS;
 	}

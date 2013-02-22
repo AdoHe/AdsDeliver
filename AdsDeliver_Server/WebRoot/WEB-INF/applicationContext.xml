@@ -216,7 +216,7 @@
 	
 	<bean id="AccountManageAction" class="edu.tongji.se.action.AccountManageAction">
 		<property name="mAccountService">
-			<ref bean="accountService"/>
+			<ref bean="WSAccountClient"/>
 		</property>
 		<property name="mUserService">
 			<ref bean="userService"/>
@@ -376,6 +376,10 @@
     		<ref bean="WSAccount"/>
     	</jaxws:serviceBean>
     </jaxws:server>
+    
+    <jaxws:client id="WSAccountClient" serviceClass="edu.tongji.se.webservice.AccountService"
+    	address="http://localhost:8080/AdsDeliver_Server/services/AccountService">
+    </jaxws:client>
     
 </beans>
 
