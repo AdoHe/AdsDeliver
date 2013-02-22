@@ -8,5 +8,5 @@ import javax.jws.WebService;
 public interface AccountService 
 {
 	@WebMethod(action="getAccountBalance")
-	public int getAccountBalance(@WebParam(name="id") int id);
+	public int getAccountBalance(@WebParam(name="userName") String userName);
 }

@@ -215,11 +215,14 @@
 	</bean>
 	
 	<bean id="AccountManageAction" class="edu.tongji.se.action.AccountManageAction">
-		<property name="mAccountService">
+		<!--property name="mAccountService">
 			<ref bean="WSAccountClient"/>
-		</property>
+		</property-->
 		<property name="mUserService">
 			<ref bean="userService"/>
+		</property>
+		<property name="mAccountClientFactory">
+			<ref bean="WSAccountClientFactory" />
 		</property>
 	</bean>
 	
@@ -358,9 +361,12 @@
     </bean>
     
     <bean id="WSAccount" class="edu.tongji.se.webserviceImpl.AccountServiceImpl">
-    	<property name="mAccountDao">
+    	<!--property name="mAccountDao">
     		<ref bean="AccountDAO"/>
     	</property>
+    	<property name="mUserDao">
+    		<ref bean="UserDAO"/>
+    	</property-->
     </bean>
     
     <bean id="WSAd" class="edu.tongji.se.webserviceImpl.AdServiceImpl">
@@ -399,9 +405,18 @@
     	</jaxws:serviceBean>
     </jaxws:server>
     
-    <jaxws:client id="WSAccountClient" serviceClass="edu.tongji.se.webservice.AccountService"
+    <!--jaxws:client id="WSAccountClient" serviceClass="edu.tongji.se.webservice.AccountService"
     	address="http://localhost:8080/AdsDeliver_Server/services/AccountService">
-    </jaxws:client>
+    </jaxws:client-->
+    
+    <bean id="WSAccountClient" class="edu.tongji.se.webservice.AccountService"
+    	factory-bean="WSAccountClientFactory" factory-method="create">
+    </bean>
+    <!-- 添加AccountClient的工厂 -->
+    <bean id="WSAccountClientFactory" class="org.apache.cxf.jaxws.JaxWsProxyFactoryBean">
+        <property name="serviceClass" value="edu.tongji.se.webservice.AccountService" />
+        <property name="address" value="http://localhost:8080/AdsDeliver_Server/services/AccountService" />
+    </bean>
     
 </beans>
 

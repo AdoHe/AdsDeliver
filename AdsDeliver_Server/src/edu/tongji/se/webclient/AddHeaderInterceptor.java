@@ -13,13 +13,13 @@ import org.w3c.dom.Element;
 
 public class AddHeaderInterceptor extends AbstractPhaseInterceptor<SoapMessage> 
 {
-	private int userId;
+	private String userName;
 	private String sessionId;
 	
-	public AddHeaderInterceptor(int userId, String sessionId)
+	public AddHeaderInterceptor(String userName, String sessionId)
 	{
 		super(Phase.PREPARE_SEND);
-		this.setUserId(userId);
+		this.setUserName(userName);
 		this.setSessionId(sessionId);
 	}
 
@@ -30,7 +30,7 @@ public class AddHeaderInterceptor extends AbstractPhaseInterceptor<SoapMessage>
 		Document document = DOMUtils.createDocument();
 		Element authElement = document.createElement("auth");
 		Element userIdElement = document.createElement("ads:id");
-		userIdElement.setTextContent(String.valueOf(userId));
+		userIdElement.setTextContent(userName);
 		authElement.appendChild(userIdElement);
 		Element sessionIdElement = document.createElement("ads:session");
 		sessionIdElement.setTextContent(sessionId);
@@ -40,12 +40,14 @@ public class AddHeaderInterceptor extends AbstractPhaseInterceptor<SoapMessage>
 		message.getHeaders().add(header);
 	}
 
-	public int getUserId() {
-		return userId;
+	
+
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getSessionId() {

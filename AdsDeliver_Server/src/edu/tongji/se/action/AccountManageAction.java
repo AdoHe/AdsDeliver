@@ -5,6 +5,7 @@ package edu.tongji.se.action;
 
 import java.util.Map;
 
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
 import org.apache.struts2.interceptor.SessionAware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,7 @@ import edu.tongji.se.model.User;
 //import edu.tongji.se.service.AccountService;
 import edu.tongji.se.service.UserService;
 import edu.tongji.se.tools.AuthorInterceptor;
+import edu.tongji.se.webclient.AddHeaderInterceptor;
 import edu.tongji.se.webservice.AccountService;
 
 /**
@@ -34,6 +36,7 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 	private AccountService mAccountService;
 	private UserService mUserService;
 	
+	private JaxWsProxyFactoryBean mAccountClientFactory;
 	
 	private int balance;
 	
@@ -43,6 +46,11 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 	
 	private static final Logger log = LoggerFactory.getLogger(AccountManageAction.class);
 	
+	
+	public void setmAccountClientFactory(JaxWsProxyFactoryBean mAccountClientFactory) {
+		this.mAccountClientFactory = mAccountClientFactory;
+	}
+
 	public void setmUserService(UserService mUserService) {
 		this.mUserService = mUserService;
 	}
@@ -74,6 +82,14 @@ public class AccountManageAction extends ActionSupport implements SessionAware
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("spring-client.xml");
 		edu.tongji.se.webservice.AccountService accountService =
 					(edu.tongji.se.webservice.AccountService)ctx.getBean("WSAccountService");
+		
+		String sessionId = session.containsKey(AuthorInterceptor.SESSION_ID_KEY) ? 
+				(String)session.get(AuthorInterceptor.SESSION_ID_KEY) : "";
+		
+		mAccountClientFactory.getInInterceptors().add(new AddHeaderInterceptor(userName, sessionId));
+		
+		mAccountService = (AccountService)mAccountClientFactory.create();
+		
 		
 		//TODO accountService改变方法
 		//balance = accountService.getAccountBalance(id);
